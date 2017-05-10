@@ -11,24 +11,54 @@
 @import "../common/scss/variables";
 @import "../common/scss/mixins";
 
+%gradation{
+	@include background-image( linear-gradient( to right, $green, $blue ) );	
+}
+
 html{
 	color: #fff;
 	font-size: 15px;
-	@include background-image( linear-gradient( to right, $green, $blue ) );
+	
+	@extend %gradation;
 }
-.testmb{
-	mix-blend-mode: overlay;	
+
+
+
+
+/***********************
+ module
+***********************/
+
+.section{
+	height: 100vh;
+	@extend %gradation;	
+	
+	&_index{
+			text-shadow: 0 0 5px rgba(#000, 0.05);		
+		font-family: $fontFamily_wf_ultra;
+		font-size: 8.33em;
+	}
+
+	&_article{
+		max-width: 500px;
+		width: 90%;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	&_footer{
+		margin-top: 55px;
+		text-align: center;
+	}
 }
-// body{
-// 		background: url(../img/main.png) left top no-repeat;
-// 		background-blend-mode: hard-light;	
-// }
 
 
-////////////////
-// mainvisual
-////////////////
 
+/***********************
+ mainvisual
+***********************/
+
+/********** mainvisual **********/
 .mainvisual
 {
 	position: relative;
@@ -42,8 +72,7 @@ html{
 		align-items: center;
 		justify-content: flex-end;
 	
-		@include background-image( linear-gradient( to right, $green, $blue ) );
-
+		@extend %gradation;
 	}
 
 
@@ -129,4 +158,19 @@ html{
 
 	&_copy_sitename{
 	}
+}
+
+
+/***********************
+ section
+***********************/
+
+/********** about **********/
+
+.section-about{
+	
+	.section_article{
+		// @include liquid( 490, 1080, true );
+	}
+
 }

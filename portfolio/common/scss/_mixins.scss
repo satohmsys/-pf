@@ -18,6 +18,21 @@
 	}
 }
 
+///リキッドレイアウト幅
+// @param @width
+//
+@mixin liquid( 
+	$width: 100px ,
+	$parentWidth: 1000px,
+	$centering: true ){
+	width: percentage( $width / $parentWidth );
+	
+	@if( $centering == true ){
+		margin-left: auto;
+		margin-right: auto;
+	}
+}
+
 
 
 ///クリアフィックス

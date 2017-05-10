@@ -107,19 +107,22 @@
 .small{ font-size: $small; }
 
 .wfBlack{
-	$fontFamily_wf_black: 'woodford black';
+	font-family: $fontFamily_wf_black;
 }
 .wfUltra{
-	$fontFamily_wf_ultra: 'woodford ultra';
+	font-family: $fontFamily_wf_ultra;
+}
+.wfBold{
+	font-family: $fontFamily_wf_bold;
 }
 .wfRegular{
-	$fontFamily_wf_regular: 'woodford regular';
+	font-family: $fontFamily_wf_regular;
 }
-.wfMed{
-	$fontFamily_wf_medium: 'woodford medium';
+.wfMedium{
+	font-family: $fontFamily_wf_medium;
 }
 .wfLight{
-	$fontFamily_wf_light: 'woodford light';
+	font-family: $fontFamily_wf_light;
 }
 .damion{
 	font-family: $fontFamily_damion;
@@ -143,6 +146,14 @@
 .icon-facebook{
 	@include iconfont(
 		$content: '\f09a',
+		$icon-margin-right: 0, 			
+		$top : 0, 
+		$font-size: 22px
+	 );
+}
+.icon-instagram{
+	@include iconfont(
+		$content: '\f16d',
 		$icon-margin-right: 0, 			
 		$top : 0, 
 		$font-size: 22px

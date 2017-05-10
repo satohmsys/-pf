@@ -1,0 +1,150 @@
+@charset "UTF-8";
+//////////////////////////////////////////
+
+//utilitie classes
+
+//include by style.scss
+
+//////////////////////////////////////////
+
+
+//////////////////
+
+// block level
+
+//////////////////
+
+%inner{
+	max-width: $innerWidth;
+	margin-left: auto;
+	margin-right: auto;
+	box-sizing: border-box;
+}
+
+.wrap{
+	max-width: $outerWidth;
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: 30px;
+	padding-right: 30px;	
+	box-sizing: border-box;
+
+
+	//////////media queries
+	@include breakpoint( pc ){
+		padding-left: 25px;
+		padding-right: 25px;
+	}//max 1200
+	
+	@include breakpoint( sp ){
+			padding-left: 15px;
+			padding-right: 15px;
+	}//max 580	
+}
+
+.contain{
+	@extend %inner;
+}
+
+.inner{
+	@extend %inner;
+}
+
+
+.clearfix{
+	@include clearfix();
+	@include has-layout;
+}
+
+
+
+//////////////////
+
+// responsive
+
+//////////////////
+
+
+////////スマホで非表示
+
+.spShow{
+	display: none;
+}
+@include breakpoint( sp ){
+	.spHide{
+		display: none;	
+	}
+	.spShow{
+		display: inherit;
+	}
+} //max 580
+
+.tabShow{
+	display: none;
+}
+@include breakpoint( tab ){
+	.tabHide{
+		display: none;	
+	}
+	.tabShow{
+		display: inherit;
+	}
+} //max 780
+
+
+
+
+
+//////////////////
+
+// typography
+
+//////////////////
+
+.xxlarge{ font-size: $xxlarge;}
+.xlarge{ font-size: $xlarge;}
+.large{ font-size: $large;}
+.small{ font-size: $small; }
+
+.wfBlack{
+	$fontFamily_wf_black: 'woodford black';
+}
+.wfUltra{
+	$fontFamily_wf_ultra: 'woodford ultra';
+}
+.wfRegular{
+	$fontFamily_wf_regular: 'woodford regular';
+}
+.wfMed{
+	$fontFamily_wf_medium: 'woodford medium';
+}
+.wfLight{
+	$fontFamily_wf_light: 'woodford light';
+}
+.damion{
+	font-family: $fontFamily_damion;
+}
+
+
+//////////////////
+
+// icon
+
+//////////////////
+
+.icon-twitter{
+	@include iconfont(
+		$content: '\f099',
+		$icon-margin-right: 0, 
+		$top : 0, 
+		$font-size: 22px
+	 );
+}
+.icon-facebook{
+	@include iconfont(
+		$content: '\f09a',
+		$icon-margin-right: 0, 			
+		$top : 0, 
+		$font-size: 22px
+	 );
+}

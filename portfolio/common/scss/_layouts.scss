@@ -1,0 +1,76 @@
+//////////////////////////////////////////
+
+//layout
+
+//include by style.scss
+
+//////////////////////////////////////////
+
+%lastChild{
+	&:last-child{
+		margin-right: 0;
+	}	
+}
+
+
+////////////////////
+
+// header
+
+////////////////////
+
+//////// 固定ナビ高さ分余白
+body.headerFix
+{
+
+	//media queries
+	@include breakpoint( sp ){
+		//ナビの高さ
+		padding-top: 45px;
+
+		.header{
+			position: fixed;
+			top: 0;
+			right: 0;
+			left: 0;
+		}	
+		
+	} //max 580
+
+}
+
+
+
+
+////////////////////
+
+// column layout
+
+////////////////////
+
+
+.hasColumn{
+	$susy: ( columns: $gridNum );	
+	overflow: hidden;
+	
+	// @include container();
+	
+	// .hasColumn_child{
+	// 	@include gallery(4 of 12);		
+	// }	
+	
+	@for $num from 1 through $maxColumnNum{
+
+		&-#{$num}{
+			@include container($num center);	
+			
+			.hasColumn_child{
+				@include gallery( $num of $gridNum );	
+				
+				// &:last-child{
+				// 	@include last;
+				// }
+			}			
+		}	
+	}
+}

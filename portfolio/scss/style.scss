@@ -1,0 +1,132 @@
+@charset "utf-8";
+
+//////////////////////////////////////////////////
+
+// top
+
+//////////////////////////////////////////////////
+
+@import "compass";
+@import "../common/scss/colors";
+@import "../common/scss/variables";
+@import "../common/scss/mixins";
+
+html{
+	color: #fff;
+	font-size: 15px;
+	@include background-image( linear-gradient( to right, $green, $blue ) );
+}
+.testmb{
+	mix-blend-mode: overlay;	
+}
+// body{
+// 		background: url(../img/main.png) left top no-repeat;
+// 		background-blend-mode: hard-light;	
+// }
+
+
+////////////////
+// mainvisual
+////////////////
+
+.mainvisual
+{
+	position: relative;
+	
+	.wrap{
+		min-height: 100vh;
+		position: relative;
+		display: flex;
+		flex-wrap: wrap;
+		flex-direction: row;
+		align-items: center;
+		justify-content: flex-end;
+	
+		@include background-image( linear-gradient( to right, $green, $blue ) );
+
+	}
+
+
+	&_copy{
+		// position: absolute;
+		// text-align: right;
+		// position: relative;
+		// z-index: 1;
+		font-size: 10em;
+		
+		span{
+			display: block;
+		}
+		
+		&_sup{
+			text-shadow: 0 0 5px rgba(#000, 0.35);
+			font-size: 0.1375em;
+			font-style: italic;
+			font-family: $fontFamily_wf_light;
+			
+			span{
+				line-height: 1;
+				display: inline-block;
+				color: #fff;
+				position: relative;
+				
+				i{
+					position: relative;
+					z-index: 1;
+				}
+				
+				&:before{
+					content: " ";
+					display: block;
+					width: 100%;
+					height: 100%;
+					position: absolute;
+					z-index: 0;
+					top: 0;
+					right: 0;
+					bottom: 0;
+					left: 0;
+					background-color: $green_black;				
+				}
+			}
+			
+		}
+		&_myname{
+
+			line-height: 0.85;
+			text-shadow: 0 0 5px rgba(#000, 0.15);
+			font-family: $fontFamily_wf_black;
+			.firstName{
+				font-size: 1.195em;
+			}
+		}
+
+		.handWrite{
+			line-height: 1;
+			margin-top: -1em;
+			text-align: right;
+			font-size: 0.35em;
+			color: $green_black;
+			font-family: $fontFamily_damion;
+		}
+	}
+	
+	////////// image 
+	&_img{
+		width: auto;
+		height: 100%;
+		margin: auto;
+		margin-left: -10%;
+		opacity: 0.45;
+		position: absolute;
+		// z-index: 0;
+		top: 0;
+		right: 0;
+		left: 0;
+		mix-blend-mode: hard-light;
+		
+	}
+
+	&_copy_sitename{
+	}
+}

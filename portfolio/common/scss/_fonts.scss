@@ -1,0 +1,87 @@
+@charset "utf-8";//////////////////////////////////////////
+
+//font setting
+
+//include by style.scss
+
+//////////////////////////////////////////
+
+@import "https://fonts.googleapis.com/earlyaccess/notosansjapanese.css";
+@import "https://fonts.googleapis.com/css?family=Damion";
+
+
+@font-face {
+	font-family: 'woodford ultra';
+	src: url('../fonts/woodford/Ultra/WoodfordBournePRO-Ultra.eot');
+	src: url('../fonts/woodford/Ultra/WoodfordBournePRO-Ultra.eot?#iefix') format('embedded-opentype'),
+		 url('../fonts/woodford/Ultra/WoodfordBournePRO-Ultra.woff') format('woff'),
+		 url('../fonts/woodford/Ultra/WoodfordBournePRO-Ultra.ttf') format('truetype'),
+		 url('../fonts/woodford/Ultra/WoodfordBournePRO-Ultra.svg#e33779abaa52bf778efe7c6765d3aa92') format('svg');
+	font-style: normal;
+	font-weight: normal;
+}
+@font-face {
+	font-family: 'woodford black';
+	src: url('../fonts/woodford/Black/WoodfordBournePRO-Black.eot');
+	src: url('../fonts/woodford/Black/WoodfordBournePRO-Black.eot?#iefix') format('embedded-opentype'),
+		 url('../fonts/woodford/Black/WoodfordBournePRO-Black.woff') format('woff'),
+		 url('../fonts/woodford/Black/WoodfordBournePRO-Black.ttf') format('truetype'),
+		 url('../fonts/woodford/Black/WoodfordBournePRO-Black.svg#f8903037c4efd0bd144a157b5653d1d8') format('svg');
+	font-style: normal;
+	font-weight: normal;
+}
+@font-face {
+	font-family: 'woodford bold';
+	src: url('../fonts/woodford/Semibold/WoodfordBournePRO-SemiBold.eot');
+	src: url('../fonts/woodford/Semibold/WoodfordBournePRO-SemiBold.eot?#iefix') format('embedded-opentype'),
+		 url('../fonts/woodford/Semibold/WoodfordBournePRO-SemiBold.woff') format('woff'),
+		 url('../fonts/woodford/Semibold/WoodfordBournePRO-SemiBold.ttf') format('truetype'),
+		 url('../fonts/woodford/Semibold/WoodfordBournePRO-SemiBold.svg#41c783441c8d6e7139c5ab0d4d0ebdf7') format('svg');
+	font-style: normal;
+	font-weight: normal;
+}
+@font-face {
+	font-family: 'woodford medium';
+	src: url('../fonts/woodford/Medium/WoodfordBournePRO-Medium.eot');
+	src: url('../fonts/woodford/Medium/WoodfordBournePRO-Medium.eot?#iefix') format('embedded-opentype'),
+		 url('../fonts/woodford/Medium/WoodfordBournePRO-Medium.woff') format('woff'),
+		 url('../fonts/woodford/Medium/WoodfordBournePRO-Medium.ttf') format('truetype'),
+		 url('../fonts/woodford/Medium/WoodfordBournePRO-Regular.svg#9def0a3348b8aae467fd22910b83fc79') format('svg');
+	font-style: normal;
+	font-weight: normal;
+}
+@font-face {
+	font-family: 'woodford regular';
+	src: url('../fonts/woodford/Regular/WoodfordBournePRO-Regular.eot');
+	src: url('../fonts/woodford/Regular/WoodfordBournePRO-Regular.eot?#iefix') format('embedded-opentype'),
+		 url('../fonts/woodford/Regular/WoodfordBournePRO-Regular.woff') format('woff'),
+		 url('../fonts/woodford/Regular/WoodfordBournePRO-Regular.ttf') format('truetype'),
+		 url('../fonts/woodford/Regular/WoodfordBournePRO-Regular.svg#683fa0ccaf91887de6a6b5f515413350') format('svg');
+	font-style: normal;
+	font-weight: normal;
+}
+@font-face {
+	font-family: 'woodford light';
+	src: url('../fonts/woodford/Light/WoodfordBournePRO-Light.eot');
+	src: url('../fonts/woodford/Light/WoodfordBournePRO-Light.eot?#iefix') format('embedded-opentype'),
+		 url('../fonts/woodford/Light/WoodfordBournePRO-Light.woff') format('woff'),
+		 url('../fonts/woodford/Light/WoodfordBournePRO-Light.ttf') format('truetype'),
+		 url('../fonts/woodford/Light/WoodfordBournePRO-Light.svg#232fd019ed526095b758e656dbf94787') format('svg');
+	font-style: normal;
+	font-weight: normal;
+}
+
+@font-face {
+	font-family: 'woodford exlight';
+	src: url('../fonts/woodford/Extralight/WoodfordBournePRO-ExtraLight.eot');
+	src: url('../fonts/woodford/Extralight/WoodfordBournePRO-ExtraLight.eot?#iefix') format('embedded-opentype'),
+		 url('../fonts/woodford/Extralight/WoodfordBournePRO-ExtraLight.woff') format('woff'),
+		 url('../fonts/woodford/Extralight/WoodfordBournePRO-ExtraLight.ttf') format('truetype'),
+		 url('../fonts/woodford/Extralight/WoodfordBournePRO-ExtraLight.svg#b8a2de952566267567abb658d2358ba3') format('svg');
+	font-style: normal;
+	font-weight: normal;
+}
+
+
+// 【明朝】　font-family:Times New Roman , "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", Hiragino Mincho ProN , "MSP明朝","MS PMincho","MS 明朝",serif;
+// 【ゴシック】　font-family: Verdana, "游ゴシック", YuGothic, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;

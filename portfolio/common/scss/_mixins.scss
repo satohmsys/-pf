@@ -22,8 +22,8 @@
 // @param @width
 //
 @mixin liquid( 
-	$width: 100px ,
-	$parentWidth: 1000px,
+	$width: 100 ,
+	$parentWidth: 1000,
 	$centering: true ){
 	width: percentage( $width / $parentWidth );
 	

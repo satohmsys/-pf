@@ -6,3 +6,51 @@
 
 //////////////////////////////////////////
 
+@-webkit-keyframes mouseScroll {
+	0% { 
+		transform: translateY(0px);
+	 }
+	 70%{
+	 	opacity: 1;
+	 }
+	100% {  
+		transform: translateY(5px);
+		opacity: 0;
+	}
+}
+@-o-keyframes mouseScroll {
+	0% { 
+		transform: translateY(0px);
+	 }
+	 70%{
+	 	opacity: 1;
+	 }
+	100% {  
+		transform: translateY(5px);
+		opacity: 0;
+	}
+}
+@-moz-keyframes mouseScroll {
+	0% { 
+		transform: translateY(0px);
+	 }
+	 70%{
+	 	opacity: 1;
+	 }
+	100% {  
+		transform: translateY(5px);
+		opacity: 0;
+	}
+}
+@keyframes mouseScroll {
+	0% { 
+		transform: translateY(0px);
+	 }
+	 70%{
+	 	opacity: 1;
+	 }
+	100% {  
+		transform: translateY(5px);
+		opacity: 0;
+	}
+}

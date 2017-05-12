@@ -64,6 +64,44 @@
     src: url('../fonts/woodford/Extralight/WoodfordBournePRO-ExtraLight.eot');
     src: url('../fonts/woodford/Extralight/WoodfordBournePRO-ExtraLight.eot?#iefix') format('embedded-opentype'), url('../fonts/woodford/Extralight/WoodfordBournePRO-ExtraLight.woff') format('woff'), url('../fonts/woodford/Extralight/WoodfordBournePRO-ExtraLight.ttf') format('truetype'), url('../fonts/woodford/Extralight/WoodfordBournePRO-ExtraLight.svg#b8a2de952566267567abb658d2358ba3') format('svg');
 }
+@-webkit-keyframes mouseScroll
+{
+    0%
+    {
+        -webkit-transform: translateY(0px);
+                transform: translateY(0px);
+    }
+    70%
+    {
+        opacity: 1;
+    }
+    100%
+    {
+        -webkit-transform: translateY(5px);
+                transform: translateY(5px);
+
+        opacity: 0;
+    }
+}
+@keyframes mouseScroll
+{
+    0%
+    {
+        -webkit-transform: translateY(0px);
+                transform: translateY(0px);
+    }
+    70%
+    {
+        opacity: 1;
+    }
+    100%
+    {
+        -webkit-transform: translateY(5px);
+                transform: translateY(5px);
+
+        opacity: 0;
+    }
+}
 ::-moz-selection
 {
     background-color: rgba(0, 216, 253, .3);
@@ -312,14 +350,14 @@ button
 }
 
 .wfBold,
-.button
+.button,
+.button a
 {
     font-family: 'woodford bold';
 }
 
 .wfRegular,
-.siteForm_label,
-.mySns li a
+.siteForm_label
 {
     font-family: 'woodford regular';
 }
@@ -329,7 +367,9 @@ button
     font-family: 'woodford medium';
 }
 
-.wfLight
+.wfLight,
+.fixedSns .fixedSns_index,
+.mySns li a
 {
     font-family: 'woodford light';
 }
@@ -445,6 +485,42 @@ html.ie8 .icon-instagram:before
     font-family: inherit; 
 
     content: '>';
+}
+
+.icon-mouse
+{
+    position: relative;
+
+    display: block;
+
+    width: 17px;
+    height: 27px;
+    margin-right: auto;
+    margin-left: auto;
+
+    border: solid 1px #fff;
+    border-radius: 5px;
+}
+.icon-mouse:after
+{
+    position: absolute;
+    top: 5px;
+    right: 0;
+    left: 0;
+
+    display: block;
+
+    width: 3px;
+    height: 3px;
+    margin-right: auto;
+    margin-left: auto;
+
+    content: ' ';
+    -webkit-animation: mouseScroll 2s ease-in-out .8s infinite normal forwards;
+            animation: mouseScroll 2s ease-in-out .8s infinite normal forwards;
+
+    border-radius: 100%;
+    background-color: #fff;
 }
 
 .siteHeader
@@ -604,7 +680,7 @@ html.ie8 .icon-instagram:before
 }
 .inquiry_content:after
 {
-    top: -30px;
+    top: -28px;
     right: 0; 
 
     height: calc( 100% + 30px );
@@ -989,13 +1065,14 @@ body.menuOpening .overlay_close_icon:after
     line-height: 1;
 
     display: inline-block;
+    overflow: hidden;
 }
 .button a
 {
-    position: relative; 
+    position: relative;
 
     display: block;
-    overflow: hidden;
+    overflow: hidden; 
 
     width: 150px;
 }
@@ -1005,8 +1082,8 @@ body.menuOpening .overlay_close_icon:after
     transition: all .3s cubic-bezier(.785, .135, .15, .86);
 }
 
-.button-def a,
-.button-nav a
+.button-def,
+.button-nav
 {
     transition: all .5s ease 0s;
 }
@@ -1030,28 +1107,28 @@ body.menuOpening .overlay_close_icon:after
 {
     background-color: #24383f;
 }
-.button-def a:hover,
-.button-nav a:hover,
-.button-def a:active,
-.button-nav a:active,
-.button-def a:focus,
-.button-nav a:focus
+.button-def:hover a,
+.button-nav:hover a,
+.button-def:active a,
+.button-nav:active a,
+.button-def:focus a,
+.button-nav:focus a
 {
     color: #fff;
     background-color: #24383f;
 }
-.button-def a:hover:before,
-.button-nav a:hover:before,
-.button-def a:hover:after,
-.button-nav a:hover:after,
-.button-def a:active:before,
-.button-nav a:active:before,
-.button-def a:active:after,
-.button-nav a:active:after,
-.button-def a:focus:before,
-.button-nav a:focus:before,
-.button-def a:focus:after,
-.button-nav a:focus:after
+.button-def:hover a:before,
+.button-nav:hover a:before,
+.button-def:hover a:after,
+.button-nav:hover a:after,
+.button-def:active a:before,
+.button-nav:active a:before,
+.button-def:active a:after,
+.button-nav:active a:after,
+.button-def:focus a:before,
+.button-nav:focus a:before,
+.button-def:focus a:after,
+.button-nav:focus a:after
 {
     left: 100%; 
 
@@ -1069,6 +1146,8 @@ body.menuOpening .overlay_close_icon:after
 
 .button-form
 {
+    position: relative;
+
     width: 150px;
 
     transition: all .5s ease 0s; 
@@ -1088,9 +1167,7 @@ body.menuOpening .overlay_close_icon:after
 
     content: ' ';
     transition: all .35s ease-in 0s;
-}
-.button-form:before
-{
+
     background-color: #24383f;
 }
 .button-form:hover,
@@ -1101,28 +1178,88 @@ body.menuOpening .overlay_close_icon:after
     background-color: #24383f;
 }
 .button-form:hover:before,
-.button-form:hover:after,
 .button-form:active:before,
-.button-form:active:after,
-.button-form:focus:before,
-.button-form:focus:after
+.button-form:focus:before
 {
     left: 100%; 
 
     width: 150%;
 }
 
+.fixedSns
+{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+
+    width: 1em;
+    height: 100%;
+
+    text-align: center;
+        -ms-writing-mode: tb-lr;
+
+    -webkit-writing-mode: vertical-lr;
+            writing-mode: vertical-lr;
+}
+.fixedSns .fixedSns_sns,
+.fixedSns .fixedSns_index
+{
+    line-height: 1;
+
+    display: inline-block; 
+
+    vertical-align: middle;
+}
+.fixedSns .fixedSns_index
+{
+    margin-bottom: 10px; 
+    margin-left: .5em;
+}
+.fixedSns .mySns li:not(:last-child)
+{
+    margin-right: 0;
+    margin-bottom: 1px;
+}
+
 .mySns
 {
+    line-height: 1;
+
+    margin: 0;
+    padding: 0;
+
     list-style: none;
 
     text-align: center;
 }
 .mySns li
 {
-    line-height: 1;
-
     display: inline-block;
+}
+.mySns li [class*='icon']:before
+{
+    transition: all .3s cubic-bezier(.785, .135, .15, .86);
+}
+.mySns li .icon-twitter
+{
+    transition: all .5s ease 0s;
+}
+.mySns li .icon-twitter:hover:before,
+.mySns li .icon-twitter:active:before,
+.mySns li .icon-twitter:focus:before
+{
+    color: #55acee;
+}
+.mySns li .icon-instagram
+{
+    transition: all .5s ease 0s;
+}
+.mySns li .icon-instagram:hover:before,
+.mySns li .icon-instagram:active:before,
+.mySns li .icon-instagram:focus:before
+{
+    color: pink;
 }
 .mySns li a
 {

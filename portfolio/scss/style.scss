@@ -46,11 +46,37 @@ html{
 	}
 
 	&_index{
+		line-height: 1;
+		margin-bottom: 0.5em;
 		text-align: center;
 		text-shadow: 0 0 5px rgba(#000, 0.05);		
 		font-family: $fontFamily_wf_ultra;
 		font-size: 8.33em;
+		
+		&,
+		span{
+			transition: easeInOutBack($s : 0.4s, $prop : all);		
+		}
+	
+		span{
+			transform: translateY( -0.18em ) scale(1.1);
+			opacity: 0;
+			display: inline-block;
+	
+			@for $i from 1 through 7 {
+				&:nth-child( #{$i} ){
+					$delay: 0.1 * $i;
+					transition-delay: #{0.5 + $delay}s;
+				}
+			}
+		}
+
+		@at-root .inview & span{
+			transform: translateY( 0 ) scale( 1 );
+			opacity: 1;			
+		}
 	}
+
 
 
 	&_article{
@@ -67,7 +93,7 @@ html{
 	{
 		position: absolute;
 		z-index: 0;
-			mix-blend-mode: hard-light;
+		mix-blend-mode: hard-light;
 	}
 
 
@@ -117,7 +143,7 @@ html{
 			text-shadow: 0 0 5px rgba(#000, 0.35);
 			font-size: 0.1375em;
 			font-style: italic;
-			font-family: $fontFamily_wf_light;
+			font-family: $fontFamily_wf_exlight;
 			
 			span{
 				line-height: 1;
@@ -150,7 +176,7 @@ html{
 
 			line-height: 0.85;
 			text-shadow: 0 0 5px rgba(#000, 0.15);
-			font-family: $fontFamily_wf_black;
+			font-family: $fontFamily_wf_ultra;
 			.firstName{
 				font-size: 1.195em;
 			}
@@ -246,7 +272,7 @@ html{
 
 	.section_bg-first{
 		width: percentage( 538/1366 );
-		bottom: 0;
+		bottom: -20px;
 		right: 10.4%;
 	}
 
@@ -262,8 +288,6 @@ html{
 		margin-right: 0;
 		// @include liquid( 490, 1080, true );
 	}
-
-
 
 	.section_bg{
 		transform: rotate(45deg);
@@ -292,6 +316,14 @@ html{
 		color: #fff;
 		box-shadow:  5px 5px 0 #fbfbfb;
 		@extend %gradation;
+
+		opacity: 0;
+		transform: translateX(-2em);
+		
+		&,
+		&_catName{
+			transition: easeInOutBack($s : 0.75s, $prop : all);				
+		}
 		
 		&_catName{
 			font-size: 2em;
@@ -299,7 +331,19 @@ html{
 			display: table-cell;
 			vertical-align: middle;
 		}
+
+		@for $i from 1 through 4 {
+			&:nth-child( #{$i} ){
+				$delay: 0.08 * $i;
+				transition-delay: #{$delay}s;
+			}
+		}		
+		
 	}
+	&.inview .panel{
+		transform: translateX( 0 );
+		opacity: 1;			
+	}		
 
 
 	.section_bg-first{
@@ -308,4 +352,25 @@ html{
 		right: 10.4%;
 	}
 
+}
+
+
+
+/********** contact **********/
+
+.section-contact{
+	min-height: 0;
+	height: auto;
+	padding-bottom: 0;
+	background-image: none;
+
+	.wrap{
+		display: block;
+	}
+	.section_index{
+		font-size: 6.66em;
+	}
+	.section_caption{
+		margin-bottom: 2em;
+	}
 }

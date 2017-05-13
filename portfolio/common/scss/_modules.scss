@@ -550,6 +550,7 @@ body.menuOpening
 ////////////////////
 
 %buttonDef{
+	transition-duration: 0.3s;
 	font-size: 1.35em;
 	padding-top: 0.5em;
 	padding-bottom: 0.5em;
@@ -574,7 +575,7 @@ body.menuOpening
 
 	&,
 	a{
-		@extend .wfBold;
+		@extend .wfSemi;
 		transition: transition();
 	}
 }
@@ -586,12 +587,16 @@ body.menuOpening
 		&:after*/{
 			content: " ";
 			display: block;
-			width: 100%;
-			height: 100%;
+			width: 0px;
+			height: 0px;
+			margin: auto;
+			border-radius: 100%;
 			position: absolute;
 			top: 0%;
-			left: -100%;
-			transition: all 0.35s ease-in 0s;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			transition: all 0.3s ease-in 0s;
 		}
 
 		&:before{
@@ -605,8 +610,9 @@ body.menuOpening
 		}
 		a:before,
 		a:after{
-			width: 150%;
-			left: 100%;
+			width: 300px;
+			height: 300px;
+			opacity: 0;
 		}			
 	}
 }
@@ -632,14 +638,17 @@ body.menuOpening
 	
 	&:before{
 		content: " ";
-		display: block;
-		width: 100%;
-		height: 100%;
-		position: absolute;
-		top: 0%;
-		left: -100%;
-		transition: all 0.35s ease-in 0s;
-		background-color: $green_black;
+			display: block;
+			width: 0px;
+			height: 0px;
+			margin: auto;
+			border-radius: 100%;
+			position: absolute;
+			top: 0%;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			transition: all 0.3s ease-in 0s;
 	}
 
 	@include mouseOver(){
@@ -647,8 +656,9 @@ body.menuOpening
 		background-color: $green_black;	
 
 		&:before{
-			width: 150%;
-			left: 100%;
+			width: 300px;
+			height: 300px;
+			opacity: 0;
 		}			
 	}	
 
@@ -759,7 +769,7 @@ body.menuOpening
 	z-index: 99;
 	cursor: pointer;
 	display: none;
-	background-color: #333;
+	background-color: $green;
 	
 	transition: transform 0.5s;
 	

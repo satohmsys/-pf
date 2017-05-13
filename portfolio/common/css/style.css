@@ -21,12 +21,21 @@
 }
 @font-face
 {
-    font-family: 'woodford bold';
+    font-family: 'woodford semi';
     font-weight: normal; 
     font-style: normal;
 
     src: url('../fonts/woodford/Semibold/WoodfordBournePRO-SemiBold.eot');
     src: url('../fonts/woodford/Semibold/WoodfordBournePRO-SemiBold.eot?#iefix') format('embedded-opentype'), url('../fonts/woodford/Semibold/WoodfordBournePRO-SemiBold.woff') format('woff'), url('../fonts/woodford/Semibold/WoodfordBournePRO-SemiBold.ttf') format('truetype'), url('../fonts/woodford/Semibold/WoodfordBournePRO-SemiBold.svg#41c783441c8d6e7139c5ab0d4d0ebdf7') format('svg');
+}
+@font-face
+{
+    font-family: 'woodford bold';
+    font-weight: normal; 
+    font-style: normal;
+
+    src: url('../fonts/woodford/Semibold/WoodfordBournePRO-Bold.eot');
+    src: url('../fonts/woodford/bold/WoodfordBournePRO-Bold.eot?#iefix') format('embedded-opentype'), url('../fonts/woodford/bold/WoodfordBournePRO-Bold.woff') format('woff'), url('../fonts/woodford/bold/WoodfordBournePRO-Bold.ttf') format('truetype'), url('../fonts/woodford/bold/WoodfordBournePRO-Bold.svg#41c783441c8d6e7139c5ab0d4d0ebdf7') format('svg');
 }
 @font-face
 {
@@ -349,9 +358,14 @@ button
     font-family: 'woodford ultra';
 }
 
-.wfBold,
+.wfSemi,
 .button,
 .button a
+{
+    font-family: 'woodford semi';
+}
+
+.wfBold
 {
     font-family: 'woodford bold';
 }
@@ -795,7 +809,7 @@ html.ie8 .icon-instagram:before
     margin: auto;
 
     content: ' ';
-    transition: all .3s cubic-bezier(.785, .135, .15, .86);
+    transition: all .3s cubic-bezier(.785, .135, .15, .86) 0s;
 
     background-color: #fff;
 }
@@ -899,7 +913,7 @@ html.ie8 .icon-instagram:before
     height: 2px;
     margin: auto;
 
-    transition: all .3s cubic-bezier(.785, .135, .15, .86); 
+    transition: all .3s cubic-bezier(.785, .135, .15, .86) 0s; 
 
     background-color: #fff;
 }
@@ -973,7 +987,7 @@ body.menuOpening .overlay
 body.menuOpening .overlay_close_icon:after,
 body.menuOpening .overlay_close_icon:before
 {
-    transition: all .5s cubic-bezier(.785, .135, .15, .86);
+    transition: all .5s cubic-bezier(.785, .135, .15, .86) 0s;
 }
 body.menuOpening .overlay
 {
@@ -1054,6 +1068,8 @@ body.menuOpening .overlay_close_icon:after
     padding-top: .5em;
     padding-bottom: .5em;
 
+    transition-duration: .3s;
+
     color: #24383f;
     border: none;
     background-color: #fefefe; 
@@ -1079,7 +1095,7 @@ body.menuOpening .overlay_close_icon:after
 .button,
 .button a
 {
-    transition: all .3s cubic-bezier(.785, .135, .15, .86);
+    transition: all .3s cubic-bezier(.785, .135, .15, .86) 0s;
 }
 
 .button-def,
@@ -1092,15 +1108,20 @@ body.menuOpening .overlay_close_icon:after
 {
     position: absolute;
     top: 0;
-    left: -100%;
+    right: 0;
+    bottom: 0;
+    left: 0;
 
     display: block;
 
-    width: 100%;
-    height: 100%;
+    width: 0;
+    height: 0;
+    margin: auto;
 
     content: ' ';
-    transition: all .35s ease-in 0s;
+    transition: all .3s ease-in 0s; 
+
+    border-radius: 100%;
 }
 .button-def a:before,
 .button-nav a:before
@@ -1130,9 +1151,10 @@ body.menuOpening .overlay_close_icon:after
 .button-def:focus a:after,
 .button-nav:focus a:after
 {
-    left: 100%; 
+    width: 300px;
+    height: 300px;
 
-    width: 150%;
+    opacity: 0;
 }
 
 .button-nav a
@@ -1158,17 +1180,20 @@ body.menuOpening .overlay_close_icon:after
 {
     position: absolute;
     top: 0;
-    left: -100%;
+    right: 0;
+    bottom: 0;
+    left: 0;
 
     display: block;
 
-    width: 100%;
-    height: 100%;
+    width: 0;
+    height: 0;
+    margin: auto;
 
     content: ' ';
-    transition: all .35s ease-in 0s;
+    transition: all .3s ease-in 0s; 
 
-    background-color: #24383f;
+    border-radius: 100%;
 }
 .button-form:hover,
 .button-form:active,
@@ -1181,9 +1206,10 @@ body.menuOpening .overlay_close_icon:after
 .button-form:active:before,
 .button-form:focus:before
 {
-    left: 100%; 
+    width: 300px;
+    height: 300px;
 
-    width: 150%;
+    opacity: 0;
 }
 
 .fixedSns
@@ -1239,7 +1265,7 @@ body.menuOpening .overlay_close_icon:after
 }
 .mySns li [class*='icon']:before
 {
-    transition: all .3s cubic-bezier(.785, .135, .15, .86);
+    transition: all .3s cubic-bezier(.785, .135, .15, .86) 0s;
 }
 .mySns li .icon-twitter
 {
@@ -1291,7 +1317,7 @@ body.menuOpening .overlay_close_icon:after
     transition:         transform .5s;
     transition:         transform .5s, -webkit-transform .5s; 
 
-    background-color: #333;
+    background-color: #0eff9e;
 }
 .backToTop i
 {

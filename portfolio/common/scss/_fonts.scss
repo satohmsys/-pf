@@ -31,12 +31,22 @@
 	font-weight: normal;
 }
 @font-face {
-	font-family: 'woodford bold';
+	font-family: 'woodford semi';
 	src: url('../fonts/woodford/Semibold/WoodfordBournePRO-SemiBold.eot');
 	src: url('../fonts/woodford/Semibold/WoodfordBournePRO-SemiBold.eot?#iefix') format('embedded-opentype'),
 		 url('../fonts/woodford/Semibold/WoodfordBournePRO-SemiBold.woff') format('woff'),
 		 url('../fonts/woodford/Semibold/WoodfordBournePRO-SemiBold.ttf') format('truetype'),
 		 url('../fonts/woodford/Semibold/WoodfordBournePRO-SemiBold.svg#41c783441c8d6e7139c5ab0d4d0ebdf7') format('svg');
+	font-style: normal;
+	font-weight: normal;
+}
+@font-face {
+	font-family: 'woodford bold';
+	src: url('../fonts/woodford/Semibold/WoodfordBournePRO-Bold.eot');
+	src: url('../fonts/woodford/bold/WoodfordBournePRO-Bold.eot?#iefix') format('embedded-opentype'),
+		 url('../fonts/woodford/bold/WoodfordBournePRO-Bold.woff') format('woff'),
+		 url('../fonts/woodford/bold/WoodfordBournePRO-Bold.ttf') format('truetype'),
+		 url('../fonts/woodford/bold/WoodfordBournePRO-Bold.svg#41c783441c8d6e7139c5ab0d4d0ebdf7') format('svg');
 	font-style: normal;
 	font-weight: normal;
 }

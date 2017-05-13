@@ -132,12 +132,12 @@ $(function(){
 
 
 
-/**
-* scrollDepth
-*/
-$(function() {
-    $.scrollDepth();
-});
+// /**
+// * scrollDepth
+// */
+// $(function() {
+//     $.scrollDepth();
+// });
 
 /***
 *　back to top スクロール
@@ -185,5 +185,28 @@ $( function(){
  } );
 
 });
+
+
+/**
+* テキスト一文字ずつ区切ってspanで囲む
+* @param eml { obj } html element テキストノードの親
+*/
+function spaning( elm ){ 
+    var text = elm.innerText, //innerTextは改行コードも取る, textContentはタブも取る
+        l = text.length,
+        newText = '',
+        textArg = new Array();
+
+    for( var $i=0; $i<l; $i++ ){
+        moji = text.substr( $i, 1 );
+
+        if( moji !== ' ' && typeof moji !== undefined && typeof moji !== null && 
+            moji !== "\r\n" && moji !=="\r" && moji !== "\n"){
+            // textArg[$i] = text.substr( $i, 1 ); 
+            newText +=  '<span>' + moji + '</span>';
+        }        
+    }
+    elm.innerHTML = newText;
+}
 
 

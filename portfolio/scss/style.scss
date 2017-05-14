@@ -131,8 +131,8 @@ html{
 	&_copy{
 		// position: absolute;
 		// text-align: right;
-		// position: relative;
-		// z-index: 1;
+		position: relative;
+		z-index: 1;
 		font-size: 10em;
 		
 		span{
@@ -159,7 +159,7 @@ html{
 				&:before{
 					content: " ";
 					display: block;
-					width: 100%;
+					width: 0%;
 					height: 100%;
 					position: absolute;
 					z-index: 0;
@@ -167,12 +167,19 @@ html{
 					right: 0;
 					bottom: 0;
 					left: 0;
-					background-color: $green_black;				
+					transition: easeInOutCirc();
+					transition-delay: 1s;
+					background-color: $green_deep;				
+				}
+
+				@at-root .introEnd &:before{
+					width: 100%;
 				}
 			}
 			
 		}
-		&_myname{
+		&_myname
+		{
 
 			line-height: 0.85;
 			text-shadow: 0 0 5px rgba(#000, 0.15);
@@ -182,18 +189,42 @@ html{
 			}
 		}
 
-		.handWrite{
-			line-height: 1;
+		.handWrite
+		{
+
 			margin-top: -1em;
-			text-align: right;
-			font-size: 0.35em;
-			color: $green_black;
-			font-family: $fontFamily_damion;
+			text-align: right;				
+			&,
+			svg text{
+				line-height: 1;
+				color: $green_black;
+				font-family: $fontFamily_damion;
+			}
+			svg text{
+				// font-size: 0.35em;
+			}
+
+			svg{
+				width: 510px;
+				height: auto;
+				overflow: visible;
+			}
+
+
+			// .handWrite{
+			// 	line-height: 1;
+			// 	margin-top: -1em;
+			// 	text-align: right;
+			// 	font-size: 0.35em;
+			// 	color: $green_black;
+			// 	font-family: $fontFamily_damion;
+			// }			
 		}
 	}
 	
 	////////// image 
 	&_img{
+		max-width: none;
 		width: auto;
 		height: 100%;
 		margin: auto;
@@ -241,13 +272,13 @@ html{
 	}
 
 	.section_bg-first{
-		width: percentage( 494/1366 );
+		width: percentage( 683/1366 );
 		top: -5%;
 		left: -10%;
 	}
 	.section_bg-last{
-		width: percentage( 224/1366 );
-		top: percentage( 400/768 );
+		width: percentage( 225/1366 );
+		top: percentage( 506/768 );
 		right: 5%;
 	}
 
@@ -283,13 +314,19 @@ html{
 /********** works **********/
 
 .section-works{
+
+	min-height: 550px;
 	
 	.section_article{
+		margin-top: 5%;
 		margin-right: 0;
+		align-self: flex-start;
 		// @include liquid( 490, 1080, true );
 	}
 
 	.section_bg{
+		bottom: 0%;
+		left: 10%;
 		transform: rotate(45deg);
 	}
 
@@ -334,7 +371,7 @@ html{
 
 		@for $i from 1 through 4 {
 			&:nth-child( #{$i} ){
-				$delay: 0.08 * $i;
+				$delay: 0.1 * $i;
 				transition-delay: #{$delay}s;
 			}
 		}		

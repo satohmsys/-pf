@@ -22,8 +22,8 @@ html{
 	line-height: $baselineHeight;
 	position: relative;
 	font-family: $fontFamily;
+	 -webkit-text-size-adjust: 100%;
 	color: $basefontColor;
-
 }
 
 body{

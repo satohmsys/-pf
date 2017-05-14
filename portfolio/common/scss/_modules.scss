@@ -200,6 +200,7 @@
 		background-color: transparent;
 		border: none;
 		color: #fff;
+		-webkit-appearance:none;		
 	}
 
 	
@@ -793,4 +794,131 @@ body.menuOpening
 	&.moving{
 		@include rotate3d( 50, 1000, 500, 360deg, 500 );
 	}
+}
+
+
+
+
+////////////////////
+
+// intro
+
+////////////////////
+
+.hello{
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+
+.helloAfter{
+	.myIntroduction	{
+		opacity: 0;
+	}
+}
+
+.myIntroduction
+{
+	width: 100%;
+	height: 100%;
+	margin: auto;
+	position: fixed;
+	z-index: 99;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;	
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	color: $basefontColor;
+	// transition: all 2s ease 0.05s;	
+	will-change: filter, opacity;
+	background-color: #ffffff;
+
+
+	.noHello & {
+		display: none;
+	}
+
+	[ class *= "text-" ]{
+		opacity: 0;
+		transform: translateY(-5px);
+		will-change: opacity,transform;
+		transition: all 1s ease 0.05s;
+		
+		&:last-of-type{
+		}
+	}
+	@for $i from 3 through 6 {
+		$delay: 0.3  + (0.7 * $i);
+				
+		.text-#{$i}{
+			transition-delay: #{$delay}s;
+		}
+	}
+	.text-1{
+		transition-delay: 0.3s;		
+	}
+	.text-2{
+		transition-delay: 0.45s;
+	}
+	
+
+	.text-7{
+		transition-delay: 6s;	
+	}
+	
+	&_index{
+		max-width: 332px;
+		margin-right: auto;
+		margin-left: auto;
+		text-align: center;
+		line-height: 1;
+		font-feature-settings: 'palt';
+		
+		.indexHello{
+			margin-top: 0;
+			margin-bottom: 0px;
+			font-size: 8em;	
+			@extend .wfUltra;
+			
+			@at-root .usefirefox &{
+				font-size: 3.5em;
+			}
+		}
+
+		svg{
+			max-width: 332px;
+			overflow: visible;
+		}
+		.indexMyname{
+			margin-top: 0;
+			margin-bottom: 0.45em;
+			font-size: 3.5em;
+			color: $green_black;
+			@extend .damion;
+		}
+	}
+
+	&_content
+	{
+		font-size: 0.9em;
+		letter-spacing: 0.05em;
+		text-align: center;
+		font-weight: 200;
+		font-feature-settings: 'palt';
+		
+	}
+
+
+	//////// エフェクト開始
+	.letsTalk &{
+		background-color: #f9f9f9;
+		[ class *= "text-" ]{
+			opacity: 1;
+			transform: translateY(0px) scale(1);
+		}		
+	}	
 }

@@ -163,7 +163,10 @@ html
 }
 .mainvisual_copy
 {
-    font-size: 10em;
+    font-size: 10em; 
+
+    position: relative;
+    z-index: 1;
 }
 .mainvisual_copy span
 {
@@ -203,12 +206,18 @@ html
 
     display: block;
 
-    width: 100%;
+    width: 0;
     height: 100%;
 
     content: ' ';
+    transition: all .5s cubic-bezier(.785, .135, .15, .86) 0s;
+    transition-delay: 1s;
 
-    background-color: #24383f;
+    background-color: #005f70;
+}
+.introEnd .mainvisual_copy_sup span:before
+{
+    width: 100%;
 }
 .mainvisual_copy_myname
 {
@@ -223,15 +232,24 @@ html
 }
 .mainvisual_copy .handWrite
 {
-    font-family: 'Damion', cursive; 
-    font-size: .35em;
-    line-height: 1;
-
     margin-top: -1em;
 
     text-align: right;
+}
+.mainvisual_copy .handWrite,
+.mainvisual_copy .handWrite svg text
+{
+    font-family: 'Damion', cursive; 
+    line-height: 1;
 
-    color: #24383f;
+    color: #003640;
+}
+.mainvisual_copy .handWrite svg
+{
+    overflow: visible; 
+
+    width: 510px;
+    height: auto;
 }
 .mainvisual_img
 {
@@ -242,6 +260,7 @@ html
     left: 0;
 
     width: auto;
+    max-width: none;
     height: 100%;
     margin: auto;
     margin-left: -15%;
@@ -272,14 +291,14 @@ html
     top: -5%;
     left: -10%; 
 
-    width: 36.16398%;
+    width: 50%;
 }
 .section-about .section_bg-last
 {
-    top: 52.08333%;
+    top: 65.88542%;
     right: 5%; 
 
-    width: 16.39824%;
+    width: 16.47145%;
 }
 
 /********** think **********/
@@ -301,12 +320,23 @@ html
 }
 
 /********** works **********/
+.section-works
+{
+    min-height: 550px;
+}
 .section-works .section_article
 {
+    margin-top: 5%;
     margin-right: 0;
+
+    -ms-flex-item-align: start;
+    align-self: flex-start;
 }
 .section-works .section_bg
 {
+    bottom: 0;
+    left: 10%;
+
     -webkit-transform: rotate(45deg);
             transform: rotate(45deg);
 }
@@ -360,19 +390,19 @@ html
 }
 .section-works .panel:nth-child(1)
 {
-    transition-delay: .08s;
+    transition-delay: .1s;
 }
 .section-works .panel:nth-child(2)
 {
-    transition-delay: .16s;
+    transition-delay: .2s;
 }
 .section-works .panel:nth-child(3)
 {
-    transition-delay: .24s;
+    transition-delay: .3s;
 }
 .section-works .panel:nth-child(4)
 {
-    transition-delay: .32s;
+    transition-delay: .4s;
 }
 .section-works.inview .panel
 {

@@ -1,5 +1,14 @@
 var $w = $( window )
 
+/**
+* modenizr
+*/
+Modernizr.addTest( 'usefirefox', function( e ){
+    console.log( e );
+    return 0 < navigator.userAgent.indexOf('Firefox');
+});
+
+
 
 /**
 * （ スマートフォン用 ）ナビゲーション開閉
@@ -148,43 +157,44 @@ $( function(){
     var $timer = null;
     var $icon = $( '.backToTop' ); //icon
 
- $(window).on( 'scroll', function(){
+     $(window).on( 'scroll', function(){
 
-     if( $timer == null ){
+         if( $timer == null ){
 
-         $timer = setTimeout( function(){
+             $timer = setTimeout( function(){
+                    
+                clearTimeout( $timer );
                 
-            clearTimeout( $timer );
-            
-             var $visible = $icon.is( ':visible' );
-             var $scrollVal = $( window ).scrollTop(); //スクロール値
-             var $under = $( 'body' ).height() - ( $scrollVal + $( window ).height() ); //ページの残りの長さ
+                 var $visible = $icon.is( ':visible' );
+                 var $scrollVal = $( window ).scrollTop(); //スクロール値
+                 var $under = $( 'body' ).height() - ( $scrollVal + $( window ).height() ); //ページの残りの長さ
 
-             if( $scrollVal > 500 && 300 > $under ){
-                 if(! $visible ){
-                     $icon.fadeIn( 'slow' );
+                 if( $scrollVal > 500 && 300 > $under ){
+                     if(! $visible ){
+                         $icon.fadeIn( 'slow' );
+                     }
+                 } else {
+                     $icon.fadeOut( 'slow' );
                  }
-             } else {
-                 $icon.fadeOut( 'slow' );
-             }
 
-             $timer = null;
+                 $timer = null;
 
-         }, 1000 );
-     }
+             }, 1000 );
+         }
 
- } );
-
-
- $( '.backToTop' ).on( 'click', function(){
-     var $icon = $( this );
-     $icon.addClass( 'moving' );
-     $( 'html,body' ).animate({ scrollTop: 0 }, 'slow', function(){
-         $icon.removeClass( 'moving' );
      } );
- } );
+
+
+     $( '.backToTop' ).on( 'click', function(){
+         var $icon = $( this );
+         $icon.addClass( 'moving' );
+         $( 'html,body' ).animate({ scrollTop: 0 }, 'slow', function(){
+             $icon.removeClass( 'moving' );
+         } );
+     } );
 
 });
+
 
 
 /**
@@ -208,5 +218,58 @@ function spaning( elm ){
     }
     elm.innerHTML = newText;
 }
+
+
+/**
+* cookie判断でイントロを出すかどうか。出す場合はアニメ後Removechild
+*/
+
+(function(){
+    var $doc = document,
+        $body = $doc.body;
+        $intro = document.getElementById('myIntroduction');
+    
+    ///////// 初回訪問（cookieなし
+    if( ! $doc.cookie.match('visited') ){
+
+        $body.classList.add( 'hello' );
+
+         setTimeout( function(){
+            $body.classList.add( 'letsTalk' );
+            TweenMax.to( $intro, 2, {
+                backGroundColor: '#fafafa'
+            });
+         }, 800 );
+
+        $doc.addEventListener( 'DOMContentLoaded', function(){
+
+             $doc.getElementById('just').addEventListener('transitionend', function(){
+
+                TweenMax.to( $intro, 2, {
+                    opacity: 0,
+                    filter: 'blur(200px)',
+
+                    delay: 0.5,
+
+                    onComplete:function( e ){
+                        $body.classList.remove('hello','helloAfter','letsTalk')
+                        $body.classList.add( 'introEnd' );
+                        $intro.parentNode.removeChild( $intro );
+
+                        $doc.cookie = 'visited';
+                    }
+                } );               
+             });
+        });
+    } else {
+        $body.classList.add( 'noHello', 'introEnd' );
+
+        if( $intro ){
+            $intro.parentNode.removeChild( $intro );
+        }
+    }
+
+})();
+
 
 

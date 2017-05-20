@@ -124,6 +124,7 @@ html
 {
     font-family: 'Noto Sans Japanese', '游ゴシック', YuGothic, 'ヒラギノ角ゴ ProN W3', 'Hiragino Kaku Gothic ProN', 'メイリオ', Meiryo, sans-serif;
     font-size: 15px;
+    font-weight: 200;
     line-height: 1.75;
 
     position: relative;
@@ -707,6 +708,10 @@ html.ie8 .icon-instagram:before
 {
     margin-top: 45px;
 }
+.inquiry .section_caption
+{
+    text-align: center;
+}
 
 .siteForm
 {
@@ -1087,14 +1092,12 @@ body.menuOpening .overlay_close_icon:after
     line-height: 1;
 
     display: inline-block;
-    overflow: hidden;
 }
 .button a
 {
-    position: relative;
+    position: relative; 
 
     display: block;
-    overflow: hidden; 
 
     width: 150px;
 }
@@ -1120,19 +1123,15 @@ body.menuOpening .overlay_close_icon:after
 
     display: block;
 
-    width: 0;
-    height: 0;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
     margin: auto;
 
     content: ' ';
-    transition: all .3s ease-in 0s; 
+    transition: all .2s ease-in 0s; 
 
-    border-radius: 100%;
-}
-.button-def a:before,
-.button-nav a:before
-{
-    background-color: #003640;
+    border: solid 1px #fff;
 }
 .button-def:hover a,
 .button-nav:hover a,
@@ -1141,8 +1140,8 @@ body.menuOpening .overlay_close_icon:after
 .button-def:focus a,
 .button-nav:focus a
 {
-    color: #fff;
-    background-color: #003640;
+    -webkit-transform: scale(.95);
+            transform: scale(.95);
 }
 .button-def:hover a:before,
 .button-nav:hover a:before,
@@ -1157,8 +1156,8 @@ body.menuOpening .overlay_close_icon:after
 .button-def:focus a:after,
 .button-nav:focus a:after
 {
-    width: 300px;
-    height: 300px;
+    -webkit-transform: scale(1.5);
+            transform: scale(1.5);
 
     opacity: 0;
 }

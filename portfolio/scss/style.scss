@@ -36,6 +36,10 @@ html{
 	position: relative;
 	overflow: hidden;
 	
+	@include breakpoint( 900 ){
+		mih-height: 500px;
+	}
+	
 	@extend %gradation;	
 
 	.wrap{
@@ -86,6 +90,11 @@ html{
 		margin-right: auto;
 		position: relative;
 		z-index: 1;
+	}
+
+	&_content{
+		padding-left: 2em;
+		padding-right: 2em;
 	}
 
 

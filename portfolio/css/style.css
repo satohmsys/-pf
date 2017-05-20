@@ -28,6 +28,13 @@ html
     min-height: 700px;
     padding-bottom: 75px;
 }
+@media screen and (max-width: 900px)
+{
+    .section
+    {
+        mih-height: 500px;
+    }
+}
 .section .wrap
 {
     display: -webkit-box;
@@ -114,6 +121,11 @@ html
     max-width: 500px;
     margin-right: auto;
     margin-left: auto;
+}
+.section_content
+{
+    padding-right: 2em; 
+    padding-left: 2em;
 }
 .section_bg
 {

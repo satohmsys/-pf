@@ -38,7 +38,7 @@
 	
 
 	//////// media queries 
-	@include breakpoint( sp ){
+	@include break( sp ){
 		z-index: 3;
 
 	} //max 580	
@@ -87,7 +87,7 @@
 
 
 	//////// media queries 
-	@include breakpoint( sp ){
+	@include break( sp ){
 
 		&_top
 		{
@@ -303,7 +303,7 @@
 				background-color: #fff;
 			}
 
-			@include breakpoint( tab, min ){
+			@include break( tab, min ){
 				@include mouseOver(){
 					&:not( .current ):before{
 						width: 100%;
@@ -331,7 +331,7 @@
 
 
 	//////// media queries 
-	@include breakpoint( sp ){
+	@include break( sp ){
 		opacity: 0;
 		display: none;
 		background-color: transparent;
@@ -369,46 +369,65 @@
 ////( スマホ用 )開閉アイコン
 .navToggle
 {
-	$buttonSize : 45px;
+	$buttonSize : 50px;
 	$buttonTextColor: #fff;
 	
-	width: $buttonSize;
-	height: $buttonSize;
-	line-height: 1;
-	padding: 5px;
-	box-sizing: border-box;
-	display: inline-block;
-	position: absolute;
-	top: 0;
-	right: 0;
-	text-align: center;
-	font-size: 10px;
-	cursor: pointer;
-	color: $buttonTextColor;
-	background-color: #000;
+	&_hitArea,
+	&:after{
+		width: $buttonSize;
+		height: $buttonSize;
+		line-height: 1;
+		padding: 5px;
+		box-sizing: border-box;
+		display: block;
+		position: fixed;
+		bottom: 2%;
+		right: 2%;
+		cursor: pointer;
+	}
+
+	&_hitArea{
+		z-index: 100;
+	}
+
+	&:after{
+		content: " ";
+		z-index: 99;
+		transition: easeInOutCirc();
+		border-radius: 100%;
+		box-shadow: 0 4px 4px rgba( #000, 0.1), 0 0 10px rgba( #000, 0.3 );
+		background-color: darken( $blue, 35 );		
+	}
+	
 	
 	//icon
 	&_icon
 	{
 
 		height: 20px;
-		margin-bottom: 5px;
-		position: relative;
+		top: 0;
+		bottom: 0;
 		
 		//bar
+		&,
 		&:before , 
 		&:after, 		
 		&_lineCenter{
-			width: 80%;
-			height: 2px;
+			width: 70%;
 			margin: auto;
 			display: block;
 			position: absolute;
 			right: 0;
 			left: 0;			
+		}
+
+		&:before , 
+		&:after, 		
+		&_lineCenter{
+			height: 1px;
 			background-color: $buttonTextColor;		
 			transition: easeInOutCirc(0.3s);		
-		}
+		}		
 		
 		&:before , 
 		&:after{
@@ -429,8 +448,55 @@
 		}		
 	}
 
+	@at-root .navOpen
+	{
+	
+		.navToggle
+		{
+
+			&_hitArea{
+				z-index: 100;
+			}
+
+			&:after{
+				width: 100%;
+				height: 100%;
+				right: 0;
+				bottom: 0;
+				border-radius: 0;
+				box-shadow: none;
+				@include background-image( linear-gradient( to right, $green, $blue ) );	
+				
+				// background-color: darken( $blue, 15 );		
+			}
+			
+			
+			//icon
+			&_icon
+			{
+				
+				//bar
+
+				//top
+				&:before{
+					transform: rotate( 45deg );
+				} 
+				//center
+				&_lineCenter{
+					width: 200%;
+					opacity: 0;
+				}
+				//bottom
+				&:after{
+					transform: rotate( -45deg );
+				}		
+			}
+		}	
+
+	}
+
 	///////media queries
-	@include breakpoint( sp, min ){
+	@include break( sp, min ){
 		display: none;
 	} // min 580
 }
@@ -710,6 +776,10 @@ body.menuOpening
 			}
 		}
 	}
+
+	@include break( sp ){
+		display: none;
+	}
 }
 
 
@@ -842,6 +912,13 @@ body.menuOpening
 	background-color: #ffffff;
 
 
+	@include break( sp ){
+		.wrap{
+			padding-left: 15%;
+			padding-right: 15%;
+		}
+	}
+
 	.noHello & {
 		display: none;
 	}
@@ -904,6 +981,13 @@ body.menuOpening
 			color: $green_black;
 			@extend .damion;
 		}
+
+		@include break( sp ){
+			max-width: 80%;
+			.indexMyname{
+				font-size: 2.25em;
+			}			
+		}		
 	}
 
 	&_content
@@ -913,6 +997,10 @@ body.menuOpening
 		text-align: center;
 		font-weight: 200;
 		font-feature-settings: 'palt';
+		
+		@include break( sp ){
+			text-align: left;
+		}		
 		
 	}
 

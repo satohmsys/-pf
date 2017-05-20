@@ -31,12 +31,12 @@
 
 
 	//////////media queries
-	@include breakpoint( pc ){
+	@include break( pc ){
 		padding-left: 25px;
 		padding-right: 25px;
 	}//max 1200
 	
-	@include breakpoint( sp ){
+	@include break( sp ){
 			padding-left: 15px;
 			padding-right: 15px;
 	}//max 580	
@@ -70,7 +70,7 @@
 .spShow{
 	display: none;
 }
-@include breakpoint( sp ){
+@include break( sp ){
 	.spHide{
 		display: none;	
 	}
@@ -82,7 +82,7 @@
 .tabShow{
 	display: none;
 }
-@include breakpoint( tab ){
+@include break( tab ){
 	.tabHide{
 		display: none;	
 	}

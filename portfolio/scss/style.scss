@@ -36,9 +36,15 @@ html{
 	position: relative;
 	overflow: hidden;
 	
-	@include breakpoint( 900 ){
+	@include break( 900 ){
 		mih-height: 500px;
 	}
+
+	@include break( sp ){
+		height: 80vh;
+		padding-bottom: 0px;
+		min-height: 0;
+	}	
 	
 	@extend %gradation;	
 
@@ -79,6 +85,12 @@ html{
 			transform: translateY( 0 ) scale( 1 );
 			opacity: 1;			
 		}
+
+		@include break( sp ){
+			font-size: 4.5em;
+		}
+
+
 	}
 
 
@@ -121,6 +133,7 @@ html{
 /********** mainvisual **********/
 .mainvisual
 {
+	overflow: hidden;
 	position: relative;
 	@extend %gradation;
 	
@@ -133,7 +146,10 @@ html{
 		flex-direction: row;
 		align-items: center;
 		justify-content: flex-end;
-	
+		
+		@include break( sp ){
+			min-height: 0;
+		}
 	}
 
 
@@ -143,6 +159,10 @@ html{
 		position: relative;
 		z-index: 1;
 		font-size: 10em;
+		
+		@include break( sp ){
+			font-size: 23vw;
+		}		
 		
 		span{
 			display: block;
@@ -185,6 +205,9 @@ html{
 					width: 100%;
 				}
 			}
+			@include break( sp ){
+				font-size: 0.14em;
+			}				
 			
 		}
 		&_myname
@@ -227,7 +250,13 @@ html{
 			// 	font-size: 0.35em;
 			// 	color: $green_black;
 			// 	font-family: $fontFamily_damion;
-			// }			
+			// }
+			
+			@include break( sp ){
+				svg{
+					width: 100%;				
+				}
+			}
 		}
 	}
 	
@@ -245,6 +274,13 @@ html{
 		right: 0;
 		left: 0;
 		mix-blend-mode: hard-light;
+		
+		@include break( sp ){
+			height: 95%;
+			margin-left: -30%;
+			top: auto;
+			bottom: 0;
+		}		
 		
 	}
 
@@ -291,6 +327,12 @@ html{
 		right: 5%;
 	}
 
+	@include break( sp ){
+		.section_bg-last{
+			top: percentage( 600/768 );
+		}
+	}	
+
 }
 
 
@@ -316,6 +358,14 @@ html{
 		right: 10.4%;
 	}
 
+	@include break( sp ){
+		padding-bottom: 40px;
+		.section_article{
+			margin-top: 0%;	
+			margin-left: auto;	
+		}
+	}		
+
 }
 
 
@@ -331,6 +381,11 @@ html{
 		margin-right: 0;
 		align-self: flex-start;
 		// @include liquid( 490, 1080, true );
+		
+		@include break( sp ){
+			margin-right: auto;
+			margin-top: 10vh;
+		}
 	}
 
 	.section_bg{
@@ -419,4 +474,12 @@ html{
 	.section_caption{
 		margin-bottom: 2em;
 	}
+
+	@include break( sp ){
+
+		.section_index{
+			font-size: 7vh;
+		}		
+
+	}	
 }

@@ -35,6 +35,15 @@ html
         mih-height: 500px;
     }
 }
+@media screen and (max-width: 580px)
+{
+    .section
+    {
+        height: 80vh;
+        min-height: 0; 
+        padding-bottom: 0;
+    }
+}
 .section .wrap
 {
     display: -webkit-box;
@@ -112,6 +121,13 @@ html
 
     opacity: 1;
 }
+@media screen and (max-width: 580px)
+{
+    .section_index
+    {
+        font-size: 4.5em;
+    }
+}
 .section_article
 {
     position: relative;
@@ -147,7 +163,9 @@ html
 /********** mainvisual **********/
 .mainvisual
 {
-    position: relative;
+    position: relative; 
+
+    overflow: hidden;
 }
 .mainvisual .wrap
 {
@@ -173,12 +191,26 @@ html
     -ms-flex-pack: end;
     justify-content: flex-end;
 }
+@media screen and (max-width: 580px)
+{
+    .mainvisual .wrap
+    {
+        min-height: 0;
+    }
+}
 .mainvisual_copy
 {
     font-size: 10em; 
 
     position: relative;
     z-index: 1;
+}
+@media screen and (max-width: 580px)
+{
+    .mainvisual_copy
+    {
+        font-size: 23vw;
+    }
 }
 .mainvisual_copy span
 {
@@ -231,6 +263,13 @@ html
 {
     width: 100%;
 }
+@media screen and (max-width: 580px)
+{
+    .mainvisual_copy_sup
+    {
+        font-size: .14em;
+    }
+}
 .mainvisual_copy_myname
 {
     font-family: 'woodford ultra'; 
@@ -263,6 +302,13 @@ html
     width: 510px;
     height: auto;
 }
+@media screen and (max-width: 580px)
+{
+    .mainvisual_copy .handWrite svg
+    {
+        width: 100%;
+    }
+}
 .mainvisual_img
 {
     position: absolute;
@@ -280,6 +326,17 @@ html
     opacity: .45;
 
     mix-blend-mode: hard-light;
+}
+@media screen and (max-width: 580px)
+{
+    .mainvisual_img
+    {
+        top: auto;
+        bottom: 0; 
+
+        height: 95%;
+        margin-left: -30%;
+    }
 }
 .mainvisual .icon-mouse
 {
@@ -312,6 +369,13 @@ html
 
     width: 16.47145%;
 }
+@media screen and (max-width: 580px)
+{
+    .section-about .section_bg-last
+    {
+        top: 78.125%;
+    }
+}
 
 /********** think **********/
 .section-think .section_article
@@ -330,6 +394,18 @@ html
 
     width: 39.38507%;
 }
+@media screen and (max-width: 580px)
+{
+    .section-think
+    {
+        padding-bottom: 40px;
+    }
+    .section-think .section_article
+    {
+        margin-top: 0;
+        margin-left: auto;
+    }
+}
 
 /********** works **********/
 .section-works
@@ -343,6 +419,14 @@ html
 
     -ms-flex-item-align: start;
     align-self: flex-start;
+}
+@media screen and (max-width: 580px)
+{
+    .section-works .section_article
+    {
+        margin-top: 10vh; 
+        margin-right: auto;
+    }
 }
 .section-works .section_bg
 {
@@ -451,4 +535,11 @@ html
 .section-contact .section_caption
 {
     margin-bottom: 2em;
+}
+@media screen and (max-width: 580px)
+{
+    .section-contact .section_index
+    {
+        font-size: 7vh;
+    }
 }

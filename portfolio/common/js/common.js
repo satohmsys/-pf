@@ -1,4 +1,6 @@
-var $w = $( window )
+var $w = $( window );
+
+var $button = document.getElementsByClassName('navToggle');
 
 /**
 * modenizr
@@ -12,119 +14,24 @@ Modernizr.addTest( 'usefirefox', function( e ){
 
 /**
 * （ スマートフォン用 ）ナビゲーション開閉
-**/
-$( function(){
+*/
 
-    // alert( window.outerHeight );
+$button[0].addEventListener( 'click', function( e ){
+    e.stopPropagation();
+    e.preventDefault();
 
-    /**
-    * ウィンドウ幅取得
-    */
-    $w.on( 'resize', function(){
-        $wWidth = $w.width();
-    });
+    var $body = document.body;
+        $status = document.body.getAttribute('data-navopen');
 
-
-    /**
-    * 処理スタート
-    */
-    $w.on( 'load', function(){
-
-        var $menu = $( '.nav' ); //navigation
-        var $button = $( '.navToggle' ); //button
-        var $slideType = $button.data( 'navtype' ); //ナビゲーションのエフェクト判別
-        var $body = $( 'body' );
-        var $wWidth = $w.width();
-
-        if( $wWidth < 780 ){
-            // $menu.hide();
-
-            $button.on( 'click', function( e ){
-                e.preventDefault();
-                e.stopPropagation();
-
-                if( $slideType == 'fade'){
-                    //オーバーレイ生成
-                    doOverlay( $body, 'menuOpening', $button, $menu );
-                    //bodyのクラスを着脱
-                    $body.toggleClass( 'menuOpening' );                    
-                } else {
-                    $menu.stop().slideToggle();                
-                }
-
-            } );
-        }
-    } );
-
-
-    /**
-    * オーバーレイを生成する
-    * @param $targetObj {jQuery Obj} クラスの操作をするオブジェクト
-    * @param $class {string} $targetObjの切り替わりクラス    
-    * @param $button {jQuery} オーバーレイをフェードアウトさせるボタン    
-    * @param $fadeSpeed { int } エフェクトのスピード    
-    * @see  fadeOutOverlay
-    * @see  menuAction
-    */
-    function doOverlay( $targetObj, $class, $button, $menu, $fadeSpeed ){
-        if(! $fadeSpeed ) $fadeSpeed = 200;        
-        typeof $button == 'undefined' || $button.length == 0 ? $button = '' : '';
-        $overlay = '<div class="overlay"><div class="overlay_close"><i class="overlay_close_icon"></i>close</div></div>';
-        $targetObj.append( $overlay );
-        $ovl = $( '.overlay' );
-
-        $ovl.hide();
-
-        if( ! $targetObj.hasClass( $class ) ){
-            $ovl.stop(true,true).fadeIn();
-            //メニューを開く
-            menuAction( $targetObj, 'menuOpening' ,$menu );            
-        } else {
-            //メニューを閉じる
-            menuAction( $targetObj, 'menuOpening' ,$menu );           
-            fadeOutOverlay( $ovl, {obj:$targetObj,class:$class} );   
-        }
-        $ovl.on( 'click', function( e ){
-            e.stopPropagation();
-            menuAction( $targetObj, 'menuOpening' ,$menu );  
-            fadeOutOverlay( $ovl, {obj:$targetObj,class:$class} );                        
-        } );              
+    if( $status == 'open' ){
+        $body.classList.remove( 'navOpen');
+        $body.setAttribute( 'data-navopen', '');
+    } else {
+        $body.classList.add( 'navOpen');
+        $body.setAttribute( 'data-navopen', 'open');
     }
-
-
-    /**
-    * メニューを操作する
-    * @param $targetObj {jQuery Obj} ラッパー要素
-    * @param $class {string} $targetObjにこのクラスがあるか照合    
-    * @param $menu {jQuery Obj} 操作するメニュー   
-    * @param $fadeSpeed { int } エフェクトのスピード    
-    */
-    function menuAction( $targetObj, $class, $menu, $fadeSpeed ){
-        if(! $fadeSpeed ) $fadeSpeed = 200;
-
-        if( ! $targetObj.hasClass( $class ) ){
-            $menu.addClass('open').delay( 400 ).fadeIn( $fadeSpeed );
-        } else { 
-            $menu.stop(true,true).fadeOut( $fadeSpeed ).removeClass('open');
-        }        
-    }
-
-
-    /**
-    * オーバーレイをフェードアウト , 消去させる
-    * @param $ovl {jQuery Obj} オーバーレイのオブジェクト
-    * @param $targetObj {Obj} cssクラスの操作をするオブジェクト
-    *               obj { jQuery Obj } 対象の要素
-    *               class { string } objに着脱するcssクラス
-    */
-    function fadeOutOverlay( $ovl, $targetObj, $bodyObj ){
-        $ovl.fadeOut().queue( function(){
-            $( this ).remove();
-            $targetObj.obj.toggleClass( $targetObj.class );  
-        } );                        
-    }
-
 } );
+
 
 
 
@@ -244,21 +151,27 @@ function spaning( elm ){
         $doc.addEventListener( 'DOMContentLoaded', function(){
 
              $doc.getElementById('just').addEventListener('transitionend', function(){
-
-                TweenMax.to( $intro, 2, {
-                    opacity: 0,
-                    filter: 'blur(200px)',
-
-                    delay: 0.5,
-
-                    onComplete:function( e ){
-                        $body.classList.remove('hello','helloAfter','letsTalk')
-                        $body.classList.add( 'introEnd' );
-                        $intro.parentNode.removeChild( $intro );
-
-                        $doc.cookie = 'visited';
+                TweenMax.fromTo( $intro, 2,
+                    {
+                        opacity: 1,
+                        filter: 'blur(0)'
+                    },
+                    {
+                         opacity: 0,
+                         filter: 'blur(200px)',
+                         delay: 0.5,
+                         onComplete:function( e ){
+                            $body.classList.remove('hello','helloAfter','letsTalk')
+                            $body.classList.add( 'introEnd' );
+                            $intro.parentNode.removeChild( $intro );
+                            
+                            $expire = new Date();
+                            $expire.setTime( $expire.getTime() + 1000 * 3600 * 48 );                            
+                            $doc.cookie = 'visit=visited; expired=' . $expire ;
+                        }
                     }
-                } );               
+
+                );               
              });
         });
     } else {

@@ -152,7 +152,7 @@ function spaning( elm ){
         $doc.addEventListener( 'DOMContentLoaded', function(){
 
              $doc.getElementById('just').addEventListener('transitionend', function(){
-                TweenMax.fromTo( $intro, 4,
+                TweenMax.fromTo( $intro, 2.5,
                     {
                         opacity: 1,
                         filter: 'blur(0)'

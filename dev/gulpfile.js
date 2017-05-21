@@ -9,7 +9,7 @@ var plumber = require( 'gulp-plumber' );
 var notify = require( 'gulp-notify' );
 var imagemin = require( 'gulp-imagemin' );
 var imagemin_png = require( 'imagemin-pngquant' );
-// var ejs = require( 'gulp-ejs' ); //EJS
+var ejs = require( 'gulp-ejs' ); //EJS
 var rename = require( 'gulp-rename' );
 // var prettify = require( 'gulp-prettify' );
 var csscomb = require( 'gulp-csscomb' );
@@ -27,7 +27,7 @@ var dir = {
     dir: ''
   },
   ejsDir = {
-    template: 'ejs/' + '.ejs',//[ ejs ] 更新対象ejsのファイル
+    template: '_ejs/*' + '.ejs',//[ ejs ] 更新対象ejsのファイル
     rename: 'index.html'// [ ejs ] .ejs→htmlリネーム
   }
 
@@ -128,44 +128,17 @@ gulp.task( 'imagemin', function(){
 * @param $readJson str 変数を設定したjson 
 * @param ejs.template str テンプレートファイル 
 */
-gulp.task("ejs" , function(callback){
-  // var $readJson = "./index.json";
-
-  gulp.watch([ ejsDir.template /*, dir.top + $readJson*/ ] , function(e){
-
-    //
-    if(e.type != "deleted") {
-      //fsを使って最新のjsonファイルを同期読み込みしてオブジェクト生成
-      // var json = JSON.parse(fs.readFileSync($readJson));
-
-    // gulp.src(["include/**/*.ejs" , '!' + "include/**/_*.ejs"])　「_」が付いているものは除く
-      gulp.src(ejsDir.template)
-      .pipe(ejs(/*json*/))
+gulp.task("ejs", function(){
+       gulp.src(
+        ejsDir.template
+      )
+      .pipe(ejs({}, {ext: '.html'}))
+      .pipe( rename({
+        extname: '.html'      
+        }) )
       .pipe(plumber())
-      .pipe(rename( ejsDir.rename ))
       .pipe(gulp.dest(dir.top + dir.below));
-    }
-  });
 });
-
-
-/**
-* ejsリロード
-* @link http://qiita.com/yuichiroharai/items/63b0769bc8ebe0220018
-*/
-gulp.task( 'ejsReload', function(){
-
-  gulp.watch([ ejs.template ] , function(e){
-    //
-    if(e.type != "deleted") {
-      gulp.src(ejs.template)
-      .pipe(ejs(/*json*/))
-      .pipe(plumber())
-      .pipe(rename( ejsDir.rename ))
-      .pipe(gulp.dest(dir.top + dir.below));
-    }
-  });
-} );
 
 
 
@@ -186,9 +159,8 @@ gulp.task('prettify', function() {
 /**
 * default tasks
 */
-gulp.task('default' ,['browserSync' , 'sassCompileReload'] ,  function(){
-  gulp.watch( dir.top + '/**/scss/*.scss' , ['sassCompileReload']);
-  // gulp.watch('./**/*.ejs', ['ejsReload','browserSyncReload']);
-  // gulp.watch([ './**/*.ejs', dir.top + 'include/**/*.json', '!' + dir.top + './**/* _.ejs' ] , ['ejsReload','browserSyncReload']);
+gulp.task('default' ,['browserSync', 'sassCompileReload'], function(){
+  gulp.watch('_ejs/**/*.ejs', [ 'ejs' ]);
+  gulp.watch( dir.top + '/**/scss/*.scss', ['sassCompileReload']);
   gulp.watch( [dir.top + '/**/*.html',dir.top + '/**/*.php' ] , ['browserSyncReload']);
 });

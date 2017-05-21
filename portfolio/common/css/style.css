@@ -846,6 +846,14 @@ html.ie8 .icon-instagram:before
         width: 100%;
     }
 }
+.siteHeader_nav li.current a
+{
+    pointer-events: none;
+}
+.siteHeader_nav li.current a:before
+{
+    width: 100%;
+}
 @media screen and (max-width: 580px)
 {
     .siteHeader_nav .wrap

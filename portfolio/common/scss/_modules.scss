@@ -324,6 +324,16 @@
 		}
 	}
 
+	li.current
+	{
+		a{
+			pointer-events: none;
+		}
+		a:before{
+			width: 100%;
+		}
+	}
+
 
 	//////// media queries 
 	@include break( sp ){

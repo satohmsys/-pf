@@ -127,6 +127,7 @@ function spaning( elm ){
 }
 
 
+
 /**
 * cookie判断でイントロを出すかどうか。出す場合はアニメ後Removechild
 */
@@ -151,7 +152,7 @@ function spaning( elm ){
         $doc.addEventListener( 'DOMContentLoaded', function(){
 
              $doc.getElementById('just').addEventListener('transitionend', function(){
-                TweenMax.fromTo( $intro, 2,
+                TweenMax.fromTo( $intro, 4,
                     {
                         opacity: 1,
                         filter: 'blur(0)'
@@ -159,7 +160,9 @@ function spaning( elm ){
                     {
                          opacity: 0,
                          filter: 'blur(200px)',
-                         delay: 0.5,
+
+                         delay: 1,
+
                          onComplete:function( e ){
                             $body.classList.remove('hello','helloAfter','letsTalk')
                             $body.classList.add( 'introEnd' );
@@ -167,7 +170,8 @@ function spaning( elm ){
                             
                             $expire = new Date();
                             $expire.setTime( $expire.getTime() + 1000 * 3600 * 48 );                            
-                            $doc.cookie = 'visit=visited; expired=' . $expire ;
+                            $doc.cookie = 'visit=visited; expires=' . $expire.toUTCString() ;
+                            console.log( document.cookie )
                         }
                     }
 

@@ -371,9 +371,15 @@ html
 }
 @media screen and (max-width: 580px)
 {
+    .section-about .section_bg-first
+    {
+        width: 57.32064%;
+    }
     .section-about .section_bg-last
     {
-        top: 78.125%;
+        top: 78.125%; 
+
+        width: 23.79209%;
     }
 }
 
@@ -404,6 +410,13 @@ html
     {
         margin-top: 0;
         margin-left: auto;
+    }
+    .section-think .section_bg-first
+    {
+        right: .4%; 
+        bottom: -20px;
+
+        width: 46.70571%;
     }
 }
 
@@ -468,7 +481,7 @@ html
     opacity: 0;
     color: #fff;
     border: solid 1px #fafafa;
-    box-shadow: 5px 5px 0 #fbfbfb;
+    box-shadow: 5px 5px 0 #fbfbfb, 10px 8px 0 #eaeaea;
 }
 .section-works .panel,
 .section-works .panel_catName
@@ -507,12 +520,41 @@ html
 
     opacity: 1;
 }
-.section-works .section_bg-first
+@media screen and (max-width: 580px)
 {
-    right: 10.4%; 
-    bottom: 0;
-
-    width: 39.38507%;
+    .section-works .section_bg
+    {
+        bottom: 1.5%;
+    }
+    .section-works .panel
+    {
+        padding-top: 12%;
+        padding-bottom: 12%;
+    }
+    .section-works .panel_catName
+    {
+        font-size: 1.25em;
+    }
+    .section-works .panel:nth-child(1)
+    {
+        transition-delay: .5s;
+    }
+    .section-works .panel:nth-child(2)
+    {
+        transition-delay: .6s;
+    }
+    .section-works .panel:nth-child(3)
+    {
+        transition-delay: .7s;
+    }
+    .section-works .panel:nth-child(4)
+    {
+        transition-delay: .8s;
+    }
+    .section-works .section_bg-first
+    {
+        bottom: 3%;
+    }
 }
 
 /********** contact **********/
@@ -538,6 +580,10 @@ html
 }
 @media screen and (max-width: 580px)
 {
+    .section-contact
+    {
+        padding-top: 60px;
+    }
     .section-contact .section_index
     {
         font-size: 7vh;

@@ -39,7 +39,15 @@
 
 	//////// media queries 
 	@include break( sp ){
-		z-index: 3;
+		
+		 > .wrap{
+			display: block;
+			.siteHeader_logo,
+			.siteHeader_nav	{
+				display: block;
+			}
+		}
+
 
 	} //max 580	
 }
@@ -89,6 +97,7 @@
 	//////// media queries 
 	@include break( sp ){
 
+		margin-top: 70px;
 		&_top
 		{
 			li{
@@ -314,51 +323,77 @@
 			
 		}
 	}
-	
-
-	// li.nav_contact{
-
-	// 	a{
-
-	// 	}
-
-	// }
-
-	///////メニューが開いた状態
-	.menuOpening &{
-			opacity: 1;	
-	}
 
 
 	//////// media queries 
 	@include break( sp ){
-		opacity: 0;
-		display: none;
-		background-color: transparent;
-		
 		.wrap{
-			width: auto;
+		    width: 100%;
+		    height: 100%;
+		    display: flex;
 			max-width: none;
+			padding-top: 0%;
 			padding-right: 0;
 			padding-left: 0;
+		    flex-direction: column;
+		    justify-content: center;
+		    align-items: center;
+		    align-content: center;
+		    position: fixed;
+		    z-index: -10;
+		    top: 0;
+		    left: 0;		
+			float: none;
+			font-family: $fontFamily_wf_medium;
 		}
 		
-		li{
-			margin-right: 0;
+		li
+		{
+			font-size: 1.5em;
+			padding: 20px;
 			display: block;
-			position: relative;
-			top: -2em;			
-			border-bottom: solid 1px rgba( #fff, 0.5 );
-			transition: all 0.3s ease 0s;
+			opacity: 0;
+			transform: translateX(10px);
+			
+			//ナビ開いてない状態
+			a{
+				z-index: -10;
+			}
 		}
 
-		li a{
-			margin-right: 0px;
-			padding-bottom: 1em;
-		}			
-		
-		&.open li{
-			top: 0;
+		.button-nav
+		{
+			padding-right: 0;
+			padding-left: 0;
+ 			a{
+				width: auto;
+				padding: 0.5em 1.5em;
+				margin-left: auto;
+				margin-right: auto;
+			}			
+		}
+
+		@at-root .navOpen &{
+			li{
+				opacity: 1;
+				transform: translateX(0px);
+
+				transition: all 0.3s ease 0s;
+			
+				@for $i from 1 through 6 {
+
+					&:nth-child( #{$i} ){
+						$delay: 0.85 + (0.15 * $i);
+						transition-delay: #{$delay}s;
+					}
+				}	
+
+				//ナビ開いた状態
+				a{
+					z-index: 9;
+				}						
+			}
+			
 		}
 
 	} //max 580
@@ -369,6 +404,10 @@
 ////( スマホ用 )開閉アイコン
 .navToggle
 {
+	display: none;
+
+	@include break( sp ){
+		display: block;
 	$buttonSize : 50px;
 	$buttonTextColor: #fff;
 	
@@ -392,7 +431,7 @@
 
 	&:after{
 		content: " ";
-		z-index: 99;
+		z-index: 8;
 		transition: easeInOutCirc();
 		border-radius: 100%;
 		box-shadow: 0 4px 4px rgba( #000, 0.1), 0 0 10px rgba( #000, 0.3 );
@@ -432,6 +471,7 @@
 		&:before , 
 		&:after{
 			content: " "; 
+			transform-origin: 0;
 		}
 		//top
 		&:before{
@@ -450,12 +490,13 @@
 
 	@at-root .navOpen
 	{
+		overflow: hidden;
 	
 		.navToggle
 		{
 
 			&_hitArea{
-				z-index: 100;
+				z-index: 11;
 			}
 
 			&:after{
@@ -465,9 +506,9 @@
 				bottom: 0;
 				border-radius: 0;
 				box-shadow: none;
-				@include background-image( linear-gradient( to right, $green, $blue ) );	
+				// @include background-image( linear-gradient( to right, $green, $blue ) );	
 				
-				// background-color: darken( $blue, 15 );		
+				background-color: darken( $blue, 15 );		
 			}
 			
 			
@@ -476,7 +517,6 @@
 			{
 				
 				//bar
-
 				//top
 				&:before{
 					transform: rotate( 45deg );
@@ -493,124 +533,13 @@
 			}
 		}	
 
-	}
-
-	///////media queries
-	@include break( sp, min ){
-		display: none;
+	}		
 	} // min 580
 }
 
 
-///////メニューが開いている状態 ( body )
-.menuOpening
-{
-	/////アイコン
-	.navToggle_icon
-	{
-		overflow: hidden;
-		&_lineCenter{
-			right: 100px;
-			opacity: 0;
-		}	
-		&:before,
-		&:after{
-			width: 100%;
-			transform-origin: 25% 25%;
-		}		
-		&:before{
-			transform: rotate( 45deg );
-		}
-		&:after{			
-			transform: rotate( -45deg );
-		}
-	}	
-}
 
 
-
-////////////////////
-
-// menu open ( overlay )
-
-////////////////////
-
-////////メニューがオープンした時に、クラス「menuOpening」が付与される場合
-body.menuOpening
-{
-	position: relative;
-	$overlayBgColor : #000;
-	
-	.overlay{
-		top: 0;
-		right: 0;
-		bottom: 0;
-		left: 0;
-		position: fixed;
-	}
-
-	.overlay_close_icon:after,
-	.overlay_close_icon:before{
-		transition: easeInOutCirc();
-	}
-
-	////オーバーレイ
-	.overlay{
-		width: 100%;
-		height: 100%;
-		background-color: rgba( $overlayBgColor, 0.8 );
-		z-index: 2;
-	}	
-
-	.overlay_close{
-		width: 100%;
-		padding-top: 5px;
-		padding-bottom: 5px;
-		// display: block;
-		position: absolute;
-		right: 0;
-		bottom: 0;
-		left: 0;
-		cursor: pointer;
-		text-align: center;
-		color: #fff;
-		background-color: rgba( $overlayBgColor, 0.2 );		
-	}	
-
-	.overlay_close_icon
-	{
-		width: 1.4em;
-		height: 1.4em;
-		margin-right: 0.5em;
-		position: relative;
-		display: inline-block;
-		vertical-align: middle;
-		
-		//bar
-		&:before,
-		&:after
-		{
-			content: " ";
-			width: 100%;
-			height: 2px;
-			margin: auto;
-			position: absolute;
-			right: 0;
-			left: 0;
-			top: 0;
-			bottom: 0;
-			transform-origin: 53% 50%;
-			background-color: #fff;
-			display: block;
-		}
-		&:before{
-			transform: rotate( -45deg );
-		}
-		&:after{
-			transform: rotate( 45deg );
-		}		
-	}
-}
 
 
 
@@ -844,7 +773,7 @@ body.menuOpening
 	z-index: 99;
 	cursor: pointer;
 	display: none;
-	background-color: $green;
+
 	
 	transition: transform 0.5s;
 	
@@ -867,6 +796,10 @@ body.menuOpening
 	
 	&.moving{
 		@include rotate3d( 50, 1000, 500, 360deg, 500 );
+	}
+
+	@include break( sp ){
+		bottom: 70px;
 	}
 }
 
@@ -914,8 +847,8 @@ body.menuOpening
 
 	@include break( sp ){
 		.wrap{
-			padding-left: 15%;
-			padding-right: 15%;
+			padding-left: 10%;
+			padding-right: 10%;
 		}
 	}
 
@@ -957,13 +890,13 @@ body.menuOpening
 		margin-left: auto;
 		text-align: center;
 		line-height: 1;
-		font-feature-settings: 'palt';
 		
 		.indexHello{
 			margin-top: 0;
 			margin-bottom: 0px;
 			font-size: 8em;	
 			@extend .wfUltra;
+			text-align: center;
 			
 			@at-root .usefirefox &{
 				font-size: 3.5em;
@@ -973,6 +906,7 @@ body.menuOpening
 		svg{
 			max-width: 332px;
 			overflow: visible;
+			text-align: center;
 		}
 		.indexMyname{
 			margin-top: 0;
@@ -983,7 +917,10 @@ body.menuOpening
 		}
 
 		@include break( sp ){
-			max-width: 80%;
+			.indexHello{
+				padding-left: 8%;
+				padding-right: 8%;
+			}
 			.indexMyname{
 				font-size: 2.25em;
 			}			
@@ -1000,6 +937,7 @@ body.menuOpening
 		
 		@include break( sp ){
 			text-align: left;
+			font-size: 3.55vw;			
 		}		
 		
 	}

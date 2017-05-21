@@ -328,7 +328,11 @@ html{
 	}
 
 	@include break( sp ){
+		.section_bg-first{
+			width: percentage( 783/1366 );
+		}
 		.section_bg-last{
+			width: percentage( 325/1366 );
 			top: percentage( 600/768 );
 		}
 	}	
@@ -364,6 +368,11 @@ html{
 			margin-top: 0%;	
 			margin-left: auto;	
 		}
+		.section_bg-first{
+			width: percentage( 638/1366 );
+			bottom: -20px;
+			right: 0.4%;
+		}		
 	}		
 
 }
@@ -415,7 +424,7 @@ html{
 		float: left;
 		font-family: $fontFamily_wf_bold;
 		color: #fff;
-		box-shadow:  5px 5px 0 #fbfbfb;
+		box-shadow:  5px 5px 0 #fbfbfb, 10px 8px 0 #eaeaea;
 		@extend %gradation;
 
 		opacity: 0;
@@ -447,10 +456,33 @@ html{
 	}		
 
 
-	.section_bg-first{
-		width: percentage( 538/1366 );
-		bottom: 0;
-		right: 10.4%;
+	@include break( sp ){
+
+		.section_bg{
+			bottom: 1.5%;
+		}
+
+		.panel
+			{
+				padding-top: 12%;
+				padding-bottom: 12%;
+
+				&_catName{
+					font-size: 1.25em;
+				}
+
+				@for $i from 1 through 4 {
+					&:nth-child( #{$i} ){
+						$delay: 0.4 + (0.1 * $i);
+						transition-delay: #{$delay}s;
+					}
+				}		
+				
+			}	
+		.section_bg-first{
+			bottom: 3%;
+		}
+
 	}
 
 }
@@ -477,6 +509,7 @@ html{
 
 	@include break( sp ){
 
+		padding-top: 60px;
 		.section_index{
 			font-size: 7vh;
 		}		

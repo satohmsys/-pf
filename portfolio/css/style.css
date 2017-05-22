@@ -49,8 +49,6 @@ html,
 
 html
 {
-    font-size: 15px; 
-
     color: #fff;
 }
 
@@ -78,7 +76,7 @@ html
 {
     .section
     {
-        height: 80vh;
+        height: 70vh;
         min-height: 0; 
         padding-bottom: 0;
     }
@@ -98,6 +96,14 @@ html
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
+}
+@media screen and (max-width: 580px)
+{
+    .main .section .wrap
+    {
+        padding-right: 5%;
+        padding-left: 5%;
+    }
 }
 .section_index
 {
@@ -142,8 +148,10 @@ html
 }
 .section_content
 {
-    padding-right: 2em; 
+    padding-right: 2em;
     padding-left: 2em;
+
+    text-shadow: 0 0 5px rgba(0, 0, 0, .1);
 }
 .section_bg
 {
@@ -585,6 +593,10 @@ html
     .section-contact
     {
         padding-top: 60px;
+    }
+    .siteFooter
+    {
+        padding-top: 0;
     }
     .section-contact .section_index
     {

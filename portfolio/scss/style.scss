@@ -17,7 +17,6 @@
 
 html{
 	color: #fff;
-	font-size: 15px;
 	
 	@extend %gradation;
 }
@@ -41,7 +40,7 @@ html{
 	}
 
 	@include break( sp ){
-		height: 80vh;
+		height: 70vh;
 		padding-bottom: 0px;
 		min-height: 0;
 	}	
@@ -52,7 +51,14 @@ html{
 		height: 100%;
 		display: flex;
 		flex-direction: row;
-		align-items: center;
+		align-items: center;	
+		
+		@at-root .main & {
+			@include break( sp ){
+				padding-right: 5%;
+				padding-left: 5%;
+			}			
+		}	
 	}
 
 	&_index{
@@ -98,6 +104,7 @@ html{
 	&_content{
 		padding-left: 2em;
 		padding-right: 2em;
+		text-shadow: 0 0 5px rgba(#000, 0.1);
 	}
 
 
@@ -501,6 +508,11 @@ html{
 	@include break( sp ){
 
 		padding-top: 60px;
+		
+		@at-root .siteFooter{
+			padding-top: 0;
+		}
+		
 		.section_index{
 			font-size: 7vh;
 		}		

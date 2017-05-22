@@ -21,6 +21,23 @@
  module
 ***********************/
 
+.topGradation{
+    padding-top: 280px;
+    background: transparent url(../img/gradation.png) left top repeat-x;
+    margin-top: -160px;
+    position: relative;
+    z-index: 2;
+    background-size: 10px auto;	
+    
+    @include break( sp ){
+		margin-top: -80px;
+		padding-top: 120px;
+		background-size: 5px auto;    	
+    }
+}
+
+
+
 .section{
 	
 
@@ -29,16 +46,27 @@
 
 	&:not( :last-child ):after{
 		content: " ";
-		width: 1px;
-		height: 50px;
+		width: 2px;
+		height: 0px;
 		margin-top: 50px;
 		margin-right: auto;
 		margin-bottom: 50px;
 		margin-left: auto;
 		display: block;
 		transition: easeInOutCirc(1s);
-		border-right: dashed 3px #0dff9e;
-		// background-color: #0dff9e;
+		transition-delay: 1s;
+		background-image: linear-gradient(to bottom, transparent, transparent 50%, #fff 50%, #fff 100%), linear-gradient(to bottom, $green, $blue);
+		background-size: 3px 10px, 3px 100%;		
+		
+		
+		@include break( sp ){
+			margin-bottom: 1px;
+		}		
+	
+	}
+
+	@at-root &.inview:not( :last-child ):after{
+		height: 50px;
 	}
 	
 	
@@ -58,7 +86,9 @@
 	
 		
 		@include break( sp ){
-			font-size: 4.5em;
+			font-size: 6em;
+			margin-bottom: 30px;
+			// font-size: 4.5em;
 		}
 
 
@@ -68,6 +98,10 @@
 		line-height: 2;
 		letter-spacing: 0.06em;
 		font-size: 0.933em;
+		
+		@include break( sp ){
+			font-size: 1em;
+		}		
 	}
 }
 
@@ -119,6 +153,8 @@
 /********** hi **********/
 .section-hi
 {
+	// overflow: hidden;
+	
 	&,
 	.section_index,
 	.section_content{
@@ -136,6 +172,11 @@
 			transform: rotate(5deg);
 			font-size: 0.6em;
 			font-family: $fontFamily_damion;
+			
+			@include break( sp ){
+				top: 5px;
+				font-size: 0.5em;
+			}			
 		}
 	}	
 
@@ -145,6 +186,11 @@
 		z-index: 0;
 		top: -12%;
 		right: 0;
+		
+		@include break( sp ){
+			max-width: 80%;
+			top: -1%;
+		}		
 	}
 }
 
@@ -163,11 +209,20 @@
 		justify-content: space-between;
 		align-content: flex-start;
 		
+		@include break( sp ){
+			margin-left: -2.5%;
+			margin-right: -2.5%;
+		}		
 		&_mind{
 			width: calc( 100% / 3 );
 			margin-top: 50px;
 			list-style: none;
 			text-align: center;
+			
+			@include break( sp ){
+				width: calc( 100% / 2 );
+				margin-top: 30px;
+			}
 		}
 
 		&_icon
@@ -189,6 +244,11 @@
 			font-size: 0.9em;
 			font-feature-settings: 'palt';
 			letter-spacing: 0.05em;
+			
+			@include break( sp ){
+				letter-spacing: 0;
+			}		
+
 		}
 	}	
 }

@@ -1,4 +1,6 @@
-var controller = new ScrollMagic.Controller();    
+var controller = new ScrollMagic.Controller(),
+    $timer = null,
+    $sections = document.getElementsByClassName( 'section' );    
 
 /**
 * SPANで囲む
@@ -11,23 +13,33 @@ spaning( document.getElementsByClassName('pagevisual_copy_pagename')[0] );
 /**
 * scrollMagic 
 */
-
-// //mainvisualのスクロールアイコン消す
-// (function(){
-//     var scene = new ScrollMagic.Scene({
-//         triggerElement: '.icon-mouse',
-//         duration: 300
-//     })
-//     .setTween(
-//         TweenMax.to( '.icon-mouse', 1, {
-//             opacity: 0
-//         }) )
-//     .addTo( controller );
-// })();
-    
-$scene =  new ScrollMagic.Scene({
+// first view   
+new ScrollMagic.Scene({
 	triggerElement: document.getElementsByClassName('pagevisual')[0],
 	triggetHook: 'onEnter'
 })
 .setClassToggle( document.getElementsByClassName('pagevisual')[0], "inview" )
 .addTo(controller);
+
+//section
+Array.prototype.forEach.call( $sections, function( e ){
+    console.log( e, e.className );
+    var $section =  e ,
+        $sectionClassName = '.' + $section.className.match( 'section-.*' )[0],
+        $scene =  new ScrollMagic.Scene({
+            triggerElement: $sectionClassName,
+            triggetHook: 'onEnter'
+        })
+        // trigger animation by adding a css class
+        .setClassToggle( $sectionClassName, "inview" )
+        .on("enter", function (event) {  // シーンの状態が"DURING"に入る際に発火する
+            console.log("Scene entered.",event);
+        })
+        .on("leave", function (event) { // シーンの状態が"DURING"から"BEFORE"か"AFTER"に移る際に発火する
+            this.setClassToggle( $sectionClassName, "outview" )
+        })
+        .on("progress", function (event) { // シーン変化の度に呼ばれる
+            console.log("Scene progress changed to " + event.progress)
+        })
+        .addTo(controller);
+} );

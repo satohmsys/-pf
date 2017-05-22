@@ -1715,6 +1715,10 @@ html.ie8 .icon-instagram:before
         min-height: 0;
     }
 }
+.pagevisual.hasGradation .wrap
+{
+    padding-bottom: 50px;
+}
 .pagevisual_copy
 {
     font-size: 8.33em; 
@@ -1795,4 +1799,8 @@ html.ie8 .icon-instagram:before
     right: 0;
     bottom: 5%;
     left: 0;
+}
+.pagevisual.hasGradation .icon-mouse
+{
+    bottom: 10%;
 }

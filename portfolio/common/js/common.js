@@ -197,9 +197,9 @@ function spaning( elm ){
                             $intro.parentNode.removeChild( $intro );
                             
                             $expire = new Date();
-                            $expire.setTime( $expire.getTime() + 1000 * 3600 * 48 );                            
-                            $doc.cookie = 'visit=visited; expires=' . $expire.toUTCString() ;
-                            console.log( document.cookie )
+                            $expire.setTime( $expire.getTime() + 1000 * 3600 * 48 );
+                            $expire = $expire.toUTCString();                            
+                            $doc.cookie = 'visit=visited; expires=' . $expire;
                         }
                     }
 

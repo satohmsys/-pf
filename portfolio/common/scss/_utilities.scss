@@ -28,17 +28,10 @@
 	padding-left: 30px;
 	padding-right: 30px;	
 	box-sizing: border-box;
-
-
-	//////////media queries
-	@include break( pc ){
-		padding-left: 25px;
-		padding-right: 25px;
-	}//max 1200
 	
 	@include break( sp ){
-			padding-left: 15px;
-			padding-right: 15px;
+			padding-left: 10%;
+			padding-right: 10%;
 	}//max 580	
 }
 

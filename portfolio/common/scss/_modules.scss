@@ -962,6 +962,7 @@
 		line-height: 1;
 		
 		.indexHello{
+			line-height: 1;
 			margin-top: 0;
 			margin-bottom: 0px;
 			font-size: 8em;	
@@ -1042,7 +1043,7 @@
 	
 	.wrap{
 		height: 100vh;
-		min-height: 680px;
+		min-height: 600px;
 		position: relative;
 		display: flex;
 		flex-wrap: wrap;
@@ -1051,6 +1052,7 @@
 		justify-content: center;
 		
 		@include break( sp ){
+			height: 60vh;
 			min-height: 0;
 		}
 	}
@@ -1059,10 +1061,10 @@
 	&_copy{
 		position: relative;
 		z-index: 1;
-		font-size: 6em;
+		font-size: 8.33em;
 		
 		@include break( sp ){
-			font-size: 23vw;
+			font-size: 15vw;
 		}	
 
 		p{
@@ -1086,14 +1088,14 @@
 
 		.handWrite
 		{
-
-			margin-top: -1em;
+			margin-top: -1.4em;
 			transition: easeInOutBack($s : 0.4s, $prop : all);
 			transition-delay: 1.5s;	
 			transform:  scale(1.25);
 			transform-origin: 50% 25%;
 			opacity: 0;
 			text-align: right;	
+			font-size: 0.58em;
 			
 			&,
 			svg text{
@@ -1113,19 +1115,16 @@
 	
 	////////// image 
 	&_img{
-		max-width: none;
-		width: auto;
-		height: 100%;
+		width: 100%;
+		// max-width: none;
+		// width: auto;
+		// height: 100%;
 		margin: auto;
 		z-index: 0;
 		top: 0;
 		right: 0;
 		left: 0;
-		
-		@include break( sp ){
-			top: auto;
-			bottom: 0;
-		}		
+			
 		
 	}
 

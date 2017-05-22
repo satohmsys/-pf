@@ -189,6 +189,13 @@ html
 
     -webkit-text-size-adjust: 100%;
 }
+@media screen and (max-width: 580px)
+{
+    html
+    {
+        font-size: 13px;
+    }
+}
 
 body
 {
@@ -323,20 +330,12 @@ button
     padding-right: 30px;
     padding-left: 30px;
 }
-@media screen and (max-width: 1200px)
-{
-    .wrap
-    {
-        padding-right: 25px; 
-        padding-left: 25px;
-    }
-}
 @media screen and (max-width: 580px)
 {
     .wrap
     {
-        padding-right: 15px; 
-        padding-left: 15px;
+        padding-right: 10%; 
+        padding-left: 10%;
     }
 }
 
@@ -1604,6 +1603,7 @@ html.ie8 .icon-instagram:before
 .myIntroduction_index .indexHello
 {
     font-size: 8em;
+    line-height: 1;
 
     margin-top: 0;
     margin-bottom: 0;
@@ -1693,7 +1693,7 @@ html.ie8 .icon-instagram:before
         flex-direction: row;
 
     height: 100vh;
-    min-height: 680px;
+    min-height: 600px;
 
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
@@ -1711,12 +1711,13 @@ html.ie8 .icon-instagram:before
 {
     .pagevisual .wrap
     {
+        height: 60vh;
         min-height: 0;
     }
 }
 .pagevisual_copy
 {
-    font-size: 6em; 
+    font-size: 8.33em; 
 
     position: relative;
     z-index: 1;
@@ -1725,7 +1726,7 @@ html.ie8 .icon-instagram:before
 {
     .pagevisual_copy
     {
-        font-size: 23vw;
+        font-size: 15vw;
     }
 }
 .pagevisual_copy p
@@ -1748,7 +1749,9 @@ html.ie8 .icon-instagram:before
 }
 .pagevisual_copy .handWrite
 {
-    margin-top: -1em;
+    font-size: .58em; 
+
+    margin-top: -1.4em;
 
     transition: all .4s cubic-bezier(.68, -.55, .265, 1.55) 0s;
     transition-delay: 1.5s;
@@ -1756,7 +1759,7 @@ html.ie8 .icon-instagram:before
             transform: scale(1.25);
     -webkit-transform-origin: 50% 25%;
             transform-origin: 50% 25%;
-    text-align: right; 
+    text-align: right;
 
     opacity: 0;
 }
@@ -1782,18 +1785,8 @@ html.ie8 .icon-instagram:before
     right: 0;
     left: 0; 
 
-    width: auto;
-    max-width: none;
-    height: 100%;
+    width: 100%;
     margin: auto;
-}
-@media screen and (max-width: 580px)
-{
-    .pagevisual_img
-    {
-        top: auto;
-        bottom: 0;
-    }
 }
 .pagevisual .icon-mouse
 {

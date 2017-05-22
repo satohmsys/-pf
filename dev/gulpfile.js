@@ -27,7 +27,7 @@ var dir = {
     dir: ''
   },
   ejsDir = {
-    template: '_ejs/*' + '.ejs',//[ ejs ] 更新対象ejsのファイル
+    template: '_ejs/about/*' + '.ejs',//[ ejs ] 更新対象ejsのファイル
     rename: 'index.html'// [ ejs ] .ejs→htmlリネーム
   }
 
@@ -129,16 +129,20 @@ gulp.task( 'imagemin', function(){
 * @param ejs.template str テンプレートファイル 
 */
 gulp.task("ejs", function(){
-       gulp.src(
-        ejsDir.template
-      )
-      .pipe(ejs({}, {ext: '.html'}))
-      .pipe( rename({
-        extname: '.html'      
-        }) )
-      .pipe(plumber())
-      .pipe(gulp.dest(dir.top + dir.below));
+     gulp.src(
+      ejsDir.template
+    )
+    .pipe(ejs(/*{}, {ext: '.html'}*/))
+    .pipe( rename({
+      extname: '.html'      
+    }) )
+    .pipe(plumber())
+    .pipe(gulp.dest(dir.top + dir.below + 'about'));
 });
+gulp.task('ejsWatch', ['browserSync'], function(){
+  gulp.watch('_ejs/**/*.ejs', ['ejs','browserSyncReload']);
+
+})
 
 
 
@@ -159,8 +163,8 @@ gulp.task('prettify', function() {
 /**
 * default tasks
 */
-gulp.task('default' ,['browserSync', 'sassCompileReload'], function(){
-  gulp.watch('_ejs/**/*.ejs', [ 'ejs' ]);
+gulp.task('default' ,['browserSync'], function(){
+  gulp.watch('_ejs/**/*.ejs', ['ejs']);
   gulp.watch( dir.top + '/**/scss/*.scss', ['sassCompileReload']);
   gulp.watch( [dir.top + '/**/*.html',dir.top + '/**/*.php' ] , ['browserSyncReload']);
 });

@@ -147,140 +147,19 @@ $css = ['css/style.css'];
       </main>
       <!-- //// BODY END -->
      
-      <footer>
-         <!-- ***** inquiry -->
-         <section class="inquiry section section-contact">
-            <div class="wrap">
-               <header>
-                  <h2 class="section_index">CONTACT</h2>
-                  <p class="section_caption">当サイトに関するお問い合わせやアドバイス、<br>雑談ほか、デザイン作成依頼、イベントのお誘いはこちらから。</p>
-               </header>            
-               <header class="inquiry_index wfBlack">
-                  <h3 class="inquiry_index_text">MESSAGE & ASK ME</h3>
-               </header>
-               <div class="inquiry_content">
-                  <div class="inquiry_content_form">
-                     <form class="siteForm" action="">
-                        <div class="siteForm_row">
-                           <label  class="siteForm_label" for="name">
-                              <span>Name</span>
-                           </label>
-                           <div class="siteForm_input">
-                              <input type="text" id="name">
-                           </div>
-                        </div>
-                        <div class="siteForm_row">
-                           <label  class="siteForm_label" for="sub">
-                              <span>Subject</span>
-                           </label>
-                           <div class="siteForm_input">
-                              <select name="" id="sub">
-                                 <option value="あああ">サイトに関して</option>
-                                 <option value="お仕事のご依頼">お仕事のご依頼</option>
-                                 <option value="おすすめのカフェ、コーヒー豆">おすすめのカフェ、コーヒー豆</option>                              
-                              </select>
-                           </div>
-                        </div>
-                         <div class="siteForm_row">
-                           <label  class="siteForm_label" for="message">
-                              <span>Message</span>
-                           </label>
-                           <div class="siteForm_input">
-                              <textarea name="" id="message" cols="30" rows="1"></textarea>
-                           </div>
-                        </div>
-                        <div class=" siteForm_row-button">
-                           <button class="siteForm_button button button-form">confirm</button>
-                        </div>
-                     </form>
-                  </div>
-               </div>
-               <footer class="inquiry_footer">
-                  <ul class="mySns">
-                     <li ><a class="mySns_twitter icon-twitter" href=""></a></li>
-                     <li ><a class="mySns_instagram icon-instagram" href=""></a></li>
-                  </ul>
-               </footer>
-            </div>
-         </section>
-         <!-- ///// inquiry -->
-
-         <section class="siteFooter">
-            <div class="siteFooter_top">
-               <figure><img src="img/face.png" width="41" alt=""></figure>
-            </div>
-            <div class="siteFooter_bottom footer_copyright">
-               <div class="copyright wfLight"> COPYRIGHT satohmsys &copy; ALL RIGHTS RESERVED. </div>
-            </div>
-         </section>
-      </footer>
-
-
-      <div class="backToTop">
-         <i></i>
-      </div>
-
-      <div class="fixedSns">
-         <div class="fixedSns_index">
-            Share on
-         </div>
-         <ul class="mySns fixedSns_sns">
-            <li><a class="mySns_twitter icon-twitter" href=""></a></li>
-            <li><a class="mySns_instagram icon-instagram" href=""></a></li>
-         </ul>
-      </div>
+     <%- include( $path + '_inc/_footer' ) %>
+     <%- $parts.backtotop %>
+     <%- $parts.fixedsns %>
 
       <!-- ***** menu button -->
-      <div class="navToggle" data-navtype="fade">
-         <div class="navToggle_hitArea">
-            <div class="navToggle_icon"> <i class="navToggle_icon_lineCenter"></i> </div>
-         </div>
-      </div>
+      <%- $parts.toggle %>
       <!-- //// menu button -->
 
-      <!-- ***** 自己紹介 -->
-      <div id="myIntroduction" class="myIntroduction">
-         <div class="wrap">
-            <header class="myIntroduction_index">
-            
-               <p class="indexHello text-1">
-                  <svg viewBox="0 0 332 90">
-                    <defs>
-                       <linearGradient id="g0">
-                          <stop offset="0" stop-color="#0eff9e"/>
-                          <stop offset="0.9" stop-color="#00d8fd"/>
-                       </linearGradient>
-                     </defs>
-                     <g font-family="woodford ultra">
-                       <text x="0" y="85" fill=url(#g0) style="line-height: 1" font-size-adjust="1">
-                         Hello!
-                       </text>
-                     </g>
-                  </svg>
-               </p>
-               <p class="indexMyname text-2">I'm satohmsys.</p>
-            </header>
-            <div class="myIntroduction_content">
-               <p class="row text-3">こんにちは！東京のWebデザイナー、<br class="spShow">サトウマサヤスです。</p>
-               <p class="row text-4">
-                  このサイトにたどり着いたのも、何かのご縁。<br>
-                  ちょっと数クリックだけでも、<br class="spShow">お付き合いただけませんか。
-               </p>
-               <p class="row text-5">
-                  もしかしたら、あなたと一緒に、<br>美味しいコーヒーが飲めるかもしれません。
-               </p>
-               <p class="row text-6">
-                  もしかしたら、あなたと一緒に、<br>クリエイティブで小さい何かを<br class="spShow">変えていけるかもしれません。
-               </p>
-               <p id="just" class="row text-7">
-                  なので、ちょっとだけでも。
-               </p>
-            </div>
-         </div>
-      </div>
+      <!-- ***** 自己紹介 -->      
+      <%- include($path + '_inc/_intro') %>
       <!-- ///// 自己紹介 -->
 
-      
+
       <!-- *****scripts -->
       <script type="text/javascript" src="common/js/jquery.min.js"></script>
 

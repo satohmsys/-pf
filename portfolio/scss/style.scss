@@ -11,9 +11,9 @@
 @import "../common/scss/variables";
 @import "../common/scss/mixins";
 
-%gradation{
-	@include background-image( linear-gradient( to right, $green, $blue ) );	
-}
+// %gradation{
+// 	@include background-image( linear-gradient( to right, $green, $blue ) );	
+// }
 
 html{
 	color: #fff;
@@ -69,16 +69,7 @@ html{
 		}
 	
 		span{
-			transform: translateY( -0.18em ) scale(1.1);
-			opacity: 0;
-			display: inline-block;
-	
-			@for $i from 1 through 7 {
-				&:nth-child( #{$i} ){
-					$delay: 0.1 * $i;
-					transition-delay: #{0.5 + $delay}s;
-				}
-			}
+			@extend %popspan;
 		}
 
 		@at-root .inview & span{

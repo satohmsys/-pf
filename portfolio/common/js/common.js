@@ -1,6 +1,7 @@
 var $w = $( window );
 
-var $button = document.getElementsByClassName('navToggle');
+var $button = document.getElementsByClassName('navToggle'),
+    controller = new ScrollMagic.Controller();
 
 /**
 * modenizr
@@ -16,22 +17,49 @@ Modernizr.addTest( 'usefirefox', function( e ){
 * （ スマートフォン用 ）ナビゲーション開閉
 */
 
-$button[0].addEventListener( 'click', function( e ){
-    e.stopPropagation();
-    e.preventDefault();
+if( $button.length ){
+    $button[0].addEventListener( 'click', function( e ){
+        e.stopPropagation();
+        e.preventDefault();
 
-    var $body = document.body;
-        $status = document.body.getAttribute('data-navopen');
+        var $body = document.body;
+            $status = document.body.getAttribute('data-navopen');
 
-    if( $status == 'open' ){
-        $body.classList.remove( 'navOpen');
-        $body.setAttribute( 'data-navopen', '');
-    } else {
-        $body.classList.add( 'navOpen');
-        $body.setAttribute( 'data-navopen', 'open');
-    }
-} );
+        if( $status == 'open' ){
+            $body.classList.remove( 'navOpen');
+            $body.setAttribute( 'data-navopen', '');
+        } else {
+            $body.classList.add( 'navOpen');
+            $body.setAttribute( 'data-navopen', 'open');
+        }
+    } );
+}
 
+
+/**
+* scrollMagic 
+*/
+
+var $inquirySection =  document.getElementsByClassName('inquiry')[0] ,
+    $scene =  new ScrollMagic.Scene({
+        triggerElement: $inquirySection,
+        triggetHook: 'onEnter'
+    })
+    .setClassToggle( $inquirySection, "inview" )
+    .addTo(controller);
+
+//mainvisualのスクロールアイコン消す
+(function(){
+    var scene = new ScrollMagic.Scene({
+        triggerElement: '.icon-mouse',
+        duration: 300
+    })
+    .setTween(
+        TweenMax.to( '.icon-mouse', 1, {
+            opacity: 0
+        }) )
+    .addTo( controller );
+})();
 
 
 

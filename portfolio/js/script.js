@@ -19,15 +19,14 @@ $w.on( 'resize', function(){
 } );
 
 
-
 /**
 * SPANで囲む
 */
 
 Array.prototype.forEach.call( $sections, function( e ){
-	var $sectionIndex = e.querySelector( '.section_index' );
+    var $sectionIndex = e.querySelector( '.section_index' );
 
-	spaning( $sectionIndex ); 
+    spaning( $sectionIndex ); 
 });
 
 

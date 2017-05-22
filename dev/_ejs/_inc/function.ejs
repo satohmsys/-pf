@@ -1,4 +1,7 @@
 <%
+   $scripts = new Array();
+   $scripts_global=new Array();
+
    $meta = {
       title: 'satohmsys portfolio',
       description: 'ディスクリプション',
@@ -16,5 +19,11 @@
          description: 'twitter: des',
          image: '',
       }
+   }
+
+   $parts = {
+      toggle: '<div class="navToggle" data-navtype="fade"><div class="navToggle_hitArea"><div class="navToggle_icon"><i class="navToggle_icon_lineCenter"></i></div></div></div>',
+      backtotop: '<div class="backToTop"><i></i></div>',
+      fixedsns: '<div class="fixedSns"><div class="fixedSns_index">Share on</div><ul class="mySns fixedSns_sns"><li><a class="mySns_twitter icon-twitter" href=""></a></li><li><a class="mySns_facebook icon-facebook" href=""></a></li></ul></div>'
    }
 %>

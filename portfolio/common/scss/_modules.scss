@@ -24,6 +24,7 @@
 	right: 0;
 	left: 0;
 	z-index: 10;
+	color: #fff;
 	
 
 	 > .wrap{
@@ -62,56 +63,65 @@
 
 .siteFooter
 {
-	margin-top: 100px;
-	padding-top: 1em;
-	padding-bottom: 1em;
+
+	padding-top: 150px;
+
+	@extend %gradation;
 	
-	////フッター上部
-	&_top
-	{
-		margin-bottom: 1em;
-		text-align: center;
-		font-size: $small;
+
+	.credit{	
+		margin-top: 100px;
+		padding-top: 1em;
+		padding-bottom: 1em;
 		
-		li{
-			margin-left: 1em;
-			padding-left: 1em;
-			display: inline-block;
-			vertical-align: middle;
-			border-left: solid 1px #fff;
-		}
-		li:first-child{
-			margin-left: 0;
-			padding-left: 0;
-			border-left: none;
-		}
-	}
-	
-	//copyright
-	.copyright{
-		font-size: 0.65em;
-		text-align: center;
-	}
-
-
-	//////// media queries 
-	@include break( sp ){
-
-		margin-top: 70px;
+		////フッター上部
 		&_top
 		{
+			margin-bottom: 1em;
+			text-align: center;
+			font-size: $small;
+			
 			li{
+				margin-left: 1em;
+				padding-left: 1em;
+				display: inline-block;
+				vertical-align: middle;
+				border-left: solid 1px #fff;
+			}
+			li:first-child{
 				margin-left: 0;
-				padding-top: 0.5em;
-				padding-bottom: 0.5em;
 				padding-left: 0;
-				display: block;
-				border-left: 0;
-				border-bottom: solid 1px #333;
+				border-left: none;
 			}
 		}
+		
+		//copyright
+		.copyright{
+			color: #fff;
+			font-size: 0.65em;
+			text-align: center;
+		}
 
-	} //max 580
+
+		//////// media queries 
+		@include break( sp ){
+
+			margin-top: 70px;
+			&_top
+			{
+				li{
+					margin-left: 0;
+					padding-top: 0.5em;
+					padding-bottom: 0.5em;
+					padding-left: 0;
+					display: block;
+					border-left: 0;
+					border-bottom: solid 1px #333;
+				}
+			}
+
+		} //max 580
+	}
 }
 
 
@@ -141,11 +151,59 @@
 	background-color: #fff;	
 }
 
+
+
+.section-contact{
+	min-height: 0;
+	height: auto;
+	padding-bottom: 0;
+
+	.wrap{
+		display: block;
+	}
+	.section_index{
+		font-size: 6.66em;
+	}
+	.section_caption{
+		margin-bottom: 2em;
+	}
+
+	@include break( sp ){
+
+		padding-top: 60px;
+		.section_index{
+			font-size: 7vh;
+		}		
+
+	}	
+}
+
 .inquiry
 {
-	max-width: 680px;
-	margin-left: auto;
-	margin-right: auto;
+	color: #fff;
+	
+	.wrap{
+		max-width: 680px;
+		padding-right: 30px;
+		padding-left: 30px;
+		box-sizing: border-box;	
+	}
+	
+
+	@extend %gradation;
+	
+	.section_index{
+		line-height: 1;
+		margin-bottom: 0.5em;
+		text-align: center;
+		text-shadow: 0 0 5px rgba(#000, 0.05);		
+		font-family: $fontFamily_wf_ultra;
+		
+		span{
+			@extend %popspan;
+
+		}
+	}
 	&_index{
 		line-height: 1;
 		display: flex;
@@ -277,6 +335,7 @@
 		display: inline-block;
 		list-style: none;
 		text-align: center;
+		color: #fff;
 		
 		&:last-child{
 			margin-right: 0;
@@ -294,7 +353,7 @@
 		a{
 			line-height: 1;
 			// display: block;
-			color: inherit;
+			color: #fff;
 			position: relative;
 			
 			&:before{
@@ -691,6 +750,7 @@
 	height: 100%;
 	width: 1em;
 	text-align: center;
+	color: #fff;
 	writing-mode: vertical-lr;
 	
 	.fixedSns_sns,
@@ -961,4 +1021,122 @@
 			transform: translateY(0px) scale(1);
 		}		
 	}	
+}
+
+
+
+////////////////////
+
+// main visual
+
+////////////////////
+
+
+///////　下層
+.pagevisual
+{
+	overflow: hidden;
+	color: #fff;
+	position: relative;
+	@extend %gradation;
+	
+	.wrap{
+		height: 100vh;
+		min-height: 680px;
+		position: relative;
+		display: flex;
+		flex-wrap: wrap;
+		flex-direction: row;
+		align-items: center;
+		justify-content: center;
+		
+		@include break( sp ){
+			min-height: 0;
+		}
+	}
+
+
+	&_copy{
+		position: relative;
+		z-index: 1;
+		font-size: 6em;
+		
+		@include break( sp ){
+			font-size: 23vw;
+		}	
+
+		p{
+			margin-top: 0;
+			margin-bottom: 0;
+		}	
+		
+		span{
+			@extend %popspan;
+		}
+		@at-root .inview & span{
+			transform: translateY( 0 ) scale( 1 );
+			opacity: 1;			
+		}		
+		
+		&_pagename{
+			// line-height: 0.85;
+			text-shadow: 0 0 5px rgba(#000, 0.15);
+			font-family: $fontFamily_wf_ultra;
+		}
+
+		.handWrite
+		{
+
+			margin-top: -1em;
+			transition: easeInOutBack($s : 0.4s, $prop : all);
+			transition-delay: 1.5s;	
+			transform:  scale(1.25);
+			transform-origin: 50% 25%;
+			opacity: 0;
+			text-align: right;	
+			
+			&,
+			svg text{
+				line-height: 1;
+				color: $green_black;
+				font-family: $fontFamily_damion;
+			}
+			@at-root .inview &	{
+				transform: scale( 1 );
+				opacity: 1;			
+			}		
+			
+			@include break( sp ){
+			}
+		}
+	}
+	
+	////////// image 
+	&_img{
+		max-width: none;
+		width: auto;
+		height: 100%;
+		margin: auto;
+		z-index: 0;
+		top: 0;
+		right: 0;
+		left: 0;
+		
+		@include break( sp ){
+			top: auto;
+			bottom: 0;
+		}		
+		
+	}
+
+
+	//////// scroll down
+	
+	.icon-mouse{
+		bottom: 5%;
+		position: absolute;
+		right: 0;
+		left: 0;
+		z-index: 3;
+	}
 }

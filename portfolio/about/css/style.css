@@ -1,70 +1,37 @@
 /***********************
  module
 ***********************/
-@media screen and (max-width: 900px)
+.section:not(:last-child):after
 {
-    .section
-    {
-        mih-height: 500px;
-    }
-}
-@media screen and (max-width: 580px)
-{
-    .section
-    {
-        height: 80vh;
-        min-height: 0; 
-        padding-bottom: 0;
-    }
-}
-.section_index,
-.section_index span
-{
-    transition: all .4s cubic-bezier(.68, -.55, .265, 1.55) 0s;
-}
-.section_index span
-{
-    display: inline-block; 
+    display: block;
 
-    -webkit-transform: translateY(-.18em) scale(1.1);
-            transform: translateY(-.18em) scale(1.1);
+    width: 1px;
+    height: 50px;
+    margin-top: 50px;
+    margin-right: auto;
+    margin-bottom: 50px;
+    margin-left: auto;
 
-    opacity: 0;
-}
-.section_index span:nth-child(1)
-{
-    transition-delay: .6s;
-}
-.section_index span:nth-child(2)
-{
-    transition-delay: .7s;
-}
-.section_index span:nth-child(3)
-{
-    transition-delay: .8s;
-}
-.section_index span:nth-child(4)
-{
-    transition-delay: .9s;
-}
-.section_index span:nth-child(5)
-{
-    transition-delay: 1s;
-}
-.section_index span:nth-child(6)
-{
-    transition-delay: 1.1s;
-}
-.section_index span:nth-child(7)
-{
-    transition-delay: 1.2s;
-}
-.inview .section_index span
-{
-    -webkit-transform: translateY(0) scale(1);
-            transform: translateY(0) scale(1);
+    content: ' ';
+    transition: all 1s cubic-bezier(.785, .135, .15, .86) 0s;
 
-    opacity: 1;
+    border-right: dashed 3px #0dff9e;
+}
+.section .wrap
+{
+    box-sizing: content-box; 
+    max-width: 680px;
+}
+.section_index
+{
+    font-size: 4.66em; 
+    line-height: 1;
+
+    margin-bottom: 45px;
+}
+.section_index svg
+{
+    font-family: 'woodford bold';
 }
 @media screen and (max-width: 580px)
 {
@@ -75,15 +42,10 @@
 }
 .section_content
 {
-    padding-right: 2em; 
-    padding-left: 2em;
-}
-.section_bg
-{
-    position: absolute;
-    z-index: 0;
+    font-size: .933em; 
+    line-height: 2;
 
-    mix-blend-mode: hard-light;
+    letter-spacing: .06em;
 }
 
 /***********************
@@ -106,16 +68,6 @@
 
     mix-blend-mode: hard-light;
 }
-@media screen and (max-width: 580px)
-{
-    .pagevisual_img
-    {
-        top: auto;
-        bottom: 0; 
-
-        height: 95%;
-    }
-}
 .pagevisual .icon-mouse
 {
     position: absolute;
@@ -128,4 +80,184 @@
 /***********************
  section
 ***********************/
-/********** about **********/
+/********** hi **********/
+.section-hi,
+.section-hi .section_index,
+.section-hi .section_content
+{
+    position: relative;
+    z-index: 1;
+}
+.section-hi .section_index
+{
+    line-height: 1;
+
+    position: relative;
+}
+.section-hi .section_index .handWrite
+{
+    font-family: 'Damion', cursive; 
+    font-size: .6em;
+
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    -webkit-transform: rotate(5deg);
+            transform: rotate(5deg);
+}
+.section-hi .section_bg
+{
+    position: absolute;
+    z-index: 0;
+    top: -12%;
+    right: 0; 
+
+    max-width: 518px;
+}
+
+/********** mind **********/
+.section-mind .mindlist
+{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+        flex-direction: row;
+
+    margin-top: -50px;
+
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -ms-flex-line-pack: start;
+    align-content: flex-start;
+}
+.section-mind .mindlist_mind
+{
+    width: calc( 100% / 3 );
+    margin-top: 50px;
+
+    list-style: none;
+
+    text-align: center;
+}
+.section-mind .mindlist_icon
+{
+    line-height: 1;
+}
+.section-mind .mindlist_icon figcaption
+{
+    font-family: 'woodford exlight';
+    font-size: 1.3em;
+    font-style: italic;
+
+    display: block;
+
+    margin-top: 1em;
+    margin-bottom: 1em;
+
+    color: #003640;
+}
+.section-mind .mindlist_description
+{
+    font-size: .9em;
+
+    letter-spacing: .05em; 
+
+    -webkit-font-feature-settings: 'palt';
+            font-feature-settings: 'palt';
+}
+
+/********** skill **********/
+.section-skill .section_index
+{
+    margin-bottom: 30px;
+}
+.section-skill .skill
+{
+    max-width: 410px;
+    margin-right: auto;
+    margin-bottom: 40px;
+    margin-left: auto;
+}
+.section-skill .skill_index
+{
+    font-family: 'Damion', cursive;
+    font-size: 1.2em;
+    line-height: 1;
+
+    position: relative;
+
+    margin-bottom: 1.5em;
+
+    color: #003640;
+}
+.section-skill .skill_index,
+.section-skill .skill_index i
+{
+    transition: all .5s cubic-bezier(.785, .135, .15, .86) 0s;
+}
+.section-skill .skill_index i
+{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: -100%;
+
+    display: block;
+
+    width: 95%;
+    height: 1px;
+    margin: auto;
+
+    background-color: #003640;
+}
+.section-skill .skill_content
+{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+        flex-direction: row;
+
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+}
+.section-skill .skill_content_list
+{
+    display: inline-block;
+}
+.section-skill .skill_icon
+{
+    line-height: 1;
+}
+.section-skill .skill_icon img
+{
+    box-sizing: border-box;
+
+    border: solid 1px #ccc;
+}
+.section-skill .skill_icon figcaption
+{
+    font-family: 'woodford exlight';
+    font-style: italic;
+
+    display: block;
+
+    margin-top: 1em;
+    margin-bottom: 1em;
+
+    text-align: center;
+
+    color: #003640;
+}

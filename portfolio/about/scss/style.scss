@@ -23,47 +23,40 @@
 
 .section{
 	
-	@include break( 900 ){
-		mih-height: 500px;
-	}
 
 	@include break( sp ){
-		height: 80vh;
-		padding-bottom: 0px;
-		min-height: 0;
 	}	
+
+	&:not( :last-child ):after{
+		content: " ";
+		width: 1px;
+		height: 50px;
+		margin-top: 50px;
+		margin-right: auto;
+		margin-bottom: 50px;
+		margin-left: auto;
+		display: block;
+		transition: easeInOutCirc(1s);
+		border-right: dashed 3px #0dff9e;
+		// background-color: #0dff9e;
+	}
 	
 	
 	.wrap{
-		
+		max-width: 680px;
+		box-sizing: content-box;
 	}
 
 	&_index{
+		line-height: 1;
+		margin-bottom: 45px;
+		font-size: 4.66em;
+		
+		svg{
+			font-family: $fontFamily_wf_bold;
+		}
 	
 		
-		&,
-		span{
-			transition: easeInOutBack($s : 0.4s, $prop : all);		
-		}
-	
-		span{
-			transform: translateY( -0.18em ) scale(1.1);
-			opacity: 0;
-			display: inline-block;
-	
-			@for $i from 1 through 7 {
-				&:nth-child( #{$i} ){
-					$delay: 0.1 * $i;
-					transition-delay: #{0.5 + $delay}s;
-				}
-			}
-		}
-
-		@at-root .inview & span{
-			transform: translateY( 0 ) scale( 1 );
-			opacity: 1;			
-		}
-
 		@include break( sp ){
 			font-size: 4.5em;
 		}
@@ -72,18 +65,10 @@
 	}
 
 	&_content{
-		padding-left: 2em;
-		padding-right: 2em;
+		line-height: 2;
+		letter-spacing: 0.06em;
+		font-size: 0.933em;
 	}
-
-
-	&_bg
-	{
-		position: absolute;
-		z-index: 0;
-		mix-blend-mode: hard-light;
-	}
-
 }
 
 
@@ -110,9 +95,9 @@
 		mix-blend-mode: hard-light;
 		
 		@include break( sp ){
-			height: 95%;
-			top: auto;
-			bottom: 0;
+			// width: auto;
+			// max-width: none;
+			// height: 100%;
 		}			
 	}
 	//////// scroll down
@@ -131,6 +116,157 @@
  section
 ***********************/
 
-/********** about **********/
+/********** hi **********/
+.section-hi
+{
+	&,
+	.section_index,
+	.section_content{
+		position: relative;
+		z-index: 1;
+	}
+	.section_index
+	{
+		line-height: 1;
+		position: relative;
+		.handWrite{
+			position: absolute;
+			top: 0;
+			right: 0;
+			transform: rotate(5deg);
+			font-size: 0.6em;
+			font-family: $fontFamily_damion;
+		}
+	}	
+
+	.section_bg{
+		max-width: 518px;
+		position: absolute;
+		z-index: 0;
+		top: -12%;
+		right: 0;
+	}
+}
 
 
+
+/********** mind **********/
+
+.section-mind
+{
+	.mindlist
+	{
+		margin-top: -50px;
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		align-content: flex-start;
+		
+		&_mind{
+			width: calc( 100% / 3 );
+			margin-top: 50px;
+			list-style: none;
+			text-align: center;
+		}
+
+		&_icon
+		{
+			line-height: 1;
+			
+			figcaption{
+				margin-top: 1em;
+				margin-bottom: 1em;
+				display: block;
+				font-size: 1.3em;
+				font-family: $fontFamily_wf_exlight;
+				font-style: italic;
+				color: $green_black;
+			}
+		}
+
+		&_description{
+			font-size: 0.9em;
+			font-feature-settings: 'palt';
+			letter-spacing: 0.05em;
+		}
+	}	
+}
+
+
+
+/********** skill **********/
+
+.section-skill
+{
+
+	.section_index{
+		margin-bottom: 30px;
+	}
+	.skill{
+			max-width: 410px;
+			margin-right: auto;
+			margin-bottom: 40px;
+			margin-left: auto;
+			
+			&_index
+			{
+				line-height: 1;
+				margin-bottom: 1.5em;
+				position: relative;
+				font-size: 1.2em;
+				font-family: $fontFamily_damion;
+				color: $green_black;
+				&,
+				i{
+					transition: easeInOutCirc(0.5s);		
+				}
+				
+				i{
+					width: 95%;
+					height: 1px;
+					margin: auto;
+					display: block;
+					position: absolute;
+					top: 0;
+					bottom: 0;
+					left: -100%;
+					background-color: $green_black;
+				}
+			}
+
+		&_content{
+			display: flex;
+			flex-direction: row;
+			flex-wrap: wrap;
+			justify-content: space-between;
+		}
+		&_content_list{
+			display: inline-block;
+			
+			// &:not( :last-child ){
+			// 	margin-right: 30px;
+			// }
+		}
+
+		&_icon
+		{
+			line-height: 1;
+			img{
+				box-sizing: border-box;
+				border: solid 1px #ccc;			
+			}
+			
+			figcaption{
+				text-align: center;
+				margin-top: 1em;
+				margin-bottom: 1em;
+				display: block;
+				font-family: $fontFamily_wf_exlight;
+				font-style: italic;
+				color: $green_black;
+			}
+		}		
+		
+	}
+}

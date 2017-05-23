@@ -40,35 +40,6 @@
 
 .section{
 	
-
-	@include break( sp ){
-	}	
-
-	&:not( :last-child ):not( .section-contact ):after{
-		content: " ";
-		width: 2px;
-		height: 0px;
-		margin-top: 50px;
-		margin-right: auto;
-		margin-bottom: 50px;
-		margin-left: auto;
-		display: block;
-		transition: easeInOutCirc(1s);
-		transition-delay: 1s;
-		background-image: linear-gradient(to bottom, transparent, transparent 50%, #fff 50%, #fff 100%), linear-gradient(to bottom, $green, $blue);
-		background-size: 3px 10px, 3px 100%;		
-		
-		
-		@include break( sp ){
-			margin-bottom: 1px;
-		}		
-	
-	}
-
-	@at-root &.inview:not( :last-child ):after{
-		height: 50px;
-	}
-	
 	
 	.wrap{
 		max-width: 680px;
@@ -103,6 +74,38 @@
 			font-size: 1em;
 		}		
 	}
+}
+
+.main .section{
+		
+
+		@include break( sp ){
+		}	
+
+		&:not( :last-child ):after{
+			content: " ";
+			width: 2px;
+			height: 50px;
+			margin-top: 50px;
+			margin-right: auto;
+			margin-bottom: 50px;
+			margin-left: auto;
+			display: block;
+			transition: easeInOutCirc(1s);
+			transition-delay: 1s;
+			background-image: linear-gradient(to bottom, transparent, transparent 50%, #fff 50%, #fff 100%), linear-gradient(to bottom, $green, $blue);
+			background-size: 3px 10px, 3px 100%;		
+			
+			
+			@include break( sp ){
+				margin-bottom: 1px;
+			}		
+		
+		}
+
+		@at-root &.inview:not( :last-child ):after{
+			height: 50px;
+		}
 }
 
 
@@ -192,6 +195,11 @@
 			max-width: 80%;
 			top: -1%;
 		}		
+	}
+
+	.button{
+		display: block;
+		text-align: right;
 	}
 }
 

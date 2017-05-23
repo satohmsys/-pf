@@ -1,35 +1,6 @@
 /***********************
  module
 ***********************/
-.section:not(:last-child):not(.section-contact):after
-{
-    display: block;
-
-    width: 2px;
-    height: 0;
-    margin-top: 50px;
-    margin-right: auto;
-    margin-bottom: 50px;
-    margin-left: auto;
-
-    content: ' ';
-    transition: all 1s cubic-bezier(.785, .135, .15, .86) 0s;
-    transition-delay: 1s;
-
-    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0) 50%, #fff 50%, #fff 100%), linear-gradient(to bottom, #0eff9e, #00d8fd);
-    background-size: 3px 10px, 3px 100%;
-}
-@media screen and (max-width: 580px)
-{
-    .section:not(:last-child):not(.section-contact):after
-    {
-        margin-bottom: 1px;
-    }
-}
-.section.inview:not(:last-child):after
-{
-    height: 50px;
-}
 .section .wrap
 {
     box-sizing: content-box; 
@@ -68,6 +39,36 @@
     {
         font-size: 1em;
     }
+}
+
+.main .section:not(:last-child):after
+{
+    display: block;
+
+    width: 2px;
+    height: 50px;
+    margin-top: 50px;
+    margin-right: auto;
+    margin-bottom: 50px;
+    margin-left: auto;
+
+    content: ' ';
+    transition: all 1s cubic-bezier(.785, .135, .15, .86) 0s;
+    transition-delay: 1s;
+
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0) 50%, #fff 50%, #fff 100%), linear-gradient(to bottom, #0eff9e, #00d8fd);
+    background-size: 3px 10px, 3px 100%;
+}
+@media screen and (max-width: 580px)
+{
+    .main .section:not(:last-child):after
+    {
+        margin-bottom: 1px;
+    }
+}
+.main .section.inview:not(:last-child):after
+{
+    height: 50px;
 }
 
 /***********************
@@ -156,6 +157,12 @@
 
         max-width: 80%;
     }
+}
+.section-hi .button
+{
+    display: block;
+
+    text-align: right;
 }
 
 /********** mind **********/

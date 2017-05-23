@@ -652,6 +652,22 @@
 	border: none;
 	background-color: #fefefe;		
 }
+
+%mouseOver{
+	a{
+		// color: #fff;
+		// background-color: $green_black;	
+		transform: scale(0.95);
+	}
+	a:before,
+	a:after{
+		transform: scale(1.5);
+		
+		opacity: 0;
+	}			
+}
+
+
 .button
 {
 	line-height: 1;
@@ -660,7 +676,7 @@
 	
 	a{
 		width: 150px;
-		display: block;
+		display: inline-block;
 		position: relative;
 		// overflow: hidden;
 	}
@@ -695,17 +711,7 @@
 	
 	}
  	@include mouseOver(){
-		a{
-			// color: #fff;
-			// background-color: $green_black;	
-			transform: scale(0.95);
-		}
-		a:before,
-		a:after{
-			transform: scale(1.5);
-			
-			opacity: 0;
-		}			
+		@extend %mouseOver;
 	}
 }
 
@@ -720,6 +726,29 @@
 	}
 }
 
+.button-link{
+	a{
+		padding-top: 0.5em;
+		padding-bottom: 0.5em;
+		transition-duration: 0.2s;
+		font-size: 1em;
+		box-shadow: 0 0 5px rgba( #000, 0.05);
+		text-align: center;
+		border: none;
+		background-color: $green_black;
+		font-style: italic;
+		color: #fefefe;		
+		@extend .wfLight;		
+	}
+	@include mouseOver(){
+		a{
+			color: #fff;
+			background-color: darken( $green_black, 10 );
+		}
+		@extend %mouseOver;
+	}	
+}
+
 .button-form{
 	
 	@extend %buttonDef;		
@@ -728,28 +757,30 @@
 	border: none;
 	position: relative;
 	
-	&:before{
+	&:before/*,
+	&:after*/{
 		content: " ";
-			display: block;
-			width: 0px;
-			height: 0px;
-			margin: auto;
-			border-radius: 100%;
-			position: absolute;
-			top: 0%;
-			right: 0;
-			bottom: 0;
-			left: 0;
-			transition: all 0.3s ease-in 0s;
-	}
+		display: block;
+		width: 100%;
+		height: 100%;
+		margin: auto;
+		box-sizing: border-box;
+		position: absolute;
+		top: 0%;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		border: solid 1px #fff;
+		transition: all 0.2s ease-in 0s;
+	}	
+
 
 	@include mouseOver(){
-		color: #fff;
-		background-color: $green_black;	
-
-		&:before{
-			width: 300px;
-			height: 300px;
+		transform: scale(0.95);
+		
+		&:before,
+		&:after{
+			transform: scale(1.5);
 			opacity: 0;
 		}			
 	}	

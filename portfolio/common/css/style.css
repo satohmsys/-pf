@@ -639,7 +639,38 @@ html.ie8 .icon-instagram:before
 
 .siteFooter
 {
-    padding-top: 150px;
+    padding-top: 200px;
+}
+.siteFooter.hasGradation
+{
+    position: relative;
+}
+.siteFooter.hasGradation:before
+{
+    position: absolute;
+    z-index: 2;
+    top: 0;
+
+    display: block;
+    overflow: hidden;
+
+    width: 100%;
+    height: 0;
+    padding-top: 200px;
+
+    content: ' ';
+
+    background: transparent url(../img/gradation-bottom.png) left bottom repeat-x;
+    background-size: 10px auto;
+}
+@media screen and (max-width: 580px)
+{
+    .siteFooter.hasGradation:before
+    {
+        padding-top: 100px;
+
+        background-size: 5px auto;
+    }
 }
 .siteFooter .credit
 {
@@ -744,6 +775,8 @@ html.ie8 .icon-instagram:before
 
 .inquiry
 {
+    overflow: hidden;
+
     color: #fff;
 }
 .inquiry .wrap
@@ -1683,6 +1716,57 @@ html.ie8 .icon-instagram:before
 
     color: #fff;
 }
+.pagevisual:after
+{
+    position: absolute;
+    z-index: 2;
+    bottom: 0;
+
+    display: block;
+    overflow: hidden;
+
+    width: 100%;
+    height: 0;
+    padding-top: 200px;
+
+    content: ' ';
+
+    background: transparent url(../img/gradation.png) left top repeat-x;
+    background-size: 10px auto;
+}
+@media screen and (max-width: 580px)
+{
+    .pagevisual:after
+    {
+        padding-top: 100px;
+
+        background-size: 5px auto;
+    }
+}
+.pagevisual.hasGradation .wrap
+{
+    padding-bottom: 180px;
+}
+@media screen and (max-width: 580px)
+{
+    .pagevisual.hasGradation .wrap
+    {
+        padding-bottom: 50px;
+    }
+}
+.pagevisual.hasGradation + .main
+{
+    padding-top: 100px;
+
+    background-color: #fafafa;
+}
+@media screen and (max-width: 580px)
+{
+    .pagevisual.hasGradation + .main
+    {
+        padding-top: 12px;
+    }
+}
 .pagevisual .wrap
 {
     position: relative;
@@ -1714,10 +1798,6 @@ html.ie8 .icon-instagram:before
         height: 60vh;
         min-height: 0;
     }
-}
-.pagevisual.hasGradation .wrap
-{
-    padding-bottom: 50px;
 }
 .pagevisual_copy
 {

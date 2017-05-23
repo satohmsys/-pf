@@ -1,29 +1,7 @@
 /***********************
  module
 ***********************/
-.topGradation
-{
-    position: relative;
-    z-index: 2;
-
-    margin-top: -160px;
-    padding-top: 280px;
-
-    background: transparent url(../img/gradation.png) left top repeat-x;
-    background-size: 10px auto;
-}
-@media screen and (max-width: 580px)
-{
-    .topGradation
-    {
-        margin-top: -80px;
-        padding-top: 120px;
-
-        background-size: 5px auto;
-    }
-}
-
-.section:not(:last-child):after
+.section:not(:last-child):not(.section-contact):after
 {
     display: block;
 
@@ -43,7 +21,7 @@
 }
 @media screen and (max-width: 580px)
 {
-    .section:not(:last-child):after
+    .section:not(:last-child):not(.section-contact):after
     {
         margin-bottom: 1px;
     }
@@ -149,6 +127,8 @@
 
     -webkit-transform: rotate(5deg);
             transform: rotate(5deg);
+
+    color: #003640;
 }
 @media screen and (max-width: 580px)
 {
@@ -267,8 +247,11 @@
 {
     max-width: 410px;
     margin-right: auto;
-    margin-bottom: 40px;
     margin-left: auto;
+}
+.section-skill .skill:not(:last-child)
+{
+    margin-bottom: 40px;
 }
 .section-skill .skill_index
 {

@@ -21,20 +21,20 @@
  module
 ***********************/
 
-.topGradation{
-    padding-top: 280px;
-    background: transparent url(../img/gradation.png) left top repeat-x;
-    margin-top: -160px;
-    position: relative;
-    z-index: 2;
-    background-size: 10px auto;	
+// .topGradation{
+//     padding-top: 280px;
+//     background: transparent url(../img/gradation.png) left top repeat-x;
+//     margin-top: -160px;
+//     position: relative;
+//     z-index: 2;
+//     background-size: 10px auto;	
     
-    @include break( sp ){
-		margin-top: -80px;
-		padding-top: 120px;
-		background-size: 5px auto;    	
-    }
-}
+//     @include break( sp ){
+// 		margin-top: -80px;
+// 		padding-top: 120px;
+// 		background-size: 5px auto;    	
+//     }
+// }
 
 
 
@@ -44,7 +44,7 @@
 	@include break( sp ){
 	}	
 
-	&:not( :last-child ):after{
+	&:not( :last-child ):not( .section-contact ):after{
 		content: " ";
 		width: 2px;
 		height: 0px;
@@ -171,6 +171,7 @@
 			right: 0;
 			transform: rotate(5deg);
 			font-size: 0.6em;
+			color: $green_black;
 			font-family: $fontFamily_damion;
 			
 			@include break( sp ){
@@ -266,8 +267,11 @@
 	.skill{
 			max-width: 410px;
 			margin-right: auto;
-			margin-bottom: 40px;
 			margin-left: auto;
+			
+			&:not( :last-child ){
+				margin-bottom: 40px;
+			}
 			
 			&_index
 			{

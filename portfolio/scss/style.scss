@@ -398,7 +398,16 @@ html{
 	.section_bg{
 		bottom: 0%;
 		left: 10%;
-		transform: rotate(45deg);
+		
+		&_skewWrapper{
+			transform: translate(30%, 50px) rotate(45deg) ;		
+		}
+
+		@include break( sp ){
+			&_skewWrapper{
+				transform: translate(30%) rotate(45deg) ;		
+			}			
+		}
 	}
 
 	.section_bg_panels{

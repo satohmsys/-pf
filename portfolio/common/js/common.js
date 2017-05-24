@@ -1,6 +1,21 @@
 var $w = $( window ),
-    $button = document.getElementsByClassName('navToggle');
+    $timer = null,
+    $windowH = null,
+    $ua = null,
+    $button = document.getElementsByClassName('navToggle'),
     controller = new ScrollMagic.Controller();
+
+window.onload = window.onresize = function(){
+    $windowH = window.innerHeight;
+    // console.log( $windowH )
+
+    $timer = setTimeout( function() {
+        clearTimeout( $timer );
+        $ua = window.innerWidth < 580 ? 'mobile' : 'desktop';
+
+        console.log( $ua )
+    }, 600 );    
+};
 
 /**
 * modenizr
@@ -8,6 +23,9 @@ var $w = $( window ),
 Modernizr.addTest( 'usefirefox', function( e ){
     console.log( e );
     return 0 < navigator.userAgent.indexOf('Firefox');
+});
+Modernizr.addTest( 'mobile', function( e ){
+    return $ua == 'mobile';
 });
 
 
@@ -200,7 +218,8 @@ function spaning( elm ){
                             $expire = new Date();
                             $expire.setTime( $expire.getTime() + 1000 * 3600 * 48 );
                             $expire = $expire.toUTCString();                            
-                            $doc.cookie = 'visit=visited; expires=' . $expire;
+                            $doc.cookie = 'visit=visited;';
+                            // $doc.cookie = 'visit=visited; expires=' . $expire;
                         }
                     }
 

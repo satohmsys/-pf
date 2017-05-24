@@ -1191,6 +1191,8 @@ html.ie8 .icon-instagram:before
         border-radius: 100%;
         background-color: #00404b; 
         box-shadow: 0 4px 4px rgba(0, 0, 0, .1), 0 0 10px rgba(0, 0, 0, .3);
+
+        will-change: width, height, border-radius;
     }
     .navToggle_icon
     {
@@ -1204,6 +1206,8 @@ html.ie8 .icon-instagram:before
     .navToggle_icon:after,
     .navToggle_icon_lineCenter
     {
+        line-height: 0;
+
         position: absolute;
         right: 0;
         left: 0; 
@@ -1227,8 +1231,8 @@ html.ie8 .icon-instagram:before
     .navToggle_icon:after
     {
         content: ' ';
-        -webkit-transform-origin: 0;
-                transform-origin: 0;
+        -webkit-transform-origin: -1px;
+                transform-origin: -1px;
     }
     .navToggle_icon:before
     {
@@ -1962,6 +1966,13 @@ html.ie8 .icon-instagram:before
 
     width: 100%;
     margin: auto;
+}
+@media screen and (max-width: 580px)
+{
+    .pagevisual_img
+    {
+        will-change: transform;
+    }
 }
 .pagevisual .icon-mouse
 {

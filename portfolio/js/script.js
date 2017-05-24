@@ -5,18 +5,18 @@ var $mainvisual = $('.mainvisual'),
 	$sections = document.getElementsByClassName( 'section' ),
 	controller = new ScrollMagic.Controller();    
 
-$w.on( 'resize', function(){
+// $w.on( 'resize', function(){
 
-    $timer = setTimeout( function() {
-        clearTimeout( $timer );
+//     $timer = setTimeout( function() {
+//         clearTimeout( $timer );
 
-        var $windowHeight = $w.height();
-        $mainvisual_wrap.height( $windowHeight );
+//         var $windowHeight = $w.height();
+//         $mainvisual_wrap.height( $windowHeight );
 
 
-    }, 300 );
+//     }, 300 );
 
-} );
+// } );
 
 
 /**
@@ -34,6 +34,8 @@ Array.prototype.forEach.call( $sections, function( e ){
 /**
 * scrollMagic 
 */
+
+visualMover( 'mainvisual', '.mainvisual_img' );
 
 //mainvisualのスクロールアイコン消す
 (function(){
@@ -60,6 +62,7 @@ Array.prototype.forEach.call( $sections, function( e ){
 		.setClassToggle( $sectionClassName, "inview" )
         .on("enter", function (event) {  // シーンの状態が"DURING"に入る際に発火する
             console.log("Scene entered.",event);
+            visualMover( $sectionClassName.substr( 1 ), '.section_bg' );
         })
         .on("leave", function (event) { // シーンの状態が"DURING"から"BEFORE"か"AFTER"に移る際に発火する
             console.log("Scene left.", event);
@@ -70,3 +73,34 @@ Array.prototype.forEach.call( $sections, function( e ){
         // .addIndicators({name: "1 - add a class"}) // add indicators (requires plugin)
 		.addTo(controller);
 } );
+
+
+
+/**
+* （mobile）スマホの傾きで画像を動かす
+*/
+
+function visualMover( $areaClass, $targetClassName, xmove, ymove, zmove ){
+    if( window.DeviceOrientationEvent ){
+        if( $ua == 'mobile'){ 
+            var $target = document.getElementsByClassName( $areaClass ),
+                $target = $target[0].querySelector( $targetClassName ),
+                xmove = xmove || 0.25,
+                ymove = ymove || 0.25,
+                zmove = zmove || 0.4;
+
+            if( $target ){
+                // beta X軸の傾き
+                // gamma　Y軸の傾き
+                window.addEventListener( 'deviceorientation', function( e ){
+                    var x = Math.round( event.gamma || 0 ) * xmove,
+                        y = Math.round( event.beta || 0 ) * ymove,
+                        z = Math.round( event.alpha || 0 ) * zmove;
+
+                        $target.setAttribute('style', 'will-change:transform; transform: translate3d(' + x + 'px, ' + y + 'px, ' + z + 'px )'  );
+
+                }, false );
+            }
+        }
+    }
+}

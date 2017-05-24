@@ -455,9 +455,19 @@ html
 {
     bottom: 0;
     left: 10%;
-
-    -webkit-transform: rotate(45deg);
-            transform: rotate(45deg);
+}
+.section-works .section_bg_skewWrapper
+{
+    -webkit-transform: translate(30%, 50px) rotate(45deg);
+            transform: translate(30%, 50px) rotate(45deg);
+}
+@media screen and (max-width: 580px)
+{
+    .section-works .section_bg_skewWrapper
+    {
+        -webkit-transform: translate(30%) rotate(45deg);
+                transform: translate(30%) rotate(45deg);
+    }
 }
 .section-works .section_bg_panels
 {

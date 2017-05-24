@@ -1,7 +1,5 @@
-var controller = new ScrollMagic.Controller(),
-    $timer = null,
-    $sections = document.getElementsByClassName( 'section' );    
-
+var $sections = document.getElementsByClassName( 'section' );    
+    controller = new ScrollMagic.Controller();
 /**
 * SPANで囲む
 */
@@ -23,7 +21,6 @@ new ScrollMagic.Scene({
 
 //section
 Array.prototype.forEach.call( $sections, function( e ){
-    console.log( e, e.className );
     var $section =  e ,
         $sectionClassName = '.' + $section.className.match( 'section-.*' )[0],
         $scene =  new ScrollMagic.Scene({

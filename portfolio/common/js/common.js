@@ -1,6 +1,5 @@
-var $w = $( window );
-
-var $button = document.getElementsByClassName('navToggle'),
+var $w = $( window ),
+    $button = document.getElementsByClassName('navToggle');
     controller = new ScrollMagic.Controller();
 
 /**
@@ -40,13 +39,13 @@ if( $button.length ){
 * scrollMagic 
 */
 
-var $inquirySection =  document.getElementsByClassName('inquiry')[0] ,
-    $scene =  new ScrollMagic.Scene({
-        triggerElement: $inquirySection,
-        triggetHook: 'onEnter'
-    })
-    .setClassToggle( $inquirySection, "inview" )
-    .addTo(controller);
+var $inquirySection =  document.getElementsByClassName('inquiry')[0];
+    // $scene =  new ScrollMagic.Scene({
+    //     triggerElement: $inquirySection,
+    //     triggetHook: 'onEnter'
+    // })
+    // .setClassToggle( $inquirySection, "inview" )
+    // .addTo(controller);
 
 //mainvisualのスクロールアイコン消す
 (function(){
@@ -164,6 +163,8 @@ function spaning( elm ){
     var $doc = document,
         $body = $doc.body;
         $intro = document.getElementById('myIntroduction');
+
+    if(! $intro ) return;
     
     ///////// 初回訪問（cookieなし
     if( ! $doc.cookie.match('visited') ){

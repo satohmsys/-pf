@@ -625,6 +625,35 @@ html.ie8 .icon-instagram:before
 
     vertical-align: middle;
 }
+.siteHeader_logo
+{
+    line-height: 1;
+
+    position: relative; 
+
+    width: 100px;
+
+    color: #fff;
+}
+.siteHeader_logo a
+{
+    color: inherit;
+}
+.siteHeader_logo .name
+{
+    font-family: 'woodford bold'; 
+    font-size: 1.25em;
+}
+.siteHeader_logo .handWrite
+{
+    font-family: 'Damion', cursive; 
+
+    position: absolute;
+    top: 1.35em;
+    left: 2em;
+
+    color: #24383f;
+}
 @media screen and (max-width: 580px)
 {
     .siteHeader > .wrap
@@ -636,15 +665,21 @@ html.ie8 .icon-instagram:before
     {
         display: block;
     }
+    .siteHeader_logo
+    {
+        text-shadow: 0 0 5px rgba(0, 0, 0, .15);
+    }
+    .siteHeader_logo .handWrite
+    {
+        top: .8em;
+    }
 }
 
-.siteFooter
-{
-    padding-top: 200px;
-}
 .siteFooter.hasGradation
 {
-    position: relative;
+    position: relative; 
+
+    padding-top: 200px;
 }
 .siteFooter.hasGradation:before
 {
@@ -666,6 +701,10 @@ html.ie8 .icon-instagram:before
 }
 @media screen and (max-width: 580px)
 {
+    .siteFooter.hasGradation
+    {
+        padding-top: 60px;
+    }
     .siteFooter.hasGradation:before
     {
         padding-top: 100px;
@@ -869,6 +908,14 @@ html.ie8 .icon-instagram:before
 {
     padding-right: 55px; 
     padding-left: 55px;
+}
+@media screen and (max-width: 580px)
+{
+    .siteForm
+    {
+        padding-right: 30px; 
+        padding-left: 30px;
+    }
 }
 .siteForm input,
 .siteForm select,
@@ -1521,7 +1568,7 @@ html.ie8 .icon-instagram:before
     line-height: 1;
 
     position: fixed;
-    z-index: 99;
+    z-index: 7;
     right: 10px;
     bottom: 0;
 
@@ -1694,6 +1741,7 @@ html.ie8 .icon-instagram:before
 {
     overflow: visible;
 
+    width: 100%;
     max-width: 332px;
 
     text-align: center;
@@ -1882,8 +1930,8 @@ html.ie8 .icon-instagram:before
 
     transition: all .4s cubic-bezier(.68, -.55, .265, 1.55) 0s;
     transition-delay: 1.5s;
-    -webkit-transform: scale(1.25);
-            transform: scale(1.25);
+    -webkit-transform: scale(1.15);
+            transform: scale(1.15);
     -webkit-transform-origin: 50% 25%;
             transform-origin: 50% 25%;
     text-align: right;

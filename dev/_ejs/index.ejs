@@ -20,14 +20,9 @@ $css = ['css/style.css'];
       <header>
          <div class="siteHeader">
             <div class="wrap clearfix">
-               <!-- *** logo -->
-               <h1 class="siteHeader_logo">
-   					<strong>LOGO</strong>
-   				</h1>
-
               <%- include('_inc/_gnav') %>
+            </div>
          </div>
-         
       </header>
       <!-- ///// header  -->
 
@@ -147,7 +142,7 @@ $css = ['css/style.css'];
       </main>
       <!-- //// BODY END -->
      
-     <%- include( $path + '_inc/_footer' ) %>
+     <%- include( $path + '_inc/_footer', {hasGradation: false} ) %>
      <%- $parts.backtotop %>
      <%- $parts.fixedsns %>
 

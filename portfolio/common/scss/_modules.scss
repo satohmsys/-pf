@@ -36,6 +36,29 @@
 			vertical-align: middle;
 		}
 	}
+
+	&_logo{
+		width: 100px;
+		line-height: 1;
+		color: #fff;
+		position: relative;
+		
+		a{
+			color: inherit;
+		}
+		
+		.name{
+			font-size: 1.25em;
+			font-family: $fontFamily_wf_bold;
+		}
+		.handWrite{
+			position: absolute;
+			top: 1.35em;
+			left: 2em;
+			color: $green_dark;
+			font-family: $fontFamily_damion;
+		}
+	}
 	
 
 	//////// media queries 
@@ -48,7 +71,12 @@
 				display: block;
 			}
 		}
-
+		&_logo{
+			text-shadow: 0 0 5px rgba( #000, 0.15 );
+			.handWrite{
+				top: 0.8em;
+			}
+		}
 
 	} //max 580	
 }
@@ -64,11 +92,11 @@
 .siteFooter
 {
 
-	padding-top: 200px;
 
 	@extend %gradation;
 	
 	&.hasGradation{
+		padding-top: 200px;
 		position: relative;
 		&:before{
 			content: " ";
@@ -83,11 +111,14 @@
 		    background: transparent url(../img/gradation-bottom.png) left bottom repeat-x;
 		    background-size: 10px auto;
 		    
-		    @include break( sp ){
-		    	padding-top: 100px;
-				background-size: 5px auto;    	
-		    }	    
 		}    
+	    @include break( sp ){
+	    	padding-top: 60px;
+	    	&:before{
+		    	padding-top: 100px;
+				background-size: 5px auto;    		    		
+	    	}
+	    }	    
 		
 	}	
 
@@ -287,6 +318,11 @@
 .siteForm{
 	padding-left: 55px;
 	padding-right: 55px;
+	
+	@include break( sp ){
+		padding-left: 30px;
+		padding-right: 30px;
+	} 
 	
 	input,
 	select,
@@ -894,7 +930,7 @@
 	bottom: 0;
 	right: 10px;
 	position: fixed;
-	z-index: 99;
+	z-index: 7;
 	cursor: pointer;
 	display: none;
 
@@ -1030,6 +1066,7 @@
 
 		svg{
 			max-width: 332px;
+			width: 100%;
 			overflow: visible;
 			text-align: center;
 		}
@@ -1189,7 +1226,7 @@
 			margin-top: -1.4em;
 			transition: easeInOutBack($s : 0.4s, $prop : all);
 			transition-delay: 1.5s;	
-			transform:  scale(1.25);
+			transform:  scale(1.15);
 			transform-origin: 50% 25%;
 			opacity: 0;
 			text-align: right;	

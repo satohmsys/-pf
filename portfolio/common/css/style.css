@@ -628,7 +628,7 @@ html.ie8 .icon-instagram:before
         color: #fff;
         background-color: #003640;
     }
-    .scrollOverVisual .siteHeader .button-nav a:after
+    .scrollOverVisual .siteHeader .button-nav a:before
     {
         border-color: #003640;
     }
@@ -1331,8 +1331,8 @@ html.ie8 .icon-instagram:before
 .button-link:active a,
 .button-link:focus a
 {
-    -webkit-transform: scale(.95);
-            transform: scale(.95);
+    -webkit-transform: scale(.98);
+            transform: scale(.98);
 }
 .button-def:hover a:before,
 .button-nav:hover a:before,
@@ -1353,8 +1353,8 @@ html.ie8 .icon-instagram:before
 .button-link:active a:after,
 .button-link:focus a:after
 {
-    -webkit-transform: scale(1.5);
-            transform: scale(1.5);
+    -webkit-transform: scale(1.25);
+            transform: scale(1.25);
 
     opacity: 0;
 }
@@ -1401,7 +1401,7 @@ html.ie8 .icon-instagram:before
     margin: auto;
 
     content: ' ';
-    transition: all .2s ease-in 0s; 
+    transition: all .1s ease-in 0s; 
 
     border: solid 1px #fff;
 }

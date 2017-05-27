@@ -42,7 +42,7 @@
 			.button-nav a{
 				color: #fff;
 				background-color: $green_black;
-				&:after{
+				&:before{
 					border-color: $green_black;
 				}
 			}
@@ -524,8 +524,6 @@
 	background-color: #fff;	
 }
 
-
-
 .section-contact{
 	min-height: 0;
 	height: auto;
@@ -550,6 +548,7 @@
 
 	}	
 }
+
 
 .inquiry
 {
@@ -631,8 +630,6 @@
 	.section_caption{
 		text-align: center;
 	}
-
-
 }
 
 .siteForm{
@@ -714,11 +711,11 @@
 	a{
 		// color: #fff;
 		// background-color: $green_black;	
-		transform: scale(0.95);
+		transform: scale(0.98);
 	}
 	a:before,
 	a:after{
-		transform: scale(1.5);
+		transform: scale(1.25);
 		
 		opacity: 0;
 	}			
@@ -763,7 +760,7 @@
 			bottom: 0;
 			left: 0;
 			border: solid 1px #fff;
-			transition: all 0.2s ease-in 0s;
+			transition: all 0.1s ease-in 0s;
 		}
 	
 	}

@@ -26,6 +26,29 @@
 	z-index: 10;
 	color: #fff;
 	
+	@at-root .scrollOverVisual & {
+		
+		&,
+		&_logo{
+			color: $green_black;
+		}
+		&_logo{
+			.handWrite{
+				color: $blue;
+			}
+		}	
+
+		@include break( sp, min ){
+			.button-nav a{
+				color: #fff;
+				background-color: $green_black;
+				&:after{
+					border-color: $green_black;
+				}
+			}
+		}	
+	}
+	
 
 	 > .wrap{
 		width: 100%;
@@ -80,6 +103,303 @@
 
 	} //max 580	
 }
+
+
+
+////////////////////
+
+// navigation
+
+////////////////////
+
+.siteHeader_nav
+{
+	float: right;
+	clear: both;
+	text-align: center;
+	letter-spacing: 0.04em;
+	font-family: $fontFamily_wf_light;
+
+	li
+	{
+		vertical-align: middle;
+		display: inline-block;
+		list-style: none;
+		text-align: center;
+		
+		&:last-child{
+			margin-right: 0;
+		}
+	}
+
+	li:not( .nav_contact ){
+		&:after{
+			margin-left: 15px;
+			margin-right: 15px;
+			content:  "/";
+			display: inline-block;
+			vertical-align: middle;
+		}
+		a{
+			line-height: 1;
+			// display: block;
+			color: inherit;
+			position: relative;
+			
+			&:before{
+				content: " ";
+				width: 0%;
+				height: 3px;
+				display: block;
+				margin: auto;
+				position: absolute;
+				transition: transition();
+				top: 0;
+				right: 0;
+				bottom: 0;
+				left: 0;
+				background-color: currentColor;
+			}
+
+			@include break( tab, min ){
+				@include mouseOver(){
+					&:not( .current ):before{
+						width: 100%;
+					}
+				}
+				
+			}
+			
+		}
+	}
+
+	li.current
+	{
+		a{
+			pointer-events: none;
+		}
+		a:before{
+			width: 100%;
+		}
+	}
+
+
+	//////// media queries 
+	@include break( sp ){
+		.wrap{
+		    width: 100%;
+		    height: 100%;
+		    display: flex;
+			max-width: none;
+			padding-top: 0%;
+			padding-right: 0;
+			padding-left: 0;
+		    flex-direction: column;
+		    justify-content: center;
+		    align-items: center;
+		    align-content: center;
+		    position: fixed;
+		    z-index: -10;
+		    top: 0;
+		    left: 0;		
+			float: none;
+			font-family: $fontFamily_wf_medium;
+		}
+		
+		li
+		{
+			font-size: 1.5em;
+			padding: 20px;
+			display: block;
+			opacity: 0;
+			transform: translateX(10px);
+			
+			//ナビ開いてない状態
+			a{
+				z-index: -10;
+			}
+		}
+
+		.button-nav
+		{
+			padding-right: 0;
+			padding-left: 0;
+ 			a{
+				width: auto;
+				padding: 0.5em 1.5em;
+				margin-left: auto;
+				margin-right: auto;
+			}			
+		}
+
+		@at-root .navOpen &{
+			li{
+				opacity: 1;
+				transform: translateX(0px);
+
+				transition: all 0.3s ease 0s;
+			
+				@for $i from 1 through 6 {
+
+					&:nth-child( #{$i} ){
+						$delay: 0.85 + (0.15 * $i);
+						transition-delay: #{$delay}s;
+					}
+				}	
+
+				//ナビ開いた状態
+				a{
+					z-index: 9;
+				}						
+			}
+			
+		}
+
+	} //max 580
+
+	
+}
+
+////( スマホ用 )開閉アイコン
+.navToggle
+{
+	display: none;
+
+	@include break( sp ){
+		display: block;
+	$buttonSize : 50px;
+	$buttonTextColor: #fff;
+	
+	&_hitArea,
+	&:after{
+		width: $buttonSize;
+		height: $buttonSize;
+		line-height: 1;
+		padding: 5px;
+		box-sizing: border-box;
+		display: block;
+		position: fixed;
+		bottom: 2%;
+		right: 2%;
+		cursor: pointer;
+	}
+
+	&_hitArea{
+		z-index: 100;
+	}
+
+	&:after{
+		content: " ";
+		will-change: width, height, border-radius;
+		z-index: 8;
+		transition: easeInOutCirc();
+		border-radius: 100%;
+		box-shadow: 0 4px 4px rgba( #000, 0.1), 0 0 10px rgba( #000, 0.3 );
+		background-color: darken( $blue, 35 );		
+	}
+	
+	
+	//icon
+	&_icon
+	{
+
+		height: 20px;
+		top: 0;
+		bottom: 0;
+		
+		//bar
+		&,
+		&:before , 
+		&:after, 		
+		&_lineCenter{
+			width: 70%;
+			line-height: 0;
+			margin: auto;
+			display: block;
+			position: absolute;
+			right: 0;
+			left: 0;			
+		}
+
+		&:before , 
+		&:after, 		
+		&_lineCenter{
+			height: 1px;
+			background-color: $buttonTextColor;		
+			transition: easeInOutCirc(0.3s);		
+		}		
+		
+		&:before , 
+		&:after{
+			content: " "; 
+			transform-origin: -1px;
+		}
+		//top
+		&:before{
+			top: 0;
+		} 
+		//center
+		&_lineCenter{
+			top: 0;
+			bottom: 0;
+		}
+		//bottom
+		&:after{
+			bottom: 0;
+		}		
+	}
+
+	@at-root .navOpen
+	{
+		overflow: hidden;
+	
+		.navToggle
+		{
+
+			&_hitArea{
+				z-index: 11;
+			}
+
+			&:after{
+				width: 100%;
+				height: 100%;
+				right: 0;
+				bottom: 0;
+				border-radius: 0;
+				box-shadow: none;
+				// @include background-image( linear-gradient( to right, $green, $blue ) );	
+				
+				background-color: darken( $blue, 15 );		
+			}
+			
+			
+			//icon
+			&_icon
+			{
+				
+				//bar
+				//top
+				&:before{
+					transform: rotate( 45deg );
+				} 
+				//center
+				&_lineCenter{
+					width: 200%;
+					opacity: 0;
+				}
+				//bottom
+				&:after{
+					transform: rotate( -45deg );
+				}		
+			}
+		}	
+
+	}		
+	} // min 580
+}
+
+
+
 
 
 
@@ -370,307 +690,6 @@
 
 
 }
-
-
-
-
-////////////////////
-
-// navigation
-
-////////////////////
-
-.siteHeader_nav
-{
-	float: right;
-	clear: both;
-	text-align: center;
-	letter-spacing: 0.04em;
-	font-family: $fontFamily_wf_light;
-
-	li
-	{
-		vertical-align: middle;
-		display: inline-block;
-		list-style: none;
-		text-align: center;
-		color: #fff;
-		
-		&:last-child{
-			margin-right: 0;
-		}
-	}
-
-	li:not( .nav_contact ){
-		&:after{
-			margin-left: 15px;
-			margin-right: 15px;
-			content:  "/";
-			display: inline-block;
-			vertical-align: middle;
-		}
-		a{
-			line-height: 1;
-			// display: block;
-			color: #fff;
-			position: relative;
-			
-			&:before{
-				content: " ";
-				width: 0%;
-				height: 3px;
-				display: block;
-				margin: auto;
-				position: absolute;
-				transition: transition();
-				top: 0;
-				right: 0;
-				bottom: 0;
-				left: 0;
-				background-color: #fff;
-			}
-
-			@include break( tab, min ){
-				@include mouseOver(){
-					&:not( .current ):before{
-						width: 100%;
-					}
-				}
-				
-			}
-			
-		}
-	}
-
-	li.current
-	{
-		a{
-			pointer-events: none;
-		}
-		a:before{
-			width: 100%;
-		}
-	}
-
-
-	//////// media queries 
-	@include break( sp ){
-		.wrap{
-		    width: 100%;
-		    height: 100%;
-		    display: flex;
-			max-width: none;
-			padding-top: 0%;
-			padding-right: 0;
-			padding-left: 0;
-		    flex-direction: column;
-		    justify-content: center;
-		    align-items: center;
-		    align-content: center;
-		    position: fixed;
-		    z-index: -10;
-		    top: 0;
-		    left: 0;		
-			float: none;
-			font-family: $fontFamily_wf_medium;
-		}
-		
-		li
-		{
-			font-size: 1.5em;
-			padding: 20px;
-			display: block;
-			opacity: 0;
-			transform: translateX(10px);
-			
-			//ナビ開いてない状態
-			a{
-				z-index: -10;
-			}
-		}
-
-		.button-nav
-		{
-			padding-right: 0;
-			padding-left: 0;
- 			a{
-				width: auto;
-				padding: 0.5em 1.5em;
-				margin-left: auto;
-				margin-right: auto;
-			}			
-		}
-
-		@at-root .navOpen &{
-			li{
-				opacity: 1;
-				transform: translateX(0px);
-
-				transition: all 0.3s ease 0s;
-			
-				@for $i from 1 through 6 {
-
-					&:nth-child( #{$i} ){
-						$delay: 0.85 + (0.15 * $i);
-						transition-delay: #{$delay}s;
-					}
-				}	
-
-				//ナビ開いた状態
-				a{
-					z-index: 9;
-				}						
-			}
-			
-		}
-
-	} //max 580
-
-	
-}
-
-////( スマホ用 )開閉アイコン
-.navToggle
-{
-	display: none;
-
-	@include break( sp ){
-		display: block;
-	$buttonSize : 50px;
-	$buttonTextColor: #fff;
-	
-	&_hitArea,
-	&:after{
-		width: $buttonSize;
-		height: $buttonSize;
-		line-height: 1;
-		padding: 5px;
-		box-sizing: border-box;
-		display: block;
-		position: fixed;
-		bottom: 2%;
-		right: 2%;
-		cursor: pointer;
-	}
-
-	&_hitArea{
-		z-index: 100;
-	}
-
-	&:after{
-		content: " ";
-		will-change: width, height, border-radius;
-		z-index: 8;
-		transition: easeInOutCirc();
-		border-radius: 100%;
-		box-shadow: 0 4px 4px rgba( #000, 0.1), 0 0 10px rgba( #000, 0.3 );
-		background-color: darken( $blue, 35 );		
-	}
-	
-	
-	//icon
-	&_icon
-	{
-
-		height: 20px;
-		top: 0;
-		bottom: 0;
-		
-		//bar
-		&,
-		&:before , 
-		&:after, 		
-		&_lineCenter{
-			width: 70%;
-			line-height: 0;
-			margin: auto;
-			display: block;
-			position: absolute;
-			right: 0;
-			left: 0;			
-		}
-
-		&:before , 
-		&:after, 		
-		&_lineCenter{
-			height: 1px;
-			background-color: $buttonTextColor;		
-			transition: easeInOutCirc(0.3s);		
-		}		
-		
-		&:before , 
-		&:after{
-			content: " "; 
-			transform-origin: -1px;
-		}
-		//top
-		&:before{
-			top: 0;
-		} 
-		//center
-		&_lineCenter{
-			top: 0;
-			bottom: 0;
-		}
-		//bottom
-		&:after{
-			bottom: 0;
-		}		
-	}
-
-	@at-root .navOpen
-	{
-		overflow: hidden;
-	
-		.navToggle
-		{
-
-			&_hitArea{
-				z-index: 11;
-			}
-
-			&:after{
-				width: 100%;
-				height: 100%;
-				right: 0;
-				bottom: 0;
-				border-radius: 0;
-				box-shadow: none;
-				// @include background-image( linear-gradient( to right, $green, $blue ) );	
-				
-				background-color: darken( $blue, 15 );		
-			}
-			
-			
-			//icon
-			&_icon
-			{
-				
-				//bar
-				//top
-				&:before{
-					transform: rotate( 45deg );
-				} 
-				//center
-				&_lineCenter{
-					width: 200%;
-					opacity: 0;
-				}
-				//bottom
-				&:after{
-					transform: rotate( -45deg );
-				}		
-			}
-		}	
-
-	}		
-	} // min 580
-}
-
-
-
-
-
 
 
 

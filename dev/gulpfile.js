@@ -19,7 +19,8 @@ var csscomb = require( 'gulp-csscomb' );
 var dir = {
   top: '../portfolio',
   below: '/',
-  index: 'index.html'
+  index: 'index.html',
+  ejsEdit: 'about/'
 },
   sassDir = {
     css: 'css',
@@ -27,7 +28,7 @@ var dir = {
     dir: ''
   },
   ejsDir = {
-    template: '_ejs/about/*' + '.ejs',//[ ejs ] 更新対象ejsのファイル
+    template: '_ejs/'+ dir.ejsEdit +'*' + '.ejs',//[ ejs ] 更新対象ejsのファイル
     rename: 'index.html'// [ ejs ] .ejs→htmlリネーム
   }
 
@@ -137,7 +138,7 @@ gulp.task("ejs", function(){
       extname: '.html'      
     }) )
     .pipe(plumber())
-    .pipe(gulp.dest(dir.top + dir.below + 'about'));
+    .pipe(gulp.dest(dir.top + dir.below + dir.ejsEdit));
 });
 gulp.task('ejsWatch', ['browserSync'], function(){
   gulp.watch('_ejs/**/*.ejs', ['ejs','browserSyncReload']);

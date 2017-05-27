@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<!--[if lte IE 9]>
+<html lang="ja" class="ie">
+<![endif]-->
+<!--[if !IE]<!-->
+<html lang="ja">
+   <!--<![endif]-->
+   <% include ../_inc/function %>
+   <%
+      $meta.title = 'about'
+   %>
+   <%
+   $path = '../';
+   $active = 'about';
+   $css = ['css/style.css'];
+   $scripts_global=null;
+   $scripts=[$path + 'common/js/common.js',$path + 'common/js/childpage.js','js/script.js'];
+   %>
+   <head>
+     <%- include($path + '_inc/_header') %>
+   </head>
+
+   <body class="about">
+      <!-- ***** header  -->
+      <header>
+         <div class="siteHeader">
+            <div class="wrap clearfix">
+               <!-- *** logo -->
+               <h1 class="siteHeader_logo">
+   					    <a href="<%= $path %>">
+                  <span class="name">Satohmsys</span><span class="handWrite">portfoliosite</span></a>
+   				     </h1>
+              <%- include($path + '_inc/_gnav') %>
+            </div>
+         </div>
+      </header>
+      <!-- ///// header  -->
+
+
+      <!-- ***** mainvisual -->
+      <section class="pagevisual hasGradation">
+         <div class="wrap">
+
+            <div class="pagevisual_copy">
+               <h2>
+                  <p class="pagevisual_copy_pagename">
+                   ABOUT
+                  </p>
+                  <p class="handWrite">   
+                     me
+                  </p>
+                  
+               </h2>
+            </div>
+
+            <i class="icon icon-mouse"></i>
+
+           <img src="img/about-main.png" width="700" class=" pagevisual_img" alt="">
+         </div>
+      </section>
+      <!-- ///// mainvisual  -->
+      
+      <!-- ***** BODY START -->
+      <main class="main topGradation">
+
+         <section class="section section-hi">
+            <div class="wrap">
+               <header class="section_index">
+                  <h3>
+                     <svg viewBox="0 0 680 70">
+                       <defs>
+                          <linearGradient id="g0">
+                             <stop offset="0" stop-color="#00d8fd"/>
+                             <stop offset="0.9" stop-color="#0eff9e"/>
+                          </linearGradient>
+                        </defs>
+                        <text text-anchor="start" x="0" y="55" fill=url(#g0) font-size-adjust="1">
+                          Hi! My name is
+                        </text>
+                     </svg>
+                     <span class="handWrite">@satohmsys</span>
+                  </h3>
+               </header>
+               <div class="section_content">
+                     <p>北海道生まれ、愛知県育ち、東京で働くWebデザイナー。元ダンサー。<br/>
+                        ストリートファッション系のECサイトの運営に携わった後、<br/>
+                        業界大手のアフィリエイトプラットフォームを持つ企業で3年、Webデザイナーとして勤務。主にLP制作を担当。<br/>
+                           マーケティング施策の成功も相まってLPのコンバージョン率は5,60%を超え、プロジェクトの売上は最高で2億円にも達した。<br/>その他、wordpressを使った会員制サイト構築、LINEスタンプ制作、オウンドメディア立ち上げに携わる。</p>
+                     <p>その後、企業のブランディングを総合的に行う制作会社にてWebデザイン、コーディングから、採用サイト用キーヴィジュアル制作を担当。<br/>
+                     「"メッセージ"をデザインする」ことをモットーに、訴求力とWebサイトとしての美しく機能的なインタフェイス、トレンドを意識してデザインを行う。</p>
+                     <p>検索エンジンフレンドリーな構造を意識したHTML、CSS3マークアップから、wordpressを用いたサイト構築、javascriptなどを使ったアニメーションの実装も行う。</p>
+                     <p>ほか、<a href="">技術系ブログ</a>、<a href="">おおげさなラーメンInsta</a>も更新中。</p>
+                     <p>趣味はカフェ、ラーメン屋めぐり、コーヒー、マンガ・音楽鑑賞。</p>
+                     <div class="button button-link"><a href="">BIOGRAPHY</a></div>
+               </div>
+               <figure class="section_bg">
+                <img src="img/about-my.png" width="518" alt=""/>
+               </figure>
+            </div>
+         </section>
+
+         <!-- ***** mind -->
+         <section class="section section-mind">
+            <div class="wrap">
+               <header class="section_index">
+                  <h3>
+                      <svg viewBox="0 0 680 70">
+                          <text text-anchor="middle" x="340" y="55" fill=url(#g0)>
+                            MIND
+                          </text>
+                     </svg>
+                  </h3>
+               </header>
+               <div class="section_content">
+                  <ul class="mindlist">
+                     <li class="mindlist_mind">
+                        <figure class="mindlist_icon">
+                           <img src="img/icon-multidevice.svg" width="80" alt=""/>
+                           <figcaption>multidevice</figcaption>
+                        </figure>
+                        <h4 class="mindlist_description">
+                           写真の見え方まで意識した<br/>
+                           レスポンシブコーディング
+                        </h4>
+                     </li>
+                    <li class="mindlist_mind">
+                        <figure class="mindlist_icon">
+                           <img src="img/icon-target.svg" width="80" alt=""/>
+                           <figcaption>target</figcaption>
+                        </figure>
+                        <h4 class="mindlist_description">
+                           目的や課題を理解し意識した<br/>
+                           意味のあるデザイン
+                        </h4>
+                     </li>
+                     <li class="mindlist_mind">
+                        <figure class="mindlist_icon">
+                           <img src="img/icon-communication.svg" width="80" alt=""/>
+                           <figcaption>communication</figcaption>
+                        </figure>
+                        <h4 class="mindlist_description">
+                           他者の意見も聞き入れ<br/>
+                           円満で有益な会話
+                        </h4>
+                     </li>
+                     <li class="mindlist_mind">
+                        <figure class="mindlist_icon">
+                           <img src="img/icon-easy.svg" width="80" alt=""/>
+                           <figcaption>easy to use</figcaption>
+                        </figure>
+                        <h4 class="mindlist_description">
+                           ユーザーも、提供側も<br/>
+                           扱いやすいコーディング
+                        </h4>
+                     </li>
+                    <li class="mindlist_mind">
+                        <figure class="mindlist_icon">
+                           <img src="img/icon-color.svg" width="80" alt=""/>
+                           <figcaption>color coordinate</figcaption>
+                        </figure>
+                        <h4 class="mindlist_description">
+                           色彩論を取り入れた<br/>
+                           効果的で気持ちいい配色
+                        </h4>
+                     </li>
+                     <li class="mindlist_mind">
+                        <figure class="mindlist_icon">
+                           <img src="img/icon-handdrip.svg" width="80" alt=""/>
+                           <figcaption>hand drip cofee</figcaption>
+                        </figure>
+                        <h4 class="mindlist_description">
+                           クリエイティブのために<br/>
+                           息抜きは忘れずに
+                        </h4>
+                     </li>
+                  </ul>
+               </div>
+            </div>
+         </section>
+         <!-- ///// mind -->
+          
+
+         <!-- ***** skill -->
+         <section class="section section-skill">
+            <div class="wrap">
+               <header class="section_index">
+                  <h3>
+                    <svg viewBox="0 0 680 70">
+                      <text text-anchor="middle" x="340" y="55" fill=url(#g0)>
+                        SKILL
+                      </text>
+                   </svg>
+                  </h3>
+               </header>
+               <div class="section_content">
+                  <section class="skill skill-tools">
+                     <header class="skill_index">
+                        <i></i><h4>Tools</h4>
+                     </header>
+                     <ul class="skill_content">
+                        <li class="skill_content_list">
+                           <figure class="skill_icon">
+                              <img src="img/icon-photoshop.svg" width="80" alt="Photoshop"/>
+                              <figcaption>Photoshop</figcaption>
+                           </figure>
+                        </li>
+                        <li class="skill_content_list">
+                           <figure class="skill_icon">
+                              <img src="img/icon-illustrator.svg" width="80" alt="Illustrator"/>
+                              <figcaption>Illustrator</figcaption>
+                           </figure>
+                        </li>
+                        <li class="skill_content_list">
+                           <figure class="skill_icon">
+                              <img src="img/icon-sublimetext.svg" width="80" alt="Sublime Text"/>
+                              <figcaption>Sublime Text</figcaption>
+                           </figure>
+                        </li>
+                        <li class="skill_content_list">
+                           <figure class="skill_icon">
+                              <img src="img/icon-gulp.svg" width="80" alt="gulp"/>
+                              <figcaption>Gulp</figcaption>
+                           </figure>
+                        </li>                        
+                     </ul>
+                  </section>
+                   <section class="skill skill-cording">
+                     <header class="skill_index">
+                        <i></i><h4>Cording</h4>
+                     </header>
+                     <ul class="skill_content">
+                        <li class="skill_content_list">
+                           <figure class="skill_icon">
+                              <img src="img/icon-css3.svg" width="80" alt="css3"/>
+                              <figcaption>CSS3</figcaption>
+                           </figure>
+                        </li>
+                        <li class="skill_content_list">
+                           <figure class="skill_icon">
+                              <img src="img/icon-html5.svg" width="80" alt="html5"/>
+                              <figcaption>HTML5</figcaption>
+                           </figure>
+                        </li>
+                        <li class="skill_content_list">
+                           <figure class="skill_icon">
+                              <img src="img/icon-sass.svg" width="80" alt="Sass(scss)"/>
+                              <figcaption>Sass(scss)</figcaption>
+                           </figure>
+                        </li>
+                        <li class="skill_content_list">
+                           <figure class="skill_icon">
+                              <img src="img/icon-less.svg" width="80" alt="less"/>
+                              <figcaption>Less</figcaption>
+                           </figure>
+                        </li>                        
+                     </ul>
+                  </section>            
+                  <section class="skill skill-front">
+                     <header class="skill_index">
+                        <i></i><h4>Front-end</h4>
+                     </header>
+                     <ul class="skill_content">
+                        <li class="skill_content_list">
+                           <figure class="skill_icon">
+                              <img src="img/icon-javascript.svg" width="80" alt="javascript"/>
+                              <figcaption>Javascript</figcaption>
+                           </figure>
+                        </li>
+                        <li class="skill_content_list">
+                           <figure class="skill_icon">
+                              <img src="img/icon-jquery.svg" width="80" alt="jquery"/>
+                              <figcaption>jQuery</figcaption>
+                           </figure>
+                        </li>
+                        <li class="skill_content_list">
+                           <figure class="skill_icon">
+                              <img src="img/icon-php.svg" width="80" alt="php"/>
+                              <figcaption>Php</figcaption>
+                           </figure>
+                        </li>
+                        <li class="skill_content_list">
+                           <figure class="skill_icon">
+                              <img src="img/icon-wordpress.svg" width="80" alt="wordpress"/>
+                              <figcaption>Wordpress</figcaption>
+                           </figure>
+                        </li>                        
+                     </ul>
+                  </section>            
+               </div>
+            </div>
+         </section>
+         <!-- ///// skill -->          
+
+      </main>
+      <!-- //// BODY END -->
+     
+      <%- include( $path + '_inc/_footer', {hasGradation: true} ) %>
+
+      <%- $parts.backtotop %>
+
+      <%- $parts.fixedsns %>
+
+
+      <!-- ***** menu button -->
+      <%- $parts.toggle %>
+      <!-- //// menu button -->
+
+      
+     <%#- include($path + '_inc/_intro') %>
+
+     <%- include($path + '_inc/_scripts') %>
+   </body>
+
+</html>

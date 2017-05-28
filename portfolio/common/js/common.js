@@ -1,8 +1,10 @@
 var $w = $( window ),
     $timer = null,
     $windowH = null,
-    $ua = null,
+    $ua = window.innerWidth < 580 ? 'mobile' : 'desktop',
     $button = document.getElementsByClassName('navToggle'),
+    $contact = document.getElementsByClassName('nav_contact'),
+    $contact = $contact[0].querySelector('a'),
     controller = new ScrollMagic.Controller();
 
 window.onload = window.onresize = function(){
@@ -34,22 +36,35 @@ Modernizr.addTest( 'mobile', function( e ){
 * （ スマートフォン用 ）ナビゲーション開閉
 */
 
-if( $button.length ){
-    $button[0].addEventListener( 'click', function( e ){
+if( $ua == 'mobile' && $button.length ){
+    $button[0].onclick = $contact.onclick = function( e ){
+
+        console.log( $contact )
         e.stopPropagation();
         e.preventDefault();
 
         var $body = document.body;
-            $status = document.body.getAttribute('data-navopen');
+            $status = document.body.getAttribute('data-navopen'),
+            $toggleAction = new Toggle( $body );
 
         if( $status == 'open' ){
-            $body.classList.remove( 'navOpen');
-            $body.setAttribute( 'data-navopen', '');
+            $toggleAction.close();
         } else {
-            $body.classList.add( 'navOpen');
-            $body.setAttribute( 'data-navopen', 'open');
+            $toggleAction.open();
         }
-    } );
+    }
+}
+
+function Toggle( $body ){
+    this.body = $body;
+}
+Toggle.prototype.close = function (){
+    this.body.classList.remove( 'navOpen');
+    this.body.setAttribute( 'data-navopen', '');
+}
+Toggle.prototype.open = function (){
+    this.body.classList.add( 'navOpen');
+    this.body.setAttribute( 'data-navopen', 'open');
 }
 
 
@@ -58,12 +73,12 @@ if( $button.length ){
 */
 
 var $inquirySection =  document.getElementsByClassName('inquiry')[0];
-    // $scene =  new ScrollMagic.Scene({
-    //     triggerElement: $inquirySection,
-    //     triggetHook: 'onEnter'
-    // })
-    // .setClassToggle( $inquirySection, "inview" )
-    // .addTo(controller);
+    $scene =  new ScrollMagic.Scene({
+        triggerElement: $inquirySection,
+        triggetHook: 'onEnter'
+    })
+    .setClassToggle( $inquirySection, "inview" )
+    .addTo(controller);
 
 //mainvisualのスクロールアイコン消す
 (function(){

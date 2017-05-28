@@ -32,10 +32,10 @@ window.onresize = window.onscroll = function( e ){
 
 
 if( window.DeviceOrientationEvent ){
-
-    if( $ua == 'mobile'){ 
+    if( $ua == 'mobile' ){ 
         var $pageVisual = document.getElementsByClassName('pagevisual_img'),
             $pageVisual = $pageVisual[0];
+
 
         if( $pageVisual ){
             // beta X軸の傾き

@@ -633,6 +633,11 @@ html.ie8 .icon-instagram:before
         border-color: #003640;
     }
 }
+.scrollOverVisual.navOpen .siteHeader,
+.scrollOverVisual.navOpen .siteHeader_logo
+{
+    color: #fff;
+}
 .siteHeader > .wrap
 {
     display: table; 
@@ -767,6 +772,13 @@ html.ie8 .icon-instagram:before
     .siteHeader_nav li:not(.nav_contact) a:focus:not(.current):before
     {
         width: 100%;
+    }
+}
+@media screen and (max-width: 580px)
+{
+    .siteHeader_nav li:not(.nav_contact) a
+    {
+        color: #fff;
     }
 }
 .siteHeader_nav li.current a
@@ -1020,7 +1032,7 @@ html.ie8 .icon-instagram:before
 {
     position: relative; 
 
-    padding-top: 200px;
+    padding-top: 175px;
 }
 .siteFooter.hasGradation:before
 {
@@ -1037,8 +1049,9 @@ html.ie8 .icon-instagram:before
 
     content: ' ';
 
-    background: transparent url(../img/gradation-bottom.png) left bottom repeat-x;
-    background-size: 10px auto;
+    background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuNSIgeTE9IjAuMCIgeDI9IjAuNSIgeTI9IjEuMCI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZhZmFmYSIvPjxzdG9wIG9mZnNldD0iNTAlIiBzdG9wLWNvbG9yPSIjZmFmYWZhIiBzdG9wLW9wYWNpdHk9IjAuNSIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2ZhZmFmYSIgc3RvcC1vcGFjaXR5PSIwLjAiLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyYWQpIiAvPjwvc3ZnPiA=');
+    background-image: linear-gradient(to bottom, #fafafa, rgba(250, 250, 250, .5) 50%, rgba(250, 250, 250, 0) 100%); 
+    background-size: 100%;
 }
 @media screen and (max-width: 580px)
 {
@@ -1049,8 +1062,6 @@ html.ie8 .icon-instagram:before
     .siteFooter.hasGradation:before
     {
         padding-top: 100px;
-
-        background-size: 5px auto;
     }
 }
 .siteFooter .credit
@@ -1495,6 +1506,8 @@ html.ie8 .icon-instagram:before
 
 .fixedSns
 {
+    font-size: .9em;
+
     position: fixed;
     top: 0;
     bottom: 0;
@@ -1511,6 +1524,39 @@ html.ie8 .icon-instagram:before
     -webkit-writing-mode: vertical-lr;
             writing-mode: vertical-lr;
 }
+.scrollOverVisual .fixedSns a
+{
+    transition: none;
+}
+.scrollOverVisual .fixedSns .fixedSns_sns li a.icon-twitter:before,
+.scrollOverVisual .fixedSns .fixedSns_sns li a.icon-facebook:before
+{
+    color: #cacaca;
+}
+.scrollOverVisual .fixedSns .fixedSns_sns li a.icon-twitter
+{
+    transition: all .5s ease 0s;
+}
+.scrollOverVisual .fixedSns .fixedSns_sns li a.icon-twitter:hover:before,
+.scrollOverVisual .fixedSns .fixedSns_sns li a.icon-twitter:active:before,
+.scrollOverVisual .fixedSns .fixedSns_sns li a.icon-twitter:focus:before
+{
+    color: #55acee;
+}
+.scrollOverVisual .fixedSns .fixedSns_sns li a.icon-facebook
+{
+    transition: all .5s ease 0s;
+}
+.scrollOverVisual .fixedSns .fixedSns_sns li a.icon-facebook:hover:before,
+.scrollOverVisual .fixedSns .fixedSns_sns li a.icon-facebook:active:before,
+.scrollOverVisual .fixedSns .fixedSns_sns li a.icon-facebook:focus:before
+{
+    color: #3b5998;
+}
+.scrollOverVisual .fixedSns .fixedSns_index
+{
+    color: #ccc;
+}
 .fixedSns .fixedSns_sns,
 .fixedSns .fixedSns_index
 {
@@ -1522,13 +1568,15 @@ html.ie8 .icon-instagram:before
 }
 .fixedSns .fixedSns_index
 {
-    margin-bottom: 10px; 
-    margin-left: .5em;
+    margin-bottom: 8px;
+    margin-left: .8em;
+
+    transition: all .3s cubic-bezier(.785, .135, .15, .86) 0s;
 }
 .fixedSns .mySns li:not(:last-child)
 {
     margin-right: 0;
-    margin-bottom: 1px;
+    margin-bottom: 3px;
 }
 @media screen and (max-width: 580px)
 {
@@ -1830,7 +1878,7 @@ html.ie8 .icon-instagram:before
 
     color: #fff;
 }
-.pagevisual:after
+.pagevisual.hasGradation:after
 {
     position: absolute;
     z-index: 2;
@@ -1841,25 +1889,24 @@ html.ie8 .icon-instagram:before
 
     width: 100%;
     height: 0;
-    padding-top: 200px;
+    padding-top: 100px;
 
     content: ' ';
 
-    background: transparent url(../img/gradation.png) left top repeat-x;
-    background-size: 10px auto;
+    background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuNSIgeTE9IjEuMCIgeDI9IjAuNSIgeTI9IjAuMCI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZhZmFmYSIvPjxzdG9wIG9mZnNldD0iNTAlIiBzdG9wLWNvbG9yPSIjZmFmYWZhIiBzdG9wLW9wYWNpdHk9IjAuNSIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2ZhZmFmYSIgc3RvcC1vcGFjaXR5PSIwLjAiLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyYWQpIiAvPjwvc3ZnPiA=');
+    background-image: linear-gradient(to top, #fafafa, rgba(250, 250, 250, .5) 50%, rgba(250, 250, 250, 0) 100%); 
+    background-size: 100%;
 }
 @media screen and (max-width: 580px)
 {
-    .pagevisual:after
+    .pagevisual.hasGradation:after
     {
         padding-top: 100px;
-
-        background-size: 5px auto;
     }
 }
 .pagevisual.hasGradation .wrap
 {
-    padding-bottom: 180px;
+    padding-bottom: 100px;
 }
 @media screen and (max-width: 580px)
 {
@@ -1871,6 +1918,7 @@ html.ie8 .icon-instagram:before
 .pagevisual.hasGradation + .main
 {
     padding-top: 100px;
+    padding-bottom: 100px;
 
     background-color: #fafafa;
 }
@@ -1890,7 +1938,7 @@ html.ie8 .icon-instagram:before
     display: flex;
         flex-direction: row;
 
-    height: 100vh;
+    height: 80vh;
     min-height: 600px;
 
     -ms-flex-wrap: wrap;
@@ -1953,8 +2001,8 @@ html.ie8 .icon-instagram:before
 
     transition: all .4s cubic-bezier(.68, -.55, .265, 1.55) 0s;
     transition-delay: 1.5s;
-    -webkit-transform: scale(1.15);
-            transform: scale(1.15);
+    -webkit-transform: translateY(6px);
+            transform: translateY(6px);
     -webkit-transform-origin: 50% 25%;
             transform-origin: 50% 25%;
     text-align: right;
@@ -1971,8 +2019,8 @@ html.ie8 .icon-instagram:before
 }
 .inview .pagevisual_copy .handWrite
 {
-    -webkit-transform: scale(1);
-            transform: scale(1);
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
 
     opacity: 1;
 }

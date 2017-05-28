@@ -1,46 +1,13 @@
 /***********************
  module
 ***********************/
-.section .wrap
+.main .section
 {
-    box-sizing: content-box; 
-    max-width: 680px;
+    text-align: center;
+    /**
+  * dashed
+  */
 }
-.section_index
-{
-    font-size: 4.66em; 
-    line-height: 1;
-
-    margin-bottom: 45px;
-}
-.section_index svg
-{
-    font-family: 'woodford bold';
-}
-@media screen and (max-width: 580px)
-{
-    .section_index
-    {
-        font-size: 6em;
-
-        margin-bottom: 30px;
-    }
-}
-.section_content
-{
-    font-size: .933em; 
-    line-height: 2;
-
-    letter-spacing: .06em;
-}
-@media screen and (max-width: 580px)
-{
-    .section_content
-    {
-        font-size: 1em;
-    }
-}
-
 .main .section:not(:last-child):after
 {
     display: block;
@@ -70,6 +37,56 @@
 {
     height: 50px;
 }
+.main .section .wrap
+{
+    box-sizing: content-box; 
+    max-width: 680px;
+}
+.main .section_index
+{
+    font-size: 4.66em; 
+    line-height: 1;
+
+    margin-bottom: 45px;
+}
+.main .section_index svg
+{
+    font-family: 'woodford bold';
+}
+@media screen and (max-width: 580px)
+{
+    .main .section_index
+    {
+        font-size: 6em;
+
+        margin-bottom: 30px;
+    }
+}
+.main .section_content
+{
+    font-size: .933em; 
+    line-height: 2;
+
+    display: inline-block;
+
+    text-align: left;
+    letter-spacing: .06em;
+}
+@media screen and (max-width: 580px)
+{
+    .main .section_content
+    {
+        font-size: 1em;
+    }
+}
+.main .section p:first-child
+{
+    margin-top: 0;
+}
+.main .section p:not(:last-child)
+{
+    margin-bottom: 1em;
+}
 
 /***********************
  mainvisual
@@ -83,9 +100,11 @@
 {
     position: absolute;
     z-index: 0;
-    top: 0;
-    right: 0;
-    left: 0;
+    right: 5%;
+    bottom: 0;
+    left: auto;
+
+    width: 435px;
 
     opacity: .45;
 
@@ -98,241 +117,4 @@
     right: 0;
     bottom: 5%;
     left: 0;
-}
-
-/***********************
- section
-***********************/
-/********** hi **********/
-.section-hi,
-.section-hi .section_index,
-.section-hi .section_content
-{
-    position: relative;
-    z-index: 1;
-}
-.section-hi .section_index
-{
-    line-height: 1;
-
-    position: relative;
-}
-.section-hi .section_index .handWrite
-{
-    font-family: 'Damion', cursive; 
-    font-size: .6em;
-
-    position: absolute;
-    top: 0;
-    right: 0;
-
-    -webkit-transform: rotate(5deg);
-            transform: rotate(5deg);
-
-    color: #003640;
-}
-@media screen and (max-width: 580px)
-{
-    .section-hi .section_index .handWrite
-    {
-        font-size: .5em; 
-
-        top: 5px;
-    }
-}
-.section-hi .section_bg
-{
-    position: absolute;
-    z-index: 0;
-    top: -12%;
-    right: 0; 
-
-    max-width: 518px;
-}
-@media screen and (max-width: 580px)
-{
-    .section-hi .section_bg
-    {
-        top: -1%; 
-
-        max-width: 80%;
-    }
-}
-.section-hi .button
-{
-    display: block;
-
-    text-align: right;
-}
-
-/********** mind **********/
-.section-mind .mindlist
-{
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-        flex-direction: row;
-
-    margin-top: -50px;
-
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: row;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-    -webkit-box-pack: justify;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
-    -ms-flex-line-pack: start;
-    align-content: flex-start;
-}
-@media screen and (max-width: 580px)
-{
-    .section-mind .mindlist
-    {
-        margin-right: -2.5%; 
-        margin-left: -2.5%;
-    }
-}
-.section-mind .mindlist_mind
-{
-    width: calc( 100% / 3 );
-    margin-top: 50px;
-
-    list-style: none;
-
-    text-align: center;
-}
-@media screen and (max-width: 580px)
-{
-    .section-mind .mindlist_mind
-    {
-        width: calc( 100% / 2 );
-        margin-top: 30px;
-    }
-}
-.section-mind .mindlist_icon
-{
-    line-height: 1;
-}
-.section-mind .mindlist_icon figcaption
-{
-    font-family: 'woodford exlight';
-    font-size: 1.3em;
-    font-style: italic;
-
-    display: block;
-
-    margin-top: 1em;
-    margin-bottom: 1em;
-
-    color: #003640;
-}
-.section-mind .mindlist_description
-{
-    font-size: .9em;
-
-    letter-spacing: .05em; 
-
-    -webkit-font-feature-settings: 'palt';
-            font-feature-settings: 'palt';
-}
-@media screen and (max-width: 580px)
-{
-    .section-mind .mindlist_description
-    {
-        letter-spacing: 0;
-    }
-}
-
-/********** skill **********/
-.section-skill .section_index
-{
-    margin-bottom: 30px;
-}
-.section-skill .skill
-{
-    max-width: 410px;
-    margin-right: auto;
-    margin-left: auto;
-}
-.section-skill .skill:not(:last-child)
-{
-    margin-bottom: 40px;
-}
-.section-skill .skill_index
-{
-    font-family: 'Damion', cursive;
-    font-size: 1.2em;
-    line-height: 1;
-
-    position: relative;
-
-    margin-bottom: 1.5em;
-
-    color: #003640;
-}
-.section-skill .skill_index,
-.section-skill .skill_index i
-{
-    transition: all .5s cubic-bezier(.785, .135, .15, .86) 0s;
-}
-.section-skill .skill_index i
-{
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: -100%;
-
-    display: block;
-
-    width: 95%;
-    height: 1px;
-    margin: auto;
-
-    background-color: #003640;
-}
-.section-skill .skill_content
-{
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-        flex-direction: row;
-
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: row;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-    -webkit-box-pack: justify;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
-}
-.section-skill .skill_content_list
-{
-    display: inline-block;
-}
-.section-skill .skill_icon
-{
-    line-height: 1;
-}
-.section-skill .skill_icon img
-{
-    box-sizing: border-box;
-
-    border: solid 1px #ccc;
-}
-.section-skill .skill_icon figcaption
-{
-    font-family: 'woodford exlight';
-    font-style: italic;
-
-    display: block;
-
-    margin-top: 1em;
-    margin-bottom: 1em;
-
-    text-align: center;
-
-    color: #003640;
 }

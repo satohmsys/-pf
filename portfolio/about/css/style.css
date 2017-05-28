@@ -307,9 +307,25 @@
     -ms-flex-pack: justify;
     justify-content: space-between;
 }
+@media screen and (max-width: 580px)
+{
+    .section-skill .skill_content
+    {
+        -ms-flex-wrap: nowrap;
+            flex-wrap: nowrap;
+    }
+}
 .section-skill .skill_content_list
 {
     display: inline-block;
+}
+@media screen and (max-width: 580px)
+{
+    .section-skill .skill_content_list
+    {
+        margin-right: 5px; 
+        margin-left: 5px;
+    }
 }
 .section-skill .skill_icon
 {

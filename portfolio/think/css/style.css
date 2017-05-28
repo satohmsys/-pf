@@ -83,9 +83,9 @@
 {
     margin-top: 0;
 }
-.main .section p:not(:last-child)
+.main .section p:last-child
 {
-    margin-bottom: 1em;
+    margin-bottom: 0;
 }
 
 /***********************
@@ -109,6 +109,17 @@
     opacity: .45;
 
     mix-blend-mode: hard-light;
+}
+@media screen and (max-width: 580px)
+{
+    .pagevisual_img
+    {
+        right: auto;
+        left: auto; 
+
+        width: auto;
+        height: 90%;
+    }
 }
 .pagevisual .icon-mouse
 {

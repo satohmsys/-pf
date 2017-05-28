@@ -83,8 +83,8 @@
 			&:first-child{
 				margin-top: 0;
 			}
-			&:not( :last-child ){
-				margin-bottom: 1em;
+			&:last-child{
+				margin-bottom: 0;
 			}
 		}	
 }
@@ -114,9 +114,12 @@
 		mix-blend-mode: hard-light;
 		
 		@include break( sp ){
-			// width: auto;
-			// max-width: none;
-			// height: 100%;
+			width: auto;
+			height: 90%;
+			right: auto;
+			left: auto;
+			// left: -2%;
+			// right: -25%;
 		}			
 	}
 	//////// scroll down

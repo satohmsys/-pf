@@ -1,0 +1,280 @@
+@charset 'UTF-8';
+/***********************
+ module
+***********************/
+.works
+{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+        flex-direction: row;
+
+    max-width: 90%;
+    margin-right: auto;
+    margin-left: auto;
+
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+}
+
+.work
+{
+    width: 30.4878%;
+    margin-bottom: 20px;
+
+    transition: all .5s ease 0s;
+}
+.work:hover .work_info img,
+.work:active .work_info img,
+.work:focus .work_info img
+{
+    opacity: 1;
+}
+.work:hover .work_info:before,
+.work:active .work_info:before,
+.work:focus .work_info:before
+{
+    left: -50%; 
+
+    width: 200%;
+}
+.work:hover .work_info_category,
+.work:hover .work_info_category li:not(:last-child):after,
+.work:hover .work_info a,
+.work:active .work_info_category,
+.work:active .work_info_category li:not(:last-child):after,
+.work:active .work_info a,
+.work:focus .work_info_category,
+.work:focus .work_info_category li:not(:last-child):after,
+.work:focus .work_info a
+{
+    color: #fff;
+}
+@media screen and (max-width: 580px)
+{
+    .work
+    {
+        width: 48%;
+    }
+}
+.work_img
+{
+    position: relative;
+
+    overflow: hidden; 
+
+    box-sizing: border-box;
+    width: 100%;
+    height: 0;
+    padding-top: 81.51596%;
+
+    border: solid 1px #aaa;
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: cover;
+}
+.work_img img
+{
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0; 
+
+    width: 100%;
+    height: auto;
+}
+.work_info
+{
+    line-height: 1;
+
+    position: relative;
+    top: -20px;
+
+    overflow: hidden;
+
+    width: 85.33333%;
+    margin-left: -20px;
+    padding: 20px;
+
+    transition: all .05s cubic-bezier(.785, .135, .15, .86) 0s;
+
+    background-color: #fff; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, .05), 0 6px 5px -5px rgba(0, 0, 0, .01);
+}
+.work_info:before
+{
+    position: absolute;
+    z-index: 0;
+    top: auto;
+    right: auto;
+    bottom: 0;
+    left: -210%;
+
+    display: block;
+
+    width: 200%;
+    height: 100%;
+
+    content: ' ';
+    transition: all .3s cubic-bezier(.785, .135, .15, .86) 0s;
+    -webkit-transform: skew(15deg);
+            transform: skew(15deg);
+
+    background-color: #003640;
+}
+@media screen and (max-width: 580px)
+{
+    .work_info
+    {
+        top: -10px; 
+
+        margin-left: -10px;
+        padding: 10px;
+    }
+}
+.work_info a
+{
+    transition: all .3s cubic-bezier(.785, .135, .15, .86) 0s; 
+
+    color: inherit;
+}
+.work_info_type
+{
+    font-family: 'woodford light';
+    font-size: 1.45em; 
+    font-weight: lighter;
+
+    position: relative;
+    z-index: 1;
+
+    margin-bottom: 15px;
+
+    transition: all .3s cubic-bezier(.785, .135, .15, .86) 0s;
+
+    color: #005f70;
+}
+@media screen and (max-width: 580px)
+{
+    .work_info_type
+    {
+        margin-bottom: 10px;
+    }
+}
+.work_info_category
+{
+    position: relative;
+    z-index: 1;
+
+    padding-left: 1.2em;
+
+    transition: all .3s cubic-bezier(.785, .135, .15, .86) 0s;
+}
+.work_info_category:before
+{
+    font-family: fontawesome;
+    font-size: .8em;
+    font-weight: normal;
+    font-style: normal;
+    font-variant: normal;
+    line-height: 1;
+
+    position: relative;
+    top: 0;
+    left: 0;
+
+    display: inline-block;
+
+    margin-right: -4px;
+
+    content: '';
+    -webkit-transform: translate(0, 0);
+            transform: translate(0, 0);
+    vertical-align: middle;
+    text-transform: none;
+
+    color: inherit;
+
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+html.ie8 .work_info_category:before
+{
+    font-family: inherit; 
+
+    content: '>';
+}
+.work_info_category:before
+{
+    text-indent: -1.2em;
+}
+.work_info_category li
+{
+    font-family: 'woodford light';
+
+    display: inline-block;
+
+    transition: all .3s cubic-bezier(.785, .135, .15, .86) 0s; 
+
+    color: #4d4d4d;
+}
+.work_info_category li:not(:last-child):after
+{
+    display: inline-block;
+
+    margin: 0 2px;
+
+    content: '/';
+    transition: all .3s cubic-bezier(.785, .135, .15, .86) 0s;
+    vertical-align: middle;
+
+    opacity: .5;
+}
+
+/***********************
+ mainvisual
+***********************/
+/********** mainvisual **********/
+.pagevisual .wrap
+{
+    max-width: none;
+}
+.pagevisual_img
+{
+    position: absolute;
+    z-index: 0;
+    right: 15%;
+    bottom: 0;
+    left: auto;
+
+    width: 606px;
+
+    opacity: .45;
+
+    mix-blend-mode: hard-light;
+}
+@media screen and (max-width: 580px)
+{
+    .pagevisual_img
+    {
+        right: auto;
+        left: auto; 
+
+        width: auto;
+        height: 90%;
+    }
+}
+.pagevisual .icon-mouse
+{
+    position: absolute;
+    z-index: 3; 
+    right: 0;
+    bottom: 5%;
+    left: 0;
+}

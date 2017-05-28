@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<!--[if lte IE 9]>
+<html lang="ja" class="ie">
+<![endif]-->
+<!--[if !IE]<!-->
+<html lang="ja">
+   <!--<![endif]-->
+   <% include ../_inc/function %>
+   <%
+      $meta.title = 'WORKS'
+   %>
+   <%
+   $path = '../';
+   $active = 'think';
+   $css = ['css/style.css'];
+   $scripts_global=null;
+   $scripts=[$path + 'common/js/common.js',$path + 'common/js/childpage.js','js/script.js'];
+   %>
+   <head>
+     <%- include($path + '_inc/_header') %>
+   </head>
+
+   <body class="about">
+      <!-- ***** header  -->
+        <%- include($path + '_inc/_gnav', {logo: true}) %>
+      <!-- ///// header  -->
+
+
+      <!-- ***** mainvisual -->
+      <section class="pagevisual pagevisual-child hasGradation">
+         <div class="wrap">
+
+            <div class="pagevisual_copy">
+               <h2>
+                  <p class="pagevisual_copy_pagename">
+                   WORKS
+                  </p>
+                  <p class="handWrite">   
+                     archive
+                  </p>
+                  
+               </h2>
+            </div>
+
+            <i class="icon icon-mouse"></i>
+
+           <img src="img/work-main.png" width="606" class=" pagevisual_img" alt="">
+         </div>
+      </section>
+      <!-- ///// mainvisual  -->
+      
+      <!-- ***** BODY START -->
+      <main class="main topGradation">
+
+        <section class="works">
+          
+          <article class="work">
+            <a href="">
+              <figure class="work_img"><img src="img/website1.jpg" alt=""/></figure>
+              <div class="work_info">
+                <h3 class="work_info_type">Website</h3>
+                <ul class="work_info_category">
+                  <li><a href="">design</a></li>
+                  <li><a href="">coding</a></li>
+                  <li><a href="">frontend</a></li>
+                </ul>
+              </div></a>
+          </article>
+
+          <article class="work">
+            <a href="">
+              <figure class="work_img"><img src="img/icon.jpg" alt=""/></figure>
+              <div class="work_info">
+                <h3 class="work_info_type">Website</h3>
+                <ul class="work_info_category">
+                  <li><a href="">design</a></li>
+                  <li><a href="">coding</a></li>
+                  <li><a href="">frontend</a></li>
+                </ul>
+              </div></a>
+          </article>
+
+          <article class="work">
+            <a href="">
+              <figure class="work_img"><img src="img/visual.jpg" alt=""/></figure>
+              <div class="work_info">
+                <h3 class="work_info_type">Website</h3>
+                <ul class="work_info_category">
+                  <li><a href="">design</a></li>
+                  <li><a href="">coding</a></li>
+                  <li><a href="">frontend</a></li>
+                </ul>
+              </div></a>
+          </article>
+
+          <article class="work">
+            <a href="">
+              <figure class="work_img"><img src="img/website1.jpg" alt=""/></figure>
+              <div class="work_info">
+                <h3 class="work_info_type">Website</h3>
+                <ul class="work_info_category">
+                  <li><a href="">design</a></li>
+                  <li><a href="">coding</a></li>
+                  <li><a href="">frontend</a></li>
+                </ul>
+              </div></a>
+          </article>
+
+          <article class="work">
+            <a href="">
+              <figure class="work_img"><img src="img/icon.jpg" alt=""/></figure>
+              <div class="work_info">
+                <h3 class="work_info_type">Website</h3>
+                <ul class="work_info_category">
+                  <li><a href="">design</a></li>
+                  <li><a href="">coding</a></li>
+                  <li><a href="">frontend</a></li>
+                </ul>
+              </div></a>
+          </article>
+
+          <article class="work">
+            <a href="">
+              <figure class="work_img"><img src="img/visual.jpg" alt=""/></figure>
+              <div class="work_info">
+                <h3 class="work_info_type">Website</h3>
+                <ul class="work_info_category">
+                  <li><a href="">design</a></li>
+                  <li><a href="">coding</a></li>
+                  <li><a href="">frontend</a></li>
+                </ul>
+              </div></a>
+          </article>          
+
+        </section>
+       
+      </main>
+      <!-- //// BODY END -->
+     
+      <%- include( $path + '_inc/_footer', {hasGradation: true} ) %>
+
+      <%- $parts.backtotop %>
+
+      <%- $parts.fixedsns %>
+
+
+      <!-- ***** menu button -->
+      <%- $parts.toggle %>
+      <!-- //// menu button -->
+
+      
+     <%#- include($path + '_inc/_intro') %>
+
+     <%- include($path + '_inc/_scripts') %>
+   </body>
+
+</html>

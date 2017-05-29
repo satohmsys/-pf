@@ -20,7 +20,7 @@
      <%- include($path + '_inc/_header') %>
    </head>
 
-   <body class="about">
+   <body class="works works-child">
       <!-- ***** header  -->
         <%- include($path + '_inc/_gnav', {logo: true}) %>
       <!-- ///// header  -->
@@ -30,21 +30,29 @@
       <section class="pagevisual pagevisual-child hasGradation">
          <div class="wrap">
 
+            <!-- *** text -->
             <div class="pagevisual_copy">
-               <h2>
-                  <p class="pagevisual_copy_pagename">
-                   WORKS
-                  </p>
-                  <p class="handWrite">   
-                     archive
-                  </p>
-                  
+              <p class="pagevisual_copy_pagename">
+                WORKS
+              </p>
+               <h2 class="pagevisual_copy_productname">
+                パナソニック産機システムズ               
                </h2>
+               <p class="pagevisual_copy_type">Website</p>
+                <ul class="pagevisual_copy_category">
+                  <li><a href="">design</a></li>
+                  <li><a href="">coding</a></li>
+                  <li><a href="">frontend</a></li>
+                </ul>               
             </div>
+            <!-- /// text -->
+            <!-- *** screen -->
+            <figure class="pagevisual_screen">
+              <img src="img/website1.jpg" alt=""/>
+            </figure>
+            <!-- /// screen -->
 
             <i class="icon icon-mouse"></i>
-
-           <img src="img/work-main.png" width="606" class=" pagevisual_img" alt="">
          </div>
       </section>
       <!-- ///// mainvisual  -->
@@ -52,88 +60,54 @@
       <!-- ***** BODY START -->
       <main class="main topGradation">
 
-        <section class="works">
-          
-          <article class="work">
-            <a href="">
-              <figure class="work_img"><img src="img/website1.jpg" alt=""/></figure>
-              <div class="work_info">
-                <h3 class="work_info_type">Website</h3>
-                <ul class="work_info_category">
-                  <li><a href="">design</a></li>
-                  <li><a href="">coding</a></li>
-                  <li><a href="">frontend</a></li>
-                </ul>
-              </div></a>
-          </article>
+        <section class="section-intro">
+           <div class="wrap">
+             
+              タフなデザインタフなデザインタフなデザインタフなデザインタフなデザインタフなデザイン。
+             <p>タフなデザイン</p>
+             
+             <p>ヤツともやりあっている。</p>
 
-          <article class="work">
-            <a href="">
-              <figure class="work_img"><img src="img/icon.jpg" alt=""/></figure>
-              <div class="work_info">
-                <h3 class="work_info_type">Website</h3>
-                <ul class="work_info_category">
-                  <li><a href="">design</a></li>
-                  <li><a href="">coding</a></li>
-                  <li><a href="">frontend</a></li>
-                </ul>
-              </div></a>
-          </article>
-
-          <article class="work">
-            <a href="">
-              <figure class="work_img"><img src="img/visual.jpg" alt=""/></figure>
-              <div class="work_info">
-                <h3 class="work_info_type">Website</h3>
-                <ul class="work_info_category">
-                  <li><a href="">design</a></li>
-                  <li><a href="">coding</a></li>
-                  <li><a href="">frontend</a></li>
-                </ul>
-              </div></a>
-          </article>
-
-          <article class="work">
-            <a href="">
-              <figure class="work_img"><img src="img/website1.jpg" alt=""/></figure>
-              <div class="work_info">
-                <h3 class="work_info_type">Website</h3>
-                <ul class="work_info_category">
-                  <li><a href="">design</a></li>
-                  <li><a href="">coding</a></li>
-                  <li><a href="">frontend</a></li>
-                </ul>
-              </div></a>
-          </article>
-
-          <article class="work">
-            <a href="">
-              <figure class="work_img"><img src="img/icon.jpg" alt=""/></figure>
-              <div class="work_info">
-                <h3 class="work_info_type">Website</h3>
-                <ul class="work_info_category">
-                  <li><a href="">design</a></li>
-                  <li><a href="">coding</a></li>
-                  <li><a href="">frontend</a></li>
-                </ul>
-              </div></a>
-          </article>
-
-          <article class="work">
-            <a href="">
-              <figure class="work_img"><img src="img/visual.jpg" alt=""/></figure>
-              <div class="work_info">
-                <h3 class="work_info_type">Website</h3>
-                <ul class="work_info_category">
-                  <li><a href="">design</a></li>
-                  <li><a href="">coding</a></li>
-                  <li><a href="">frontend</a></li>
-                </ul>
-              </div></a>
-          </article>          
-
+             <p>だから、大学生はだから、大学生はだから、大学生はだから、大学生はだから、大学生はだから、大学生はだから、大学生は</p>
+           </div>
         </section>
-       
+
+        <section class="section section-screenshots section-desktop">
+          <div class="wrap">
+            <img src="img/sample-index.jpg" alt=""/>
+            <img src="img/sample-detail.jpg" alt=""/>
+            <img src="img/sample-whyhere.jpg" alt=""/>
+          </div>
+        </section>
+
+        <div className="pagelinks"></div>
+
+        <section class="section section-mobile"></section>
+
+        <section class="section section-related">
+          <div class="wrap">
+            <header class="section_index">
+                <h3>
+                   <svg viewBox="0 0 1280 70">
+                     <defs>
+                        <linearGradient id="g0">
+                           <stop offset="0" stop-color="#00d8fd"/>
+                           <stop offset="0.9" stop-color="#0eff9e"/>
+                        </linearGradient>
+                      </defs>
+                      <text text-anchor="middle" x="640" y="55" fill=url(#g0) font-size-adjust="1">
+                        Related Works
+                      </text>
+                   </svg>
+                </h3>
+             </header>
+             <div class="section_content">
+                「クライアントのメッセージをデザインする」ことをたいせつに。<br/>
+                形にするべきものは何か、そこに込める想いは？を突き詰めて、<br/>納得のいく、納得していただけるモノづくりを目指します。
+             </div>
+          </div>
+        </section>
+
       </main>
       <!-- //// BODY END -->
      

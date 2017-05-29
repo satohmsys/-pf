@@ -278,6 +278,13 @@ html.ie8 .work_info_category:before
     bottom: 5%;
     left: 0;
 }
+@media screen and (max-width: 580px)
+{
+    .pagevisual.hasGradation + .main
+    {
+        padding-top: 40px;
+    }
+}
 
 /**********************************************
 
@@ -296,6 +303,13 @@ html.ie8 .work_info_category:before
 .works-child .section-intro
 {
     margin-bottom: 100px;
+}
+@media screen and (max-width: 580px)
+{
+    .works-child .section-intro
+    {
+        margin-bottom: 50px;
+    }
 }
 .works-child .section-screenshots .wrap
 {
@@ -324,9 +338,22 @@ html.ie8 .work_info_category:before
 
     margin-left: 2%;
 }
+@media screen and (max-width: 580px)
+{
+    .works-child .section-screenshots img,
+    .works-child .section-screenshots img:nth-child(even)
+    {
+        display: block; 
+        float: none;
+
+        max-width: 90%;
+        margin-right: auto;
+        margin-left: auto;
+    }
+}
 .works-child .section-related .section_index
 {
-    font-size: 4.66em; 
+    font-size: 2.33em; 
     line-height: 1;
 
     margin-bottom: 45px;

@@ -86,8 +86,13 @@
     right: 0;
     left: 0; 
 
+    display: inline-block;
+
     width: 100%;
     height: auto;
+
+    -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
 }
 .work_info
 {
@@ -327,16 +332,16 @@ html.ie8 .work_info_category:before
 .works-child .section-screenshots img
 {
     display: inline-block;
-    float: left; 
+    float: left;
 
-    max-width: 49%;
-    margin-bottom: 3%;
+    max-width: 47.5%;
+    margin-bottom: 5%;
+
+    box-shadow: 0 0 15px rgba(0, 0, 0, .13), 0 6px 5px -5px rgba(0, 0, 0, .3);
 }
 .works-child .section-screenshots img:nth-child(even)
 {
     float: right;
-
-    margin-left: 2%;
 }
 @media screen and (max-width: 580px)
 {

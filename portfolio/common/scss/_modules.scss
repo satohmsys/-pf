@@ -858,6 +858,27 @@
 
 }
 
+/////// 関連ページに行く戻るボタン
+
+.relatedLink
+{
+	text-align: right;
+	font-family: $fontFamily_wf_light;
+	
+	ul
+	{
+		margin: 0;
+		li{
+			display: inline-block;
+			vertical-align: middle;
+		}	
+	}
+	
+	.button{
+		margin-left: 0.5em;
+	}
+}
+
 
 
 ////////////////////

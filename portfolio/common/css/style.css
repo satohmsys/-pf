@@ -1504,6 +1504,27 @@ html.ie8 .icon-instagram:before
     opacity: 0;
 }
 
+.relatedLink
+{
+    font-family: 'woodford light'; 
+
+    text-align: right;
+}
+.relatedLink ul
+{
+    margin: 0;
+}
+.relatedLink ul li
+{
+    display: inline-block;
+
+    vertical-align: middle;
+}
+.relatedLink .button
+{
+    margin-left: .5em;
+}
+
 .fixedSns
 {
     font-size: .9em;

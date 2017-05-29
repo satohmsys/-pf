@@ -2,7 +2,7 @@
 /***********************
  module
 ***********************/
-.works
+.worksArchive
 {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -277,4 +277,77 @@ html.ie8 .work_info_category:before
     right: 0;
     bottom: 5%;
     left: 0;
+}
+
+/**********************************************
+
+ child page
+
+**********************************************/
+.works-child
+{
+    /***********************
+   module
+  ***********************/
+    /***********************
+   style
+  ***********************/
+}
+.works-child .section-intro
+{
+    margin-bottom: 100px;
+}
+.works-child .section-screenshots .wrap
+{
+    overflow: hidden;
+
+    *zoom: 1;
+}
+.works-child .section-screenshots .wrap:after
+{
+    display: table;
+    clear: both; 
+
+    content: '';
+}
+.works-child .section-screenshots img
+{
+    display: inline-block;
+    float: left; 
+
+    max-width: 49%;
+    margin-bottom: 3%;
+}
+.works-child .section-screenshots img:nth-child(even)
+{
+    float: right;
+
+    margin-left: 2%;
+}
+.works-child .section-related .section_index
+{
+    font-size: 4.66em; 
+    line-height: 1;
+
+    margin-bottom: 45px;
+}
+.works-child .section-related .section_index svg
+{
+    font-family: 'woodford bold';
+}
+@media screen and (max-width: 580px)
+{
+    .works-child .section-related .section_index
+    {
+        font-size: 6em;
+
+        margin-bottom: 30px;
+    }
+}
+@media screen and (max-width: 580px)
+{
+    .works-child .section-related_content
+    {
+        font-size: 1em;
+    }
 }

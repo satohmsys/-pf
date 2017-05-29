@@ -17,7 +17,7 @@
  module
 ***********************/
 
-.works
+.worksArchive
 {
 	max-width: 90%;
 	margin-left: auto;
@@ -153,15 +153,15 @@
 			transition: transition(0.3s);
 			
 
-		@include iconfont(
-        $content: '\f0c1' ,
-        $icon-margin-right: -4px,
-        $font-size : 0.8em,
-        $top: 0 );
-        
-        &:before{
-        	text-indent: -1.2em;
-        }
+			@include iconfont(
+	        $content: '\f0c1' ,
+	        $icon-margin-right: -4px,
+	        $font-size : 0.8em,
+	        $top: 0 );
+	        
+	        &:before{
+	        	text-indent: -1.2em;
+	        }
         
 			li{
 				color: #4d4d4d;
@@ -227,5 +227,90 @@
 		left: 0;
 		z-index: 3;
 	}
+}
+
+
+
+/**********************************************
+
+ child page
+
+**********************************************/
+
+.works-child
+{
+
+
+/***********************
+ module
+***********************/
+
+.section{
+
+
+}	
+
+
+
+
+/***********************
+ style
+***********************/
+
+.section-intro{
+	// margin-top: 80px;
+	margin-bottom: 100px;
+}
+
+
+.section-screenshots
+{
+	.wrap{
+		// display: flex;
+		// justify-content: space-between;
+		// flex-wrap: wrap;
+		overflow: hidden;
+		
+		@include clearfix();
+	}
+	img{
+		max-width: 49%;
+		margin-bottom: 3%;
+		display: inline-block;
+		float: left;
+		
+		&:nth-child( even ){
+			float: right;
+			margin-left: 2%;
+			
+		}
+	}
+}
+
+
+.section-related{
+	.section_index{
+			line-height: 1;
+			margin-bottom: 45px;
+			font-size: 4.66em;
+			
+			svg{
+				font-family: $fontFamily_wf_bold;
+			}
+		
+			@include break( sp ){
+				font-size: 6em;
+				margin-bottom: 30px;
+				// font-size: 4.5em;
+			}
+		}
+
+		&_content{
+			
+			@include break( sp ){
+				font-size: 1em;
+			}		
+		}	
+}
 }
 

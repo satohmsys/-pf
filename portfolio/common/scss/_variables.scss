@@ -7,7 +7,7 @@
 //////////////////////////////////////////
 
 %gradation{
-	@include background-image( linear-gradient( to right, $green, $blue ) );	
+	@include background-image( linear-gradient( to right, $blue, $green ) );	
 }
 
 %popspan{

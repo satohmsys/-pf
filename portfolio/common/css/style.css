@@ -2193,14 +2193,24 @@ html.ie8 .pagevisual-child .pagevisual_copy_category:before
 {
     position: absolute;
     top: 100px;
-    right: 0;
+    right: 5%;
 
     box-sizing: border-box; 
-    width: 55.78947%;
+    width: 45.26316%;
 }
 .pagevisual-child .pagevisual_screen img
 {
     width: 100%;
+}
+@media screen and (max-width: 1366px)
+{
+    .pagevisual-child .pagevisual_screen
+    {
+        position: absolute;
+        right: 0; 
+
+        width: 55.78947%;
+    }
 }
 @media screen and (max-width: 580px)
 {

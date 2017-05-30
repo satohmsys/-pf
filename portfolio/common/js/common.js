@@ -23,7 +23,6 @@ window.onload = window.onresize = function(){
 * modenizr
 */
 Modernizr.addTest( 'usefirefox', function( e ){
-    console.log( e );
     return 0 < navigator.userAgent.indexOf('Firefox');
 });
 Modernizr.addTest( 'mobile', function( e ){
@@ -39,7 +38,6 @@ Modernizr.addTest( 'mobile', function( e ){
 if( $ua == 'mobile' && $button.length ){
     $button[0].onclick = $contact.onclick = function( e ){
 
-        console.log( $contact )
         e.stopPropagation();
         e.preventDefault();
 
@@ -232,9 +230,9 @@ function spaning( elm ){
                             
                             $expire = new Date();
                             $expire.setTime( $expire.getTime() + 1000 * 3600 * 48 );
-                            $expire = $expire.toUTCString();                            
-                            $doc.cookie = 'visit=visited;';
-                            // $doc.cookie = 'visit=visited; expires=' . $expire;
+                            $expire = $expire.toUTCString();              
+                            // $doc.cookie = 'visit=visited;';
+                            $doc.cookie = 'visit=visited; expires=' + $expire;
                         }
                     }
 

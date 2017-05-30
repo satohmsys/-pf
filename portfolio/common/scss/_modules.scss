@@ -1454,18 +1454,24 @@
 	&-child
 	{
 		.pagevisual_screen{
-			width: percentage( 530/ 950 );
+			width: percentage( 430 / 950 );
 			// margin-left: auto;
 			// margin-right: 0;
 			position: absolute;
 			top: 100px;
-			right: 0;
+			right: 5%;
 			
 			box-sizing: border-box;
 			
 			img{
 				width: 100%;
 			}
+
+			@include break( 1366 ){
+				width: percentage( 530 / 950 );
+				position: absolute;
+				right: 0;
+			} 
 
 			@include break( sp ){
 				width: 80%;

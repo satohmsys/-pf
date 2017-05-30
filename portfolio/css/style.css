@@ -302,8 +302,10 @@ html
 {
     font-family: 'Damion', cursive; 
     line-height: 1;
-
-    color: #003640;
+}
+.mainvisual_copy .handWrite svg text
+{
+    fill: #003640;
 }
 .mainvisual_copy .handWrite svg
 {
@@ -331,11 +333,18 @@ html
     max-width: none;
     height: 100%;
     margin: auto;
-    margin-left: -15%;
+    margin-left: -1%;
 
     opacity: .45;
 
     mix-blend-mode: hard-light;
+}
+@media screen and (max-width: 1366px)
+{
+    .mainvisual_img
+    {
+        margin-left: -5%;
+    }
 }
 @media screen and (max-width: 580px)
 {
@@ -408,7 +417,16 @@ html
     right: 10.4%; 
     bottom: -20px;
 
-    width: 39.38507%;
+    width: auto;
+    height: 100%;
+}
+@media screen and (max-width: 1366px)
+{
+    .section-think .section_bg-first
+    {
+        width: 39.38507%;
+        height: auto;
+    }
 }
 @media screen and (max-width: 580px)
 {
@@ -437,11 +455,18 @@ html
 }
 .section-works .section_article
 {
-    margin-top: 5%;
+    margin-top: 15%;
     margin-right: 0;
 
     -ms-flex-item-align: start;
     align-self: flex-start;
+}
+@media screen and (max-width: 1366px)
+{
+    .section-works .section_article
+    {
+        margin-top: 5%;
+    }
 }
 @media screen and (max-width: 580px)
 {
@@ -454,12 +479,21 @@ html
 .section-works .section_bg
 {
     bottom: 0;
-    left: 10%;
+    left: 10%; 
+
+    width: 38%;
 }
 .section-works .section_bg_skewWrapper
 {
     -webkit-transform: translate(30%, 50px) rotate(45deg);
             transform: translate(30%, 50px) rotate(45deg);
+}
+@media screen and (max-width: 1366px)
+{
+    .section-works .section_bg
+    {
+        width: 35%;
+    }
 }
 @media screen and (max-width: 580px)
 {
@@ -510,12 +544,19 @@ html
 }
 .section-works .panel_catName
 {
-    font-size: 2em;
+    font-size: 3em;
 
     display: table-cell;
 
     text-align: center;
     vertical-align: middle;
+}
+@media screen and (max-width: 1366px)
+{
+    .section-works .panel_catName
+    {
+        font-size: 2em;
+    }
 }
 .section-works .panel:nth-child(1)
 {

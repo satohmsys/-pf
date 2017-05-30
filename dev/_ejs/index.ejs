@@ -20,7 +20,7 @@ $css = ['css/style.css'];
       <header>
          <div class="siteHeader">
             <div class="wrap clearfix">
-              <%- include('_inc/_gnav') %>
+              <%- include('_inc/_gnav', {logo: false}) %>
             </div>
          </div>
       </header>
@@ -42,22 +42,19 @@ $css = ['css/style.css'];
                      <span class="firstName">MSYS</span>
                   </span>
                   <span class="handWrite">
-
                    <svg viewBox="0 0 1080 52">
-                       <text x="390" y="51" font-family="Damion, cursive" style="line-height: 1">
-                         portfolio site
-                       </text>
+                    <text x="390" y="51" font-size-adjust="1">
+                      portfolio site
+                    </text>
                   </svg>                  
-                     
                   </span>
-                  
                </h1>
             </div>
 
             <i class="icon icon-mouse"></i>
 
-           <img src="img/main.png" width="700" class="testmb mainvisual_img" alt="">
          </div>
+         <img src="img/main.png" width="700" class="testmb mainvisual_img" alt="">
       </section>
       <!-- ///// mainvisual  -->
       

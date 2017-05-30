@@ -210,7 +210,6 @@ html{
 		}
 		&_myname
 		{
-
 			line-height: 0.85;
 			text-shadow: 0 0 5px rgba(#000, 0.15);
 			font-family: $fontFamily_wf_ultra;
@@ -221,16 +220,16 @@ html{
 
 		.handWrite
 		{
-
 			margin-top: -1em;
 			text-align: right;				
 			&,
 			svg text{
 				line-height: 1;
-				color: $green_black;
+				// color: $green_deep;
 				font-family: $fontFamily_damion;
 			}
 			svg text{
+				fill: $green_black;
 				// font-size: 0.35em;
 			}
 
@@ -264,7 +263,7 @@ html{
 		width: auto;
 		height: 100%;
 		margin: auto;
-		margin-left: -15%;
+		margin-left: -1%;
 		opacity: 0.45;
 		position: absolute;
 		z-index: 0;
@@ -273,6 +272,9 @@ html{
 		left: 0;
 		mix-blend-mode: hard-light;
 		
+		@include break( 1366 ){
+			margin-left: -5%;
+		}
 		@include break( sp ){
 			height: 95%;
 			margin-left: -30%;
@@ -355,10 +357,18 @@ html{
 	}
 
 	.section_bg-first{
-		width: percentage( 538/1366 );
+		width: auto;
+		height: 100%;
+
 		bottom: -20px;
 		right: 10.4%;
+	
+		@include break( 1366 ){
+			width: percentage( 538/1366 );
+			height: auto;
+		}
 	}
+
 
 	@include break( sp ){
 		padding-bottom: 40px;
@@ -384,10 +394,14 @@ html{
 	min-height: 550px;
 	
 	.section_article{
-		margin-top: 5%;
+		margin-top: 15%;
 		margin-right: 0;
 		align-self: flex-start;
 		// @include liquid( 490, 1080, true );
+		
+		@include break( 1366 ){
+			margin-top: 5%;
+		}		
 		
 		@include break( sp ){
 			margin-right: auto;
@@ -396,12 +410,17 @@ html{
 	}
 
 	.section_bg{
+		width: 38%;
 		bottom: 0%;
 		left: 10%;
 		
 		&_skewWrapper{
 			transform: translate(30%, 50px) rotate(45deg) ;		
 		}
+
+		@include break( 1366 ){
+			width: 35%;
+		}		
 
 		@include break( sp ){
 			&_skewWrapper{
@@ -443,10 +462,14 @@ html{
 		}
 		
 		&_catName{
-			font-size: 2em;
+			font-size: 3em;
 			text-align: center;
 			display: table-cell;
 			vertical-align: middle;
+			
+			@include break( 1366 ){
+				font-size: 2em;
+			}			
 		}
 
 		@for $i from 1 through 4 {

@@ -757,7 +757,7 @@ html.ie8 .icon-instagram:before
     margin: auto;
 
     content: ' ';
-    transition: all .3s cubic-bezier(.785, .135, .15, .86) 0s;
+    transition: all .5s ease 0s;
 
     background-color: currentColor;
 }

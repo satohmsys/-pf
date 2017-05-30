@@ -100,15 +100,27 @@
 {
     position: absolute;
     z-index: 0;
-    right: 5%;
-    bottom: 0;
+    top: 0;
+    right: 18%;
     left: auto;
 
-    width: 435px;
+    width: auto;
+    height: 100%;
 
     opacity: .45;
 
     mix-blend-mode: hard-light;
+}
+@media screen and (max-width: 1366px)
+{
+    .pagevisual_img
+    {
+        top: auto;
+        right: 5%;
+        bottom: 0; 
+
+        width: 435px;
+    }
 }
 @media screen and (max-width: 580px)
 {

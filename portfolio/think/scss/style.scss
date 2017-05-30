@@ -20,73 +20,73 @@
 
 .main .section{
 	text-align: center;
-		/**
-		* dashed
-		*/
-		&:not( :last-child ):after{
-			content: " ";
-			width: 2px;
-			height: 50px;
-			margin-top: 50px;
-			margin-right: auto;
-			margin-bottom: 50px;
-			margin-left: auto;
-			display: block;
-			transition: easeInOutCirc(1s);
-			transition-delay: 1s;
-			background-image: linear-gradient(to bottom, transparent, transparent 50%, #fff 50%, #fff 100%), linear-gradient(to bottom, $green, $blue);
-			background-size: 3px 10px, 3px 100%;		
-			
-			@include break( sp ){
-				margin-bottom: 1px;
-			}		
-		}
-
-		@at-root &.inview:not( :last-child ):after{
-			height: 50px;
-		}
-
-		.wrap{
-			max-width: 680px;
-			box-sizing: content-box;
-		}
-
-		&_index{
-			line-height: 1;
-			margin-bottom: 45px;
-			font-size: 4.66em;
-			
-			svg{
-				font-family: $fontFamily_wf_bold;
-			}
+	/**
+	* dashed
+	*/
+	&:not( :last-child ):after{
+		content: " ";
+		width: 2px;
+		height: 50px;
+		margin-top: 50px;
+		margin-right: auto;
+		margin-bottom: 50px;
+		margin-left: auto;
+		display: block;
+		transition: easeInOutCirc(1s);
+		transition-delay: 1s;
+		background-image: linear-gradient(to bottom, transparent, transparent 50%, #fff 50%, #fff 100%), linear-gradient(to bottom, $green, $blue);
+		background-size: 3px 10px, 3px 100%;		
 		
-			@include break( sp ){
-				font-size: 6em;
-				margin-bottom: 30px;
-				// font-size: 4.5em;
-			}
-		}
+		@include break( sp ){
+			margin-bottom: 1px;
+		}		
+	}
 
-		&_content{
-			line-height: 2;
-			display: inline-block;
-			text-align: left;			
-			letter-spacing: 0.06em;
-			font-size: 0.933em;
-			
-			@include break( sp ){
-				font-size: 1em;
-			}		
-		}
+	@at-root &.inview:not( :last-child ):after{
+		height: 50px;
+	}
 
-		p{
-			&:first-child{
-				margin-top: 0;
-			}
-			&:last-child{
-				margin-bottom: 0;
-			}
-		}	
+	.wrap{
+		max-width: 680px;
+		box-sizing: content-box;
+	}
+
+	&_index{
+		line-height: 1;
+		margin-bottom: 45px;
+		font-size: 4.66em;
+		
+		svg{
+			font-family: $fontFamily_wf_bold;
+		}
+	
+		@include break( sp ){
+			font-size: 6em;
+			margin-bottom: 30px;
+			// font-size: 4.5em;
+		}
+	}
+
+	&_content{
+		line-height: 2;
+		display: inline-block;
+		text-align: left;			
+		letter-spacing: 0.06em;
+		font-size: 0.933em;
+		
+		@include break( sp ){
+			font-size: 1em;
+		}		
+	}
+
+	p{
+		&:first-child{
+			margin-top: 0;
+		}
+		&:last-child{
+			margin-bottom: 0;
+		}
+	}	
 }
 
 
@@ -104,14 +104,22 @@
 	}
 
 	&_img{
-		width: 435px;
+		width: auto;
+		height: 100%;
 		opacity: 0.45;
 		position: absolute;
 		z-index: 0;
-		right: 5%;
+		top: 0;
+		right: 18%;
 		left: auto;
-		bottom: 0;
 		mix-blend-mode: hard-light;
+		
+		@include break( 1366 ){
+			width: 435px;	
+			top: auto;	
+			right: 5%;	
+			bottom: 0;
+		}
 		
 		@include break( sp ){
 			width: auto;

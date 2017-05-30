@@ -35,30 +35,33 @@
 	
 	@include mouseOver(){
 
+		img{
+			opacity: 0.75;
+			-webkit-mix-blend-mode: multiply;
+			mix-blend-mode: multiply;
+		}			
+
 		.work_info{
 			// box-shadow: none;
 			// top: -18px;
 			// background-color: #fdfdfd;
 			
-			img{
-				opacity: 1;
-			}			
 			
 			&:before{
-				width: 200%;
+				width: 100%;
 				// margin: auto;
 				// top: 0;
 				// right: 0;
-				left: -50%;
+				left: 0%;
 				// bottom: -50%;
 			}
 
 			// &_type,
-			&_category,
-			&_category li:not( :last-child ):after,
-			a{
-				color: #fff;
-			}
+			// &_category,
+			// &_category li:not( :last-child ):after,
+			// a{
+			// 	color: #fff;
+			// }
 		}
 	}	
 	
@@ -74,6 +77,7 @@
 		position: relative;
 		border: solid 1px #aaa;
 		box-sizing: border-box;
+		@extend %gradation;
 		background-size: cover;
 		background-position: center top;
 		background-repeat: no-repeat;
@@ -82,7 +86,6 @@
 		img{
 			width: 100%;
 			height: auto;
-			display: inline-block;
 			backface-visibility: hidden;
 			position: absolute;
 			top: 0;
@@ -106,8 +109,8 @@
 		&:before{
 			content: " ";
 			display: block;
-			width: 200%;
-			height: 100%;
+			width: 0%;
+			height: 3px;
 			position: absolute;
 			z-index: 0;
 			transition: transition(0.3s);
@@ -115,7 +118,7 @@
 			top: auto;
 			right: auto;
 			bottom: 0%;
-			left: -210%;
+			left: -10%;
 			transform: skew( 15deg );
 			background-color: $green_black;
 		}

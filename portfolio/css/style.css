@@ -46,6 +46,18 @@ html,
 {
     transition-delay: 1.2s;
 }
+.section_index span:nth-child(8)
+{
+    transition-delay: 1.3s;
+}
+.section_index span:nth-child(9)
+{
+    transition-delay: 1.4s;
+}
+.section_index span:nth-child(10)
+{
+    transition-delay: 1.5s;
+}
 
 html
 {

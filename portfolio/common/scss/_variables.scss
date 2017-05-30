@@ -16,7 +16,7 @@
 	opacity: 0;
 	display: inline-block;
 
-	@for $i from 1 through 7 {
+	@for $i from 1 through 10 {
 		&:nth-child( #{$i} ){
 			$delay: 0.1 * $i;
 			transition-delay: #{0.5 + $delay}s;

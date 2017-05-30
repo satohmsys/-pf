@@ -20,7 +20,7 @@ var dir = {
   top: '../portfolio',
   below: '/',
   index: 'index.html',
-  ejsEdit: 'works/'
+  ejsEdit: 'about/'
 },
   sassDir = {
     css: 'css',

@@ -56,6 +56,21 @@
 {
     transition-delay: 1.2s;
 }
+.inquiry .section_index span:nth-child(8),
+.pagevisual_copy span:nth-child(8)
+{
+    transition-delay: 1.3s;
+}
+.inquiry .section_index span:nth-child(9),
+.pagevisual_copy span:nth-child(9)
+{
+    transition-delay: 1.4s;
+}
+.inquiry .section_index span:nth-child(10),
+.pagevisual_copy span:nth-child(10)
+{
+    transition-delay: 1.5s;
+}
 
 @font-face
 {
@@ -1988,6 +2003,7 @@ html.ie8 .icon-instagram:before
 
     max-width: 1080px;
     height: 65vh;
+    padding-bottom: 0;
 
     -webkit-box-pack: start;
     -ms-flex-pack: start;
@@ -2070,16 +2086,13 @@ html.ie8 .icon-instagram:before
 
     text-shadow: 0 0 10px rgba(0, 0, 0, .1);
 }
-.pagevisual-child .pagevisual_copy_pagename,
-.pagevisual-child .pagevisual_copy_productname
-{
-    font-size: 1.5em;
-
-    letter-spacing: .02em;
-}
 .pagevisual-child .pagevisual_copy_pagename
 {
-    margin-bottom: 1.5em; 
+    font-size: 1.8em;
+
+    margin-bottom: 1em;
+
+    letter-spacing: .02em; 
 
     box-shadow: none;
 }
@@ -2092,9 +2105,12 @@ html.ie8 .icon-instagram:before
 }
 .pagevisual-child .pagevisual_copy_productname
 {
-    font-weight: 200; 
+    font-size: 1.5em;
+    font-weight: 200;
 
     margin-bottom: 1em;
+
+    letter-spacing: .02em;
 }
 .pagevisual-child .pagevisual_copy_type
 {

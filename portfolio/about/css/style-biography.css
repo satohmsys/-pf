@@ -1,0 +1,17 @@
+/***********************
+ module
+***********************/
+/***********************
+ mainvisual
+***********************/
+/********** mainvisual **********/
+.pagevisual.pagevisual-child .wrap
+{
+    height: 40vh;
+    min-height: 400px;
+    padding-bottom: 0;
+}
+
+/***********************
+ section
+***********************/

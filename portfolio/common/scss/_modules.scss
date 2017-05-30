@@ -1291,6 +1291,7 @@
 		.wrap{
 			max-width: $outerWidth;
 			height: 65vh;
+			padding-bottom: 0;
 			position: static;
 			justify-content: flex-start;
 			
@@ -1364,27 +1365,23 @@
 		{
 			text-shadow: 0 0 10px rgba( #000, 0.1 )	;
 			font-size: 1em;
-			
-			&_pagename,
-			&_productname,
-			{
-				font-size: 1.5em;
-				letter-spacing: 0.02em;
-			}
 
 			&_pagename{
+				margin-bottom: 1em;
 				box-shadow: none;
-				margin-bottom: 1.5em;
+				font-size: 1.8em;
+				letter-spacing: 0.02em;
 				
 				@include break( sp ){
 					margin-bottom: 0em;
-					
 				}				
 			}
 
 			&_productname{
 				margin-bottom: 1em;
+				font-size: 1.5em;
 				font-weight: 200;
+				letter-spacing: 0.02em;
 			}
 
 

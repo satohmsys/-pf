@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<!--[if lte IE 9]>
+<html lang="ja" class="ie">
+<![endif]-->
+<!--[if !IE]<!-->
+<html lang="ja">
+   <!--<![endif]-->
+   <% include ../_inc/function %>
+   <%
+      $meta.title = 'about - BIOGRAPHY'
+   %>
+   <%
+   $path = '../';
+   $active = 'about';
+   $css = ['css/style-biography.css'];
+   $scripts_global=null;
+   $scripts=[$path + 'common/js/common.js',$path + 'common/js/childpage.js','js/script.js'];
+   %>
+   <head>
+     <%- include($path + '_inc/_header') %>
+   </head>
+
+   <body class="about about-biography">
+      <!-- ***** header  -->
+        <%- include($path + '_inc/_gnav', {logo: true}) %>
+      <!-- ///// header  -->
+
+
+      <!-- ***** mainvisual -->
+      <section class="pagevisual pagevisual-child hasGradation">
+         <div class="wrap">
+
+            <!-- *** text -->
+            <div class="pagevisual_copy">
+              <p class="pagevisual_copy_pagename">
+                BIOGRAPHY
+              </p>
+            </div>
+            <!-- /// text -->
+
+            <!-- <i class="icon icon-mouse"></i> -->
+         </div>
+      </section>
+      <!-- ///// mainvisual  -->
+      
+      <!-- ***** BODY START -->
+      <main class="main topGradation">
+
+         
+      </main>
+      <!-- //// BODY END -->
+     
+      <%- include( $path + '_inc/_footer', {hasGradation: true} ) %>
+
+      <%- $parts.backtotop %>
+
+      <%- $parts.fixedsns %>
+
+
+      <!-- ***** menu button -->
+      <%- $parts.toggle %>
+      <!-- //// menu button -->
+
+      
+     <%#- include($path + '_inc/_intro') %>
+
+     <%- include($path + '_inc/_scripts') %>
+   </body>
+
+</html>

@@ -1,0 +1,62 @@
+@charset "utf-8";
+
+//////////////////////////////////////////////////
+
+// top
+
+//////////////////////////////////////////////////
+
+@import "compass";
+@import "../../common/scss/colors";
+@import "../../common/scss/variables";
+@import "../../common/scss/mixins";
+
+.about-biography
+{
+	
+}
+
+
+
+/***********************
+ module
+***********************/
+
+// .topGradation{
+//     padding-top: 280px;
+//     background: transparent url(../img/gradation.png) left top repeat-x;
+//     margin-top: -160px;
+//     position: relative;
+//     z-index: 2;
+//     background-size: 10px auto;	
+    
+//     @include break( sp ){
+// 		margin-top: -80px;
+// 		padding-top: 120px;
+// 		background-size: 5px auto;    	
+//     }
+// }
+
+
+
+
+
+/***********************
+ mainvisual
+***********************/
+
+/********** mainvisual **********/
+.pagevisual.pagevisual-child
+{
+	.wrap{
+		height: 40vh;
+		min-height: 400px;
+		padding-bottom: 0;
+	}
+}
+
+
+/***********************
+ section
+***********************/
+

@@ -22,12 +22,20 @@ window.onload = window.onresize = function(){
 /**
 * modenizr
 */
-Modernizr.addTest( 'usefirefox', function( e ){
-    return 0 < navigator.userAgent.indexOf('Firefox');
-});
 Modernizr.addTest( 'mobile', function( e ){
     return $ua == 'mobile';
 });
+Modernizr.addTest( 'usefirefox', function( e ){
+    return 0 < navigator.userAgent.indexOf('Firefox');
+});
+Modernizr.addTest( 'useie', function( e ){
+    return 0 < navigator.userAgent.indexOf('MSIE');
+});
+
+/////// IE10以下の場合転送
+if( Modernizr.useie ){
+    window.location = 'sorry_im_not_support_ie.html';
+}
 
 
 

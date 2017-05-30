@@ -201,7 +201,8 @@
 {
 
 	.wrap{
-		max-width: none;
+		// max-width: none;
+		position: static;
 	}
 
 	&_img{
@@ -315,6 +316,14 @@
 
 .section-related
 {
+
+	.wrap{
+		@include break( sp ){
+			padding-left: 0;
+			padding-right: 0;
+		}		
+	}
+
 	.section_index{
 		line-height: 1;
 		margin-bottom: 45px;

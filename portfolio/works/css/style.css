@@ -244,7 +244,7 @@ html.ie8 .work_info_category:before
 /********** mainvisual **********/
 .pagevisual .wrap
 {
-    max-width: none;
+    position: static;
 }
 .pagevisual_img
 {
@@ -350,6 +350,14 @@ html.ie8 .work_info_category:before
         max-width: 90%;
         margin-right: auto;
         margin-left: auto;
+    }
+}
+@media screen and (max-width: 580px)
+{
+    .works-child .section-related .wrap
+    {
+        padding-right: 0; 
+        padding-left: 0;
     }
 }
 .works-child .section-related .section_index

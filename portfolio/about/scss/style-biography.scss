@@ -1,4 +1,4 @@
-@charset "utf-8";
+	@charset "utf-8";
 
 //////////////////////////////////////////////////
 
@@ -11,31 +11,256 @@
 @import "../../common/scss/variables";
 @import "../../common/scss/mixins";
 
+%fadeStyleBefore{
+	transform: translateY(10px);
+	opacity: 0;
+}
+
+%fadeStyleAfter{
+	transform: translateY(0);
+	opacity: 1;
+}
+
 .about-biography
 {
 	
-}
-
-
-
 /***********************
  module
 ***********************/
 
-// .topGradation{
-//     padding-top: 280px;
-//     background: transparent url(../img/gradation.png) left top repeat-x;
-//     margin-top: -160px;
-//     position: relative;
-//     z-index: 2;
-//     background-size: 10px auto;	
-    
-//     @include break( sp ){
-// 		margin-top: -80px;
-// 		padding-top: 120px;
-// 		background-size: 5px auto;    	
-//     }
-// }
+
+
+.pagevisual.hasGradation + .main{
+	padding-top: 0px;
+}
+
+.timeline
+{
+	// margin-top: -50px;
+	padding-top: 200px;
+	position: relative;
+	
+	@include break( tab ){
+		padding-top: 100px;
+	}		
+	@include break( sp ){
+		padding-top: 50px;
+	}		
+
+	.wrap{
+		max-width: 860px;
+	}	
+}
+
+.timeline_event
+{
+	margin-bottom: 80px;
+	
+	@include break( sp ){
+		margin-bottom: 40px;
+	}	
+
+	&_content{
+		max-width: 800px;
+		margin-left: auto;
+		margin-right: auto;
+		
+		@include break( tab ){
+			padding-left: 70px;
+		}
+	}
+
+	&_date{
+		line-height: 1;
+		margin-top: 0;
+		display: inline-block;
+		vertical-align: top;
+		position: relative;
+		transition: all 0.5s ease 0s;
+		color: $blue;
+		font-size: 4.3em;
+		font-style: italic;
+		font-family: $fontFamily_wf_thin;
+		
+		@extend %fadeStyleBefore;
+		
+		@include break( tab ){
+			font-size: 2em;
+			margin-bottom: 15px;
+		}
+	}
+	&.inview{
+		.timeline_event_date{
+			@extend %fadeStyleAfter;			
+		}
+	}
+
+	// &.ltor .timeline_event_date{
+	// 	margin-right: 230px;
+	// }
+
+	///////// icon
+	&_icon{
+		width: 70px;
+		height: 70px;
+		margin: auto;
+		border-radius: 3px;
+		transform: rotate( 45deg );
+		display: block;
+		position: absolute;
+		z-index: 3;
+		top: 0;
+		right: 0;
+		left: 0;
+		background-color: $green_deep;
+		
+		&,img{
+			line-height: 1;
+			transform-origin: 50% 50%;			
+		}
+		img{
+			transform: rotate(-45deg);
+		}
+		
+		@at-root .start .timeline_event_icon{
+			background-color: $blue;
+		}
+
+		@include break( tab ){
+			// width: 40px;
+			height: auto;
+			left: calc(-5% - 10px);
+			right: auto ;
+		}		
+		@include break( sp ){	
+			left: calc(-10% - 10px);
+		}
+	}
+
+	///////// index , etxt
+	&_info{
+		width: 320px;
+		display: inline-block;
+		vertical-align: top;
+		letter-spacing: 0.05em;
+		
+		h3{
+			font-weight: bold;
+			line-height: 2;
+			transition: all 0.5s ease 0.25s;		
+			color: $green_deep;
+
+			@extend %fadeStyleBefore;			
+		}
+
+
+		div{
+			transition: all 0.5s ease 0.5s;
+
+			@extend %fadeStyleBefore;			
+		}
+
+		@include break( tab ){
+			width: auto;
+		}
+
+	}
+	&.inview{
+		.timeline_event_info h3,
+		.timeline_event_info div{
+			@extend %fadeStyleAfter;			
+		}
+	}		
+
+
+
+	//////////////////  flexbox layout  
+	
+	&_content{
+		max-width: 800px;
+		margin-right: auto;
+		margin-left: auto;
+		position: relative;
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-start;		
+		
+		@include break( tab ){
+			flex-direction: column;
+			align-items: flex-start;
+		}				
+	}
+
+	&.rtol .timeline_event_content{
+		margin-left: 0;
+		flex-direction: row-reverse;
+		
+		@include break( tab ){
+			flex-direction: column;
+		}		
+	}
+	
+	&_date{
+		right: -0.5em;		
+		order:1;
+
+		@include break( tab ){
+			right: 0;
+			
+		}
+		
+	}
+	&.rtol .timeline_event_date{
+		left: -1.8em;
+		right: 0;
+		@include break( tab ){
+			left: 0;			
+		}
+		
+	}	
+
+	&_info{
+		order:2;
+	}	
+	
+	&_icon{
+		order:3;
+		@include break( tab ){
+			order: 0			
+		}
+		
+	}
+
+
+	@include break( tab ){
+		
+	}
+
+}
+
+.timeline_line{
+	width: 8px;
+	height: 100%;
+	// height: 100px;
+	margin: auto;
+	display: block;
+	position: absolute;
+	z-index: 2;
+	top: -50px;
+	right: 0;
+	left: 0;
+	transition: transition();
+	
+	@include background-image( linear-gradient( to bottom, $blue, darken( $blue, 10 )));
+	
+	@include break( tab ){
+		left: 5% ;
+		right: auto;
+	}		
+	@include break( sp ){	
+		left: 10%;
+	}	
+}
 
 
 
@@ -52,6 +277,10 @@
 		height: 40vh;
 		min-height: 400px;
 		padding-bottom: 0;
+		
+		@include break( sp ){
+			min-height: 0;
+		}
 	}
 }
 
@@ -59,4 +288,128 @@
 /***********************
  section
 ***********************/
+
+
+.tl1989{
+	margin-bottom: 100px;
+
+	@include break( sp ){
+		margin-bottom: 70px;
+	}		
+}
+
+.tl2007{
+	margin-bottom: 150px;
+	
+	@include break( sp ){
+		margin-bottom: 60px;
+	}	
+}
+
+.tl2013{
+	margin-bottom: 30px;
+	
+	@include break( sp ){
+		margin-bottom: 40px;
+	}	
+
+}
+.tl2013-2{
+	margin-bottom: 70px;
+	@include break( sp ){
+		margin-bottom: 40px;
+	}	
+}
+
+.tl2014{
+	margin-bottom: 30px;
+	@include break( sp ){
+		margin-bottom: 40px;
+	}		
+}
+.tl2014-2{
+	margin-bottom: 70px;
+	@include break( sp ){
+		margin-bottom: 40px;
+	}		
+}
+
+.tl2015{
+	margin-bottom: 40px;
+	@include break( sp ){
+		margin-bottom: 40px;
+	}	
+}
+.tl2015-2{
+	margin-bottom: 70px;
+	@include break( sp ){
+		margin-bottom: 40px;
+	}	
+}
+
+.tl2016{
+	margin-bottom: 100px;
+	@include break( sp ){
+		margin-bottom: 50px;
+	}	
+}
+
+
+///////// Now!
+.timeline_event.now
+{
+	max-width: 400px;
+	margin-left: auto;
+	margin-right: auto;
+	position: relative;
+	display: block;
+	border-radius: 4px;	
+	
+	&:before,
+	&:after,	
+	.tweetbox:before,
+	.tweetbox:after{
+		cnotent: " ";
+		display: block;
+		position: absolute;
+		line-height: 1;
+		@extend %gradation;
+	}
+
+	.tweetbox
+	{
+		position: relative;
+		z-index: 3;
+
+		&_now{
+			line-height: 1;
+			margin: 0;
+			position: absolute;
+			right: 0em;
+			bottom: -0.5em;
+			font-size: 5em;
+			color: $green_black;
+			font-family: $fontFamily_damion;
+			opacity: 0;
+			
+			transition: transition();
+			opacity: 0;
+			transform: translateY(10px);
+		}
+	}
+
+	&.inview{
+		.tweebox_now{
+			opacity: 1;
+			transform: translateY(0px);
+			
+		}
+	}
+
+}
+
+
+
+
+}
 

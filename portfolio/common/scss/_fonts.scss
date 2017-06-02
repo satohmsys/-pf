@@ -92,6 +92,17 @@
 	font-weight: normal;
 }
 
+@font-face {
+	font-family: 'woodford thin';
+	src: url('../fonts/woodford/Thin/WoodfordBournePRO-Thin.eot');
+	src: url('../fonts/woodford/Thin/WoodfordBournePRO-Thin.eot?#iefix') format('embedded-opentype'),
+		 url('../fonts/woodford/Thin/WoodfordBournePRO-Thin.woff') format('woff'),
+		 url('../fonts/woodford/Thin/WoodfordBournePRO-Thin.ttf') format('truetype'),
+		 url('../fonts/woodford/Thin/WoodfordBournePRO-Thin.svg#2b832c0af3e420cabb7d9e4f82e5316b') format('svg');
+	font-style: normal;
+	font-weight: normal;
+}
+
 
 // 【明朝】　font-family:Times New Roman , "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", Hiragino Mincho ProN , "MSP明朝","MS PMincho","MS 明朝",serif;
 // 【ゴシック】　font-family: Verdana, "游ゴシック", YuGothic, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;

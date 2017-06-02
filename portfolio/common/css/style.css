@@ -144,6 +144,15 @@
     src: url('../fonts/woodford/Extralight/WoodfordBournePRO-ExtraLight.eot');
     src: url('../fonts/woodford/Extralight/WoodfordBournePRO-ExtraLight.eot?#iefix') format('embedded-opentype'), url('../fonts/woodford/Extralight/WoodfordBournePRO-ExtraLight.woff') format('woff'), url('../fonts/woodford/Extralight/WoodfordBournePRO-ExtraLight.ttf') format('truetype'), url('../fonts/woodford/Extralight/WoodfordBournePRO-ExtraLight.svg#b8a2de952566267567abb658d2358ba3') format('svg');
 }
+@font-face
+{
+    font-family: 'woodford thin';
+    font-weight: normal; 
+    font-style: normal;
+
+    src: url('../fonts/woodford/Thin/WoodfordBournePRO-Thin.eot');
+    src: url('../fonts/woodford/Thin/WoodfordBournePRO-Thin.eot?#iefix') format('embedded-opentype'), url('../fonts/woodford/Thin/WoodfordBournePRO-Thin.woff') format('woff'), url('../fonts/woodford/Thin/WoodfordBournePRO-Thin.ttf') format('truetype'), url('../fonts/woodford/Thin/WoodfordBournePRO-Thin.svg#2b832c0af3e420cabb7d9e4f82e5316b') format('svg');
+}
 @-webkit-keyframes mouseScroll
 {
     0%

@@ -240,7 +240,7 @@
 
 .timeline_line{
 	width: 8px;
-	height: 100%;
+	height: 100px;
 	// height: 100px;
 	margin: auto;
 	display: block;
@@ -249,7 +249,7 @@
 	top: -50px;
 	right: 0;
 	left: 0;
-	transition: transition();
+	transition: all 1s ease 0s;
 	
 	@include background-image( linear-gradient( to bottom, $blue, darken( $blue, 10 )));
 	

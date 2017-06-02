@@ -36,11 +36,10 @@ Array.prototype.forEach.call( $timelineEvents, function( e ){
         // trigger animation by adding a css class
         .setClassToggle( $sectionClassName, "inview" )
         .on("enter", function (event) {  // シーンの状態が"DURING"に入る際に発火する
-            console.log("Scene entered.",event);
-            // console.log( this );
-            // var barheight = document.getElementsByClassName( $section.className.match( 'tl[0-9].*' ) )[0].offsetHeight;
-            // $line.setAttribute('style', 'height:' + $heightOfLine + barheight + 'px');
-            // console.log( document.getElementsByClassName( $section.className.match( 'tl[0-9].*' ) )[0].style )
+            // console.log("Scene entered.",event);
+            console.log( e );
+            var barheight = e.getBoundingClientRect().top + window.pageYOffset + $line.offsetTop * -1;
+            $line.setAttribute('style', 'height:' + barheight + 'px');
         })
         .on("leave", function (event) { // シーンの状態が"DURING"から"BEFORE"か"AFTER"に移る際に発火する
             this.setClassToggle( $sectionClassName, "outview" )

@@ -1,9 +1,9 @@
 var $timelineEvents = document.getElementsByClassName( 'timeline_event' );    
     controller = new ScrollMagic.Controller(),
-    $line = document.getElementsByClassName('timeline_line')[0],
-    $heightOfLine = $line.clientHeight;
+    $line = document.getElementsByClassName('timeline_line')[0];
 
-    console.log( $heightOfLine )
+
+
 /**
 * SPANで囲む
 */
@@ -37,15 +37,16 @@ Array.prototype.forEach.call( $timelineEvents, function( e ){
         .setClassToggle( $sectionClassName, "inview" )
         .on("enter", function (event) {  // シーンの状態が"DURING"に入る際に発火する
             // console.log("Scene entered.",event);
-            console.log( e );
+            // console.log( e );
             var barheight = e.getBoundingClientRect().top + window.pageYOffset + $line.offsetTop * -1;
+            
             $line.setAttribute('style', 'height:' + barheight + 'px');
         })
         .on("leave", function (event) { // シーンの状態が"DURING"から"BEFORE"か"AFTER"に移る際に発火する
-            this.setClassToggle( $sectionClassName, "outview" )
+            this.setClassToggle( $sectionClassName, "inview" )
         })
         .on("progress", function (event) { // シーン変化の度に呼ばれる
-            console.log("Scene progress changed to " + event.progress)
+            // console.log("Scene progress changed to " + event.progress)
         })
         .addTo(controller);
 } );

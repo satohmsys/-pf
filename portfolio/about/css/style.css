@@ -1,7 +1,20 @@
-/***********************
- module
-***********************/
-.main .section:not(:last-child):after
+.about
+{
+    /***********************
+   module
+  ***********************/
+    /***********************
+   mainvisual
+  ***********************/
+    /********** mainvisual **********/
+    /***********************
+   section
+  ***********************/
+    /********** hi **********/
+    /********** mind **********/
+    /********** skill **********/
+}
+.about .main .section:not(:last-child):after
 {
     display: block;
 
@@ -21,41 +34,41 @@
 }
 @media screen and (max-width: 580px)
 {
-    .main .section:not(:last-child):after
+    .about .main .section:not(:last-child):after
     {
         margin-bottom: 1px;
     }
 }
-.main .section.inview:not(:last-child):after
+.about .main .section.inview:not(:last-child):after
 {
     height: 50px;
 }
-.main .section .wrap
+.about .main .section .wrap
 {
     box-sizing: content-box; 
     max-width: 680px;
 }
-.main .section_index
+.about .main .section_index
 {
     font-size: 4.66em; 
     line-height: 1;
 
     margin-bottom: 45px;
 }
-.main .section_index svg
+.about .main .section_index svg
 {
     font-family: 'woodford bold';
 }
 @media screen and (max-width: 580px)
 {
-    .main .section_index
+    .about .main .section_index
     {
         font-size: 6em;
 
         margin-bottom: 30px;
     }
 }
-.main .section_content
+.about .main .section_content
 {
     font-size: .933em; 
     line-height: 2;
@@ -64,33 +77,36 @@
 }
 @media screen and (max-width: 580px)
 {
-    .main .section_content
+    .about .main .section_content
     {
         font-size: 1em;
     }
 }
-
-/***********************
- mainvisual
-***********************/
-/********** mainvisual **********/
-.pagevisual .wrap
+.about .pagevisual .wrap
 {
     max-width: none;
 }
-.pagevisual_img
+.about .pagevisual_img
 {
     position: absolute;
     z-index: 0;
-    top: 0;
+    top: -15%;
     right: 0;
-    left: 0;
+    left: -15%;
 
     opacity: .45;
 
     mix-blend-mode: hard-light;
 }
-.pagevisual .icon-mouse
+@media screen and (max-width: 580px)
+{
+    .about .pagevisual_img
+    {
+        top: auto;
+        left: 0;
+    }
+}
+.about .pagevisual .icon-mouse
 {
     position: absolute;
     z-index: 3; 
@@ -98,32 +114,27 @@
     bottom: 5%;
     left: 0;
 }
-
-/***********************
- section
-***********************/
-/********** hi **********/
-.section-hi,
-.section-hi .section_index,
-.section-hi .section_content
+.about .section-hi,
+.about .section-hi .section_index,
+.about .section-hi .section_content
 {
     position: relative;
     z-index: 1;
 }
-.section-hi .section_index
+.about .section-hi .section_index
 {
     line-height: 1;
 
     position: relative;
 }
-.section-hi .section_index .handWrite
+.about .section-hi .section_index .handWrite
 {
     font-family: 'Damion', cursive; 
     font-size: .6em;
 
     position: absolute;
     top: 0;
-    right: 0;
+    right: 25px;
 
     -webkit-transform: rotate(5deg);
             transform: rotate(5deg);
@@ -132,14 +143,15 @@
 }
 @media screen and (max-width: 580px)
 {
-    .section-hi .section_index .handWrite
+    .about .section-hi .section_index .handWrite
     {
         font-size: .5em; 
 
         top: 5px;
+        right: 0;
     }
 }
-.section-hi .section_bg
+.about .section-hi .section_bg
 {
     position: absolute;
     z-index: 0;
@@ -150,22 +162,20 @@
 }
 @media screen and (max-width: 580px)
 {
-    .section-hi .section_bg
+    .about .section-hi .section_bg
     {
         top: -1%; 
 
         max-width: 80%;
     }
 }
-.section-hi .button
+.about .section-hi .button
 {
     display: block;
 
     text-align: right;
 }
-
-/********** mind **********/
-.section-mind .mindlist
+.about .section-mind .mindlist
 {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -187,13 +197,13 @@
 }
 @media screen and (max-width: 580px)
 {
-    .section-mind .mindlist
+    .about .section-mind .mindlist
     {
         margin-right: -2.5%; 
         margin-left: -2.5%;
     }
 }
-.section-mind .mindlist_mind
+.about .section-mind .mindlist_mind
 {
     width: calc( 100% / 3 );
     margin-top: 50px;
@@ -204,17 +214,17 @@
 }
 @media screen and (max-width: 580px)
 {
-    .section-mind .mindlist_mind
+    .about .section-mind .mindlist_mind
     {
-        width: calc( 100% / 2 );
+        width: calc( 100% / 2.2 );
         margin-top: 30px;
     }
 }
-.section-mind .mindlist_icon
+.about .section-mind .mindlist_icon
 {
     line-height: 1;
 }
-.section-mind .mindlist_icon figcaption
+.about .section-mind .mindlist_icon figcaption
 {
     font-family: 'woodford exlight';
     font-size: 1.3em;
@@ -227,7 +237,7 @@
 
     color: #003640;
 }
-.section-mind .mindlist_description
+.about .section-mind .mindlist_description
 {
     font-size: .9em;
 
@@ -238,28 +248,33 @@
 }
 @media screen and (max-width: 580px)
 {
-    .section-mind .mindlist_description
+    .about .section-mind .mindlist_description
     {
+        font-size: 10px;
+        font-weight: 500; 
+
         letter-spacing: 0;
     }
+    .about .section-mind .mindlist_description br
+    {
+        display: none;
+    }
 }
-
-/********** skill **********/
-.section-skill .section_index
+.about .section-skill .section_index
 {
     margin-bottom: 30px;
 }
-.section-skill .skill
+.about .section-skill .skill
 {
     max-width: 410px;
     margin-right: auto;
     margin-left: auto;
 }
-.section-skill .skill:not(:last-child)
+.about .section-skill .skill:not(:last-child)
 {
     margin-bottom: 40px;
 }
-.section-skill .skill_index
+.about .section-skill .skill_index
 {
     font-family: 'Damion', cursive;
     font-size: 1.2em;
@@ -271,27 +286,27 @@
 
     color: #003640;
 }
-.section-skill .skill_index,
-.section-skill .skill_index i
+.about .section-skill .skill_index,
+.about .section-skill .skill_index i
 {
     transition: all .5s cubic-bezier(.785, .135, .15, .86) 0s;
 }
-.section-skill .skill_index i
+.about .section-skill .skill_index i
 {
     position: absolute;
     top: 0;
     bottom: 0;
-    left: -100%;
+    left: -105%;
 
     display: block;
 
-    width: 95%;
+    width: 100%;
     height: 1px;
     margin: auto;
 
     background-color: #003640;
 }
-.section-skill .skill_content
+.about .section-skill .skill_content
 {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -301,43 +316,50 @@
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
     -ms-flex-direction: row;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
     -webkit-box-pack: justify;
     -ms-flex-pack: justify;
     justify-content: space-between;
 }
-@media screen and (max-width: 580px)
+@media screen and (min-width: 350px)
 {
-    .section-skill .skill_content
+    .about .section-skill .skill_content
     {
         -ms-flex-wrap: nowrap;
             flex-wrap: nowrap;
     }
 }
-.section-skill .skill_content_list
+@media screen and (max-width: 580px)
+{
+    .about .section-skill .skill_content
+    {
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+    }
+}
+.about .section-skill .skill_content_list
 {
     display: inline-block;
 }
 @media screen and (max-width: 580px)
 {
-    .section-skill .skill_content_list
+    .about .section-skill .skill_content_list
     {
         margin-right: 5px; 
         margin-left: 5px;
     }
 }
-.section-skill .skill_icon
+.about .section-skill .skill_icon
 {
     line-height: 1;
 }
-.section-skill .skill_icon img
+.about .section-skill .skill_icon img
 {
     box-sizing: border-box;
 
     border: solid 1px #ccc;
 }
-.section-skill .skill_icon figcaption
+.about .section-skill .skill_icon figcaption
 {
     font-family: 'woodford exlight';
     font-style: italic;

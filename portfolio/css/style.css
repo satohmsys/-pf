@@ -597,7 +597,9 @@ html
 {
     .section-works .section_bg
     {
-        bottom: 3%;
+        bottom: 3%; 
+
+        width: auto;
     }
     .section-works .panel
     {

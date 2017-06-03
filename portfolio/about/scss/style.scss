@@ -297,12 +297,14 @@
 			&_content{
 				display: flex;
 				flex-direction: row;
-				// flex-wrap: wrap;
 				justify-content: space-between;
 		
 				@include break( 350,min ){
 					flex-wrap: nowrap;
 				}				
+				@include break( 320,min ){
+					flex-wrap: wrap;
+				}
 				
 				@include break( sp ){
 					justify-content: center;

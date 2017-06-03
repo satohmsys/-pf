@@ -328,6 +328,14 @@
             flex-wrap: nowrap;
     }
 }
+@media screen and (min-width: 320px)
+{
+    .about .section-skill .skill_content
+    {
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+    }
+}
 @media screen and (max-width: 580px)
 {
     .about .section-skill .skill_content

@@ -41,7 +41,6 @@ window.onload = window.onresize = function(){
     ///////// 初回訪問（cookieなし
     if( ! $doc.cookie.match('visited') ){
 
-        animRemover( $loadingAnim );
 
         $body.classList.add( 'loading' );
 
@@ -53,6 +52,8 @@ window.onload = window.onresize = function(){
          }, 800 );
 
         $doc.addEventListener( 'DOMContentLoaded', function(){
+            
+             animRemover( $loadingAnim );
 
              $doc.getElementById('just').addEventListener('transitionend', function(){
                 TweenMax.fromTo( $intro, 2.5,
@@ -71,7 +72,6 @@ window.onload = window.onresize = function(){
                             $body.classList.add( 'loaded' );
 
                             animRemover( $intro );
-                            animRemover( $loadingAnim );
 
                             $expire = new Date();
                             $expire.setTime( $expire.getTime() + 1000 * 3600 * 48 );
@@ -103,7 +103,7 @@ window.onload = window.onresize = function(){
 
     function animRemover( $obj ){
         if( $obj ){
-            $obj.parentNode.$obj;        
+            $obj.parentNode.removeChild( $obj ); 
         }
     }
 

@@ -212,25 +212,21 @@
 
 		.handWrite
 		{
+				line-height: 1;
 			margin-top: -1em;
 			text-align: right;				
-			&,
-			svg text{
-				line-height: 1;
-				// color: $green_deep;
+			color: $green_black;
+			font-size: 0.4em;
+			transition: easeInOutCirc();
+			transition-delay: 1.3s;
+			transform: translateY(10px);
 				font-family: $fontFamily_damion;
-			}
-			svg text{
-				fill: $green_black;
-				// font-size: 0.35em;
-			}
-
+			
 			svg{
 				width: 510px;
 				height: auto;
 				overflow: visible;
 			}
-
 			
 			@include break( sp ){
 				line-height: inherit;
@@ -242,6 +238,9 @@
 				}
 			}
 		}
+		@at-root .loaded .handWrite{
+			transform: translateY(10px);
+		}		
 	}
 	
 	////////// image 

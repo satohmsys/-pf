@@ -2888,19 +2888,19 @@ html.ie8 .pagevisual-child .pagevisual_copy_category:before
 }
 .index .mainvisual_copy .handWrite
 {
+    font-family: 'Damion', cursive; 
+    font-size: .4em;
+    line-height: 1;
+
     margin-top: -1em;
 
+    transition: all .5s cubic-bezier(.785, .135, .15, .86) 0s;
+    transition-delay: 1.3s;
+    -webkit-transform: translateY(10px);
+            transform: translateY(10px);
     text-align: right;
-}
-.index .mainvisual_copy .handWrite,
-.index .mainvisual_copy .handWrite svg text
-{
-    font-family: 'Damion', cursive; 
-    line-height: 1;
-}
-.index .mainvisual_copy .handWrite svg text
-{
-    fill: #003640;
+
+    color: #003640;
 }
 .index .mainvisual_copy .handWrite svg
 {
@@ -2921,6 +2921,11 @@ html.ie8 .pagevisual-child .pagevisual_copy_category:before
 
         width: 100%;
     }
+}
+.loaded .handWrite
+{
+    -webkit-transform: translateY(10px);
+            transform: translateY(10px);
 }
 .index .mainvisual_img
 {

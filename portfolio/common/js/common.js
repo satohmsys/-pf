@@ -20,10 +20,96 @@ window.onload = window.onresize = function(){
     $timer = setTimeout( function() {
         clearTimeout( $timer );
         $ua = window.innerWidth < 580 ? 'mobile' : 'desktop';
-
-        console.log( $ua )
     }, 600 );    
 };
+
+
+
+/**
+* cookie判断でイントロを出すかどうか。出す場合はアニメ後Removechild
+* 出さない場合はローディングアニメ
+*/
+
+(function(){
+    var $doc = document,
+        $body = $doc.body;
+        $intro = document.getElementById('myIntroduction'),
+        $loadingAnim = document.getElementById('loadingAnim');
+
+    // if(! $intro ) return;
+    
+    ///////// 初回訪問（cookieなし
+    if( ! $doc.cookie.match('visited') ){
+
+        animRemover( $loadingAnim );
+
+        $body.classList.add( 'loading' );
+
+         setTimeout( function(){
+            $body.classList.add( 'letsTalk' );
+            TweenMax.to( $intro, 2, {
+                backGroundColor: '#fafafa'
+            });
+         }, 800 );
+
+        $doc.addEventListener( 'DOMContentLoaded', function(){
+
+             $doc.getElementById('just').addEventListener('transitionend', function(){
+                TweenMax.fromTo( $intro, 2.5,
+                    {
+                        opacity: 1,
+                        filter: 'blur(0)'
+                    },
+                    {
+                         opacity: 0,
+                         filter: 'blur(200px)',
+
+                         delay: 1,
+
+                         onComplete:function( e ){
+                            $body.classList.remove('loading','letsTalk');
+                            $body.classList.add( 'loaded' );
+
+                            animRemover( $intro );
+                            animRemover( $loadingAnim );
+
+                            $expire = new Date();
+                            $expire.setTime( $expire.getTime() + 1000 * 3600 * 48 );
+                            $expire = $expire.toUTCString();              
+                            $doc.cookie = 'visit=visited; expires=' + $expire;
+                        }
+                    }
+                );               
+             });
+        });
+    } else {
+
+        animRemover( $intro );
+        $body.classList.add( 'noIntro' );
+
+        var $loadingAnim = document.getElementById('loadingAnim');
+      
+        $doc.addEventListener( 'DOMContentLoaded', function(){
+            TweenMax.to( $loadingAnim, 0.5, {
+                opacity:0,
+                delay: 1,
+                onComplete:function( e ){
+                    animRemover( $loadingAnim );
+                    $body.classList.add('loaded');
+                }
+            });
+        });
+    }
+
+    function animRemover( $obj ){
+        if( $obj ){
+            $obj.parentNode.$obj;        
+        }
+    }
+
+})();
+
+
 
 /**
 * modenizr
@@ -80,6 +166,7 @@ Toggle.prototype.open = function (){
 }
 
 
+
 /**
 * scrollMagic 
 */
@@ -126,6 +213,8 @@ $(function(){
 // $(function() {
 //     $.scrollDepth();
 // });
+
+
 
 /***
 *　back to top スクロール
@@ -197,71 +286,5 @@ function spaning( elm ){
     }
     elm.innerHTML = newText;
 }
-
-
-
-/**
-* cookie判断でイントロを出すかどうか。出す場合はアニメ後Removechild
-*/
-
-(function(){
-    var $doc = document,
-        $body = $doc.body;
-        $intro = document.getElementById('myIntroduction');
-
-    if(! $intro ) return;
-    
-    ///////// 初回訪問（cookieなし
-    if( ! $doc.cookie.match('visited') ){
-
-        $body.classList.add( 'hello' );
-
-         setTimeout( function(){
-            $body.classList.add( 'letsTalk' );
-            TweenMax.to( $intro, 2, {
-                backGroundColor: '#fafafa'
-            });
-         }, 800 );
-
-        $doc.addEventListener( 'DOMContentLoaded', function(){
-
-             $doc.getElementById('just').addEventListener('transitionend', function(){
-                TweenMax.fromTo( $intro, 2.5,
-                    {
-                        opacity: 1,
-                        filter: 'blur(0)'
-                    },
-                    {
-                         opacity: 0,
-                         filter: 'blur(200px)',
-
-                         delay: 1,
-
-                         onComplete:function( e ){
-                            $body.classList.remove('hello','helloAfter','letsTalk')
-                            $body.classList.add( 'introEnd' );
-                            $intro.parentNode.removeChild( $intro );
-                            
-                            $expire = new Date();
-                            $expire.setTime( $expire.getTime() + 1000 * 3600 * 48 );
-                            $expire = $expire.toUTCString();              
-                            // $doc.cookie = 'visit=visited;';
-                            $doc.cookie = 'visit=visited; expires=' + $expire;
-                        }
-                    }
-
-                );               
-             });
-        });
-    } else {
-        $body.classList.add( 'noHello', 'introEnd' );
-
-        if( $intro ){
-            $intro.parentNode.removeChild( $intro );
-        }
-    }
-
-})();
-
 
 

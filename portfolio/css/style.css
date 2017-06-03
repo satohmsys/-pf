@@ -328,8 +328,14 @@ html
 }
 @media screen and (max-width: 580px)
 {
+    .mainvisual_copy .handWrite
+    {
+        line-height: inherit;
+    }
     .mainvisual_copy .handWrite svg
     {
+        font-size: 45vw; 
+
         width: 100%;
     }
 }

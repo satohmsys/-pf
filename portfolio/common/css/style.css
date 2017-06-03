@@ -191,6 +191,210 @@
         opacity: 0;
     }
 }
+@-webkit-keyframes dot-3-move
+{
+    20%
+    {
+        -webkit-transform: scale(1);
+                transform: scale(1);
+    }
+    45%
+    {
+        -webkit-transform: translateY(-18px) scale(.45);
+                transform: translateY(-18px) scale(.45);
+    }
+    60%
+    {
+        -webkit-transform: translateY(-90px) scale(.45);
+                transform: translateY(-90px) scale(.45);
+    }
+    80%
+    {
+        -webkit-transform: translateY(-90px) scale(.45);
+                transform: translateY(-90px) scale(.45);
+    }
+    100%
+    {
+        -webkit-transform: translateY(0px) scale(1);
+                transform: translateY(0px) scale(1);
+    }
+}
+@keyframes dot-3-move
+{
+    20%
+    {
+        -webkit-transform: scale(1);
+                transform: scale(1);
+    }
+    45%
+    {
+        -webkit-transform: translateY(-18px) scale(.45);
+                transform: translateY(-18px) scale(.45);
+    }
+    60%
+    {
+        -webkit-transform: translateY(-90px) scale(.45);
+                transform: translateY(-90px) scale(.45);
+    }
+    80%
+    {
+        -webkit-transform: translateY(-90px) scale(.45);
+                transform: translateY(-90px) scale(.45);
+    }
+    100%
+    {
+        -webkit-transform: translateY(0px) scale(1);
+                transform: translateY(0px) scale(1);
+    }
+}
+@-webkit-keyframes dot-2-move
+{
+    20%
+    {
+        -webkit-transform: scale(1);
+                transform: scale(1);
+    }
+    45%
+    {
+        -webkit-transform: translate(-16px, 12px) scale(.45);
+                transform: translate(-16px, 12px) scale(.45);
+    }
+    60%
+    {
+        -webkit-transform: translate(-80px, 60px) scale(.45);
+                transform: translate(-80px, 60px) scale(.45);
+    }
+    80%
+    {
+        -webkit-transform: translate(-80px, 60px) scale(.45);
+                transform: translate(-80px, 60px) scale(.45);
+    }
+    100%
+    {
+        -webkit-transform: translateY(0px) scale(1);
+                transform: translateY(0px) scale(1);
+    }
+}
+@keyframes dot-2-move
+{
+    20%
+    {
+        -webkit-transform: scale(1);
+                transform: scale(1);
+    }
+    45%
+    {
+        -webkit-transform: translate(-16px, 12px) scale(.45);
+                transform: translate(-16px, 12px) scale(.45);
+    }
+    60%
+    {
+        -webkit-transform: translate(-80px, 60px) scale(.45);
+                transform: translate(-80px, 60px) scale(.45);
+    }
+    80%
+    {
+        -webkit-transform: translate(-80px, 60px) scale(.45);
+                transform: translate(-80px, 60px) scale(.45);
+    }
+    100%
+    {
+        -webkit-transform: translateY(0px) scale(1);
+                transform: translateY(0px) scale(1);
+    }
+}
+@-webkit-keyframes dot-1-move
+{
+    20%
+    {
+        -webkit-transform: scale(1);
+                transform: scale(1);
+    }
+    45%
+    {
+        -webkit-transform: translate(16px, 12px) scale(.45);
+                transform: translate(16px, 12px) scale(.45);
+    }
+    60%
+    {
+        -webkit-transform: translate(80px, 60px) scale(.45);
+                transform: translate(80px, 60px) scale(.45);
+    }
+    80%
+    {
+        -webkit-transform: translate(80px, 60px) scale(.45);
+                transform: translate(80px, 60px) scale(.45);
+    }
+    100%
+    {
+        -webkit-transform: translateY(0px) scale(1);
+                transform: translateY(0px) scale(1);
+    }
+}
+@keyframes dot-1-move
+{
+    20%
+    {
+        -webkit-transform: scale(1);
+                transform: scale(1);
+    }
+    45%
+    {
+        -webkit-transform: translate(16px, 12px) scale(.45);
+                transform: translate(16px, 12px) scale(.45);
+    }
+    60%
+    {
+        -webkit-transform: translate(80px, 60px) scale(.45);
+                transform: translate(80px, 60px) scale(.45);
+    }
+    80%
+    {
+        -webkit-transform: translate(80px, 60px) scale(.45);
+                transform: translate(80px, 60px) scale(.45);
+    }
+    100%
+    {
+        -webkit-transform: translateY(0px) scale(1);
+                transform: translateY(0px) scale(1);
+    }
+}
+@-webkit-keyframes rotate-move
+{
+    55%
+    {
+        -webkit-transform: rotate(0deg);
+                transform: rotate(0deg);
+    }
+    80%
+    {
+        -webkit-transform: rotate(360deg);
+                transform: rotate(360deg);
+    }
+    100%
+    {
+        -webkit-transform: rotate(360deg);
+                transform: rotate(360deg);
+    }
+}
+@keyframes rotate-move
+{
+    55%
+    {
+        -webkit-transform: rotate(0deg);
+                transform: rotate(0deg);
+    }
+    80%
+    {
+        -webkit-transform: rotate(360deg);
+                transform: rotate(360deg);
+    }
+    100%
+    {
+        -webkit-transform: rotate(360deg);
+                transform: rotate(360deg);
+    }
+}
 ::-moz-selection
 {
     background-color: rgba(0, 216, 253, .3);
@@ -1745,7 +1949,82 @@ html.ie8 .icon-instagram:before
     }
 }
 
-.hello
+.loadingAnim
+{
+    overflow: hidden;
+
+    width: 100%;
+    height: 100%;
+
+    background-color: #e8f8fb;
+
+    will-change: opacity;
+}
+.loaded .loadingAnim
+{
+    display: none;
+}
+.loadingAnim,
+.loadingAnim .dots
+{
+    position: fixed;
+    z-index: 98;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    margin: auto;
+}
+.loadingAnim .dots
+{
+    width: 200px;
+    height: 200px;
+
+    -webkit-animation: rotate-move 2s ease-in-out infinite;
+            animation: rotate-move 2s ease-in-out infinite; 
+
+    -webkit-filter: url('#goo');
+            filter: url('#goo');
+}
+.loadingAnim .dot
+{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    width: 70px;
+    height: 70px;
+    margin: auto; 
+
+    border-radius: 50%;
+    background-color: #000;
+}
+.loadingAnim .dot-3
+{
+    -webkit-animation: dot-3-move 2s ease infinite;
+            animation: dot-3-move 2s ease infinite; 
+
+    background-color: #005f70;
+}
+.loadingAnim .dot-2
+{
+    -webkit-animation: dot-2-move 2s ease infinite;
+            animation: dot-2-move 2s ease infinite; 
+
+    background-color: #0eff9e;
+}
+.loadingAnim .dot-1
+{
+    -webkit-animation: dot-1-move 2s ease infinite;
+            animation: dot-1-move 2s ease infinite; 
+
+    background-color: #00d8fd;
+}
+
+.loading
 {
     overflow: hidden; 
 
@@ -1798,7 +2077,7 @@ html.ie8 .icon-instagram:before
         padding-left: 10%;
     }
 }
-.noHello .myIntroduction
+.noIntro .myIntroduction
 {
     display: none;
 }

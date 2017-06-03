@@ -1,143 +1,106 @@
-/***********************
- module
-***********************/
-.main .section
-{
-    text-align: center;
-    /**
-  * dashed
-  */
-}
-.main .section:not(:last-child):after
-{
-    display: block;
+/*
+Error: Undefined variable: "$green".
+        on line 38 of ../portfolio/think/scss/style.scss
 
-    width: 2px;
-    height: 50px;
-    margin-top: 50px;
-    margin-right: auto;
-    margin-bottom: 50px;
-    margin-left: auto;
+33: 			margin-bottom: 50px;
+34: 			margin-left: auto;
+35: 			display: block;
+36: 			transition: easeInOutCirc(1s);
+37: 			transition-delay: 1s;
+38: 			background-image: linear-gradient(to bottom, transparent, transparent 50%, #fff 50%, #fff 100%), linear-gradient(to bottom, $green, $blue);
+39: 			background-size: 3px 10px, 3px 100%;		
+40: 			
+41: 			@include break( sp ){
+42: 				margin-bottom: 1px;
+43: 			}		
 
-    content: ' ';
-    transition: all 1s cubic-bezier(.785, .135, .15, .86) 0s;
-    transition-delay: 1s;
+Backtrace:
+../portfolio/think/scss/style.scss:38
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/script/tree/variable.rb:49:in `_perform'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/script/tree/node.rb:58:in `perform'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/script/tree/funcall.rb:173:in `perform_arg'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/script/tree/funcall.rb:124:in `block in _perform'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/script/tree/funcall.rb:124:in `each'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/script/tree/funcall.rb:124:in `each_with_index'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/script/tree/funcall.rb:124:in `each'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/script/tree/funcall.rb:124:in `map'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/script/tree/funcall.rb:124:in `_perform'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/script/tree/node.rb:58:in `perform'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/script/tree/list_literal.rb:63:in `block in _perform'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/script/tree/list_literal.rb:63:in `map'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/script/tree/list_literal.rb:63:in `_perform'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/script/tree/node.rb:58:in `perform'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:397:in `visit_prop'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/tree/visitors/base.rb:36:in `visit'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:160:in `block in visit'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/stack.rb:79:in `block in with_base'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/stack.rb:115:in `with_frame'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/stack.rb:79:in `with_base'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:160:in `visit'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:433:in `block (2 levels) in visit_rule'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:433:in `map'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:433:in `block in visit_rule'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:181:in `with_environment'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:431:in `visit_rule'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/tree/visitors/base.rb:36:in `visit'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:160:in `block in visit'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/stack.rb:79:in `block in with_base'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/stack.rb:115:in `with_frame'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/stack.rb:79:in `with_base'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:160:in `visit'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:433:in `block (2 levels) in visit_rule'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:433:in `map'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:433:in `block in visit_rule'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:181:in `with_environment'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:431:in `visit_rule'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/tree/visitors/base.rb:36:in `visit'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:160:in `block in visit'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/stack.rb:79:in `block in with_base'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/stack.rb:115:in `with_frame'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/stack.rb:79:in `with_base'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:160:in `visit'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:433:in `block (2 levels) in visit_rule'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:433:in `map'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:433:in `block in visit_rule'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:181:in `with_environment'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:431:in `visit_rule'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/tree/visitors/base.rb:36:in `visit'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:160:in `block in visit'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/stack.rb:79:in `block in with_base'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/stack.rb:115:in `with_frame'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/stack.rb:79:in `with_base'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:160:in `visit'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/tree/visitors/base.rb:52:in `map'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/tree/visitors/base.rb:52:in `visit_children'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:169:in `block in visit_children'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:181:in `with_environment'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:168:in `visit_children'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/tree/visitors/base.rb:36:in `block in visit'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:188:in `visit_root'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/tree/visitors/base.rb:36:in `visit'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:159:in `visit'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:8:in `visit'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/tree/root_node.rb:36:in `css_tree'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/tree/root_node.rb:20:in `render'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/engine.rb:281:in `render'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/plugin/compiler.rb:494:in `update_stylesheet'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/plugin/compiler.rb:209:in `each'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/plugin.rb:82:in `update_stylesheets'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/exec/sass_scss.rb:340:in `watch_or_update'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/exec/sass_scss.rb:51:in `process_result'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/exec/base.rb:52:in `parse'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/lib/sass/exec/base.rb:19:in `parse!'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.22/bin/sass:13:in `<top (required)>'
+/usr/local/bin/sass:23:in `load'
+/usr/local/bin/sass:23:in `<main>'
+*/
+body:before
+{
+    font-family: monospace;
 
-    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0) 50%, #fff 50%, #fff 100%), linear-gradient(to bottom, #0eff9e, #00d8fd);
-    background-size: 3px 10px, 3px 100%;
-}
-@media screen and (max-width: 580px)
-{
-    .main .section:not(:last-child):after
-    {
-        margin-bottom: 1px;
-    }
-}
-.main .section.inview:not(:last-child):after
-{
-    height: 50px;
-}
-.main .section .wrap
-{
-    box-sizing: content-box; 
-    max-width: 680px;
-}
-.main .section_index
-{
-    font-size: 4.66em; 
-    line-height: 1;
-
-    margin-bottom: 45px;
-}
-.main .section_index svg
-{
-    font-family: 'woodford bold';
-}
-@media screen and (max-width: 580px)
-{
-    .main .section_index
-    {
-        font-size: 6em;
-
-        margin-bottom: 30px;
-    }
-}
-.main .section_content
-{
-    font-size: .933em; 
-    line-height: 2;
-
-    display: inline-block;
-
-    text-align: left;
-    letter-spacing: .06em;
-}
-@media screen and (max-width: 580px)
-{
-    .main .section_content
-    {
-        font-size: 1em;
-    }
-}
-.main .section p:first-child
-{
-    margin-top: 0;
-}
-.main .section p:last-child
-{
-    margin-bottom: 0;
-}
-
-/***********************
- mainvisual
-***********************/
-/********** mainvisual **********/
-.pagevisual .wrap
-{
-    max-width: none;
-}
-.pagevisual_img
-{
-    position: absolute;
-    z-index: 0;
-    top: 0;
-    right: 18%;
-    left: auto;
-
-    width: auto;
-    height: 100%;
-
-    opacity: .45;
-
-    mix-blend-mode: hard-light;
-}
-@media screen and (max-width: 1366px)
-{
-    .pagevisual_img
-    {
-        top: auto;
-        right: 5%;
-        bottom: 0; 
-
-        width: 435px;
-    }
-}
-@media screen and (max-width: 580px)
-{
-    .pagevisual_img
-    {
-        right: auto;
-        left: auto; 
-
-        width: auto;
-        height: 90%;
-    }
-}
-.pagevisual .icon-mouse
-{
-    position: absolute;
-    z-index: 3; 
-    right: 0;
-    bottom: 5%;
-    left: 0;
+    content: 'Error: Undefined variable: "$green".\A         on line 38 of ../portfolio/think/scss/style.scss\A \A 33: 			margin-bottom: 50px;\A 34: 			margin-left: auto;\A 35: 			display: block;\A 36: 			transition: easeInOutCirc(1s);\A 37: 			transition-delay: 1s;\A 38: 			background-image: linear-gradient(to bottom, transparent, transparent 50%, #fff 50%, #fff 100%), linear-gradient(to bottom, $green, $blue);\A 39: 			background-size: 3px 10px, 3px 100%;		\A 40: 			\A 41: 			@include break( sp ){\A 42: 				margin-bottom: 1px;\A 43: 			}		'; 
+    white-space: pre;
 }

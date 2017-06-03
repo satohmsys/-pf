@@ -1,15 +1,13 @@
-@charset "utf-8";
-
 //////////////////////////////////////////////////
 
 // top
 
 //////////////////////////////////////////////////
 
-@import "compass";
-@import "../common/scss/colors";
-@import "../common/scss/variables";
-@import "../common/scss/mixins";
+// @import "compass";
+// @import "../common/scss/colors";
+// @import "../common/scss/variables";
+// @import "../common/scss/mixins";
 
 
 .index
@@ -48,7 +46,7 @@
 		flex-direction: row;
 		align-items: center;	
 		
-		@at-root .main & {
+		 .main & {
 			@include break( sp ){
 				padding-right: 5%;
 				padding-left: 5%;
@@ -73,16 +71,14 @@
 			@extend %popspan;
 		}
 
-		@at-root .inview & span{
-			transform: translateY( 0 ) scale( 1 );
-			opacity: 1;			
-		}
 
 		@include break( sp ){
 			font-size: 4.5em;
 		}
-
-
+	}
+	&.inview .section_index span{
+		transform: translateY( 0 ) scale( 1 );
+		opacity: 1;			
 	}
 
 
@@ -194,14 +190,14 @@
 					background-color: $green_deep;				
 				}
 
-				@at-root .introEnd &:before{
-					width: 100%;
-				}
 			}
 			@include break( sp ){
 				font-size: 0.14em;
 			}				
 			
+		}
+		@at-root .loaded &:before{
+			width: 100%;
 		}
 		&_myname
 		{
@@ -212,6 +208,7 @@
 				font-size: 1.195em;
 			}
 		}
+
 
 		.handWrite
 		{
@@ -234,15 +231,6 @@
 				overflow: visible;
 			}
 
-
-			// .handWrite{
-			// 	line-height: 1;
-			// 	margin-top: -1em;
-			// 	text-align: right;
-			// 	font-size: 0.35em;
-			// 	color: $green_black;
-			// 	font-family: $fontFamily_damion;
-			// }
 			
 			@include break( sp ){
 				line-height: inherit;
@@ -555,5 +543,11 @@
 	
 }
 
+.loaded.index{
+	.mainvisual_copy_sup span:before{
+		width: 100%;		
+	}
+	
+}
 
 

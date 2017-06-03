@@ -7,6 +7,12 @@ var $w = $( window ),
     $contact = $contact[0].querySelector('a'),
     controller = new ScrollMagic.Controller();
 
+
+var userAgent = window.navigator.userAgent.toLowerCase();
+
+if (userAgent.indexOf("msie") != -1) {
+  location.href = 'ie.html';
+} 
 window.onload = window.onresize = function(){
     $windowH = window.innerHeight;
     // console.log( $windowH )

@@ -309,7 +309,7 @@ html
 
     margin-top: -1em;
 
-    transition: all 1s ease 1.45s; 
+    transition: all .5s ease 1.5s; 
     -webkit-transform: translateY(10px);
             transform: translateY(10px);
     text-align: right;

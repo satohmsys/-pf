@@ -9,7 +9,10 @@
 <%
 $path = '';
 $active = 'top';
-$css = ['css/style.css'];
+$css = ['css/index/style.css'];
+$scripts_global=null;
+$scripts=[$path + 'common/js/common.js', $path+'js/index/script.js'];
+
 %>
    <head>
      <%- include('_inc/_header') %>
@@ -52,7 +55,7 @@ $css = ['css/style.css'];
             <i class="icon icon-mouse"></i>
 
          </div>
-         <img src="img/main.png" width="700" class="testmb mainvisual_img" alt="">
+         <img src="img/index/main.png" width="700" class="testmb mainvisual_img" alt="">
       </section>
       <!-- ///// mainvisual  -->
       
@@ -73,8 +76,8 @@ $css = ['css/style.css'];
                      <div class="button button-def"><a href="about/">more</a></div>
                   </div>
                </article>
-               <img src="img/about-img-pc.png" width="867" alt="" class="section_bg section_bg-first">
-               <img src="img/about-img-cofee.png" width="225" alt="" class="section_bg section_bg-last">
+               <img src="img/index/about-img-pc.png" width="867" alt="" class="section_bg section_bg-first">
+               <img src="img/index/about-img-cofee.png" width="225" alt="" class="section_bg section_bg-last">
  
             </div>
          </section>
@@ -95,7 +98,7 @@ $css = ['css/style.css'];
                      <div class="button button-def"><a href="think/">more</a></div>
                   </div>
                </article>
-               <img src="img/think-img.png" width="538" alt="" class="section_bg section_bg-first">
+               <img src="img/index/think-img.png" width="538" alt="" class="section_bg section_bg-first">
             </div>
          </section>
          <!-- /// THINK -->  
@@ -151,21 +154,7 @@ $css = ['css/style.css'];
       <%- include($path + '_inc/_intro') %>
       <!-- ///// 自己紹介 -->
 
-
-      <!-- *****scripts -->
-      <script type="text/javascript" src="common/js/jquery.min.js"></script>
-
-      <script type="text/javascript" src="common/js/greensock-js/src/minified/TweenMax.min.js"></script>
-
-   
-      <script type="text/javascript" src="common/js/scrollmagic/minified/ScrollMagic.min.js"></script>
-      <script type="text/javascript" src="common/js/scrollmagic/minified/plugins/animation.gsap.min.js"></script>
-      <script type="text/javascript" src="common/js/scrollmagic/minified/plugins/debug.addIndicators.min.js"></script>   
-
-      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
-      <script type="text/javascript" src="common/js/common.js"></script>
-      <script type="text/javascript" src="js/script.js"></script>      
-      <!-- /////scripts -->
+     <%- include($path + '_inc/_scripts') %>
    </body>
 
 </html>

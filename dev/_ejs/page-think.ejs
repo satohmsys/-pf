@@ -5,16 +5,16 @@
 <!--[if !IE]<!-->
 <html lang="ja">
    <!--<![endif]-->
-   <% include ../_inc/function %>
+   <% include _inc/function %>
    <%
       $meta.title = 'THINK'
    %>
    <%
-   $path = '../';
+   $path = '';
    $active = 'think';
-   $css = ['css/style.css'];
+   $css = ['css/think/style.css'];
    $scripts_global=null;
-   $scripts=[$path + 'common/js/common.js',$path + 'common/js/childpage.js','js/script.js'];
+   $scripts=[$path + 'common/js/common.js',$path + 'common/js/childpage.js','js/think/script.js'];
    %>
    <head>
      <%- include($path + '_inc/_header') %>
@@ -47,7 +47,7 @@
 
             <i class="icon icon-mouse"></i>
 
-           <img src="img/think-main.png" width="435" class=" pagevisual_img" alt="">
+           <img src="img/think/think-main.png" width="435" class=" pagevisual_img" alt="">
          </div>
       </section>
       <!-- ///// mainvisual  -->

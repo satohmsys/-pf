@@ -5,16 +5,16 @@
 <!--[if !IE]<!-->
 <html lang="ja">
    <!--<![endif]-->
-   <% include ../_inc/function %>
+   <% include _inc/function %>
    <%
       $meta.title = 'about'
    %>
    <%
-   $path = '../';
+   $path = '';
    $active = 'about';
-   $css = ['css/style.css'];
+   $css = ['css/about/style.css'];
    $scripts_global=null;
-   $scripts=[$path + 'common/js/common.js',$path + 'common/js/childpage.js','js/script.js'];
+   $scripts=[$path + 'common/js/common.js',$path + 'common/js/childpage.js','js/about/script.js'];
    %>
    <head>
      <%- include($path + '_inc/_header') %>
@@ -46,7 +46,7 @@
 
             <i class="icon icon-mouse"></i>
 
-           <img src="img/about-main.png" width="1366" class=" pagevisual_img" alt="">
+           <img src="img/about/about-main.png" width="1366" class=" pagevisual_img" alt="">
          </div>
       </section>
       <!-- ///// mainvisual  -->
@@ -85,7 +85,7 @@
                      <div class="button button-link"><a href="">BIOGRAPHY</a></div>
                </div>
                <figure class="section_bg">
-                <img src="img/about-my.png" width="518" alt=""/>
+                <img src="img/about/about-my.png" width="518" alt=""/>
                </figure>
             </div>
          </section>
@@ -106,7 +106,7 @@
                   <ul class="mindlist">
                      <li class="mindlist_mind">
                         <figure class="mindlist_icon">
-                           <img src="img/icon-multidevice.svg" width="80" alt=""/>
+                           <img src="img/about/icon-multidevice.svg" width="80" alt=""/>
                            <figcaption>multidevice</figcaption>
                         </figure>
                         <h4 class="mindlist_description">
@@ -116,7 +116,7 @@
                      </li>
                     <li class="mindlist_mind">
                         <figure class="mindlist_icon">
-                           <img src="img/icon-target.svg" width="80" alt=""/>
+                           <img src="img/about/icon-target.svg" width="80" alt=""/>
                            <figcaption>target</figcaption>
                         </figure>
                         <h4 class="mindlist_description">
@@ -126,7 +126,7 @@
                      </li>
                      <li class="mindlist_mind">
                         <figure class="mindlist_icon">
-                           <img src="img/icon-communication.svg" width="80" alt=""/>
+                           <img src="img/about/icon-communication.svg" width="80" alt=""/>
                            <figcaption>communication</figcaption>
                         </figure>
                         <h4 class="mindlist_description">
@@ -136,7 +136,7 @@
                      </li>
                      <li class="mindlist_mind">
                         <figure class="mindlist_icon">
-                           <img src="img/icon-easy.svg" width="80" alt=""/>
+                           <img src="img/about/icon-easy.svg" width="80" alt=""/>
                            <figcaption>easy to use</figcaption>
                         </figure>
                         <h4 class="mindlist_description">
@@ -146,7 +146,7 @@
                      </li>
                     <li class="mindlist_mind">
                         <figure class="mindlist_icon">
-                           <img src="img/icon-color.svg" width="80" alt=""/>
+                           <img src="img/about/icon-color.svg" width="80" alt=""/>
                            <figcaption>color coordinate</figcaption>
                         </figure>
                         <h4 class="mindlist_description">
@@ -156,7 +156,7 @@
                      </li>
                      <li class="mindlist_mind">
                         <figure class="mindlist_icon">
-                           <img src="img/icon-handdrip.svg" width="80" alt=""/>
+                           <img src="img/about/icon-handdrip.svg" width="80" alt=""/>
                            <figcaption>hand drip cofee</figcaption>
                         </figure>
                         <h4 class="mindlist_description">
@@ -191,25 +191,25 @@
                      <ul class="skill_content">
                         <li class="skill_content_list">
                            <figure class="skill_icon">
-                              <img src="img/icon-photoshop.svg" width="80" alt="Photoshop"/>
+                              <img src="img/about/icon-photoshop.svg" width="80" alt="Photoshop"/>
                               <figcaption>Photoshop</figcaption>
                            </figure>
                         </li>
                         <li class="skill_content_list">
                            <figure class="skill_icon">
-                              <img src="img/icon-illustrator.svg" width="80" alt="Illustrator"/>
+                              <img src="img/about/icon-illustrator.svg" width="80" alt="Illustrator"/>
                               <figcaption>Illustrator</figcaption>
                            </figure>
                         </li>
                         <li class="skill_content_list">
                            <figure class="skill_icon">
-                              <img src="img/icon-sublimetext.svg" width="80" alt="Sublime Text"/>
+                              <img src="img/about/icon-sublimetext.svg" width="80" alt="Sublime Text"/>
                               <figcaption>Sublime Text</figcaption>
                            </figure>
                         </li>
                         <li class="skill_content_list">
                            <figure class="skill_icon">
-                              <img src="img/icon-gulp.svg" width="80" alt="gulp"/>
+                              <img src="img/about/icon-gulp.svg" width="80" alt="gulp"/>
                               <figcaption>Gulp</figcaption>
                            </figure>
                         </li>                        
@@ -222,25 +222,25 @@
                      <ul class="skill_content">
                         <li class="skill_content_list">
                            <figure class="skill_icon">
-                              <img src="img/icon-css3.svg" width="80" alt="css3"/>
+                              <img src="img/about/icon-css3.svg" width="80" alt="css3"/>
                               <figcaption>CSS3</figcaption>
                            </figure>
                         </li>
                         <li class="skill_content_list">
                            <figure class="skill_icon">
-                              <img src="img/icon-html5.svg" width="80" alt="html5"/>
+                              <img src="img/about/icon-html5.svg" width="80" alt="html5"/>
                               <figcaption>HTML5</figcaption>
                            </figure>
                         </li>
                         <li class="skill_content_list">
                            <figure class="skill_icon">
-                              <img src="img/icon-sass.svg" width="80" alt="Sass(scss)"/>
+                              <img src="img/about/icon-sass.svg" width="80" alt="Sass(scss)"/>
                               <figcaption>Sass(scss)</figcaption>
                            </figure>
                         </li>
                         <li class="skill_content_list">
                            <figure class="skill_icon">
-                              <img src="img/icon-less.svg" width="80" alt="less"/>
+                              <img src="img/about/icon-less.svg" width="80" alt="less"/>
                               <figcaption>Less</figcaption>
                            </figure>
                         </li>                        
@@ -253,25 +253,25 @@
                      <ul class="skill_content">
                         <li class="skill_content_list">
                            <figure class="skill_icon">
-                              <img src="img/icon-javascript.svg" width="80" alt="javascript"/>
+                              <img src="img/about/icon-javascript.svg" width="80" alt="javascript"/>
                               <figcaption>Javascript</figcaption>
                            </figure>
                         </li>
                         <li class="skill_content_list">
                            <figure class="skill_icon">
-                              <img src="img/icon-jquery.svg" width="80" alt="jquery"/>
+                              <img src="img/about/icon-jquery.svg" width="80" alt="jquery"/>
                               <figcaption>jQuery</figcaption>
                            </figure>
                         </li>
                         <li class="skill_content_list">
                            <figure class="skill_icon">
-                              <img src="img/icon-php.svg" width="80" alt="php"/>
+                              <img src="img/about/icon-php.svg" width="80" alt="php"/>
                               <figcaption>Php</figcaption>
                            </figure>
                         </li>
                         <li class="skill_content_list">
                            <figure class="skill_icon">
-                              <img src="img/icon-wordpress.svg" width="80" alt="wordpress"/>
+                              <img src="img/about/icon-wordpress.svg" width="80" alt="wordpress"/>
                               <figcaption>Wordpress</figcaption>
                            </figure>
                         </li>                        

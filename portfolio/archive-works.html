@@ -5,8 +5,9 @@
 <!--[if !IE]<!-->
 <html lang="ja">
    <!--<![endif]-->
-      
-
+   
+   
+   
    <head>
      
       <meta http-equiv="X-UA-Compatible" content="IE=Edge"> 
@@ -14,7 +15,7 @@
       <!-- ***** my style -->
       <link rel="stylesheet" type="text/css" href="common/css/style.css">
       
-      <link rel="stylesheet" type="text/css" href="css/index/style.css">
+      <link rel="stylesheet" type="text/css" href="css/works/style.css">
        
       <!-- ///// my style -->
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
@@ -22,7 +23,7 @@
 <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>	
 <![endif]-->
-      <title>satohmsys portfolio</title>
+      <title>WORKS</title>
       <meta name="keywords" content="Webデザイン,Webデザイナー,東京,フリーランス,コーディング,ホームページ制作,個人">
       <meta name="description" content="ディスクリプション">
       <meta property="og:title" content="og title">
@@ -39,25 +40,29 @@
       <link rel="shortcut icon" href=""> 
    </head>
 
-   <body class="index">
-      <div id="loadingAnim" class="loadingAnim"><div class="dots"><div class="dot dot-1"></div><div class="dot dot-2"></div><div class="dot dot-3"></div></div><svg xmlns="http://www.w3.org/2000/svg" version="1.1" style="display:none;"><defs><filter id="goo"><feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" /><feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 21 -7"/></filter></defs></svg></div>   
-   
+   <body class="works">
+
+      <div id="loadingAnim" class="loadingAnim"><div class="dots"><div class="dot dot-1"></div><div class="dot dot-2"></div><div class="dot dot-3"></div></div><svg xmlns="http://www.w3.org/2000/svg" version="1.1" style="display:none;"><defs><filter id="goo"><feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" /><feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 21 -7"/></filter></defs></svg></div>  
+
       <!-- ***** header  -->
-      <header>
+              <header>
          <div class="siteHeader">
             <div class="wrap clearfix">
-                    <header>
-         <div class="siteHeader">
-            <div class="wrap clearfix">
+            
+               <!-- *** logo -->
+               <h1 class="siteHeader_logo">
+                  <a href=""><span class="name">Satohmsys</span><span class="handWrite">portfoliosite</span></a>
+               </h1>
+               <!-- /// logo -->
             
 
             <!-- *** navigation -->
                <nav class="siteHeader_nav nav">
                   <ul class="wrap">
-                     <li class="current"><a href="index.html">Top</a></li>
+                     <li><a href="index.html">Top</a></li>
                      <li><a href="page-about.html">About</a></li>
                      <li><a href="page-think.html">Think</a></li>
-                     <li><a href="archive-works.html">Works</a></li>
+                     <li class="current"><a href="archive-works.html">Works</a></li>
                      <li class="nav_contact button button-nav"><a href="#contact">Contact</a></li>
                   </ul>
                </nav>
@@ -66,124 +71,122 @@
             </div>
          </div>
       </header>
-            </div>
-         </div>
-      </header>
       <!-- ///// header  -->
 
 
       <!-- ***** mainvisual -->
-      <section class="mainvisual">
+      <section class="pagevisual hasGradation">
          <div class="wrap">
 
-            <div class="mainvisual_copy">
-               <h1>
-                  <span class="mainvisual_copy_sup">
-                     <span><i>I am a WEB-CREATOR</i></span>
-                     based in Tokyo. To create loved one.
-                  </span>
-                  <span class="mainvisual_copy_myname">
-                     SATOH <br>
-                     <span class="firstName">MSYS</span>
-                  </span>
-                  <span class="handWrite">
-                     portfolio site
-                  </span>
-               </h1>
+            <div class="pagevisual_copy">
+               <h2>
+                  <p class="pagevisual_copy_pagename">
+                   WORKS
+                  </p>
+                  <p class="handWrite">   
+                     archive
+                  </p>
+                  
+               </h2>
             </div>
 
             <i class="icon icon-mouse"></i>
 
+           <img src="img/works/work-main.png" width="606" class=" pagevisual_img" alt="">
          </div>
-         <img src="img/index/main.png" width="700" class="testmb mainvisual_img" alt="">
       </section>
       <!-- ///// mainvisual  -->
       
       <!-- ***** BODY START -->
-      <main class="main">
+      <main class="main topGradation">
 
-         <!-- *** ABOUT -->            
-         <section id="about" class="section section-about">
-            <div class="wrap">
-               <article class="section_article">
-                  <header>
-                     <h2 class="section_index">ABOUT</h2>
-                  </header>
-                  <div class="section_content">
-                     東京のWEBデザイナー、サトウマサヤス(satohmsys)です。<br>デザイン、コーディング、フロントエンド。
-                  </div>
-                  <div class="section_footer">
-                     <div class="button button-def"><a href="about/">more</a></div>
-                  </div>
-               </article>
-               <img src="img/index/about-img-pc.png" width="867" alt="" class="section_bg section_bg-first">
-               <img src="img/index/about-img-cofee.png" width="225" alt="" class="section_bg section_bg-last">
- 
-            </div>
-         </section>
-         <!-- /// ABOUT -->   
+        <section class="worksArchive">
+          
+          <article class="work">
+            <a href="single-works.html">
+              <figure class="work_img"><img src="img/works/website1.jpg" alt=""/></figure>
+              <div class="work_info">
+                <h3 class="work_info_type">Website</h3>
+                <ul class="work_info_category">
+                  <li>design</li>
+                  <li>coding</li>
+                  <li>frontend</li>
+                </ul>
+              </div></a>
+          </article>
 
-         <!-- *** THINK -->            
-         <section id="think" class="section section-think">
-            <div class="wrap">
-               <article class="section_article">
-                  <header>
-                     <h2 class="section_index">THINK</h2>
-                  </header>
-                  <div class="section_content">
-                    「メッセージをデザインする」ことを意識しています。<br>
-                    色や写真を使って、使いやすさを計算し、流行を取り入れる。発信したいイメージを適切なかたちにする「意味のあるデザイン」をするのが、プロとしてのデザイナーの仕事だと考えています。
-                  </div>
-                  <div class="section_footer">
-                     <div class="button button-def"><a href="think/">more</a></div>
-                  </div>
-               </article>
-               <img src="img/index/think-img.png" width="538" alt="" class="section_bg section_bg-first">
-            </div>
-         </section>
-         <!-- /// THINK -->  
+          <article class="work">
+            <a href="single-works.html">
+              <figure class="work_img"><img src="img/works/icon.jpg" alt=""/></figure>
+              <div class="work_info">
+                <h3 class="work_info_type">Website</h3>
+                <ul class="work_info_category">
+                  <li>design</li>
+                  <li>coding</li>
+                  <li>frontend</li>
+                </ul>
+              </div></a>
+          </article>
 
-          <!-- *** works -->            
-         <section id="works" class="section section-works">
-            <div class="wrap">
-               <article class="section_article">
-                  <header>
-                     <h2 class="section_index">WORKS</h2>
-                  </header>
-                  <div class="section_content">
-                     Webサイトのほか、キーヴィジュアルやロゴやアイコンのデザイン、コーディングの実績集です。
-                  </div>
-                  <div class="section_footer">
-                     <div class="button button-def"><a href="works/">more</a></div>
-                  </div>
-               </article>
-               <div class="section_bg">
-                  <div class="section_bg_skewWrapper">
-                     <div class="section_bg_panels">
-                        <div class="section_bg_panel panel">
-                           <h3 class="panel_catName">WEB</h3>
-                        </div>
-                        <div class="section_bg_panel panel">
-                           <h3 class="panel_catName">LOGO</h3>
-                        </div>
-                        <div class="section_bg_panel panel">
-                           <h3 class="panel_catName">VISUAL</h3>
-                        </div>
-                        <div class="section_bg_panel panel">
-                           <h3 class="panel_catName">CORDING</h3>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </section>
-         <!-- /// THINK -->           
+          <article class="work">
+            <a href="single-works.html">
+              <figure class="work_img"><img src="img/works/visual.jpg" alt=""/></figure>
+              <div class="work_info">
+                <h3 class="work_info_type">Website</h3>
+                <ul class="work_info_category">
+                  <li>design</li>
+                  <li>coding</li>
+                  <li>frontend</li>
+                </ul>
+              </div></a>
+          </article>
 
+          <article class="work">
+            <a href="single-works.html">
+              <figure class="work_img"><img src="img/works/website1.jpg" alt=""/></figure>
+              <div class="work_info">
+                <h3 class="work_info_type">Website</h3>
+                <ul class="work_info_category">
+                  <li>design</li>
+                  <li>coding</li>
+                  <li>frontend</li>
+                </ul>
+              </div></a>
+          </article>
+
+          <article class="work">
+            <a href="single-works.html">
+              <figure class="work_img"><img src="img/works/icon.jpg" alt=""/></figure>
+              <div class="work_info">
+                <h3 class="work_info_type">Website</h3>
+                <ul class="work_info_category">
+                  <li>design</li>
+                  <li>coding</li>
+                  <li>frontend</li>
+                </ul>
+              </div></a>
+          </article>
+
+          <article class="work">
+            <a href="single-works.html">
+              <figure class="work_img"><img src="img/works/visual.jpg" alt=""/></figure>
+              <div class="work_info">
+                <h3 class="work_info_type">Website</h3>
+                <ul class="work_info_category">
+                  <li>design</li>
+                  <li>coding</li>
+                  <li>frontend</li>
+                </ul>
+              </div></a>
+          </article>          
+
+        </section>
+       
       </main>
       <!-- //// BODY END -->
      
-       
-   <footer class="siteFooter">
+        
+   <footer class="siteFooter hasGradation">
          <!-- ***** contact -->
          <section id="contact" class="inquiry section section-contact">
             <div class="wrap">
@@ -250,15 +253,18 @@
             </div>
          </section>
       </footer>         
-     <div class="backToTop"><i></i></div>
-     <div class="fixedSns"><div class="fixedSns_index">Share on</div><ul class="mySns fixedSns_sns"><li><a class="mySns_twitter icon-twitter" href=""></a></li><li><a class="mySns_facebook icon-facebook" href=""></a></li></ul></div>
+
+      <div class="backToTop"><i></i></div>
+
+      <div class="fixedSns"><div class="fixedSns_index">Share on</div><ul class="mySns fixedSns_sns"><li><a class="mySns_twitter icon-twitter" href=""></a></li><li><a class="mySns_facebook icon-facebook" href=""></a></li></ul></div>
+
 
       <!-- ***** menu button -->
       <div class="navToggle" data-navtype="fade"><div class="navToggle_hitArea"><div class="navToggle_icon"><i class="navToggle_icon_lineCenter"></i></div></div></div>
       <!-- //// menu button -->
 
-      <!-- ***** 自己紹介 -->      
       
+     
       <div id="myIntroduction" class="myIntroduction">
          <div class="wrap">
             <header class="myIntroduction_index">
@@ -298,7 +304,6 @@
             </div>
          </div>
       </div>
-      <!-- ///// 自己紹介 -->
 
       <!-- *****scripts -->
       <script type="text/javascript" src="common/js/jquery.min.js"></script>
@@ -312,7 +317,9 @@
       
             <script type="text/javascript" src="common/js/common.js"></script>
        
-            <script type="text/javascript" src="js/index/script.js"></script>
+            <script type="text/javascript" src="common/js/childpage.js"></script>
+       
+            <script type="text/javascript" src="js/works/script.js"></script>
           
      
       <!-- /////scripts -->

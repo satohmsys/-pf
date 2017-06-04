@@ -78,7 +78,7 @@ gulp.task('browserSyncReload' , function(){
 */
 gulp.task('sass' , function(){
 
-  return sass( dir.top + `/**/${sassDir.scss}/*.scss` , {
+  return sass( dir.top + `/**/${sassDir.scss}/**/*.scss` , {
     compass : true
   })
   .pipe(autoprefixer())
@@ -166,6 +166,6 @@ gulp.task('prettify', function() {
 */
 gulp.task('default' ,['browserSync'], function(){
   gulp.watch('_ejs/**/*.ejs', ['ejs']);
-  gulp.watch( dir.top + '/**/scss/*.scss', ['sassCompileReload']);
+  gulp.watch( dir.top + '/**/scss/**/*.scss', ['sassCompileReload']);
   gulp.watch( [dir.top + '/**/*.html',dir.top + '/**/*.php' ] , ['browserSyncReload']);
 });

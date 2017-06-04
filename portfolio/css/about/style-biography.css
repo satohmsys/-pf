@@ -41,6 +41,25 @@
    section
   ***********************/
 }
+@media screen and (max-width: 580px)
+{
+    .about-biography .pagevisual.hasGradation
+    {
+        padding-bottom: 40px;
+    }
+}
+.about-biography .pagevisual.hasGradation .icon-mouse
+{
+    bottom: 20%;
+}
+@media screen and (max-width: 780px)
+{
+    .about-biography .pagevisual.hasGradation .icon-mouse
+    {
+        right: auto;
+        left: 9%;
+    }
+}
 .about-biography .pagevisual.hasGradation + .main
 {
     padding-top: 0;
@@ -86,7 +105,7 @@
     margin-right: auto; 
     margin-left: auto;
 }
-@media screen and (max-width: 780px)
+@media screen and (max-width: 580px)
 {
     .about-biography .timeline_event_content
     {
@@ -112,6 +131,13 @@
     color: #00d8fd;
 }
 @media screen and (max-width: 780px)
+{
+    .about-biography .timeline_event_date
+    {
+        font-size: 3em;
+    }
+}
+@media screen and (max-width: 580px)
 {
     .about-biography .timeline_event_date
     {
@@ -157,7 +183,7 @@
 {
     background-color: #00d8fd;
 }
-@media screen and (max-width: 780px)
+@media screen and (max-width: 580px)
 {
     .about-biography .timeline_event_icon
     {
@@ -201,6 +227,13 @@
 {
     .about-biography .timeline_event_info
     {
+        max-width: 290px;
+    }
+}
+@media screen and (max-width: 580px)
+{
+    .about-biography .timeline_event_info
+    {
         width: auto;
     }
 }
@@ -219,7 +252,7 @@
     -ms-flex-align: start;
     align-items: flex-start;
 }
-@media screen and (max-width: 780px)
+@media screen and (max-width: 580px)
 {
     .about-biography .timeline_event_content
     {
@@ -243,7 +276,7 @@
     -webkit-box-direction: reverse;
     -ms-flex-direction: row-reverse;
 }
-@media screen and (max-width: 780px)
+@media screen and (max-width: 580px)
 {
     .about-biography .timeline_event.rtol .timeline_event_content
     {
@@ -262,7 +295,7 @@
     -ms-flex-order: 1;
     order: 1;
 }
-@media screen and (max-width: 780px)
+@media screen and (max-width: 580px)
 {
     .about-biography .timeline_event_date
     {
@@ -274,7 +307,7 @@
     right: 0; 
     left: -1.8em;
 }
-@media screen and (max-width: 780px)
+@media screen and (max-width: 580px)
 {
     .about-biography .timeline_event.rtol .timeline_event_date
     {
@@ -293,7 +326,7 @@
     -ms-flex-order: 3;
     order: 3;
 }
-@media screen and (max-width: 780px)
+@media screen and (max-width: 580px)
 {
     .about-biography .timeline_event_icon
     {
@@ -322,7 +355,7 @@
     background-image: linear-gradient(to bottom, #00d8fd, #00acca); 
     background-size: 100%;
 }
-@media screen and (max-width: 780px)
+@media screen and (max-width: 580px)
 {
     .about-biography .timeline_line
     {
@@ -504,7 +537,7 @@
     margin: auto;
 
     content: ' ';
-    transition: all 1.5s cubic-bezier(.785, .135, .15, .86) 0s;
+    transition: all 1s cubic-bezier(.785, .135, .15, .86) 0s;
     -webkit-transform: translateY(0%);
             transform: translateY(0%);
 

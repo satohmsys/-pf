@@ -29,9 +29,22 @@
 ***********************/
 
 
+.pagevisual.hasGradation {
+	@include break( sp ){	
+		padding-bottom: 40px;
+	}
+	.icon-mouse{
+		bottom: 20%;	
+		
+		@include break( tab ){
+			right: auto;
+			left: 9%;
+		}
+	}
 
-.pagevisual.hasGradation + .main{
-	padding-top: 0px;
+	& + .main{
+		padding-top: 0px;
+	}	
 }
 
 .timeline
@@ -65,7 +78,7 @@
 		margin-left: auto;
 		margin-right: auto;
 		
-		@include break( tab ){
+		@include break( sp ){
 			padding-left: 70px;
 		}
 	}
@@ -85,6 +98,9 @@
 		@extend %fadeStyleBefore;
 		
 		@include break( tab ){
+			font-size: 3em;
+		} 
+		@include break( sp ){
 			font-size: 2em;
 			margin-bottom: 15px;
 		}
@@ -126,7 +142,7 @@
 			background-color: $blue;
 		}
 
-		@include break( tab ){
+		@include break( sp ){
 			// width: 40px;
 			height: auto;
 			left: calc(-5% - 10px);
@@ -161,6 +177,9 @@
 		}
 
 		@include break( tab ){
+			max-width: 290px;
+		}
+		@include break( sp ){
 			width: auto;
 		}
 
@@ -182,7 +201,7 @@
 		justify-content: space-between;
 		align-items: flex-start;		
 		
-		@include break( tab ){
+		@include break( sp ){
 			flex-direction: column;
 			align-items: flex-start;
 		}				
@@ -192,7 +211,7 @@
 		margin-left: 0;
 		flex-direction: row-reverse;
 		
-		@include break( tab ){
+		@include break( sp ){
 			flex-direction: column;
 		}		
 	}
@@ -201,7 +220,7 @@
 		right: -1.5em;		
 		order:1;
 
-		@include break( tab ){
+		@include break( sp ){
 			right: 0;
 			
 		}
@@ -210,7 +229,7 @@
 	&.rtol .timeline_event_date{
 		left: -1.8em;
 		right: 0;
-		@include break( tab ){
+		@include break( sp ){
 			left: 0;			
 		}
 		
@@ -222,14 +241,14 @@
 	
 	&_icon{
 		order:3;
-		@include break( tab ){
+		@include break( sp ){
 			order: 0			
 		}
 		
 	}
 
 
-	@include break( tab ){
+	@include break( sp ){
 		
 	}
 
@@ -250,7 +269,7 @@
 	
 	@include background-image( linear-gradient( to bottom, $blue, darken( $blue, 10 )));
 	
-	@include break( tab ){
+	@include break( sp ){
 		left: 5% ;
 		right: auto;
 	}		
@@ -399,7 +418,7 @@
 			bottom: 0;
 			left: 0;
 			overflow: hidden;
-			transition: transition(1.5s);
+			transition: transition(1s);
 			opacity: 1;
 			transform: translateY(0%);	
 			will-change: height,transform;		

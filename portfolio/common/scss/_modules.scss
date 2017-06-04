@@ -602,6 +602,7 @@
 		display: flex;
 		flex-direction: row;
 		align-items: center;
+		font-family: $fontFamily_wf_bold;
 		justify-content: space-between;
 		
 		&:after{
@@ -693,7 +694,7 @@
 	&_label{
 		width: 50px;
 		padding-right: 20px;
-		@extend .wfRegular;
+		@extend .wfMedium;
 	}
 
 	&_input{

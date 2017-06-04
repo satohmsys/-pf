@@ -125,7 +125,7 @@
 {
     display: block;
 }.index .mainvisual_copy_sup
-{font-family: 'woodford exlight';font-size: .1375em;font-style: italic;
+{font-family: 'woodford thin';font-size: .1375em;font-style: italic;
 
     text-shadow: 0 0 5px rgba(0,0,0,.35);
 }.index .mainvisual_copy_sup span
@@ -175,10 +175,10 @@
 
         width: 100%;
     }
-}.index .mainvisual.loaded .mainvisual_sup_copy:before
+}.loaded .mainvisual_copy_sup span:before
 {
     width: 100%;
-}.index .mainvisual.loaded .mainvisual .handwrite
+}.loaded .mainvisual .handWrite
 {-webkit-transform: translateY(0px)                                        ;transform: translateY(0px);
 
     opacity: 1;

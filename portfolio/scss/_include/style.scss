@@ -162,7 +162,7 @@
 			text-shadow: 0 0 5px rgba(#000, 0.35);
 			font-size: 0.1375em;
 			font-style: italic;
-			font-family: $fontFamily_wf_exlight;
+			font-family: $fontFamily_wf_thin;
 			
 			span{
 				line-height: 1;
@@ -246,11 +246,11 @@
 		}
 	}
 
-	&.loaded{
-		 .mainvisual_sup_copy:before{
+	@at-root .loaded{
+		 .mainvisual_copy_sup span:before{
 			width: 100%;
 		}	
-		.mainvisual .handwrite{
+		.mainvisual .handWrite{
 			opacity: 1;
 			transform: translateY(0px);
 		}			

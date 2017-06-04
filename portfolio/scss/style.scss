@@ -199,7 +199,7 @@ html{
 					background-color: $green_deep;				
 				}
 
-				@at-root .introEnd &:before{
+				@at-root .loaded &:before{
 					width: 100%;
 				}
 			}
@@ -222,6 +222,17 @@ html{
 		{
 			margin-top: -1em;
 			text-align: right;				
+			color: $green_black;
+			font-size: 0.4em;
+			opacity: 0;
+			transform: translateY(10px);
+			transition: all 1s ease 1.45s;
+			
+			@at-root .loaded &{
+				opacity: 1;
+				transform: translateY(0px);
+			}			
+
 			&,
 			svg text{
 				line-height: 1;

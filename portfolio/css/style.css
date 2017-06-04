@@ -281,7 +281,7 @@ html
 
     background-color: #005f70;
 }
-.introEnd .mainvisual_copy_sup span:before
+.loaded .mainvisual_copy_sup span:before
 {
     width: 100%;
 }
@@ -305,9 +305,24 @@ html
 }
 .mainvisual_copy .handWrite
 {
+    font-size: .4em;
+
     margin-top: -1em;
 
+    transition: all 1s ease 1.45s; 
+    -webkit-transform: translateY(10px);
+            transform: translateY(10px);
     text-align: right;
+
+    opacity: 0;
+    color: #003640;
+}
+.loaded .mainvisual_copy .handWrite
+{
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px); 
+
+    opacity: 1;
 }
 .mainvisual_copy .handWrite,
 .mainvisual_copy .handWrite svg text

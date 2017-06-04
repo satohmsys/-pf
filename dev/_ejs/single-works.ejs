@@ -12,9 +12,16 @@
    <%
    $path = '';
    $active = 'think';
-   $css = ['css/style.css'];
+   $css = ['css/_include/style.css'];
    $scripts_global=null;
-   $scripts=[$path + 'common/js/common.js',$path + 'common/js/childpage.js','js/script.js'];
+   $scripts=[
+$path + 'common/js/pjax/spica.js',
+$path + 'common/js/pjax/localsocket.js',
+$path + 'common/js/pjax/pjax-api.js',
+$path + 'common/js/pjax/config.js',   
+   $path + 'common/js/common.js',
+   $path + 'common/js/childpage.js',
+   'js/script.js'];
    %>
    <head>
      <%- include($path + '_inc/_header') %>

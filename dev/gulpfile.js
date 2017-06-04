@@ -79,7 +79,8 @@ gulp.task('browserSyncReload' , function(){
 gulp.task('sass' , function(){
 
   return sass( dir.top + `/**/${sassDir.scss}/**/*.scss` , {
-    compass : true
+    compass : true,
+    style: 'compressed'
   })
   .pipe(autoprefixer())
   .pipe(csscomb()) 

@@ -138,11 +138,11 @@
 		@include break( sp ){
 			// width: 40px;
 			height: auto;
-			left: calc(-5% - 10px);
+			// left: calc(-5% - 10px);
 			right: auto ;
 		}		
 		@include break( sp ){	
-			left: calc(-10% - 10px);
+			left: calc(-10% - 4px);
 		}
 	}
 
@@ -383,9 +383,9 @@
 	display: block;
 	border-radius: 4px;	
 	
-	&:before,
-	&:after,	
-	.tweetbox:before,
+	// &:before,
+	// &:after,	
+	// .tweetbox:before,
 	.tweetbox:after{
 		cnotent: " ";
 		display: block;
@@ -413,7 +413,7 @@
 			overflow: hidden;
 			transition: transition(1s);
 			opacity: 1;
-			transform: translateY(0%);	
+			// transform: translateY(0%);	
 			will-change: height,transform;		
 			@extend %gradation;
 		}
@@ -441,7 +441,7 @@
 		.tweetbox:after{
 			height: 0;
 			top: auto;
-			transform: translateY(5px);
+			// transform: translateY(5px);
 			// opacity: 0;
 		}
 		.tweetbox_now{

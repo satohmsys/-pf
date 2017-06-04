@@ -2,9 +2,6 @@
 .index .section,
 .index .mainvisual,
 .index .section-works .panel,
-.about-biography .timeline_event.now:before,
-.about-biography .timeline_event.now:after,
-.about-biography .timeline_event.now .tweetbox:before,
 .about-biography .timeline_event.now .tweetbox:after,
 .works .work_img
 {
@@ -475,7 +472,7 @@
 }@media screen and (max-width: 580px)
 {
     .about-biography .timeline_event_icon
-    {right: auto;left: calc(-5% - 10px);
+    {right: auto;
 
         height: auto;
     }
@@ -483,7 +480,7 @@
 {
     .about-biography .timeline_event_icon
     {
-        left: calc(-10% - 10px);
+        left: calc(-10% - 4px);
     }
 }.about-biography .timeline_event_info
 {display: inline-block;
@@ -675,10 +672,7 @@
 {position: relative;display: block;
 
     max-width: 400px;margin-right: auto;margin-left: auto;border-radius: 4px;
-}.about-biography .timeline_event.now:before,
-.about-biography .timeline_event.now:after,
-.about-biography .timeline_event.now .tweetbox:before,
-.about-biography .timeline_event.now .tweetbox:after
+}.about-biography .timeline_event.now .tweetbox:after
 {line-height: 1;position: absolute;display: block;
 
     cnotent: ' ';
@@ -688,14 +682,14 @@
 }.about-biography .timeline_event.now .tweetbox:after
 {position: absolute;z-index: 2;top: 0;bottom: 0;left: 0;display: block;overflow: hidden;width: 100%;height: 100%;margin: auto;
 
-    content: ' ';transition: all 1s cubic-bezier(.785, .135, .15, .86) 0s;-webkit-transform: translateY(0%);transform: translateY(0%);opacity: 1;will-change: height,transform;
+    content: ' ';transition: all 1s cubic-bezier(.785, .135, .15, .86) 0s;opacity: 1;will-change: height,transform;
 }.about-biography .timeline_event.now .tweetbox_now
 {font-family: 'Damion',cursive;font-size: 5em;
     line-height: 1;position: absolute;right: 0;bottom: -.5em;margin: 0;transition: all .3s cubic-bezier(.785, .135, .15, .86) 0s;transition-delay: 1s;-webkit-transform: translateY(10px);transform: translateY(10px);opacity: 0;opacity: 0;color: #003640;
 }.about-biography .timeline_event.now.inview .tweetbox:after
 {top: auto;
 
-    height: 0;-webkit-transform: translateY(5px);transform: translateY(5px);
+    height: 0;
 }.about-biography .timeline_event.now.inview .tweetbox_now
 {-webkit-transform: translateY(0px)                                        ;transform: translateY(0px);
 

@@ -662,34 +662,82 @@
 		padding-right: 30px;
 	} 
 	
-	input,
-	select,
-	textarea{
-		width: 100%;
-		background-color: transparent;
-		border: none;
-		color: #fff;
-		-webkit-appearance:none;		
+
+	option{
+		opacity: 0.5em;
+		background-color: $green_deep;
+		&:hover,
+		&:active,
+		&:focus{
+			outline: none;
+		}
+	}
+
+	input:-webkit-autofill,
+	textarea:-webkit-autofill,
+	select:-webkit-autofill{
+		background-color: rgba( #fff,0.25 );
 	}
 
 	
-	&_row{
+	&_row
+	{
 		width: 100%;
 		margin-top: 20px;
 		table-layout: fixed;
 		display: table;
+		
+		input,
+		select,
+		textarea,{
+			width: 100%;
+			padding: 0.5em;
+			transition: transition();
+			box-sizing: border-box;
+			border: none;
+			border-radius: 0;
+			border-bottom: solid 1px #fff;		
+			background-color: transparent;
+			color: #fff;		
+			
+			&::-webkit-input-placeholder,
+			&::-moz-placeholder
+			{
+				opacity: 0.3;
+				font-family: $fontFamily_wf_light;
+			}
+			
+			
+			&:focus,
+			&:active,
+			&:hover{
+				background-color: rgba( #fff,0.25 );
+				outline: none;
+			}			
+		}
+		select{
+			// width: 102%;
+			-webkit-appearance:none;		
+		}
 	}
 
 	&_row-button{
 		text-align: center;
 		margin-top: 30px;
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		
+		.button:not( :last-child ){
+			margin-right: 5px;
+		}
 	}
 
 
 	&_label,
 	&_input{
 		display: table-cell;
-		vertical-align: bottom;
+		vertical-align: middle;
 	}
 	&_label{
 		width: 50px;
@@ -697,17 +745,53 @@
 		@extend .wfMedium;
 	}
 
-	&_input{
-		width: 100%;
-		border-bottom: solid 1px #fff;
-	}
-
-	&_button{
+	// &_input{
+	// 	width: 100%;
 		
+	// 	// input{
+	// 	// 	border-bottom: solid 1px #fff;		
+	// 	// }
+	// }
+
+	// &_button{
+		
+	// }
+
+	//////// contact form
+	
+	div.wpcf7 .ajax-loader{
+		margin: auto;
+		position: absolute;
+		right: 0;
+		bottom: -15px;
+		left: 0;
 	}
 
+	div.wpcf7-response-output{
+		position: relative;
+		border-color: #fff;
+		border-width: 1px;
+		font-size: 0.8em;
+		
+		&:before{
+			content: " ";
+			display: block;
+			width: 0;
+			height: 0;
+			margin: auto;
+			position: absolute;
+			top: -0.4em;
+			right: 0;
+			left: 0;
+			border-style: solid;
+			border-width: 0 4px 5px 4px;
+			border-color: transparent transparent #ffffff transparent;
+		}
+	}
 
 }
+
+
 
 
 
@@ -781,7 +865,7 @@
 			bottom: 0;
 			left: 0;
 			border: solid 1px #fff;
-			transition: all 0.1s ease-in 0s;
+			transition: all 0.16s ease-in 0s;
 		}
 	
 	}
@@ -831,33 +915,12 @@
 	width: 150px;
 	border: none;
 	position: relative;
-	
-	&:before/*,
-	&:after*/{
-		content: " ";
-		display: block;
-		width: 100%;
-		height: 100%;
-		margin: auto;
-		box-sizing: border-box;
-		position: absolute;
-		top: 0%;
-		right: 0;
-		bottom: 0;
-		left: 0;
-		border: solid 1px #fff;
-		transition: all 0.2s ease-in 0s;
-	}	
-
+	background-color: #fff;
 
 	@include mouseOver(){
-		transform: scale(0.95);
-		
-		&:before,
-		&:after{
-			transform: scale(1.5);
-			opacity: 0;
-		}			
+		cursor: pointer;
+		color: #fff;
+		background-color: $green_black;
 	}	
 
 

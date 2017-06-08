@@ -202,9 +202,17 @@
                               <span>Name</span>
                            </label>
                            <div class="siteForm_input">
-                              <input type="text" id="name">
+                              <input placeholder="name" type="text" id="name">
                            </div>
                         </div>
+                        <div class="siteForm_row">
+                           <label  class="siteForm_label" for="email">
+                              <span>Email</span>
+                           </label>
+                           <div class="siteForm_input">
+                              <input type="email" id="email">
+                           </div>
+                        </div>                        
                         <div class="siteForm_row">
                            <label  class="siteForm_label" for="sub">
                               <span>Subject</span>
@@ -225,9 +233,10 @@
                               <textarea name="" id="message" cols="30" rows="1"></textarea>
                            </div>
                         </div>
-                        <div class=" siteForm_row-button">
-                           <button class="siteForm_button button button-form">confirm</button>
-                        </div>
+                        <!-- <div class=" siteForm_row-button">
+                           <button class="siteForm_button button button-form"><input type="submit" value="confirm"></button>
+                        </div> -->
+<div class="siteForm_row-button"><input type="button" value="return" class="wpcf7-form-control wpcf7-back siteForm_button button button-form wpcf7c-elm-step2 wpcf7c-btn-back wpcf7c-force-hide"><input type="submit" value="confirm" class="wpcf7-form-control wpcf7-confirm siteForm_button button button-form wpcf7c-elm-step1 wpcf7c-btn-confirm"><input type="submit" value="submit!" class="wpcf7-form-control wpcf7-submit siteForm_button button button-form wpcf7c-elm-step2 wpcf7c-force-hide"><span class="ajax-loader"></span></div>                        
                      </form>
                   </div>
                </div>

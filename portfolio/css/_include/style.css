@@ -1081,12 +1081,19 @@
 
     content: '';
 }.single-works .section-screenshots img
-{display: inline-block;float: left;
+{
+    max-width: 75%;margin-right: auto;margin-left: auto;
+}.single-works .section-screenshots.twoColumn img
+{float: left;
 
-    max-width: 47.5%;margin-bottom: 5%;box-shadow: 0 0 15px rgba(0,0,0,.13),0 6px 5px -5px rgba(0,0,0,.3);
-}.single-works .section-screenshots img:nth-child(even)
+    max-width: 47.5%;
+}.single-works .section-screenshots.twoColumn img:nth-child(even)
 {
     float: right;
+}.single-works .section-screenshots img
+{display: inline-block;
+
+    margin-bottom: 5%;box-shadow: 0 0 15px rgba(0,0,0,.13),0 6px 5px -5px rgba(0,0,0,.3);
 }@media screen and (max-width: 580px)
 {
     .single-works .section-screenshots img,

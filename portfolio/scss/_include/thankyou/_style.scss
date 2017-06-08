@@ -1,0 +1,42 @@
+
+//////////////////////////////////////////////////
+
+// thank you!
+
+//////////////////////////////////////////////////
+
+.thankyou
+{
+	@extend %gradation;
+	
+	.thx{
+		padding-top: 150px;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+		color: #fff;
+		text-shadow:  0 0 5px rgba( #000, 0.05 );
+
+		&_index{
+			line-height: 1;
+			margin-bottom: 1em;
+			text-align: center;
+			font-family: $fontFamily_wf_ultra;
+			font-size: 4em;
+			
+		}
+
+		.relatedLink{
+			margin-top: 5em;
+		}
+		
+		@include break( sp ){
+			display: block;
+			&_index{
+				font-size: 3em;
+			}
+		}
+	}	
+}

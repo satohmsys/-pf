@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<!--[if lte IE 9]>
+<html lang="ja" class="ie">
+<![endif]-->
+<!--[if !IE]<!-->
+<html lang="ja">
+   <!--<![endif]-->
+   <% include _inc/function %>
+   <%
+      $meta.title = ''
+   %>
+   <%
+   $path = '';
+   $active = 'think';
+   $css = ['css/_include/style.css'];
+   $scripts_global=null;
+   $scripts=[
+  $path + 'common/js/pjax/spica.js',
+  $path + 'common/js/pjax/localsocket.js',
+  $path + 'common/js/pjax/pjax-api.js',
+  $path + 'common/js/pjax/config.js',   
+   $path + 'common/js/common.js'];
+   %>
+   <head>
+     <%- include($path + '_inc/_header') %>
+   </head>
+
+   <body class="thankyou">
+      
+      <%- $parts.loadingAnim %>  
+
+      <!-- ***** header  -->
+      <%- include($path + '_inc/_gnav', {logo: true}) %>
+      <!-- ///// header  -->
+
+
+  
+      <!-- ***** BODY START -->
+      <main class="main">
+        <div class="wrap thx">
+          <header class="thx_index">THANK YOU!</header>
+          <div class="thx_content">
+            <p>お問い合わせいただき、ありがとうございました！</p>
+            <p>内容を確認した後に折り返しお返事させていただきます。<br/>今しばらくお待ち下さいませ。</p>
+          </div>
+        <div class="relatedLink">
+           <div class="wrap">
+             <ul>
+               <li>
+                  Back to<div class="button button-link"><a href="index.html">TOP</a></div>
+               </li>
+             </ul>
+          </div>  
+        </div>
+
+        </div>
+        
+       
+      </main>
+      <!-- //// BODY END -->
+     
+      <%#- include( $path + '_inc/_footer', {hasGradation: true} ) %>
+
+      <%- $parts.backtotop %>
+
+      <%- $parts.fixedsns %>
+
+
+      <!-- ***** menu button -->
+      <%- $parts.toggle %>
+      <!-- //// menu button -->
+
+      
+     <%#- include($path + '_inc/_intro') %>
+
+     <%- include($path + '_inc/_scripts') %>
+   </body>
+
+</html>

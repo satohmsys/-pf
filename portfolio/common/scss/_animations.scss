@@ -86,3 +86,20 @@
   100% {transform: rotate(360deg)}
 }
 
+@-webkit-keyframes loadRotate {
+	from {  transform: rotate(0);}
+	to {  transform: rotate(360deg);}
+}
+@-o-keyframes loadRotate {
+	from {  transform: rotate(0);}
+	to {  transform: rotate(360deg);}
+}
+@-moz-keyframes loadRotate {
+	from {  transform: rotate(0);}
+	to {  transform: rotate(360deg);}
+}
+@keyframes loadRotate {
+	from {  transform: rotate(0);}
+	to {  transform: rotate(360deg);}
+}
+

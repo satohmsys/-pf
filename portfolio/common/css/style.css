@@ -368,6 +368,32 @@
                 transform: rotate(360deg);
     }
 }
+@-webkit-keyframes loadRotate
+{
+    from
+    {
+        -webkit-transform: rotate(0);
+                transform: rotate(0);
+    }
+    to
+    {
+        -webkit-transform: rotate(360deg);
+                transform: rotate(360deg);
+    }
+}
+@keyframes loadRotate
+{
+    from
+    {
+        -webkit-transform: rotate(0);
+                transform: rotate(0);
+    }
+    to
+    {
+        -webkit-transform: rotate(360deg);
+                transform: rotate(360deg);
+    }
+}
 ::-moz-selection
 {
     background-color: rgba(0, 216, 253, .3);
@@ -905,6 +931,7 @@ html.ie8 .icon-instagram:before
 .siteHeader_nav
 {
     font-family: 'woodford light'; 
+    font-size: .9em;
 
     float: right;
     clear: both;
@@ -992,6 +1019,10 @@ html.ie8 .icon-instagram:before
 }
 @media screen and (max-width: 580px)
 {
+    .siteHeader_nav
+    {
+        font-size: 1em;
+    }
     .siteHeader_nav .wrap
     {
         font-family: 'woodford medium'; 
@@ -1047,6 +1078,10 @@ html.ie8 .icon-instagram:before
         z-index: -10; 
 
         pointer-events: none;
+    }
+    .siteHeader_nav li:not(.nav_contact):after
+    {
+        display: none;
     }
     .siteHeader_nav .button-nav
     {
@@ -1586,16 +1621,77 @@ html.ie8 .icon-instagram:before
 {
     position: absolute;
     right: 0;
-    bottom: -15px;
-    left: 0; 
+    bottom: 10px;
+    left: 0;
+
+    display: block;
 
     margin: auto;
+
+    background: none;
+}
+.siteForm div.wpcf7 .ajax-loader:before
+{
+    font-family: fontawesome;
+    font-size: 1em;
+    font-weight: normal;
+    font-style: normal;
+    font-variant: normal;
+    line-height: 1;
+
+    position: relative;
+    top: 0;
+    left: 0;
+
+    display: inline-block;
+
+    margin-right: 0;
+
+    content: '';
+    -webkit-transform: translate(0, 0);
+            transform: translate(0, 0);
+    vertical-align: middle;
+    text-transform: none;
+
+    color: inherit;
+
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+html.ie8 .siteForm div.wpcf7 .ajax-loader:before
+{
+    font-family: inherit; 
+
+    content: '>';
+}
+.siteForm div.wpcf7 .ajax-loader:before
+{
+    -webkit-transform-origin: center;
+            transform-origin: center;
+    -webkit-animation: loadRotate .5s ease-in-out 0s infinite normal;
+            animation: loadRotate .5s ease-in-out 0s infinite normal;
+}
+.siteForm .button-form-return
+{
+    background-color: #eaeaea;
+}
+.siteForm span.wpcf7-not-valid-tip
+{
+    font-size: .7em;
+    line-height: 1;
+
+    padding-top: 5px; 
+
+    text-align: right;
 }
 .siteForm div.wpcf7-response-output
 {
-    font-size: .8em; 
+    font-size: .8em;
 
     position: relative;
+
+    text-align: center; 
 
     border-width: 1px;
     border-color: #fff;

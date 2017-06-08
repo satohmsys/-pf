@@ -1055,67 +1055,67 @@
     {
         padding-top: 40px;
     }
-}.works-child .relatedLink
+}.single-works .relatedLink
 {
     margin-top: 50px;margin-bottom: 50px;
 }@media screen and (max-width: 580px)
 {
-    .works-child .relatedLink
+    .single-works .relatedLink
     {
         margin-top: 25px;margin-bottom: 25px;
     }
-}.works-child .section-intro
+}.single-works .section-intro
 {
     margin-bottom: 100px;
 }@media screen and (max-width: 580px)
 {
-    .works-child .section-intro
+    .single-works .section-intro
     {
         margin-bottom: 50px;
     }
-}.works-child .section-screenshots .wrap
+}.single-works .section-screenshots .wrap
 {
     overflow: hidden;*zoom: 1;
-}.works-child .section-screenshots .wrap:after
+}.single-works .section-screenshots .wrap:after
 {display: table;clear: both;
 
     content: '';
-}.works-child .section-screenshots img
+}.single-works .section-screenshots img
 {display: inline-block;float: left;
 
     max-width: 47.5%;margin-bottom: 5%;box-shadow: 0 0 15px rgba(0,0,0,.13),0 6px 5px -5px rgba(0,0,0,.3);
-}.works-child .section-screenshots img:nth-child(even)
+}.single-works .section-screenshots img:nth-child(even)
 {
     float: right;
 }@media screen and (max-width: 580px)
 {
-    .works-child .section-screenshots img,
-    .works-child .section-screenshots img:nth-child(even)
+    .single-works .section-screenshots img,
+    .single-works .section-screenshots img:nth-child(even)
     {display: block;float: none;
 
         max-width: 90%;margin-right: auto;margin-left: auto;
     }
 }@media screen and (max-width: 580px)
 {
-    .works-child .section-related .wrap
+    .single-works .section-related .wrap
     {padding-right: 0;
         padding-left: 0;
     }
-}.works-child .section-related .section_index
+}.single-works .section-related .section_index
 {font-size: 2.33em;
     line-height: 1;margin-bottom: 45px;
-}.works-child .section-related .section_index svg
+}.single-works .section-related .section_index svg
 {
     font-family: 'woodford bold';
 }@media screen and (max-width: 580px)
 {
-    .works-child .section-related .section_index
+    .single-works .section-related .section_index
     {
         font-size: 6em;margin-bottom: 30px;
     }
 }@media screen and (max-width: 580px)
 {
-    .works-child .section-related_content
+    .single-works .section-related_content
     {
         font-size: 1em;
     }

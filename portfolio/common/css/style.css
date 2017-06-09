@@ -2325,9 +2325,7 @@ html.ie8 .siteForm div.wpcf7 .ajax-loader:before
 {
     .myIntroduction_content
     {
-        font-size: 3.55vw; 
-
-        text-align: left;
+        font-size: 3.55vw;
     }
 }
 .letsTalk .myIntroduction
@@ -2525,8 +2523,8 @@ body:before
 {
     .pagevisual-child .wrap
     {
-        height: 45vh;
-        padding-top: 50px;
+        height: 55vh;
+        padding-top: 70px;
     }
 }
 .pagevisual_copy
@@ -2721,9 +2719,8 @@ html.ie8 .pagevisual-child .pagevisual_copy_category:before
 {
     position: absolute;
     top: 100px;
-    right: 5%;
+    right: 5%; 
 
-    box-sizing: border-box; 
     width: 45.26316%;
 }
 .pagevisual-child .pagevisual_screen img
@@ -2749,6 +2746,53 @@ html.ie8 .pagevisual-child .pagevisual_copy_category:before
         width: 80%;
         margin: auto;
     }
+}
+.pagevisual-child div.pagevisual_screen
+{
+    z-index: 4;
+    right: 0;
+
+    box-sizing: border-box;
+    box-sizing: border-box; 
+    padding: 2.2% 1% 4% 6.78%;
+
+    background: url(../../img/works/work-desktopframe.png) center top no-repeat;
+    background-size: 100% auto;
+}
+@media screen and (max-width: 1366px)
+{
+    .pagevisual-child div.pagevisual_screen
+    {
+        padding-top: 2.5%;
+        padding-bottom: 8.4%;
+        padding-left: 7.5%;
+    }
+}
+@media screen and (max-width: 580px)
+{
+    .pagevisual-child div.pagevisual_screen
+    {
+        width: 100%;
+        padding-top: 3%;
+        padding-right: 2%;
+        padding-left: 14.4%;
+    }
+}
+.pagevisual-child div.pagevisual_screen > figure
+{
+    position: relative; 
+
+    overflow: hidden;
+
+    height: 0;
+    padding-top: 62.4%;
+}
+.pagevisual-child div.pagevisual_screen > figure img
+{
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
 }
 .pagevisual .icon-mouse
 {

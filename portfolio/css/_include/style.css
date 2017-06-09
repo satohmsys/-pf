@@ -2028,6 +2028,10 @@ html.ie8 .works .work_info_category:before
 
     opacity: .5;
 }
+.works .pagevisual
+{
+    overflow: visible;
+}
 .works .pagevisual .wrap
 {
     position: static;
@@ -2096,6 +2100,10 @@ html.ie8 .works .work_info_category:before
    style
   ***********************/
 }
+.single-works .pagevisual .icon-mouse
+{
+    bottom: -35%;
+}
 .single-works .relatedLink
 {
     margin-top: 50px;
@@ -2163,10 +2171,10 @@ html.ie8 .works .work_info_category:before
     .single-works .section-screenshots img,
     .single-works .section-screenshots img:nth-child(even)
     {
-        display: block; 
-        float: none;
+        display: block !important; 
+        float: none !important;
 
-        max-width: 90%;
+        max-width: 90% !important;
         margin-right: auto;
         margin-left: auto;
     }

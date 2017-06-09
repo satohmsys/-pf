@@ -1373,7 +1373,6 @@
 		font-feature-settings: 'palt';
 		
 		@include break( sp ){
-			text-align: left;
 			font-size: 3.55vw;			
 		}		
 		
@@ -1564,8 +1563,8 @@ body:before{
 			justify-content: flex-start;
 			
 			@include break( sp ){
-				height: 45vh;
-				padding-top: 50px;
+				height: 55vh;
+				padding-top: 70px;
 			}
 		}
 	}
@@ -1731,12 +1730,11 @@ body:before{
 			width: percentage( 430 / 950 );
 			// margin-left: auto;
 			// margin-right: 0;
+			
+			
 			position: absolute;
 			top: 100px;
 			right: 5%;
-			
-			box-sizing: border-box;
-			
 			img{
 				width: 100%;
 			}
@@ -1753,6 +1751,50 @@ body:before{
 				position: static;
 			}
 		}
+		div.pagevisual_screen{
+			padding: 2.2% 1% 4% 6.78%;
+			box-sizing: border-box;
+			right: 0%;
+			background: url(../../img/works/work-desktopframe.png) center top no-repeat;
+			background-size: 100% auto;
+			z-index: 4;
+			
+			box-sizing: border-box;
+			
+			@include break( 1366 ){
+				padding-top: 2.5%;
+				padding-bottom: 8.4%;
+				padding-left: 7.5%;
+			}
+
+			@include break( sp ){
+				width: 100%;
+				padding-top: 3%;
+				padding-right: 2%;
+				padding-left: 14.4%;
+			}
+			
+			
+			>figure{
+			
+				    overflow: hidden;
+				    height: 0;
+				    padding-top: 62.4%;
+				    position: relative;
+			
+				    img{
+				    	position: absolute;
+				    	top: 0;
+				    	right: 0;
+				    	left: 0;
+				    }
+			}
+		
+
+
+						
+		}
+
 	}	
 
 

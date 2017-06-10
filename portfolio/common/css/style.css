@@ -2792,7 +2792,10 @@ html.ie8 .pagevisual-child .pagevisual_copy_category:before
     position: absolute;
     top: 0;
     right: 0;
-    left: 0;
+    bottom: 0;
+    left: 0; 
+
+    margin: auto;
 }
 .pagevisual .icon-mouse
 {

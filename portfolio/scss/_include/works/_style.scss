@@ -201,17 +201,8 @@
 		}	
 	}
 
-
-	/***********************
-	 mainvisual
-	***********************/
-
-	/********** mainvisual **********/
 	.pagevisual
-	{
-		overflow: visible;
-		
-		
+	{	
 		.wrap{
 			// max-width: none;
 			position: static;
@@ -272,13 +263,9 @@
 .single-works
 {
 
-
-/***********************
- module
-***********************/
-
 .pagevisual
 {
+	overflow: visible;
 
 	.icon-mouse{
 		bottom: -35%;

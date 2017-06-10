@@ -93,11 +93,13 @@
 		margin-right: auto;
 		position: relative;
 		z-index: 1;
+		text-align: center;
 	}
 
 	&_content{
 		padding-left: 2em;
 		padding-right: 2em;
+		letter-spacing: 0.0525em;
 		text-shadow: 0 0 5px rgba(#000, 0.1);
 	}
 

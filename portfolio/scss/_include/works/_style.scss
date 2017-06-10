@@ -31,6 +31,10 @@
 		margin-right: 4.25%;
 		margin-bottom: 20px;
 		
+		a{
+			display: block;
+		}
+		
 		&:nth-child( 3n ){
 			margin-right: 0;
 		}
@@ -39,6 +43,7 @@
 
 			img{
 				opacity: 0.35;
+				backface-visibility: hidden;				
 				// -webkit-mix-blend-mode: multiply;
 				// mix-blend-mode: multiply;
 			}			
@@ -83,20 +88,20 @@
 		{
 			width: 100%;
 			height: 0;
-			padding-top: percentage( 613 / 752 );
+			padding-top: percentage( 520 / 752 );
+			// padding-top: percentage( 613 / 752 );
 			position: relative;
-			border: solid 1px #aaa;
+			border: solid 1px #f0f0f0;
 			box-sizing: border-box;
 			@extend %gradation;
-			background-size: cover;
-			background-position: center top;
-			background-repeat: no-repeat;
+			// background-size: cover;
+			// background-position: center top;
+			// background-repeat: no-repeat;
 			overflow: hidden;
 			
 			img{
 				width: 100%;
 				height: auto;
-				backface-visibility: hidden;
 				position: absolute;
 				top: 0;
 				right: 0;
@@ -205,7 +210,14 @@
 	{	
 		.wrap{
 			// max-width: none;
+			max-width: 44%;
+			margin-left: 0;
 			position: static;
+			
+			@include break( tab ){
+					max-width: none;
+					margin-left: auto;
+			}			
 		}
 
 		&_img{
@@ -243,7 +255,7 @@
 			z-index: 3;
 		}
 
-		@include break( sp ){
+		@include break( sp ){			
 			&.hasGradation + .main{
 				padding-top: 40px;
 			}
@@ -297,6 +309,15 @@
 .section-intro{
 	// margin-top: 80px;
 	margin-bottom: 100px;
+	
+	p{
+		margin-top: 1.4em;
+		margin-bottom: 1.4em;
+	}
+
+	.launchLink{
+		text-align: right;
+	}
 	
 	@include break( sp ){
 		margin-bottom: 50px;
@@ -352,6 +373,10 @@
 	}
 }
 
+.section-mobile{
+	clear: both;
+	margin-top: 5%;
+}
 
 .section-related
 {

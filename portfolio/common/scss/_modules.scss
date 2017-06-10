@@ -1445,10 +1445,17 @@ body:before{
 .pjax-fetch body:after{
 	left: -50%;
 	width: 300%;
+	
+	@include break( sp ){
+		left: -100%;
+	}
 }
 .pjax-fetch body:before{
 	left: -50%;
 	width: 300%;
+	@include break( sp ){
+		left: -100%;
+	}	
 }
 
 
@@ -1745,11 +1752,11 @@ body:before{
 				right: 0;
 			} 
 
-			@include break( sp ){
-				width: 80%;
-				margin: auto;
-				position: static;
-			}
+			// @include break( sp ){
+			// 	width: 80%;
+			// 	margin: auto;
+			// 	position: static;
+			// }
 		}
 		div.pagevisual_screen{
 			padding: 2.2% 1% 4% 6.78%;
@@ -1762,14 +1769,18 @@ body:before{
 			box-sizing: border-box;
 			
 			@include break( 1366 ){
+				width: percentage( 530 / 950 );
 				padding-top: 2.5%;
 				padding-bottom: 8.4%;
 				padding-left: 7.5%;
+				position: absolute;
+				right: 0;				
 			}
 
-			@include break( sp ){
+			@include break( tab ){
 				width: 100%;
-				padding-top: 3%;
+				position: static;
+				padding-top: 3.5%;
 				padding-right: 2%;
 				padding-left: 14.4%;
 			}
@@ -1787,7 +1798,7 @@ body:before{
 				    	position: absolute;
 				    	top: 0;
 				    	right: 0;
-				    	bottom: 0;
+				    	// bottom: 0;
 				    	left: 0;
 				    }
 			}

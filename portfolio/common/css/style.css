@@ -2391,12 +2391,26 @@ body:before
 
     width: 300%;
 }
+@media screen and (max-width: 580px)
+{
+    .pjax-fetch body:after
+    {
+        left: -100%;
+    }
+}
 
 .pjax-fetch body:before
 {
     left: -50%;
 
     width: 300%;
+}
+@media screen and (max-width: 580px)
+{
+    .pjax-fetch body:before
+    {
+        left: -100%;
+    }
 }
 
 /* 2.DOM更新直前 */
@@ -2737,16 +2751,6 @@ html.ie8 .pagevisual-child .pagevisual_copy_category:before
         width: 55.78947%;
     }
 }
-@media screen and (max-width: 580px)
-{
-    .pagevisual-child .pagevisual_screen
-    {
-        position: static; 
-
-        width: 80%;
-        margin: auto;
-    }
-}
 .pagevisual-child div.pagevisual_screen
 {
     z-index: 4;
@@ -2763,17 +2767,23 @@ html.ie8 .pagevisual-child .pagevisual_copy_category:before
 {
     .pagevisual-child div.pagevisual_screen
     {
+        position: absolute;
+        right: 0; 
+
+        width: 55.78947%;
         padding-top: 2.5%;
         padding-bottom: 8.4%;
         padding-left: 7.5%;
     }
 }
-@media screen and (max-width: 580px)
+@media screen and (max-width: 780px)
 {
     .pagevisual-child div.pagevisual_screen
     {
+        position: static;
+
         width: 100%;
-        padding-top: 3%;
+        padding-top: 3.5%;
         padding-right: 2%;
         padding-left: 14.4%;
     }
@@ -2792,7 +2802,6 @@ html.ie8 .pagevisual-child .pagevisual_copy_category:before
     position: absolute;
     top: 0;
     right: 0;
-    bottom: 0;
     left: 0; 
 
     margin: auto;

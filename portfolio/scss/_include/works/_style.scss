@@ -208,17 +208,6 @@
 
 	.pagevisual
 	{	
-		.wrap{
-			// max-width: none;
-			max-width: 44%;
-			margin-left: 0;
-			position: static;
-			
-			@include break( tab ){
-					max-width: none;
-					margin-left: auto;
-			}			
-		}
 
 		&_img{
 			width: auto;
@@ -278,6 +267,18 @@
 .pagevisual
 {
 	overflow: visible;
+	
+		.wrap{
+			// max-width: none;
+			max-width: 44%;
+			margin-left: 0;
+			position: static;
+			
+			@include break( tab ){
+					max-width: none;
+					margin-left: auto;
+			}			
+		}	
 
 	.icon-mouse{
 		bottom: -35%;

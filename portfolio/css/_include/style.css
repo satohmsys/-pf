@@ -2026,21 +2026,6 @@ html.ie8 .works .work_info_category:before
 
     opacity: .5;
 }
-.works .pagevisual .wrap
-{
-    position: static; 
-
-    max-width: 44%;
-    margin-left: 0;
-}
-@media screen and (max-width: 780px)
-{
-    .works .pagevisual .wrap
-    {
-        max-width: none;
-        margin-left: auto;
-    }
-}
 .works .pagevisual_img
 {
     position: absolute;
@@ -2105,6 +2090,21 @@ html.ie8 .works .work_info_category:before
 .single-works .pagevisual
 {
     overflow: visible;
+}
+.single-works .pagevisual .wrap
+{
+    position: static; 
+
+    max-width: 44%;
+    margin-left: 0;
+}
+@media screen and (max-width: 780px)
+{
+    .single-works .pagevisual .wrap
+    {
+        max-width: none;
+        margin-left: auto;
+    }
 }
 .single-works .pagevisual .icon-mouse
 {

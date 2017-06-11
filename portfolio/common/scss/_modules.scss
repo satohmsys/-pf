@@ -49,6 +49,8 @@
 			}
 		}	
 	}	
+
+	/////// navigation open (clicked and scroll	
 	@at-root .scrollOverVisual.navOpen & {
 		&,
 		&_logo{
@@ -92,6 +94,8 @@
 
 	//////// media queries 
 	@include break( sp ){
+		padding-top: 0;
+		position: static;
 		
 		 > .wrap{
 			display: block;
@@ -101,6 +105,10 @@
 			}
 		}
 		&_logo{
+			position: fixed;
+			z-index: 10;
+			top: 20px;
+			
 			text-shadow: 0 0 5px rgba( #000, 0.15 );
 			.handWrite{
 				top: 0.8em;
@@ -257,7 +265,11 @@
 			}			
 		}
 
+		/////// navigation open (clicked
 		@at-root .navOpen &{
+			.wrap{
+				z-index: 10;
+			}
 			li{
 				opacity: 1;
 				transform: translateX(0px);
@@ -375,13 +387,13 @@
 		}		
 	}
 
+	/////// navigation open (clicked
 	@at-root .navOpen
 	{
 		overflow: hidden;
 	
 		.navToggle
 		{
-
 			&_hitArea{
 				z-index: 11;
 			}
@@ -394,8 +406,7 @@
 				border-radius: 0;
 				box-shadow: none;
 				// @include background-image( linear-gradient( to right, $green, $blue ) );	
-				
-				background-color: darken( $blue, 15 );		
+				background-color: darken( $blue, 20 );		
 			}
 			
 			
@@ -876,7 +887,7 @@
 
 	&,
 	a{
-		@extend .wfSemi;
+		@extend .wfMedium;
 		transition: transition();
 	}
 }
@@ -1098,8 +1109,14 @@
 					color: pink;
 				}
 			}
-			
 		}
+		.icon-facebook{
+			@include mouseOver(){
+				&:before{
+					color: $facebook;
+				}
+			}
+		}		
 
 		a{
 			@extend .wfLight;

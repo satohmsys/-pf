@@ -83,21 +83,12 @@
 }
 @font-face
 {
-    font-family: 'woodford semi';
-    font-weight: normal; 
-    font-style: normal;
-
-    src: url('../fonts/woodford/Semibold/WoodfordBournePRO-SemiBold.eot');
-    src: url('../fonts/woodford/Semibold/WoodfordBournePRO-SemiBold.eot?#iefix') format('embedded-opentype'), url('../fonts/woodford/Semibold/WoodfordBournePRO-SemiBold.woff') format('woff'), url('../fonts/woodford/Semibold/WoodfordBournePRO-SemiBold.ttf') format('truetype'), url('../fonts/woodford/Semibold/WoodfordBournePRO-SemiBold.svg#41c783441c8d6e7139c5ab0d4d0ebdf7') format('svg');
-}
-@font-face
-{
     font-family: 'woodford bold';
     font-weight: normal; 
     font-style: normal;
 
-    src: url('../fonts/woodford/Semibold/WoodfordBournePRO-Bold.eot');
-    src: url('../fonts/woodford/bold/WoodfordBournePRO-Bold.eot?#iefix') format('embedded-opentype'), url('../fonts/woodford/bold/WoodfordBournePRO-Bold.woff') format('woff'), url('../fonts/woodford/bold/WoodfordBournePRO-Bold.ttf') format('truetype'), url('../fonts/woodford/bold/WoodfordBournePRO-Bold.svg#41c783441c8d6e7139c5ab0d4d0ebdf7') format('svg');
+    src: url('../fonts/woodford/Bold/WoodfordBournePRO-Bold.eot');
+    src: url('../fonts/woodford/Bold/WoodfordBournePRO-Bold.eot?#iefix') format('embedded-opentype'), url('../fonts/woodford/Bold/WoodfordBournePRO-Bold.woff') format('woff'), url('../fonts/woodford/Bold/WoodfordBournePRO-Bold.ttf') format('truetype'), url('../fonts/woodford/Bold/WoodfordBournePRO-Bold.svg#41c783441c8d6e7139c5ab0d4d0ebdf7') format('svg');
 }
 @font-face
 {
@@ -644,9 +635,7 @@ button
     font-family: 'woodford ultra';
 }
 
-.wfSemi,
-.button,
-.button a
+.wfSemi
 {
     font-family: 'woodford semi';
 }
@@ -662,7 +651,9 @@ button
 }
 
 .wfMedium,
-.siteForm_label
+.siteForm_label,
+.button,
+.button a
 {
     font-family: 'woodford medium';
 }
@@ -909,6 +900,12 @@ html.ie8 .icon-instagram:before
 }
 @media screen and (max-width: 580px)
 {
+    .siteHeader
+    {
+        position: static; 
+
+        padding-top: 0;
+    }
     .siteHeader > .wrap
     {
         display: block;
@@ -920,6 +917,10 @@ html.ie8 .icon-instagram:before
     }
     .siteHeader_logo
     {
+        position: fixed;
+        z-index: 10;
+        top: 20px;
+
         text-shadow: 0 0 5px rgba(0, 0, 0, .15);
     }
     .siteHeader_logo .handWrite
@@ -1094,6 +1095,10 @@ html.ie8 .icon-instagram:before
         margin-right: auto; 
         margin-left: auto;
         padding: .5em 1.5em;
+    }
+    .navOpen .siteHeader_nav .wrap
+    {
+        z-index: 10;
     }
     .navOpen .siteHeader_nav li
     {
@@ -2017,6 +2022,16 @@ html.ie8 .siteForm div.wpcf7 .ajax-loader:before
 .mySns li .icon-instagram:focus:before
 {
     color: pink;
+}
+.mySns li .icon-facebook
+{
+    transition: all .5s ease 0s;
+}
+.mySns li .icon-facebook:hover:before,
+.mySns li .icon-facebook:active:before,
+.mySns li .icon-facebook:focus:before
+{
+    color: #3b5998;
 }
 .mySns li a
 {

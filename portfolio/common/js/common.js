@@ -1,5 +1,4 @@
-var $w = $( window ),
-    $timer = null,
+var $timer = null,
     $windowH = null,
     $ua = window.innerWidth < 580 ? 'mobile' : 'desktop',
     $button = document.getElementsByClassName('navToggle'),
@@ -7,11 +6,10 @@ var $w = $( window ),
     $contact = $contact[0].querySelector('a'),
     controller = new ScrollMagic.Controller();
 
-
 var userAgent = window.navigator.userAgent.toLowerCase();
 
 if (userAgent.indexOf("msie") != -1) {
-  location.href = 'ie.html';
+  location.href = 'wp-content/themes/satohmsysPortfolio17/ie.html';
 } 
 window.onload = window.onresize = function(){
     $windowH = window.innerHeight;
@@ -194,7 +192,7 @@ var $inquirySection =  document.getElementsByClassName('inquiry')[0];
 
 
 
-$(function(){
+jQuery(function( $ ){
     $('a[href^="#"]').click(function(){
         var speed = 300;
         var href= $(this).attr("href");
@@ -220,12 +218,13 @@ $(function(){
 *　back to top スクロール
 */
 
-$( function(){
+jQuery( function( $ ){
 
-    var $timer = null;
-    var $icon = $( '.backToTop' ); //icon
+    var $timer = null,
+        $icon = $( '.backToTop' ); //icon
+        $window = $( 'window' )
 
-     $(window).on( 'scroll', function(){
+     $window.on( 'scroll', function(){
 
          if( $timer == null ){
 
@@ -234,7 +233,7 @@ $( function(){
                 clearTimeout( $timer );
                 
                  var $visible = $icon.is( ':visible' );
-                 var $scrollVal = $( window ).scrollTop(); //スクロール値
+                 var $scrollVal = $window.scrollTop(); //スクロール値
                  var $under = $( 'body' ).height() - ( $scrollVal + $( window ).height() ); //ページの残りの長さ
 
                  if( $scrollVal > 500 && 300 > $under ){
@@ -253,7 +252,7 @@ $( function(){
      } );
 
 
-     $( '.backToTop' ).on( 'click', function(){
+     $icon.on( 'click', function(){
          var $icon = $( this );
          $icon.addClass( 'moving' );
          $( 'html,body' ).animate({ scrollTop: 0 }, 'slow', function(){
@@ -288,3 +287,23 @@ function spaning( elm ){
 }
 
 
+/**
+* contact form 7 送信後リダイレクト
+*/
+
+document.addEventListener( 'wpcf7mailsent', function( event ) {
+    location.href = 'thankyou/';
+}, false );
+
+
+/**
+* google analytics
+*/
+
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-40118061-6', 'auto');
+  ga('send', 'pageview');

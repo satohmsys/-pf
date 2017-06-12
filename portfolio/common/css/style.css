@@ -1010,11 +1010,13 @@ html.ie8 .icon-instagram:before
         color: #fff;
     }
 }
-.siteHeader_nav li.current a
+.siteHeader_nav li.current a,
+.siteHeader_nav li.current-menu-item a
 {
     pointer-events: none;
 }
-.siteHeader_nav li.current a:before
+.siteHeader_nav li.current a:before,
+.siteHeader_nav li.current-menu-item a:before
 {
     width: 100%;
 }
@@ -1255,7 +1257,7 @@ html.ie8 .icon-instagram:before
         height: 100%;
 
         border-radius: 0;
-        background-color: #0097b1; 
+        background-color: #008197; 
         box-shadow: none;
     }
     .navOpen .navToggle_icon:before

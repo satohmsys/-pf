@@ -196,7 +196,8 @@
 		}
 	}
 
-	li.current
+	li.current,
+	li.current-menu-item
 	{
 		a{
 			pointer-events: none;

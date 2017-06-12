@@ -1812,8 +1812,6 @@
     width: 30.4878%;
     margin-right: 4.25%;
     margin-bottom: 20px;
-
-    transition: all .5s ease 0s;
 }
 .works .work a
 {
@@ -1823,22 +1821,29 @@
 {
     margin-right: 0;
 }
-.works .work:hover img,
-.works .work:active img,
-.works .work:focus img
+@media screen and (min-width: 580px)
 {
-    opacity: .35;
+    .works .work
+    {
+        transition: all .5s ease 0s;
+    }
+    .works .work:hover img,
+    .works .work:active img,
+    .works .work:focus img
+    {
+        opacity: .35;
 
-    -webkit-backface-visibility: hidden;
-            backface-visibility: hidden;
-}
-.works .work:hover .work_info:before,
-.works .work:active .work_info:before,
-.works .work:focus .work_info:before
-{
-    left: 0; 
+        -webkit-backface-visibility: hidden;
+                backface-visibility: hidden;
+    }
+    .works .work:hover .work_info:before,
+    .works .work:active .work_info:before,
+    .works .work:focus .work_info:before
+    {
+        left: 0; 
 
-    width: 100%;
+        width: 100%;
+    }
 }
 @media screen and (max-width: 580px)
 {
@@ -2096,7 +2101,13 @@ html.ie8 .works .work_info_category:before
     position: static; 
 
     max-width: 44%;
-    margin-left: 0;
+}
+@media screen and (max-width: 1366px)
+{
+    .single-works .pagevisual .wrap
+    {
+        margin-left: 0;
+    }
 }
 @media screen and (max-width: 780px)
 {
@@ -2109,6 +2120,13 @@ html.ie8 .works .work_info_category:before
 .single-works .pagevisual .icon-mouse
 {
     bottom: -35%;
+}
+@media screen and (max-width: 580px)
+{
+    .single-works .pagevisual .icon-mouse
+    {
+        display: none;
+    }
 }
 .single-works .relatedLink
 {
@@ -2199,6 +2217,24 @@ html.ie8 .works .work_info_category:before
     clear: both;
 
     margin-top: 5%;
+}
+.single-works .section-mobile img
+{
+    max-width: 80%;
+}
+@media screen and (max-width: 1366px)
+{
+    .single-works .section-mobile img
+    {
+        max-width: 90%;
+    }
+}
+@media screen and (max-width: 580px)
+{
+    .single-works .section-mobile img
+    {
+        max-width: auto;
+    }
 }
 @media screen and (max-width: 580px)
 {

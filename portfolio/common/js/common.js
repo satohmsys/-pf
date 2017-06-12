@@ -39,13 +39,12 @@ window.onload = window.onresize = function(){
     ///////// 初回訪問（cookieなし
     if( ! $doc.cookie.match('visited') ){
 
-
-        $body.classList.add( 'loading' );
+        $body.classList.add( 'loading' ); //ロード開始
 
          setTimeout( function(){
             $body.classList.add( 'letsTalk' );
             TweenMax.to( $intro, 2, {
-                backGroundColor: '#fafafa'
+                backgroundColor: '#fdfdfd'
             });
          }, 800 );
 
@@ -53,31 +52,36 @@ window.onload = window.onresize = function(){
             
              animRemover( $loadingAnim );
 
-             $doc.getElementById('just').addEventListener('transitionend', function(){
-                TweenMax.fromTo( $intro, 2.5,
-                    {
-                        opacity: 1,
-                        filter: 'blur(0)'
-                    },
-                    {
-                         opacity: 0,
-                         filter: 'blur(200px)',
+             $doc.getElementById('just').addEventListener('transitionend', function( ){
+               
+                $body.classList.add( 'introEndAnim' );
 
-                         delay: 1,
+                TweenMax.staggerTo( document.getElementsByClassName('myIntroduction_overlay'), 0.25, {
+                    top: 0,
 
-                         onComplete:function( e ){
-                            $body.classList.remove('loading','letsTalk');
-                            $body.classList.add( 'loaded' );
+                     onComplete:function( e ){
+                        TweenMax.fromTo( $intro, 0.25, {
+                            y:0
+                        },
+                        {
+                            y:'-104%',
 
-                            animRemover( $intro );
+                            delay:1,
 
-                            $expire = new Date();
-                            $expire.setTime( $expire.getTime() + 1000 * 3600 * 48 );
-                            $expire = $expire.toUTCString();              
-                            $doc.cookie = 'visit=visited; expires=' + $expire;
-                        }
-                    }
-                );               
+                            onComplete: function(){
+                                $body.classList.remove('loading','letsTalk', 'introEndAnim');
+                                $body.classList.add( 'loaded' );
+
+                                animRemover( $intro );
+
+                                $expire = new Date();
+                                $expire.setTime( $expire.getTime() + 1000 * 3600 * 48 );
+                                $expire = $expire.toUTCString();              
+                                $doc.cookie = 'visit=visited; expires=' + $expire;
+                            }
+                        });
+                    }                    
+                }, 0.25 );              
              });
         });
     } else {

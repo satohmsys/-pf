@@ -659,6 +659,11 @@
 			height: calc( 100% + 30px );
 			top: -28px;
 			right: 0;
+			
+			@include break( sp ){
+				height: calc( 100% + 32px );
+				top: -32px;				
+			}
 		}
 	}
 

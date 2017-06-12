@@ -1498,6 +1498,15 @@ html.ie8 .icon-instagram:before
 
     height: calc( 100% + 30px );
 }
+@media screen and (max-width: 580px)
+{
+    .inquiry_content:after
+    {
+        top: -32px; 
+
+        height: calc( 100% + 32px );
+    }
+}
 .inquiry_footer
 {
     margin-top: 45px;

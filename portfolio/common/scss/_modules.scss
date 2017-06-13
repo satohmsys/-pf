@@ -1319,7 +1319,7 @@
 		opacity: 0;
 		transform: translateY(-5px);
 		will-change: opacity,transform;
-		transition: all 1s linear 0.05s;
+		transition: all 0.9s linear 0.05s;
 		
 		&:last-of-type{
 		}
@@ -1338,7 +1338,7 @@
 		transition-delay: 0.7s;
 	}
 	.text-7{
-		transition-delay: 6s;	
+		transition-delay: 5.5s;	
 	}
 	
 	&_index{
@@ -1435,13 +1435,15 @@
 	//////// エフェクト終了
 	.introEndAnim &{
 		[class*="text-"]{
-			transform: translateY(-20px);
+			opacity: 0;
+			// transform: translateY(-50px);
 		}		
 		@for $i from 1 through 6 {
 			$delay: 0.15 * $i;
 					
 			.text-#{$i}{
-				transition-delay: #{$delay}s;
+				transition: all 1s ease-in #{$delay}s;
+				// transition-delay: #{$delay}s;
 			}
 		}
 

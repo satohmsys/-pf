@@ -12,7 +12,7 @@ if (userAgent.indexOf("msie") != -1) {
   location.href = 'wp-content/themes/satohmsysPortfolio17/ie.html';
 } 
 window.onload = window.onresize = function(){
-    $windowH = window.innerHeight;
+    // $windowH = window.innerHeight;
     // console.log( $windowH )
 
     $timer = setTimeout( function() {
@@ -58,13 +58,14 @@ window.onload = window.onresize = function(){
 
                 TweenMax.staggerTo( document.getElementsByClassName('myIntroduction_overlay'), 0.25, {
                     top: 0,
+                    delay: 0.75,
 
                      onComplete:function( e ){
                         TweenMax.fromTo( $intro, 0.25, {
                             y:0
                         },
                         {
-                            y:'-104%',
+                            y:'-105%',
 
                             delay:1,
 
@@ -137,7 +138,7 @@ if( Modernizr.useie ){
 * （ スマートフォン用 ）ナビゲーション開閉
 */
 
-if( $ua == 'mobile' && $button.length ){
+// if( $ua == 'mobile' && $button.length ){
     $button[0].onclick = $contact.onclick = function( e ){
 
         e.stopPropagation();
@@ -153,7 +154,7 @@ if( $ua == 'mobile' && $button.length ){
             $toggleAction.open();
         }
     }
-}
+// }
 
 function Toggle( $body ){
     this.body = $body;

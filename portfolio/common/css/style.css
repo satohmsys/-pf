@@ -2246,7 +2246,7 @@ html.ie8 .siteForm div.wpcf7 .ajax-loader:before
 }
 .myIntroduction [class*='text-']
 {
-    transition: all 1s linear .05s; 
+    transition: all .9s linear .05s; 
     -webkit-transform: translateY(-5px);
             transform: translateY(-5px);
 
@@ -2280,7 +2280,7 @@ html.ie8 .siteForm div.wpcf7 .ajax-loader:before
 }
 .myIntroduction .text-7
 {
-    transition-delay: 6s;
+    transition-delay: 5.5s;
 }
 .myIntroduction_index
 {
@@ -2387,32 +2387,31 @@ html.ie8 .siteForm div.wpcf7 .ajax-loader:before
 }
 .introEndAnim .myIntroduction [class*='text-']
 {
-    -webkit-transform: translateY(-20px);
-            transform: translateY(-20px);
+    opacity: 0;
 }
 .introEndAnim .myIntroduction .text-1
 {
-    transition-delay: .15s;
+    transition: all 1s ease-in .15s;
 }
 .introEndAnim .myIntroduction .text-2
 {
-    transition-delay: .3s;
+    transition: all 1s ease-in .3s;
 }
 .introEndAnim .myIntroduction .text-3
 {
-    transition-delay: .45s;
+    transition: all 1s ease-in .45s;
 }
 .introEndAnim .myIntroduction .text-4
 {
-    transition-delay: .6s;
+    transition: all 1s ease-in .6s;
 }
 .introEndAnim .myIntroduction .text-5
 {
-    transition-delay: .75s;
+    transition: all 1s ease-in .75s;
 }
 .introEndAnim .myIntroduction .text-6
 {
-    transition-delay: .9s;
+    transition: all 1s ease-in .9s;
 }
 
 /* オーバーレイ */

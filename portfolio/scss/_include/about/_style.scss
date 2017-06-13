@@ -158,6 +158,7 @@
 			top: -12%;
 			right: 0;
 			
+			
 			@include break( sp ){
 				max-width: 80%;
 				top: -1%;
@@ -167,6 +168,11 @@
 		.button{
 			display: block;
 			text-align: right;
+		}
+
+		p{
+			margin-top: 1.5em;
+			margin-bottom: 1.5em;
 		}
 	}
 

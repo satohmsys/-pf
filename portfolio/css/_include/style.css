@@ -1431,6 +1431,11 @@
 
     text-align: right;
 }
+.about .section-hi p
+{
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
+}
 .about .section-mind .mindlist
 {
     display: -webkit-box;

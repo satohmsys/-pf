@@ -1412,9 +1412,12 @@
     position: absolute;
     z-index: 0;
     top: -12%;
-    right: 0; 
+    right: 0;
 
     max-width: 518px;
+
+    -webkit-filter: blur(5px);
+            filter: blur(5px);
 }
 @media screen and (max-width: 580px)
 {
@@ -1608,7 +1611,9 @@
 }
 .about .section-skill .skill_content_list
 {
-    display: inline-block;
+    display: inline-block; 
+
+    text-align: center;
 }
 @media screen and (max-width: 580px)
 {

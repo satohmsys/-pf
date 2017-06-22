@@ -157,6 +157,8 @@
 			z-index: 0;
 			top: -12%;
 			right: 0;
+			// opacity: 0.5;
+		filter: blur( 5px );
 			
 			
 			@include break( sp ){
@@ -306,6 +308,7 @@
 				}
 			}
 			&_content_list{
+				text-align: center;
 				display: inline-block;
 				
 				// &:not( :last-child ){

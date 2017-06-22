@@ -67,13 +67,13 @@ window.onload = window.onresize = function(){
                         {
                             y:'-105%',
 
-                            delay:1,
+                            delay:0.5,
 
                             onComplete: function(){
                                 $body.classList.remove('loading','letsTalk', 'introEndAnim');
                                 $body.classList.add( 'loaded' );
 
-                                animRemover( $intro );
+                                  // animRemover( $intro );                                
 
                                 $expire = new Date();
                                 $expire.setTime( $expire.getTime() + 1000 * 3600 * 48 );

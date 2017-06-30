@@ -30,7 +30,7 @@
 	overflow: hidden;
 	
 	@include break( 900 ){
-		mih-height: 500px;
+		min-height: 500px;
 	}
 
 	@include break( sp ){
@@ -139,6 +139,7 @@
 		flex-wrap: wrap;
 		flex-direction: row;
 		align-items: center;
+		// justify-content: center;
 		justify-content: flex-end;
 		
 		@include break( sp ){
@@ -150,7 +151,7 @@
 	&_copy{
 		position: relative;
 		z-index: 1;
-		font-size: 10em;
+		font-size: 12em;
 		
 		@include break( sp ){
 			font-size: 23vw;
@@ -161,8 +162,10 @@
 		}
 		
 		&_sup{
-			text-shadow: 0 0 5px rgba(#000, 0.35);
-			font-size: 0.1375em;
+			margin-left: 0.5em;
+			letter-spacing: 0.37em;
+			text-shadow: 0 0 5px rgba(#000, 0.15);
+			font-size: 0.12em;
 			font-style: italic;
 			font-family: $fontFamily_wf_thin;
 			
@@ -189,19 +192,20 @@
 					bottom: 0;
 					left: 0;
 					transition: easeInOutCirc();
-					transition-delay: 1s;
+					transition-delay: .75s;
 					background-color: $green_deep;				
 				}
 			}
 			@include break( sp ){
 				font-size: 0.14em;
+				letter-spacing: 0.25em;
 			}				
 			
 		}
 		&_myname
 		{
 			line-height: 0.85;
-			text-shadow: 0 0 5px rgba(#000, 0.15);
+			text-shadow: 0 0 5px rgba(#000, 0.05);
 			font-family: $fontFamily_wf_ultra;
 			.firstName{
 				font-size: 1.195em;
@@ -210,13 +214,15 @@
 
 		.handWrite
 		{
+
 			margin-top: -1em;
+			margin-right: 0.75em;
 			text-align: right;				
 			color: $green_black;
 			font-size: 0.4em;
 			opacity: 0;
 			transform: translateY(10px);
-			transition: all 0.5s ease 1.5s;		
+			transition: all 0.5s ease 1.25s;		
 
 			&,
 			svg text{
@@ -237,6 +243,7 @@
 
 			
 			@include break( sp ){
+				margin-right: 0.35em;
 				line-height: inherit;
 
 				svg{
@@ -328,13 +335,20 @@
 		right: 5%;
 	}
 
-	@include break( sp ){
-		.section_bg-first{
-			width: percentage( 783/1366 );
-		}
+
+	@include break( tab ){
 		.section_bg-last{
 			width: percentage( 325/1366 );
 			top: percentage( 600/768 );
+		}
+		
+	}
+
+	@include break( sp ){
+		height: 85vh;
+		margin-bottom: -5vh;
+		.section_bg-first{
+			width: percentage( 783/1366 );
 		}
 	}	
 

@@ -80,7 +80,7 @@ gulp.task('sass' , function(){
 
   return sass( dir.top + `/**/${sassDir.scss}/**/*.scss` , {
     compass : true,
-    style : 'compress'
+    style : 'compressed'
   })
   .pipe(autoprefixer())
   .pipe(csscomb()) 

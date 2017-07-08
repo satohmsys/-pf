@@ -51,7 +51,7 @@
 }.works .work_info:before
 {position: absolute;z-index: 0;top: auto;right: auto;bottom: 0;left: -10%;display: block;width: 0;height: 3px;
 
-    content: ' ';transition: all .3s cubic-bezier(.785, .135, .15, .86) 0s;-webkit-transform: skew(15deg);transform: skew(15deg);background-color: #003640;
+    content: ' ';transition: all .3s cubic-bezier(.785, .135, .15, .86) 0s;-webkit-transform: skew(15deg);-ms-transform: skew(15deg);transform: skew(15deg);background-color: #003640;
 }@media screen and (max-width: 580px)
 {
     .works .work_info
@@ -78,7 +78,7 @@
 }.works .work_info_category:before
 {font-family: fontawesome;font-size: .8em;font-weight: normal;font-style: normal;font-variant: normal;line-height: 1;position: relative;top: 0;left: 0;display: inline-block;margin-right: -4px;
 
-    content: '';-webkit-transform: translate(0, 0);transform: translate(0, 0);vertical-align: middle;text-transform: none;color: inherit;text-rendering: auto;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;
+    content: '';-webkit-transform: translate(0, 0);-ms-transform: translate(0, 0);transform: translate(0, 0);vertical-align: middle;text-transform: none;color: inherit;text-rendering: auto;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;
 }html.ie8 .works .work_info_category:before
 {font-family: inherit;
 

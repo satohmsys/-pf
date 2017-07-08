@@ -82,7 +82,9 @@ gulp.task('sass' , function(){
     compass : true,
     style : 'compressed'
   })
-  .pipe(autoprefixer())
+  .pipe(autoprefixer({
+    browsers: ['last 4 versions', '> 2%', 'ie > 10', 'iOS >= 9', 'Android >= 6']
+  }))
   .pipe(csscomb()) 
   .pipe(plumber({
     errorHandler : notify.onError('<%= error.message %>') //gulp notify エラーメッセージ

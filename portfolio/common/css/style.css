@@ -7,7 +7,7 @@
 .pagevisual_copy span
 {display: inline-block;
 
-    transition: all .4s cubic-bezier(.175, .885, .32, 1.275) 0s;-webkit-transform: translateY(-.18em) scale(1.1);transform: translateY(-.18em) scale(1.1);opacity: 0;
+    transition: all .4s cubic-bezier(.175, .885, .32, 1.275) 0s;-webkit-transform: translateY(-.18em) scale(1.1);-ms-transform: translateY(-.18em) scale(1.1);transform: translateY(-.18em) scale(1.1);opacity: 0;
 }.inquiry .section_index span:nth-child(1),
 .pagevisual_copy span:nth-child(1)
 {
@@ -410,7 +410,7 @@ a img:focus
 }.icon-twitter:before
 {font-family: fontawesome;font-size: 22px;font-weight: normal;font-style: normal;font-variant: normal;line-height: 1;position: relative;top: 0;left: 0;display: inline-block;margin-right: 0;
 
-    content: '';-webkit-transform: translate(0, 0);transform: translate(0, 0);vertical-align: middle;text-transform: none;color: inherit;text-rendering: auto;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;
+    content: '';-webkit-transform: translate(0, 0);-ms-transform: translate(0, 0);transform: translate(0, 0);vertical-align: middle;text-transform: none;color: inherit;text-rendering: auto;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;
 }html.ie8 .icon-twitter:before
 {font-family: inherit;
 
@@ -418,7 +418,7 @@ a img:focus
 }.icon-facebook:before
 {font-family: fontawesome;font-size: 22px;font-weight: normal;font-style: normal;font-variant: normal;line-height: 1;position: relative;top: 0;left: 0;display: inline-block;margin-right: 0;
 
-    content: '';-webkit-transform: translate(0, 0);transform: translate(0, 0);vertical-align: middle;text-transform: none;color: inherit;text-rendering: auto;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;
+    content: '';-webkit-transform: translate(0, 0);-ms-transform: translate(0, 0);transform: translate(0, 0);vertical-align: middle;text-transform: none;color: inherit;text-rendering: auto;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;
 }html.ie8 .icon-facebook:before
 {font-family: inherit;
 
@@ -426,7 +426,7 @@ a img:focus
 }.icon-instagram:before
 {font-family: fontawesome;font-size: 22px;font-weight: normal;font-style: normal;font-variant: normal;line-height: 1;position: relative;top: 0;left: 0;display: inline-block;margin-right: 0;
 
-    content: '';-webkit-transform: translate(0, 0);transform: translate(0, 0);vertical-align: middle;text-transform: none;color: inherit;text-rendering: auto;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;
+    content: '';-webkit-transform: translate(0, 0);-ms-transform: translate(0, 0);transform: translate(0, 0);vertical-align: middle;text-transform: none;color: inherit;text-rendering: auto;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;
 }html.ie8 .icon-instagram:before
 {font-family: inherit;
 
@@ -560,7 +560,7 @@ a img:focus
         width: 100%;max-width: none;height: 100%;padding-top: 0;padding-right: 0;padding-left: 0;-webkit-box-orient: vertical;-webkit-box-direction: normal;-ms-flex-direction: column;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align: center;-ms-flex-align: center;align-items: center;-ms-flex-line-pack: center;align-content: center;
     }.siteHeader_nav li
     {
-        font-size: 1.5em;position: relative;z-index: -10;display: block;padding: 20px;-webkit-transform: translateX(10px);transform: translateX(10px);opacity: 0;
+        font-size: 1.5em;position: relative;z-index: -10;display: block;padding: 20px;-webkit-transform: translateX(10px);-ms-transform: translateX(10px);transform: translateX(10px);opacity: 0;
     }.siteHeader_nav li a
     {z-index: -10;
 
@@ -578,7 +578,7 @@ a img:focus
     {
         z-index: 10;
     }.navOpen .siteHeader_nav li
-    {transition: all .3s ease 0s;-webkit-transform: translateX(0px);transform: translateX(0px);
+    {transition: all .3s ease 0s;-webkit-transform: translateX(0px);-ms-transform: translateX(0px);transform: translateX(0px);
 
         opacity: 1;
     }.navOpen .siteHeader_nav li:nth-child(1)
@@ -642,7 +642,7 @@ a img:focus
     }.navToggle_icon:before,
     .navToggle_icon:after
     {
-        content: ' ';-webkit-transform-origin: -1px;transform-origin: -1px;
+        content: ' ';-webkit-transform-origin: -1px;-ms-transform-origin: -1px;transform-origin: -1px;
     }.navToggle_icon:before
     {
         top: 0;
@@ -664,13 +664,13 @@ a img:focus
         width: 100%;height: 100%;border-radius: 0;background-color: #008197;box-shadow: none;
     }.navOpen .navToggle_icon:before
     {
-        -webkit-transform: rotate(45deg)                                ;transform: rotate(45deg);
+        -webkit-transform: rotate(45deg)                                                ;-ms-transform: rotate(45deg);transform: rotate(45deg);
     }.navOpen .navToggle_icon_lineCenter
     {
         width: 200%;opacity: 0;
     }.navOpen .navToggle_icon:after
     {
-        -webkit-transform: rotate(-45deg)                                ;transform: rotate(-45deg);
+        -webkit-transform: rotate(-45deg)                                                ;-ms-transform: rotate(-45deg);transform: rotate(-45deg);
     }
 }.siteFooter.hasGradation
 {position: relative;
@@ -864,14 +864,14 @@ a img:focus
 }.siteForm div.wpcf7 .ajax-loader:before
 {font-family: fontawesome;font-size: 1em;font-weight: normal;font-style: normal;font-variant: normal;line-height: 1;position: relative;top: 0;left: 0;display: inline-block;margin-right: 0;
 
-    content: '';-webkit-transform: translate(0, 0);transform: translate(0, 0);vertical-align: middle;text-transform: none;color: inherit;text-rendering: auto;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;
+    content: '';-webkit-transform: translate(0, 0);-ms-transform: translate(0, 0);transform: translate(0, 0);vertical-align: middle;text-transform: none;color: inherit;text-rendering: auto;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;
 }html.ie8 .siteForm div.wpcf7 .ajax-loader:before
 {font-family: inherit;
 
     content: '>';
 }.siteForm div.wpcf7 .ajax-loader:before
 {
-    -webkit-transform-origin: center                                                                        ;transform-origin: center;-webkit-animation: loadRotate .5s ease-in-out 0s infinite normal;animation: loadRotate .5s ease-in-out 0s infinite normal;
+    -webkit-transform-origin: center                                                                ;-ms-transform-origin: center;transform-origin: center;-webkit-animation: loadRotate .5s ease-in-out 0s infinite normal;animation: loadRotate .5s ease-in-out 0s infinite normal;
 }.siteForm .button-form-return
 {
     background-color: #eaeaea;
@@ -903,7 +903,7 @@ a img:focus
 .button-link:active a,
 .button-link:focus a
 {
-    -webkit-transform: scale(.98)                        ;transform: scale(.98);
+    -webkit-transform: scale(.98)                                ;-ms-transform: scale(.98);transform: scale(.98);
 }.button-def:hover a:before,
 .button-nav:hover a:before,
 .button-def:active a:before,
@@ -923,7 +923,7 @@ a img:focus
 .button-link:active a:after,
 .button-link:focus a:after
 {
-    -webkit-transform: scale(1.25)                                                ;transform: scale(1.25);opacity: 0;
+    -webkit-transform: scale(1.25)                                                ;-ms-transform: scale(1.25);transform: scale(1.25);opacity: 0;
 }.button
 {
     line-height: 1;display: inline-block;
@@ -1074,7 +1074,7 @@ a img:focus
 }.backToTop i
 {position: absolute;top: 25%;right: 0;bottom: 0;left: 0;display: block;display: block;
 
-    width: 30%;height: 30%;margin: auto;-webkit-transform: rotate(-45deg);transform: rotate(-45deg);opacity: .5;border-top: solid 1px #545454;border-right: solid 1px #545454;
+    width: 30%;height: 30%;margin: auto;-webkit-transform: rotate(-45deg);-ms-transform: rotate(-45deg);transform: rotate(-45deg);opacity: .5;border-top: solid 1px #545454;border-right: solid 1px #545454;
 }.backToTop.moving
 {-webkit-transform: perspective(500) rotate3d(50, 1000, 500, 360deg)                                        ;transform: perspective(500) rotate3d(50, 1000, 500, 360deg);
 
@@ -1136,7 +1136,7 @@ a img:focus
 {
     display: none;
 }.myIntroduction [class*='text-']
-{transition: all .9s linear .05s;-webkit-transform: translateY(-5px);transform: translateY(-5px);
+{transition: all .9s linear .05s;-webkit-transform: translateY(-5px);-ms-transform: translateY(-5px);transform: translateY(-5px);
 
     opacity: 0;will-change: opacity,transform;
 }.myIntroduction .text-3
@@ -1156,7 +1156,7 @@ a img:focus
     transition-delay: .3s;
 }.myIntroduction .text-2
 {
-    transition-delay: .7s;
+    transition-delay: 1.2s;
 }.myIntroduction .text-7
 {
     transition-delay: 5.5s;
@@ -1206,7 +1206,7 @@ a img:focus
 {
     background-color: #14f99d;
 }.letsTalk .myIntroduction [class*='text-']
-{-webkit-transform: translateY(0px)                                        ;transform: translateY(0px);
+{-webkit-transform: translateY(0px)                            ;-ms-transform: translateY(0px);transform: translateY(0px);
 
     opacity: 1;
 }.introEndAnim .myIntroduction [class*='text-']
@@ -1234,7 +1234,7 @@ a img:focus
 body:before
 {position: fixed;z-index: 96;top: 0;bottom: 0;left: -200%;display: block;width: 100%;height: 100%;margin: auto;
 
-    content: ' ';transition: all .5s ease 0s;-webkit-transform: skew(45deg);transform: skew(45deg);
+    content: ' ';transition: all .5s ease 0s;-webkit-transform: skew(45deg);-ms-transform: skew(45deg);transform: skew(45deg);
 }@media screen and (max-width: 780px)
 {
     body:after,
@@ -1341,7 +1341,7 @@ body:before
     margin-top: 0;margin-bottom: 0;
 }.loaded .pagevisual_copy span
 {
-    -webkit-transform: translateY(0) scale(1)                                                ;transform: translateY(0) scale(1);opacity: 1;
+    -webkit-transform: translateY(0) scale(1)                                                ;-ms-transform: translateY(0) scale(1);transform: translateY(0) scale(1);opacity: 1;
 }.pagevisual_copy_pagename
 {font-family: 'woodford ultra';
 
@@ -1349,14 +1349,14 @@ body:before
 }.pagevisual_copy .handWrite
 {font-size: .58em;
 
-    margin-top: -1.4em;transition: all .4s cubic-bezier(.68, -.55, .265, 1.55) 0s;transition-delay: 1.5s;-webkit-transform: translateY(6px);transform: translateY(6px);-webkit-transform-origin: 50% 25%;transform-origin: 50% 25%;text-align: right;opacity: 0;
+    margin-top: -1.4em;transition: all .4s cubic-bezier(.68, -.55, .265, 1.55) 0s;transition-delay: 1.5s;-webkit-transform: translateY(6px);-ms-transform: translateY(6px);transform: translateY(6px);-webkit-transform-origin: 50% 25%;-ms-transform-origin: 50% 25%;transform-origin: 50% 25%;text-align: right;opacity: 0;
 }.pagevisual_copy .handWrite,
 .pagevisual_copy .handWrite svg text
 {font-family: 'Damion',cursive;
     line-height: 1;color: #003640;
 }.loaded .pagevisual_copy .handWrite
 {
-    -webkit-transform: translateY(0)                                                ;transform: translateY(0);opacity: 1;
+    -webkit-transform: translateY(0)                                                ;-ms-transform: translateY(0);transform: translateY(0);opacity: 1;
 }.pagevisual-child .pagevisual_copy
 {font-size: 1em;
 
@@ -1384,7 +1384,7 @@ body:before
 }.pagevisual-child .pagevisual_copy_category:before
 {font-family: fontawesome;font-size: .8em;font-weight: normal;font-style: normal;font-variant: normal;line-height: 1;position: relative;top: 0;left: 0;display: inline-block;margin-right: -1px;
 
-    content: '';-webkit-transform: translate(0, 0);transform: translate(0, 0);vertical-align: middle;text-transform: none;color: inherit;text-rendering: auto;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;
+    content: '';-webkit-transform: translate(0, 0);-ms-transform: translate(0, 0);transform: translate(0, 0);vertical-align: middle;text-transform: none;color: inherit;text-rendering: auto;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;
 }html.ie8 .pagevisual-child .pagevisual_copy_category:before
 {font-family: inherit;
 

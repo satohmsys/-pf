@@ -62,7 +62,7 @@
 }.about .section-hi .section_index .handWrite
 {font-family: 'Damion',cursive;font-size: .6em;
 
-    position: absolute;top: 0;right: 25px;-webkit-transform: rotate(5deg);transform: rotate(5deg);color: #003640;
+    position: absolute;top: 0;right: 25px;-webkit-transform: rotate(5deg);-ms-transform: rotate(5deg);transform: rotate(5deg);color: #003640;
 }@media screen and (max-width: 580px)
 {
     .about .section-hi .section_index .handWrite

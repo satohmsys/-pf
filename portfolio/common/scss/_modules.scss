@@ -329,9 +329,9 @@
 
 	&:after{
 		content: " ";
-		will-change: width, height, border-radius;
+		// will-change: width, height, border-radius;
 		z-index: 8;
-		transition: easeInOutCirc();
+		transition:all 0.3s linear 0s;
 		border-radius: 100%;
 		box-shadow: 0 4px 4px rgba( #000, 0.1), 0 0 10px rgba( #000, 0.3 );
 		background-color: darken( $blue, 35 );		

@@ -83,7 +83,7 @@ gulp.task('sass' , function(){
     style : 'compressed'
   })
   .pipe(autoprefixer({
-    browsers: ['last 4 versions', '> 2%', 'ie > 10', 'iOS >= 9', 'Android >= 6']
+    browsers: ['last 4 versions', '> 2%', 'ie > 10', 'iOS >= 8', 'Android >= 6']
   }))
   .pipe(csscomb()) 
   .pipe(plumber({

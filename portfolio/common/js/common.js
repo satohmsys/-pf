@@ -302,6 +302,23 @@ document.addEventListener( 'wpcf7mailsent', function( event ) {
 
 
 /**
+* クリックでクラス付与
+*/
+
+// var as = document.getElementsByTagName( 'a' ),
+//     aArray = new Array();
+
+// Array.prototype.forEach.call(as, 
+//     function( e, index ){
+//       var href = e.href;
+
+//       if( )
+//     } 
+//   )
+
+
+
+/**
 * google analytics
 */
 

@@ -6,7 +6,7 @@ new window['pjax-api'].Pjax({
     //読み込み箇所を指定
     // area: 'body',
     areas: [
-        'body'
+        '#pageContent'
     ],
     link: 'a:not([target])',
     fetch: {

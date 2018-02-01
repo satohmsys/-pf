@@ -86,7 +86,8 @@
 		color: $blue;
 		font-size: 4.3em;
 		font-style: italic;
-		font-family: $fontFamily_wf_thin;
+		font-weight: lighter;
+		// font-family: $fontFamily_wf_light;
 		
 		@extend %fadeStyleBefore;
 		

@@ -186,7 +186,7 @@
     opacity: 1;
 }.index .mainvisual_img
 {position: absolute;z-index: 0;top: 0;right: 0;left: 0;width: auto;
-    max-width: none;height: 100%;margin: auto;margin-left: -1%;opacity: .05;mix-blend-mode: hard-light;
+    max-width: none;height: 100%;margin: auto;opacity: .1;mix-blend-mode: hard-light;
 }@media screen and (max-width: 580px)
 {
     .index .mainvisual_img
@@ -443,7 +443,7 @@
         padding-left: 70px;
     }
 }.about-biography .timeline_event_date
-{font-family: 'woodford thin';font-size: 4.3em;font-style: italic;
+{font-size: 4.3em;font-weight: lighter;font-style: italic;
     line-height: 1;position: relative;display: inline-block;margin-top: 0;transition: all .5s ease 0s;vertical-align: top;color: #00d8fd;
 }@media screen and (max-width: 780px)
 {

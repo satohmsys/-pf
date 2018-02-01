@@ -25,6 +25,8 @@ html{
 	font-family: $fontFamily;
 	 -webkit-text-size-adjust: 100%;
 	color: $basefontColor;
+	background-color: #fafafa;
+	
 	
 	@include break( sp ){
 		font-size: 13px;

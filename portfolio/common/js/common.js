@@ -27,7 +27,6 @@ window.onload = window.onresize = function(){
 * cookie判断でイントロを出すかどうか。出す場合はアニメ後Removechild
 * 出さない場合はローディングアニメ
 */
-
 (function(){
     var $doc = document,
         $body = $doc.body;

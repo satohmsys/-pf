@@ -20,21 +20,7 @@ new window['pjax-api'].Pjax({
         ignore: '[href^="chrome-extension://"], [a href="#contact"]',
         reload: '',
         logger: ''
-    },
-    callbacks:{ // callbackを設定出来る
-        ajax : {  //　
-            success: function(event, setting, data, textStatus, jqXHR){
-                 console.log("ajax.success");
-            }
-        },
-        update : {
-            content: {
-                after : function( event, setting, srcContent, dstContent ) {
-                    console.log(srcContent + ': update.content.after');
-                }
-            }
-        }
-    },
+    }
   
 });
 
